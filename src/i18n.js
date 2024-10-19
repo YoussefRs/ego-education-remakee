@@ -5,11 +5,11 @@ import MsvJava from "./assets/Courses/MSCJAVA.png";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.png";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.png";
 import Civil from "./assets/Courses/BScinCivilEngineering.png";
-import Administration from "./assets/Home/banner/Administration.png"
-import JAVA from "./assets/Home/banner/JAVA.png"
-import Engineering from "./assets/Home/banner/Engineering.png"
-import SECURITY from "./assets/Home/banner/SECURITY.png"
-import INFORMATICS from "./assets/Home/banner/INFORMATICS.png"
+import Administration from "./assets/Home/banner/Administration.png";
+import JAVA from "./assets/Home/banner/JAVA.png";
+import Engineering from "./assets/Home/banner/Engineering.png";
+import SECURITY from "./assets/Home/banner/SECURITY.png";
+import INFORMATICS from "./assets/Home/banner/INFORMATICS.png";
 import {
   faLaptopCode,
   faPersonChalkboard,
@@ -47,7 +47,7 @@ i18n
             banner: {
               line1: "Why Ego Education?",
               line2:
-                "eGO Education is a brand by the International E-Learning Institute Ltd (IELI), a Higher Education Institute based in Malta, created thanks to the decennial experience of its founders in the field of online University education.",
+                "eGO Education is a Higher Education Institute based in Malta, created thanks to the decennial experience of its founders in the field of online University education.",
               line3:
                 "With our 100% online learning experience, you gain an internationally recognized degree without putting your life on hold.",
               line4: "Study on evenings and weekends, at your own pace.",
@@ -85,9 +85,11 @@ i18n
             },
             courseSlider: {
               title: "EXPLORE ALL COURSES",
+              upcomingtitle: "IN DEVELOPEMENT",
               subtitle: "Browse Our",
-              specialWord: "Course",
-              curriculum: "Curriculum",
+              upcomingsubtitle: "Our Upcoming",
+              specialWord: "Courses",
+              curriculum: "Modules",
               readMore: "Read More",
               courses: [
                 {
@@ -108,7 +110,7 @@ i18n
                   curriculum: 8,
                   link: "/courses/tU1vW2xY",
                 },
-                {
+                /*   {
                   title: "Business Administration",
                   description:
                     "Lead with Knowledge: Master the Science of Business Administration, Shaping Tomorrow's Business Landscape.",
@@ -127,6 +129,58 @@ i18n
                   curriculum: 18,
                   featured: true,
                   link: "/courses/ZZFfge4",
+                }, */
+              ],
+            },
+            UpcomingCourseSlider: {
+              title: "EXPLORE ALL COURSES",
+              upcomingtitle: "IN DEVELOPEMENT",
+              subtitle: "Browse Our",
+              upcomingsubtitle: "Our Upcoming",
+              specialWord: "Courses",
+              curriculum: "Modules",
+              readMore: "Read More",
+              courses: [
+                {
+                  title: "PhD in Law & Criminology",
+                  description:
+                    "PhD in Law & Criminology is an advanced academic research degree focused on exploring the legal system, criminal behavior, and societal responses to crime.",
+                  imgSrc:
+                    "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
+                  date: "12/08/24",
+                  curriculum: 7,
+                  link: "/courses/aB3cD4eF",
+                },
+                {
+                  title: "BSc in General Health Psychology",
+                  description:
+                    "BSc in General Health Psychology is an undergraduate degree that explores the relationship between psychological factors and physical health. Students learn how psychological, behavioral, and social elements affect health, illness, and healthcare.",
+                  imgSrc:
+                    "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
+                  date: "12/09/24",
+                  curriculum: 8,
+                  link: "/courses/tU1vW2xY",
+                },
+                {
+                  title: "Master Business Administration",
+                  description:
+                    "Lead with Knowledge: Master the Science of Business Administration, Shaping Tomorrow's Business Landscape.",
+                  imgSrc: BscBA,
+                  date: "25/10/24",
+                  curriculum: 18,
+                  featured: true,
+                  link: "/courses/JZhfbff4",
+                },
+                {
+                  title: "BSc in Biomedicine ",
+                  description:
+                    "BSc in Biomedicine is an undergraduate degree focused on understanding the biological and molecular basis of health and disease. The program combines elements of biology, chemistry, and medical science to explore how the human body functions, how diseases develop, and how they can be treated.",
+                  imgSrc:
+                    "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
+                  date: "25/10/24",
+                  curriculum: 18,
+                  featured: true,
+                  link: "/courses/JZhfbff4",
                 },
               ],
             },
@@ -355,8 +409,7 @@ i18n
                     name: "Alessandro Iacuelli",
                     title: "Analyst and teacher",
                     organization: "ETLForma",
-                    desc:
-                      "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
+                    desc: "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
                   },
                   career: [
@@ -443,9 +496,9 @@ i18n
                     name: "Manuele Monti",
                     title: "Founder and CEO",
                     organization: "TechBricks",
-                    desc:
-                      "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
-                      desc2 : "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                    desc: "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
+                    desc2:
+                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                   },
                   admission: {
@@ -614,8 +667,7 @@ i18n
                     name: "Alessandro Iacuelli",
                     title: "Analyst and teacher",
                     organization: "ETLForma",
-                    desc:
-                      "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
+                    desc: "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
                   },
                   cur: "9",
@@ -774,9 +826,9 @@ i18n
                     name: "Manuele Monti",
                     title: "Founder and CEO",
                     organization: "TechBricks",
-                    desc:
-                      "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
-                      desc2 : "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                    desc: "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
+                    desc2:
+                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                   },
                   totalEtc: 185,
@@ -973,9 +1025,9 @@ i18n
                     name: "Manuele Monti",
                     title: "Founder and CEO",
                     organization: "TechBricks",
-                    desc:
-                      "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
-                      desc2 : "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                    desc: "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
+                    desc2:
+                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                   },
                   career: [
@@ -1179,9 +1231,9 @@ i18n
             highlight:
               "of highly professionalising education provided entirely online at an international level.",
             s1: "was born with the motivation to enter the market of online education providers through an excellent training offer present in some residential universities, with all their limitation, but lacking or insufficient in the world of e-learning.",
-            s2: "is a project brand of the International E-Learning Institute (IELI) Ltd, an educational centre affiliated with Pegaso University the largest online university in Italy in terms of the number of students and turnover.",
-            s3: "Since 2017, with more than 5,000 students enrolled overall through our network, IELI has guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance.",
-            s4: "is a new project that will extend the concept through a new Higher Education Institute based in Malta, focused on the provision.",
+            s2: "Formerly an orienteering and student service centre named IELI, since 2017 we guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance – to more than 5,000 students enrolled overall through our network,",
+            /* s3: "Since 2017, with more than 5,000 students enrolled overall through our network, IELI has guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance.", */
+            s4: "is a new project that will extend the concept through a new Higher Education Institute based in Malta, focused on the provision. of highly professionalising education provided entirely online at an international level.",
           },
         },
       },
@@ -1277,7 +1329,7 @@ i18n
               title: "EXPLORAR TODOS OS CURSOS",
               subtitle: "Explore Nossos",
               specialWord: "Cursos",
-              curriculum: "Currículo",
+              curriculum: "Modulo",
               readMore: "Leia Mais",
               courses: [
                 {
@@ -1296,7 +1348,7 @@ i18n
                   date: "12/09/24",
                   curriculum: 8,
                 },
-                {
+                /*  {
                   title: "Administração de Empresas",
                   description:
                     "Lidere com conhecimento: domine a ciência da Administração de Empresas, moldando o cenário empresarial de amanhã.",
@@ -1304,7 +1356,7 @@ i18n
                   date: "25/10/24",
                   curriculum: 2,
                   featured: true,
-                },
+                }, */
               ],
             },
             homeLecturers: {

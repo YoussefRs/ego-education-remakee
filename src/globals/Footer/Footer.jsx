@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logos/logo-ego-white.png";
 import "./Footer.css";
-import ieli from "../../assets/Logos/Ego_ieli.png"
+import ieli from "../../assets/Logos/Ego_ieli.png";
 
 const Footer = () => {
   return (
@@ -15,12 +15,14 @@ const Footer = () => {
             </div>
             <div className="col-contents">
               <p>
-                <strong>eGO Education</strong> is a brand by the
-                International E-Learning Institute Ltd (IELI), a company
-                established in 2017 in Malta, by deed C83113.<br/> <br/> <strong>IELI</strong> has been
-                accredited by the Malta Further &amp; Higher Education Authority
-                (MFHEA) as a Higher Education Institute in 2023 with licence n.
-                2023-015.
+                <strong>eGO Education</strong> (formerly International
+                E-Learning Institute Ltd) is a company established in 2017 in
+                Malta, by deed C83113.
+              </p>
+              <p>
+                <strong>eGO Education</strong> has been accredited by the Malta
+                Further & Higher Education Authority (MFHEA) as a Higher
+                Education Institute in 2023 with licence n. 2023-015.
               </p>
             </div>
           </div>

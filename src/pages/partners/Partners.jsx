@@ -95,7 +95,7 @@ function Partners() {
             </p>
           </div>
         </div>
-        <div className="row p-5" style={{ backgroundColor: "#f2f8f1" }}>
+       {/*  <div className="row p-5" style={{ backgroundColor: "#f2f8f1" }}>
           <div className="col-2 partners-row">
             <img src={etl} alt="Person" />
           </div>
@@ -108,7 +108,7 @@ function Partners() {
               Italy.
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="row p-5">
           <div className="col-2 partners-row">
             <img src={hetg} alt="Person" />
