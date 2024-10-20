@@ -33,8 +33,8 @@ function HomeLecturers() {
         <div className="container py-2">
           <div className="row">
             {lecturers?.map((lecturer, i) => (
-              <div className="col-lg-4 col-md-6 mb-4 pt-5">
-                <div className="card shadow-sm border-0" data-aos={"flip-up"}>
+              <div className="col-lg-4 col-md-6 mb-4 pt-4">
+                <div className="card shadow-sm border-0 m-0" data-aos={"flip-up"}>
                   <div className="card-body">
                     {/* <div className="user-picture">
                       <img

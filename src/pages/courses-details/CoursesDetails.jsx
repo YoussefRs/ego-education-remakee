@@ -15,6 +15,7 @@ import CourseSliderDetails from "../../globals/Sliders/CourseSliderDetails";
 import { useTranslation } from "react-i18next";
 import Modal from "../../globals/Modal/Modal";
 import { useModal } from "../../globals/Modal/useModal";
+import ApplyWidget from "../../globals/Widgets/ApplyWidget";
 
 function extractIdFromPathname(pathname) {
   // Split the pathname by '/'
@@ -32,6 +33,24 @@ function CoursesDetails() {
   const [course, setCourse] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
   const { showModal, openModal, closeModal } = useModal();
+
+  const [isImage1Visible, setIsImage1Visible] = useState(true);
+  const [isImage2Visible, setIsImage2Visible] = useState(true);
+  const [isParagraph1Visible, setIsParagraph1Visible] = useState(false);
+  const [isParagraph2Visible, setIsParagraph2Visible] = useState(false);
+
+  const handleImage1Click = () => {
+    setIsImage1Visible(false);
+    setIsImage2Visible(false);
+    setIsParagraph1Visible(true);
+  };
+
+  const handleImage2Click = () => {
+    setIsImage1Visible(false);
+    setIsImage2Visible(false);
+    setIsParagraph2Visible(true);
+  };
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
@@ -266,7 +285,6 @@ function CoursesDetails() {
                         Sponsor
                       </Link>
                     </li>
-
                   </ul>
                   <div className="tab-content">
                     <div
@@ -321,231 +339,34 @@ function CoursesDetails() {
                       <h2 className="mb-4 fw-bold">Entry Requirements</h2>
                       <div className="tab row">
                         <div className="col">
-                          <article className="welcome col-12">
-                            <h6 className="mb-3 fw-bold">
-                              <FontAwesomeIcon
-                                icon={faListCheck}
-                                color="#046635"
-                              />{" "}
-                              Entry Requirements
-                            </h6>
-                            <h6>
-                              Around here, we know your time is valuable.
-                              That&#39;s why our enrolment process is simple,
-                              quick and is available all year round.
-                            </h6>{" "}
-                            On the next page you will be able to give us all the
-                            information necessary to complete your registration.
-                            You will be required to upload the following
-                            documents:
-                            <br />
-                            <br />
-                            <ul className="custom-list-style">
-                              <li className="d-flex mb-2">
-                                <FontAwesomeIcon
-                                  icon={faCheck}
-                                  color="#046635"
-                                  size={20}
-                                  style={{ paddingRight: 10, marginTop: 3 }}
+                          <div class="content">
+                            <div class="grid">
+                              <figure class="effect-layla">
+                                <img
+                                  src="https://t3.ftcdn.net/jpg/04/11/83/68/360_F_411836831_iAmsQWfsq1NZoid8XwiM60iz0WDTjGsI.jpg"
+                                  alt="img06"
                                 />
-                                <span>
-                                  Previous academic career (Exams + ECTS if you
-                                  have taken exams at other universities and
-                                  have not yet graduated).
-                                </span>
-                              </li>
-                              <li>
-                                <FontAwesomeIcon
-                                  icon={faCheck}
-                                  color="#046635"
-                                  size={20}
-                                  style={{ paddingRight: 10 }}
+                                <figcaption>
+                                  <h2>
+                                    Request <span>Evalution</span>
+                                  </h2>
+                                  <a href="#">View more</a>
+                                </figcaption>
+                              </figure>
+                              <figure class="effect-layla">
+                                <img
+                                  src="https://images.ctfassets.net/8bbwomjfix8m/migrated_1694_image1/810539178d1fd8891ed772d4963f1fd5/Study_Abroad_Intakes_In_Ireland_-_Why_The_Timing_Of_Your_Application_Matters_"
+                                  alt="img03"
                                 />
-                                <span>
-                                  Degree obtained. Qualifications issued in
-                                  English, Spanish, French, Italian are
-                                  accepted.
-                                </span>
-                              </li>
-                              <li>
-                                <FontAwesomeIcon
-                                  icon={faCheck}
-                                  color="#046635"
-                                  size={20}
-                                  style={{ paddingRight: 10 }}
-                                />
-                                <span>
-                                  For other languages, the qualification must be
-                                  translated into English or Italian.
-                                </span>
-                              </li>
-                              <li>
-                                <FontAwesomeIcon
-                                  icon={faCheck}
-                                  color="#046635"
-                                  size={20}
-                                  style={{ paddingRight: 10 }}
-                                />
-                                <span>Updated CV in English.</span>
-                              </li>
-                              <li>
-                                <FontAwesomeIcon
-                                  icon={faCheck}
-                                  color="#046635"
-                                  size={20}
-                                  style={{ paddingRight: 10 }}
-                                />
-                                <span>
-                                  Copy of a valid identification document.
-                                </span>
-                              </li>
-                            </ul>
-                            Linguistic certifications held among the following:
-                            <ul className="custom-list-style">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                color="#046635"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-dot"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                              </svg>
-                              <span style={{ fontWeight: 600 }}>English</span>
-                              <li className="d-flex mb-2">
-                                <ul className="custom-list-style d-flex flex-column">
-                                  {requiredDocuments?.english.options.map(
-                                    (option, i) => (
-                                      <span key={i}>
-                                        {" "}
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          color="#046635"
-                                          width="25"
-                                          height="10"
-                                          fill="currentColor"
-                                          class="bi bi-dot"
-                                          viewBox="0 0 16 16"
-                                        >
-                                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                                        </svg>
-                                        {option}
-                                      </span>
-                                    )
-                                  )}
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul className="custom-list-style">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                color="#046635"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-dot"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                              </svg>
-                              <span style={{ fontWeight: 600 }}>Italian</span>
-                              <li className="d-flex mb-2">
-                                <ul className="custom-list-style d-flex flex-column">
-                                  {requiredDocuments?.italian.options.map(
-                                    (option, i) => (
-                                      <span key={i}>
-                                        {" "}
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          color="#046635"
-                                          width="25"
-                                          height="10"
-                                          fill="currentColor"
-                                          class="bi bi-dot"
-                                          viewBox="0 0 16 16"
-                                        >
-                                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                                        </svg>
-                                        {option}
-                                      </span>
-                                    )
-                                  )}
-                                </ul>
-                              </li>
-                            </ul>
-                            To access the Bachelor’s, at least a{" "}
-                            <span className="fw-bold ego-green">B2</span> level of
-                            knowledge of the English or Italian language is
-                            required, while for the Master’s, at least a{" "}
-                            <span className="fw-bold ego-green">C1 </span> 
-                            level is <span className="fw-bold ego-green">required</span>.
-                            <br />
-                            <br />
-                            In the absence of a linguistic certification, at the
-                            time of enrolment there will be an entrance test to
-                            ascertain linguistic knowledge and general culture.
-                            In case of deficiency there will be foundation
-                            courses.
-                            <br />
-                            <br />
-                            To properly enrol, all educational qualifications
-                            (such as high school diploma, bachelor’s, master’s)
-                            should be apostilled through a{" "}
-                            <span className="fw-bold ego-green">
-                              certification of value at the Maltese or Italian
-                              embassies abroad
-                            </span>
-                            .
-                            <br />
-                            <br />
-                            In any case, while waiting for the apostille or to
-                            simply understand if one is eligible, a normal copy
-                            of the aforementioned qualifications is enough.
-                            <br />
-                            <br />
-                            Once registration is complete, our team will review
-                            your documents and information within 72 hours.
-                            We&#39;ll email you an update.
-                            <br />
-                            <br />
-                            Upon{" "}
-                            <span className="fw-bold ego-green">
-                              payment confirmation
-                            </span>
-                            , you&#39;ll get your username and password via
-                            email to start your online learning journey.
-                            <br />
-                            <br />
-                            <span className="fw-bold ego-green">
-                              Welcome to eGO Education.
-                            </span>
-                            <br />
-                            <br />
-                            <label>
-                              <input
-                                type="checkbox"
-                                checked={isChecked}
-                                onChange={handleCheckboxChange}
-                                style={{marginRight: 10, marginBottom: 10}}
-                              />
-                              I confirm that I have thoroughly reviewed and
-                              understood all the entry requirements.
-                            </label>
-                            <Link
-                              className={`${isChecked ? "" : "entry_inactive"}`}
-                              // to={`/apply/${course?.id}`}
-                              onClick={openModal}
-                              state={{
-                                course: course.name,
-                                degree: course.degree,
-                                inst: course.institute,
-                              }}
-                            >
-                              Apply
-                            </Link>
-                          </article>
+                                <figcaption>
+                                  <h2>
+                                    Apply <span>Now</span>
+                                  </h2>
+                                  <a href="#">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -653,7 +474,7 @@ function CoursesDetails() {
                           {" "}
                           <div class="outer">
                             <div class="progress dark">
-                            <div class="left">
+                              <div class="left">
                                 <div className="fw-bold">Full-Time</div>
                                 <div>Semester 1</div>
                                 <div>Semester 2</div>
@@ -712,9 +533,7 @@ function CoursesDetails() {
                       id="tab2"
                     >
                       <div className="tab">
-                        <main className="modules-container">
-                          
-                        </main>
+                        <main className="modules-container"></main>
                       </div>
                     </div>
                   </div>
@@ -731,6 +550,9 @@ function CoursesDetails() {
                   <div className="p-4">
                     <InfoWidget course={course} />
                   </div>
+                </div>
+                <div className="mb-5">
+                  <ApplyWidget />
                 </div>
                 <div>
                   <ContactWidget />

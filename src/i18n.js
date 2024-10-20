@@ -1197,10 +1197,12 @@ i18n
           },
           widget: {
             apply: {
-              line1: "Why Ego-Education ?",
+              line1: "Request Evaluation",
               line2:
-                "Advance your career through continuous learning. Expand your skillset, gain industry certifications, learn on your schedule, and do it all at a lower cost. Online education provides opportunities for career growth that will benefit you for years to come.",
-              button: "Apply Now",
+                "Take the first step toward your future: request a free evaluation of your academic career and let us create a personalized study plan tailored to your goals.",
+              line3:
+                "evaluation@ego-education.com",
+              button: "Request Evaluation",
             },
             contact: {
               line1: "Stay In Touch",
@@ -1216,7 +1218,7 @@ i18n
             },
           },
           degrees: {
-            d1: "Master's Degree",
+            d1: "Masters Degrees",
             d2: "Bachelor's Degree",
             d3: "PhD",
           },

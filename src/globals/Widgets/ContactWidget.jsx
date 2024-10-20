@@ -10,7 +10,7 @@ function ContactWidget() {
       <p>{line2}</p>
       <div className="contact-img">
         <img
-          src="https://lizza.wpengine.com/billaa/wp-content/uploads/sites/5/2023/09/contact-page-img-01.jpg"
+          src="https://torontohousing.ca/sites/default/files/styles/child_pages_thumbnail/public/2023-03/get_in_touch.jpg?itok=tcGg49Mc"
           alt="contact"
         />
       </div>

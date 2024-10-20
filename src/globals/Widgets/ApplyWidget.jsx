@@ -10,8 +10,8 @@ const ApplyWidget = () => {
   const { showModal, openModal, closeModal } = useModal();
 
   return (
-    <section className="widget has-divider mb-3">
-      <h3 className="title">{line1}</h3>
+    <section className="widget has-divider mb-3" id="request-widget">
+      <h3 className="text-bkack fw-bold">{line1}</h3>
       <p>{line2}</p>
       <div className="d-flex align-items-center justify-content-start">
         <button className="text-white button-green" onClick={openModal}>
