@@ -925,9 +925,9 @@ function CoursesDetails() {
                     <InfoWidget course={course} />
                   </div>
                 </div>
-                {/* <div className="mb-5">
+                <div className="mb-5">
                   <ApplyWidget />
-                </div> */}
+                </div>
                 <div>
                   <ContactWidget />
                 </div>
