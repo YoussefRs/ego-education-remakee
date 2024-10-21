@@ -17,6 +17,7 @@ import Research from "./pages/reseach/Research";
 import Partners from "./pages/partners/Partners";
 import ConfirmPolicy from "./pages/enrollment/ConfirmPolicy";
 import Policy from "./pages/policy/Policy";
+import Dashboard from "./pages/dash/Dashboard";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -147,6 +148,7 @@ function App() {
               </Layout>
             }
           />
+          <Route path="/dash" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
