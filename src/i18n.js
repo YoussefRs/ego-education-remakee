@@ -110,6 +110,15 @@ i18n
                   curriculum: 8,
                   link: "/courses/tU1vW2xY",
                 },
+                {
+                  title: "MA in Nonprofit Management & Leadership",
+                  description:
+                    "Become a Leader of Change: Master the Skills to Drive Innovation and Social Impact in the Evolving Third Sector.",
+                  imgSrc: "https://olathe.k-state.edu/images/professional-dev/leadership-series/banner-leadership-series-2025.jpg",
+                  date: "12/09/24",
+                  curriculum: 10,
+                  link: "/courses/ghnffT988",
+                },
                 /*   {
                   title: "Business Administration",
                   description:
@@ -248,7 +257,7 @@ i18n
                 {
                   id: "aB3cD4eF",
                   name: "Master of Science in Java Programming",
-                  startDate: "01 Jan 2023",
+                  // startDate: "01 Jan 2023",
                   duration: "2 years",
                   location: "In Campus",
                   totalEtc: 90,
@@ -401,7 +410,7 @@ i18n
                 {
                   id: "tU1vW2xY",
                   name: "Master of Science in Information Security",
-                  startDate: "05 Jun 2023",
+                  // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
                   totalModules: 7,
@@ -484,7 +493,7 @@ i18n
                   duration: 2,
                   category: "computer sicence",
                 },
-                {
+             /*    {
                   id: "JZhfbff4",
                   name: "Business Administration",
                   startDate: "15 Feb 2023",
@@ -1180,6 +1189,115 @@ i18n
                     "https://plus.unsplash.com/premium_photo-1682124416359-d48d59ad6916?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2NpZW5jZSUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
                   degree: "PhD",
                   institute: "Pegaso",
+                }, */
+                {
+                  id: "ghnffT988",
+                  name: "MA in Nonprofit Management & Leadership",
+                  // startDate: "05 Jun 2023",
+                  duration: "2 years",
+                  location: "Online",
+                  totalModules: 10,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analyst and teacher",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "Non-Profit Organisation Manager/Executive Director",
+                    "Project Manager for Non-Profit Initiatives",
+                    "Non-Profit Consultant",
+                    "Grant Writer/Development Officer",
+                    "Advocacy and Public Relations Specialist",
+                    "Social Impact Analyst",
+                    "Community Engagement Coordinator",
+                    "Government Relations Officer",
+                    "Human Resources Manager in Non-Profit Organizations",
+                  ],
+                  media: {
+                    type: "image",
+                    source: "https://mindgear-mea.com/wp-content/uploads/2020/09/leadership-banner-1-1024x371-2.jpg",
+                  },
+                  description:
+                    "The master's course aims to develop leaders who are aware of the new challenges in the Third Sector and adept at navigating the evolving normative landscape of social bodies. These organizations are playing a crucial role in the post-pandemic society, requiring both technical expertise and visionary leadership.",
+                  slogan:
+                    "Become a Leader of Change: Master the Skills to Drive Innovation and Social Impact in the Evolving Third Sector.",
+
+                  totalEtc: 90,
+                  thumb:
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWLWva0-DKp5IxK-HF9ZoqeT5YRas0sbZ8w&usqp=CAU",
+                  degree: "Master Degree",
+                  modules: [
+                    {
+                      title: "Governance and Risk Management",
+                      description:
+                        "This module explores the critical intersection of public policies, welfare, and the role played by the non-profit sector, particularly in response to the welfare crisis. It examines the evolution of social enterprises in the aftermath of this crisis and provides a comprehensive historical background of the non-profit sector.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Non-Profit Legislation",
+                      description:
+                        "This module examines the intricacies of not-for-profit legislation, exploring  the foundational aspects of the legal framework governing the Third Sector. It covers the infrastructure and governance of the not-for-profit legislative system, the objective scope of Third Sector activities, the subjective sphere encompassing types and legal forms of entities, and the regulatory references prevalent across Member States.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Profile and Social Impact of the Third Sector, Networking and Organisational Dynamics",
+                      description:
+                        "This module explores critical aspects of the Third Sector, delving into the management of local stakeholders and the bureaucratic and fiscal requirements essential for establishing a non-profit organisation. It addresses the creation of a community, emphasising the principles of co-programming, co-planning, accreditation, and partnership.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Vision, Mission, Management and Control of a Non-Profit Organisation",
+                      description:
+                        "This module examines key aspects of non-profit organisational dynamics, including volunteering and labor relations, fundraising methodologies, challenges in personnel management for both volunteers and employees, assets management, and the structures related to organisation, administration, and accounting. Additionally, it addresses financial management with a focus on cash management and the analysis of funding costs.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Human Resources Management and Development",
+                      description:
+                        "This module explores intricacies of human resources management and development within the context of the Third Sector. It examines work psychology, including aspects of the psychological contract, group management, and leadership specific to non-profit organizations. It addresses social communication as a vital tool for information dissemination, dialogue, and stakeholder participation. It explores group decision-making dynamics, ethical considerations, and principles of leadership and team management, concluding with an examination of succession planning.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Project Management",
+                      description:
+                        "This module explores the comprehensive spectrum of project management within the context of the Third Sector. It covers the entire project cycle, from initiation and definition to planning, execution, implementation, control, and conclusion. Additionally, the module delves into fundraising strategies, providing a guide to identifying funding sources and navigating national and international calls for proposals. Students will also learn the intricacies of project development, moving from the ideation phase to crafting a compelling proposal. The module further addresses the impact assessment of projects in the social field and explores various financial support mechanisms, including liberal donations and other forms.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Organisation of Association Events",
+                      description:
+                        "This module examine the intricacies of organising association events within the framework of the Third Sector. It explores the essential components of event planning, including logistics, coordination, and execution. The module addresses the critical aspects of communication and promotion strategies tailored for association events. It covers the definition of teams and effective volunteer management, emphasising the role of collaboration in event success.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Focus on Human Rights",
+                      description:
+                        "This module explores the critical intersection of public policies, welfare, and the role played by the non-profit sector, particularly in response to the welfare crisis. It examines the evolution of social enterprises in the aftermath of this crisis and provides a comprehensive historical background of the non-profit sector.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Research Methods",
+                      description:
+                        "This module is designed for participants who need to gain critical understanding of research approaches and skills and gain an ability to deploy research methods in their studies or in professional lives and will aid those who have to conduct research as part of their graduate studies.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Dissertation ",
+                      description:
+                        "The dissertation is a compulsory element of Master in Non-Profit Management and Leadership. Dissertation is based on a major piece of work that involves applying material encountered in the taught component of the degree, and extending that knowledge with the student's contribution, under the guidance of a supervisor. This component of Masters degree provides opportunity for students to pursue a single topic in depth and to demonstrate evidence of research ability at a Masters level. The topic is typically a current problem in the broad area of their MSc programme. The dissertation usually involves experimental or theoretical research, or a substantial literature survey on a specific topic.",
+                      ects: 24,
+                    },
+                 
+                  ],
+                  institute: "Ego Education",
+                  method:
+                    "The programme comprises an online approach promoting the building of a community of practice via peer-to-peer learning which is asynchronous. Students have the freedom and flexibility to access the course at a time which is most convenient to them.",
+                  price: 3000,
+                  duration: 2,
+                  category: "computer sicence",
                 },
               ],
               button: "Read More",
