@@ -299,7 +299,7 @@ function CoursesDetails() {
                       <h2 className="mb-4 fw-bold">{title} </h2>
                       <div className="tab row">
                         <div className="col">
-                          <div className="mb-4 w-100">
+                        {/*   <div className="mb-4 w-100">
                             <ul className="list-unstyled no-margin-bottom">
                               <li>
                                 <strong>
@@ -312,7 +312,7 @@ function CoursesDetails() {
                                 <em>{course?.startDate}</em>
                               </li>
                             </ul>
-                          </div>
+                          </div> */}
                           <article className="welcome col-12">
                             <p className="mb-4">{course?.description}</p>
                             <h2 className="mb-4 fw-bold">{title1} </h2>
@@ -611,7 +611,7 @@ function CoursesDetails() {
                                       </span>
                                       <br />
                                       <br />
-                                      <label>
+                                      <label className="mb-3">
                                         <input
                                           type="checkbox"
                                           checked={isChecked}
@@ -625,6 +625,7 @@ function CoursesDetails() {
                                         reviewed and understood all the entry
                                         requirements.
                                       </label>
+                                      <br />
                                       <Link
                                         className={`${
                                           isChecked ? "" : "entry_inactive"
