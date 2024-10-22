@@ -3,7 +3,7 @@ import "./styles.css";
 import { Button, Form, Modal } from "react-bootstrap";
 
 const LoginModal = ({ show, handleClose, setCorrect }) => {
-  const correctPassword = "aJ#49f@c9K!3pL";
+  const correctPassword = "ego-education";
   const [password, setPassword] = useState(""); // To track the entered password
   const [triesCount, setTriesCount] = useState(3); // To track the remaining tries
   const [errorMessage, setErrorMessage] = useState(""); // For showing error messages
