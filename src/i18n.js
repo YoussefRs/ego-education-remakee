@@ -93,7 +93,7 @@ i18n
               readMore: "Read More",
               courses: [
                 {
-                  title: "Master of Science in Java Programming",
+                  title: "MSc in Java Programming",
                   description:
                     "Master the Art of Software Development with our Comprehensive Java Programming Master's Program.",
                   imgSrc: MsvJava,
@@ -102,7 +102,7 @@ i18n
                   link: "/courses/aB3cD4eF",
                 },
                 {
-                  title: "Master of Science in Information Security",
+                  title: "MSc in Information Security",
                   description:
                     "Secure Your Future with Expertise: Master the Science of Information Security, Safeguarding Tomorrow's Digital Landscape.",
                   imgSrc: MsvCS,
@@ -265,7 +265,7 @@ i18n
               coursesData: [
                 {
                   id: "aB3cD4eF",
-                  name: "MS in Java Programming",
+                  name: "MSc in Java Programming",
                   // startDate: "01 Jan 2023",
                   duration: "2 years",
                   location: "In Campus",
@@ -418,7 +418,7 @@ i18n
                 },
                 {
                   id: "tU1vW2xY",
-                  name: "MS in Information Security",
+                  name: "MSc in Information Security",
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
