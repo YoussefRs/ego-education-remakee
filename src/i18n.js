@@ -119,6 +119,15 @@ i18n
                   curriculum: 10,
                   link: "/courses/ghnffT988",
                 },
+                {
+                  title: "MSc in European Project Management",
+                  description:
+                    "Build the expertise to manage innovative projects that shape the future of the EU.",
+                  imgSrc: "https://keystoneacademic-res.cloudinary.com/image/upload/element/19/193032_industrie4_1.png",
+                  date: "12/09/24",
+                  curriculum: 7,
+                  link: "/courses/ghnffTffz4",
+                },
                 /*   {
                   title: "Business Administration",
                   description:
@@ -256,7 +265,7 @@ i18n
               coursesData: [
                 {
                   id: "aB3cD4eF",
-                  name: "Master of Science in Java Programming",
+                  name: "MS in Java Programming",
                   // startDate: "01 Jan 2023",
                   duration: "2 years",
                   location: "In Campus",
@@ -409,7 +418,7 @@ i18n
                 },
                 {
                   id: "tU1vW2xY",
-                  name: "Master of Science in Information Security",
+                  name: "MS in Information Security",
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
@@ -1224,9 +1233,9 @@ i18n
                   slogan:
                     "Become a Leader of Change: Master the Skills to Drive Innovation and Social Impact in the Evolving Third Sector.",
 
-                  totalEtc: 90,
+                  totalEtc: 84,
                   thumb:
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWLWva0-DKp5IxK-HF9ZoqeT5YRas0sbZ8w&usqp=CAU",
+                    "https://olathe.k-state.edu/images/professional-dev/leadership-series/banner-leadership-series-2025.jpg",
                   degree: "Master Degree",
                   modules: [
                     {
@@ -1297,7 +1306,98 @@ i18n
                     "The programme comprises an online approach promoting the building of a community of practice via peer-to-peer learning which is asynchronous. Students have the freedom and flexibility to access the course at a time which is most convenient to them.",
                   price: 3000,
                   duration: 2,
-                  category: "computer sicence",
+                  category: "Business",
+                },
+                {
+                  id: "ghnffTffz4",
+                  name: "MSc in European Project Management",
+                  // startDate: "05 Jun 2023",
+                  duration: "2 years",
+                  location: "Online",
+                  totalModules: 10,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analyst and teacher",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "European Project Managers",
+                    "Business Development Manager",
+                    "International Project Coordinator",
+                    "Consultant in Project Management ",
+                    "Academic Researcher or Lecturer ",
+                    "EU Policy Analyst or Advisor ",
+                    "NGO Project Director ",
+                    "Entrepreneur in EU-funded Initiatives",
+                  ],
+                  media: {
+                    type: "image",
+                    source: "https://www.etnmagazine.eu/wp-content/uploads/2020/02/4_consigli_budget_erasmus-933x445-730x348.jpg",
+                  },
+                  description:
+                    "The MSc in European Project Management is tailored for individuals who aspire to excel in the dynamic field of project management with a specific focus on European projects. The program is designed to meet the needs of a diverse group of professionals who seek to enhance their skills and knowledge in managing projects within the context of the European Union.",
+                  slogan:
+                    "Build the expertise to manage innovative projects that shape the future of the EU.",
+
+                  totalEtc: 90,
+                  thumb:
+                    "https://keystoneacademic-res.cloudinary.com/image/upload/element/19/193032_industrie4_1.png",
+                  degree: "Master Degree",
+                  modules: [
+                    {
+                      title: "The European Union and its Institutional System ",
+                      description:
+                        "This module delves into the multifaceted aspects of the European Union (EU), exploring its genesis, historical foundations, and ideological underpinnings. It traces the evolutionary stages of the European Communities, explores the institutional reforms leading to the European Union, and critically examines the European Constitution process, culminating in the Treaty of Lisbon.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Introduction to Project Management and Logical Framework Analysis",
+                      description:
+                        "This module serves as a comprehensive introduction to project management, providing students with a foundational understanding of the concept, principles, and practical aspects of managing projects. It covers key areas such as the nature of projects, project management components, fundamental principles, project proposals, the client's role, and the crucial role of project managers. The second part of the module focuses on Logical Framework Analysis (LFA), exploring its application in designing development projects, establishing Project Management Offices (PMOs), and addressing conflict resolution through mediation.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Project initiation, planning, implementation, control and closure ",
+                      description:
+                        "This module explores Project Management and control covering the development and implementation methodologies of a European project from a project management point of view.",
+                      ects: 12,
+                    },
+                    {
+                      title: "The Europe Funding schemes in the 2021-2027 Multiannual Financial Framework ",
+                      description:
+                        "This module explores the Funding schemes in the 2021-2027 Multiannual Financial Framework 2021/2027 Programme, covering its foundational aspects, advantages, structure, funding modalities, and initiatives. A dedicated glossary ensures a comprehensive understanding of key terms.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Rules of the participation in the agenda 2021/2027 ",
+                      description:
+                        "This module provides an in-depth exploration of the rules and procedures governing participation in EU programs within the framework of the Agenda 2021/2027.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Research Methods",
+                      description:
+                        "This module is designed to equip students with the essential skills and knowledge required to successfully plan, research, and write a dissertation.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Dissertation",
+                      description:
+                        "The dissertation is a compulsory element of Master of EU Project Design and Management. Dissertation is based on a major piece of work that involves applying material encountered in the taught component of the degree, and extending that knowledge with the student's contribution, under the guidance of a supervisor. This component of Master’s degree provides opportunity for students to pursue a single topic in depth and to demonstrate evidence of research ability at a Masters level. The topic is typically a current problem in the broad area of their MSc programme. The dissertation usually involves experimental or theoretical research, or a substantial literature survey on a specific topic.",
+                      ects: 30,
+                    },
+                   
+                 
+                  ],
+                  institute: "Ego Education",
+                  method:
+                    "The programme comprises an online approach promoting the building of a community of practice via peer-to-peer learning which is asynchronous. Students have the freedom and flexibility to access the course at a time which is most convenient to them.",
+                  price: 3000,
+                  duration: 2,
+                  category: "Business",
                 },
               ],
               button: "Read More",

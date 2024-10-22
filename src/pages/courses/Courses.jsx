@@ -246,7 +246,7 @@ function Courses() {
           </div>
           <div className="page-sidebar  col-lg-4 col-md-12">
             <div className="right_box mb-5">
-              <div className="p-4">
+              <div >
                 <ApplyWidget />
               </div>
             </div>
