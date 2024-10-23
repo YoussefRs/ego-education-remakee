@@ -23,7 +23,7 @@
 .header-image {
   max-height: 50vh;
   width: 450px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 .header-overlay{
   background-color: #14452f;

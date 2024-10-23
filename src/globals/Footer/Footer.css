@@ -71,7 +71,7 @@ section.footer {
   background-color: var(--light-heading-clr);
   color: var(--dark-text-clr);
   border: none;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 .footer-col-4 .col-contents .newsletter-btn {
   background-color: var(--light-heading-clr);

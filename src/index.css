@@ -82,7 +82,7 @@ button:focus-visible {
   width: max-content;
   font: 800 16px/24px "Gotham Medium", sans-serif !important;
   background: #046635;
-  border-radius: 10px !important;
+  /* border-radius: 10px !important; */
   color: #fff;
   padding: 12px 28px;
   -moz-transition: all 0.3s ease-in-out;
@@ -98,7 +98,7 @@ button:focus-visible {
   width: max-content;
   font: 800 16px/24px "Gotham Medium", sans-serif !important;
   background: #fff;
-  border-radius: 10px !important;
+  /* border-radius: 10px !important; */
   color: #000;
   padding: 12px 28px;
   -moz-transition: all 0.3s ease-in-out;

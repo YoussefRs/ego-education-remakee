@@ -179,7 +179,7 @@
 .crane__list .crane__item {
   position: absolute;
   border: solid 1px #4bafac;
-  border-radius: 2px;
+  /* border-radius: 2px; */
 }
 .crane__list .crane-cable {
   width: 1px;
@@ -336,7 +336,7 @@
   width: 4px;
   height: 8px;
   margin-top: 8px;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   background: #57473d;
 }
 

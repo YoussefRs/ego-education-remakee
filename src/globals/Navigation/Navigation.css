@@ -70,7 +70,7 @@ nav .ham {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   border: 2px solid white;
   width: 40px;
   height: 40px;
@@ -200,7 +200,7 @@ nav .ham:hover {
 .flag-switch input + label:before, .flag-switch input + label:after {
   content: "";
   position: absolute;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   transition: all 0.25s ease-in-out;
 }
 .flag-switch input + label:before {

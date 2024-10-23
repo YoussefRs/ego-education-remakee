@@ -21,7 +21,7 @@
 
 #request-widget {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 2.5rem 1.5rem;
 }
 
@@ -30,7 +30,7 @@
   position: relative;
   background-color: #046635;
   padding: 2rem;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   color: white;
 
   & .contact-img {
@@ -39,7 +39,7 @@
 
     &::before {
       content: "";
-      border-radius: 10px;
+      /* border-radius: 10px; */
       background: linear-gradient(1deg, #046635, transparent);
       position: absolute;
       top: 20%;
@@ -52,7 +52,7 @@
     & img {
       width: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      /* border-radius: 10px; */
     }
   }
 }

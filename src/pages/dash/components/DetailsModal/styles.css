@@ -83,12 +83,12 @@
 
 .details_modal ._pdf_boxes ._pdf_boxe {
     border: 1px solid #252525;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 .details_modal ._pdf_boxes ._pdf_boxe ._label {
     background-color: #046635;
-    border-radius: 7.5px;
+    /* border-radius: 7.5px; */
     height: calc((100% - (50px + .75rem)));
     display: flex;
     align-items: center;
@@ -114,7 +114,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    border-radius: 7.5px;
+    /* border-radius: 7.5px; */
 }
 
 .details_modal ._pdf_boxes ._pdf_boxe svg {
