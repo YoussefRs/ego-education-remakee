@@ -29,7 +29,10 @@ function HomeAbout() {
             {line2}
             <br /> <br /> {line3}
             <br /> <br />
+            <span className="fw-bold">
+
             {line4}
+            </span>
           </p>
           <a onClick={openModal}>{button} </a>
           {/* <CustomBtn content={"Apply Now"} /> */}
