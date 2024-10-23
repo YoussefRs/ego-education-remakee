@@ -48,7 +48,7 @@ h1 {
 
 h2 {
   font-weight: 700;
-  font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 2rem);
+  font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
 }
 ul {
   list-style: none;

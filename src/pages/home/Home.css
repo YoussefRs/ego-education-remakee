@@ -229,7 +229,7 @@
 }
 .dr-sm-img img {
   border: 5px solid var(--tp-white-bg);
-  border-radius: 100%;
+  /* border-radius: 100%; */
 }
 .dr-sm-img {
   width: 250px;
