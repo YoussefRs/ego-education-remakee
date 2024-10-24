@@ -173,6 +173,10 @@
     font-family: "Gotham Medium", sans-serif;
     font-weight: 500;
   }
+
+  & p {
+    font-size: 13px;
+  }
 }
 
 /* -- About Img -- */
@@ -398,6 +402,10 @@
 }
 .swiper-slide .slide-content .slide-content-inner {
   text-align: right;
+
+  & p {
+    font-size: 13px;
+  }
 }
 
 .course_icon_btn {

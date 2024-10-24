@@ -22,7 +22,7 @@
 }
 
 a {
-  font-weight: 500;
+  font-weight: 400;
   color: #fff !important;
   text-decoration: none !important;
   cursor: pointer;
@@ -47,9 +47,10 @@ h1 {
 }
 
 h2 {
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
 }
+
 ul {
   list-style: none;
 }

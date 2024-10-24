@@ -4,12 +4,12 @@ import i18nextBrowserLanguagedetector from "i18next-browser-languagedetector";
 import MsvJava from "./assets/Courses/MSCJAVA.png";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.png";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.png";
-import Civil from "./assets/Courses/BScinCivilEngineering.png";
+import Eu from "./assets/Courses/Eu.png";
 import Administration from "./assets/Home/banner/Administration.png";
 import JAVA from "./assets/Home/banner/JAVA.png";
 import Engineering from "./assets/Home/banner/Engineering.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
-import INFORMATICS from "./assets/Home/banner/INFORMATICS.png";
+import eubanner from "./assets/Home/banner/eubanner.png";
 import {
   faLaptopCode,
   faPersonChalkboard,
@@ -123,7 +123,7 @@ i18n
                   title: "MSc in European Project Management",
                   description:
                     "Build the expertise to manage innovative projects that shape the future of the EU.",
-                  imgSrc: "https://keystoneacademic-res.cloudinary.com/image/upload/element/19/193032_industrie4_1.png",
+                  imgSrc: Eu,
                   date: "12/09/24",
                   curriculum: 7,
                   link: "/courses/ghnffTffz4",
@@ -1334,7 +1334,7 @@ i18n
                   ],
                   media: {
                     type: "image",
-                    source: "https://www.etnmagazine.eu/wp-content/uploads/2020/02/4_consigli_budget_erasmus-933x445-730x348.jpg",
+                    source: eubanner,
                   },
                   description:
                     "The MSc in European Project Management is tailored for individuals who aspire to excel in the dynamic field of project management with a specific focus on European projects. The program is designed to meet the needs of a diverse group of professionals who seek to enhance their skills and knowledge in managing projects within the context of the European Union.",
@@ -1343,7 +1343,7 @@ i18n
 
                   totalEtc: 90,
                   thumb:
-                    "https://keystoneacademic-res.cloudinary.com/image/upload/element/19/193032_industrie4_1.png",
+                  eubanner,
                   degree: "Master Degree",
                   modules: [
                     {
