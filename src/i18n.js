@@ -85,7 +85,7 @@ i18n
             },
             courseSlider: {
               title: "EXPLORE ALL COURSES",
-              upcomingtitle: "IN DEVELOPEMENT",
+              upcomingtitle: "Upcoming",
               subtitle: "Browse Our",
               upcomingsubtitle: "Our Upcoming",
               specialWord: "Courses",
@@ -152,7 +152,7 @@ i18n
             },
             UpcomingCourseSlider: {
               title: "EXPLORE ALL COURSES",
-              upcomingtitle: "IN DEVELOPEMENT",
+              upcomingtitle: "Upcoming",
               subtitle: "Browse Our",
               upcomingsubtitle: "Our Upcoming",
               specialWord: "Courses",

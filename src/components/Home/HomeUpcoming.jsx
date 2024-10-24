@@ -18,21 +18,21 @@ function HomeUpcoming() {
 
   return (
     <div className="swiper-container" data-aos={"zoom-in"}>
-      <div style={{ display: "none" }}></div>
-      <div className="container">
-        <h2 className="container-heading-green" style={{ color: "#046635" }}>
-          {upcomingtitle}{" "}
-        </h2>
-        <h1 className="container-title text-black fw-bold text-center mb-5">
-          {upcomingsubtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
-        </h1>
-       {/*  <div className="row">
-          <div className="col d-flex justify-content-end course_link">
-            <Link to={"/courses"}>view more</Link>
-          </div>
-        </div> */}
+    <div className="container mt-5" data-aos={"zoom-in"} >
+      <div className="row">
+        <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
+          
+         <h1 className="container-title text-black fw-bold ">
+                 {upcomingtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
+              </h1>
+        </div>
+    
+        <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
+        
+    <UpcomingSlider />
+        </div>
       </div>
-      <UpcomingSlider />
+    </div>
     </div>
   );
 }

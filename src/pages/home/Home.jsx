@@ -14,10 +14,10 @@ function Home() {
   return (
     <div style={{overflowX: "hidden"}}>
         <HomeHero />
-        <HomeAbout />
+        {/* <HomeAbout />  */}
+        <HomeCourseSlider />
         <HomeFeatures />
         <PartnersSlider />
-        <HomeCourseSlider />
         <HomeUpcoming />
         <HomeFeatures_2 />
         <HomeLecturers />

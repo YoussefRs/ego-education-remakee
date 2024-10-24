@@ -33,7 +33,7 @@ function HomeFeatures_2() {
                 <h2 className="container-heading text-start" >
                   {title}
                 </h2>
-                <h1 className="container-title text-white fw-bold mb-4">
+                <h1 className="container-title-extra text-white fw-bold mb-4">
                   {subtitle} <span style={{color: "#ffd23c"}}>{specialWord}</span> {normalWord}
                 </h1>
                 <p

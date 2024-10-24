@@ -12,12 +12,11 @@ const LoginModal = ({ show, handleClose, setCorrect }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if the entered password matches the correct password
     if (password === correctPassword) {
-      setCorrect(true); // Set correct state to true
-      handleClose(); // Close the modal
+      setCorrect(true); 
+      handleClose(); 
     } else {
-      setTriesCount((prev) => prev - 1); // Decrease tries count
+      setTriesCount((prev) => prev - 1); 
       setErrorMessage(
         `Incorrect password. You have ${triesCount - 1} tries left.`
       );

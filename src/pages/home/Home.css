@@ -288,7 +288,29 @@
 /* **************HOME COURSE SLIDER CSS ****************** */
 
 .swiper-container {
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
+  
+
+}
+
+.container-title {
+  max-width: 300px;
+  font-size: 4.5rem;
+
+  @media (max-width : 991px) {
+    max-width: none;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  
+}
+
+.container-title-extra {
+  /* max-width: 300px; */
+  font-size: 2.5rem;
+
+  
+  
 }
 .slick-dots li button:before {
   content: " ";
@@ -335,7 +357,7 @@
   object-fit: cover;
   height: 400px;
   position: relative;
-  width: 66%;
+  /* width: 66%; */
   z-index: 1;
 }
 
@@ -394,7 +416,7 @@
   position: absolute;
   top: 0px;
   left: 80%;
-  width: 450px;
+  width: 300px;
   transform: translateX(-50%);
   z-index: 3;
   height: 100%;

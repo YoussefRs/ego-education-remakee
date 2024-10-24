@@ -22,7 +22,7 @@ function HomeLecturers() {
         {title}
       </h2>
       <h1
-        className="container-title text-center fw-bold"
+        className="container-title-extra text-center fw-bold"
         data-aos={"zoom-in"}
         data-aos-delay={"600"}
       >
