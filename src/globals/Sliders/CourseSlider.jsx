@@ -55,6 +55,9 @@ function CourseSlider() {
   };
 
   return (
+    <div className="d-flex flex-column align-items-end w-100">
+
+    <a href="/courses" className="m-2 text-black fw-bold" style={{paddingRight: 5, textDecoration : "underline"}}>view more</a>
     <Slider {...settings} className="container">
       {shuffledCourses?.map((course, index) => (
         <div className="swiper-slide" key={index}>
@@ -119,6 +122,8 @@ function CourseSlider() {
           </div>
       ))}
     </Slider>
+    </div>
+    
   );
 }
 
