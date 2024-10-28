@@ -273,12 +273,12 @@ function CoursesDetails() {
                     <li
                       className="nav-item"
                       onClick={() => {
-                        setActivePane("Entry");
+                        setActivePane("Entry Requirement");
                       }}
                     >
                       <Link
                         className={`nav-link ${
-                          activePane === "Entry" ? "active" : ""
+                          activePane === "Entry Requirement" ? "active" : ""
                         }`}
                       >
                         <svg

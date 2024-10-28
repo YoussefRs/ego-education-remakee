@@ -458,6 +458,12 @@
   /* border-radius: 10px; */
 }
 
+@media (max-width : 1200px) {
+  .grid figure {
+    min-width: 100%;
+  }
+}
+
 .grid figure img {
 	position: relative;
 	display: block;
