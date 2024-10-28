@@ -77,12 +77,12 @@ button {
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
   text-decoration: none;
   border: none;
 }
 button:hover {
-  transform: scale(0.9);
+  /* transform: scale(0.9); */
 }
 button:focus,
 button:focus-visible {

@@ -25,7 +25,7 @@ function CourseSlider() {
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     className: "sample",
-    autoplay: false,
+    autoplay: true,
     arrows: false,
     responsive: [
       {

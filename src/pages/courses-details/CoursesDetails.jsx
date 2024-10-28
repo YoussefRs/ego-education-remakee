@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faListCheck } from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +38,35 @@ function CoursesDetails() {
   const [isImage2Visible, setIsImage2Visible] = useState(true);
   const [isParagraph1Visible, setIsParagraph1Visible] = useState(false);
   const [isParagraph2Visible, setIsParagraph2Visible] = useState(false);
+
+
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Toggle dropdown open/close
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleItemClick = (item) => {
+    setActivePane(item);  // Update selected item
+    setIsOpen(false);        // Close dropdown after selection
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+
 
   const handleImage1Click = () => {
     setIsImage1Visible(false);
@@ -103,6 +132,9 @@ function CoursesDetails() {
   if (!course) {
     return null;
   }
+
+  
+
   return (
     <>
       <SubHeader
@@ -289,6 +321,29 @@ function CoursesDetails() {
                       </Link>
                     </li>
                   </ul>
+
+
+                  <div className="dropdown" ref={dropdownRef}>
+      <button className="dropdown-btn" onClick={toggleDropdown}>
+                        {activePane}
+        <svg fill="#000000" width="20px" height="20px" viewBox="-8.5 0 32 32">
+          <path d="M7.28 20.040c-0.24 0-0.44-0.080-0.6-0.24l-6.44-6.44c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l5.84 5.84 5.84-5.84c0.32-0.32 0.84-0.32 1.2 0 0.32 0.32 0.32 0.84 0 1.2l-6.44 6.44c-0.16 0.16-0.4 0.24-0.6 0.24z"></path>
+        </svg>
+      </button>
+
+      {isOpen && (
+        <div className="dropdown-content">
+          <div onClick={() => handleItemClick('Overview') }>Overview</div>
+          <div onClick={() => handleItemClick('Modules') }>Modules</div>
+          <div onClick={() => handleItemClick('Duration') }>Duration</div>
+          <div onClick={() => handleItemClick('Lecturer') }>Lecturer</div>
+          <div onClick={() => handleItemClick('Entry Requirement') }>Entry Requirement</div>
+          <div onClick={() => handleItemClick('Sponsor') }>Sponsor</div>
+        </div>
+      )}
+    </div>
+
+
                   <div className="tab-content">
                     <div
                       className={`tab-pane ${
@@ -335,7 +390,7 @@ function CoursesDetails() {
                     </div>
                     <div
                       className={`tab-pane ${
-                        activePane === "Entry" ? "active" : ""
+                        activePane === "Entry Requirement" ? "active" : ""
                       }`}
                       id="tab1"
                     >
@@ -411,15 +466,9 @@ function CoursesDetails() {
                                   </button>
                                 </div>
                                 <h6>
-                                  Around here, we know your time is valuable.
-                                  That&#39;s why our enrolment process is
-                                  simple, quick and is available all year round.
+                                To properly enrol, make sure you have all the following documents ready: 
                                 </h6>{" "}
-                                On the next page you will be able to give us all
-                                the information necessary to complete your
-                                registration. You will be required to upload the
-                                following documents:
-                                <br />
+                              
                                 <br />
                                 <ul className="custom-list-style">
                                   <li className="d-flex mb-2">
@@ -456,9 +505,7 @@ function CoursesDetails() {
                                       style={{ paddingRight: 10 }}
                                     />
                                     <span>
-                                      For other languages, the qualification
-                                      must be translated into English or
-                                      Italian.
+                                    Updated CV in English.
                                     </span>
                                   </li>
                                   <li>
@@ -468,9 +515,28 @@ function CoursesDetails() {
                                       size={20}
                                       style={{ paddingRight: 10 }}
                                     />
+                                    <span>
+                                    Copy of a valid identification document.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <FontAwesomeIcon
+                                      icon={faCheck}
+                                      color="#046635"
+                                      size={20}
+                                      style={{ paddingRight: 10 }}
+                                    />
+                                    <span>
+                                      For other languages, the qualification
+                                      must be translated into English or
+                                      Italian.
+                                    </span>
+                                  </li>
+
+                                  <br/>
+                                  <li>
                                     <div class="content">
-                                      Linguistic certifications held among the
-                                      following:
+                                    	Linguistic certifications held among the following, if not native or not possessing a degree in the following languages:
                                       <ul className="custom-list-style">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
