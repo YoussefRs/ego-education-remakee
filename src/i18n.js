@@ -5,9 +5,9 @@ import MsvJava from "./assets/Courses/MSCJAVA.png";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.png";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.png";
 import Eu from "./assets/Courses/Eu.png";
-import Administration from "./assets/Home/banner/Administration.png";
+import MA from "./assets/Home/banner/MA.png";
 import JAVA from "./assets/Home/banner/JAVA.png";
-import Engineering from "./assets/Home/banner/Engineering.png";
+import Matitle from "./assets/Home/banner/MA-title.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
 import eubanner from "./assets/Home/banner/eubanner.png";
 import {
@@ -114,7 +114,7 @@ i18n
                   title: "MA in Nonprofit Management & Leadership",
                   description:
                     "Become a Leader of Change: Master the Skills to Drive Innovation and Social Impact in the Evolving Third Sector.",
-                  imgSrc: "https://olathe.k-state.edu/images/professional-dev/leadership-series/banner-leadership-series-2025.jpg",
+                  imgSrc: Matitle,
                   date: "12/09/24",
                   curriculum: 10,
                   link: "/courses/ghnffT988",
@@ -1226,7 +1226,7 @@ i18n
                   ],
                   media: {
                     type: "image",
-                    source: "https://mindgear-mea.com/wp-content/uploads/2020/09/leadership-banner-1-1024x371-2.jpg",
+                    source: MA,
                   },
                   description:
                     "The master's course aims to develop leaders who are aware of the new challenges in the Third Sector and adept at navigating the evolving normative landscape of social bodies. These organizations are playing a crucial role in the post-pandemic society, requiring both technical expertise and visionary leadership.",

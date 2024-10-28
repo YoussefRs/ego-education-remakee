@@ -817,11 +817,11 @@ function CoursesDetails() {
                         </main>
                       </div> */}
                       <p>
-                        Programme can be delivered full and/or part time
+                        Programme can be delivered full time <span className="fw-bold">(18 months) </span>
                         depending on the availability of students.
                       </p>
                       <div className="row">
-                        <div className="col mb-2">
+                       {/*  <div className="col mb-2">
                           {" "}
                           <div class="outer">
                             <div class="progress dark">
@@ -843,26 +843,43 @@ function CoursesDetails() {
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="col">
-                          {" "}
-                          <div class="outer">
-                            <div class="progress dark">
-                              <div class="left">
-                                <div className="fw-bold">Full-Time</div>
-                                <div>Semester 1</div>
-                                <div>Semester 2</div>
-                                <div>Semester 3</div>
-                              </div>
-                              <div class="right">
-                                <div className="fw-bold">18 Months</div>
-                                <div>Module 1, 2, 3, 4</div>
-                                <div>Module 5, 6 + Dissertation kick off</div>
-                                <div>complete dissertation</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        </div> */}
+                       
+    <div class="row">
+        <div class="col">
+            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">Semester 1</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Module 1/2/3/4</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">Semester 2</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Module 5/6 + dissertation kick off</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">Semester 3</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Complete dissertation</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
+                        <div class="inner-circle-extra"></div>
+                        <p class="h6 mt-3 mb-1">Final</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Graduation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                       </div>
                     </div>
                     <div
@@ -912,7 +929,7 @@ function CoursesDetails() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="mb-5">
                   <h2 className="fw-bold mb-4 mt-5">{title3} </h2>
                   <CourseSliderDetails />
                 </div>

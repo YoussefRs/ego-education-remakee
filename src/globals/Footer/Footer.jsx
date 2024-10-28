@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logos/logo-ego-white.png";
 import "./Footer.css";
-import ieli from "../../assets/Logos/Ego_ieli.png";
 
 const Footer = () => {
   return (

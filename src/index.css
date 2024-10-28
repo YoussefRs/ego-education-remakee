@@ -16,9 +16,14 @@
   src: local("Gotham Medium"),
     url("../assets/fonts/Gotham-Black.otf") format("truetype");
 }
+@font-face {
+  font-family: "Gotham Thin";
+  src: local("Gotham Thin"),
+    url("../assets/fonts/Gotham-Thin.otf") format("truetype");
+}
 
 * {
-  font-family: "Gotham Medium", sans-serif !important;
+  font-family: "Gotham Medium", sans-serif;
 }
 
 a {
@@ -49,6 +54,12 @@ h1 {
 h2 {
   font-weight: 400;
   font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
+}
+
+p {
+  font-family: "Gotham Medium" !important;
+  /* letter-spacing: 0.8px; */
+  
 }
 
 ul {
