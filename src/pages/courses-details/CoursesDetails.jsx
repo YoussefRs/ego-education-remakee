@@ -834,7 +834,7 @@ function CoursesDetails() {
                                           <div className="col-8">
                                             {module?.title}{" "}
                                           </div>
-                                          <div className="col-4 text-end">
+                                          <div className="col-4 text-end text-black">
                                             ECTS : {module?.ects}
                                           </div>
                                         </div>
