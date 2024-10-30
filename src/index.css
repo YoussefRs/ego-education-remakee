@@ -57,8 +57,9 @@ h2 {
 }
 
 p {
-  font-family: "Gotham Medium" !important;
+  /* font-family: "Gotham Medium" !important; */
   /* letter-spacing: 0.8px; */
+  opacity: 0.9;
   
 }
 
