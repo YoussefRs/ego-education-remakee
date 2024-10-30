@@ -308,7 +308,7 @@ i18n
                   modules: [
                     {
                       title: "Basic Java",
-                      description: `Basic Java The module explores the fundamentals of Java
+                      description: `The module explores the fundamentals of Java
                   programming and Object Oriented programming The Basic Java
                   module provides students with a solid foundation in Java
                   programming, catering to both beginners and those with
@@ -1235,7 +1235,7 @@ i18n
 
                   totalEtc: 84,
                   thumb:
-                    "https://olathe.k-state.edu/images/professional-dev/leadership-series/banner-leadership-series-2025.jpg",
+                    MA,
                   degree: "Master Degree",
                   modules: [
                     {
