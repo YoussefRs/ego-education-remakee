@@ -20,12 +20,12 @@
 .nav-tabss .nav-item .nav-link {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
   color: #22281e !important;
-  font-size: clamp(12px, 1vw, 16px);
+  font-size: clamp(12px, 1vw, 14px);
   font-weight: 600;
   margin: 0;
-  padding: 0 20px;
+  padding: 0 20px 0 5px;
   position: relative;
   width: 100%;
   line-height: 58px;

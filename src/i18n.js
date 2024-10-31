@@ -99,6 +99,7 @@ i18n
                   imgSrc: MsvJava,
                   date: "12/08/24",
                   curriculum: 7,
+                  price : "3000 €",
                   link: "/courses/aB3cD4eF",
                 },
                 {
@@ -108,6 +109,7 @@ i18n
                   imgSrc: MsvCS,
                   date: "12/09/24",
                   curriculum: 8,
+                  price : "3000 €",
                   link: "/courses/tU1vW2xY",
                 },
                 {
@@ -117,6 +119,7 @@ i18n
                   imgSrc: Matitle,
                   date: "12/09/24",
                   curriculum: 10,
+                  price : "3000 €",
                   link: "/courses/ghnffT988",
                 },
                 {
@@ -126,6 +129,7 @@ i18n
                   imgSrc: Eu,
                   date: "12/09/24",
                   curriculum: 7,
+                  price : "3000 €",
                   link: "/courses/ghnffTffz4",
                 },
                 /*   {
@@ -167,6 +171,7 @@ i18n
                     "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
                   date: "12/08/24",
                   curriculum: 7,
+                  price : "3000 €",
                   link: "/courses/aB3cD4eF",
                 },
                 {
@@ -177,6 +182,7 @@ i18n
                     "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
                   date: "12/09/24",
                   curriculum: 8,
+                  price : "3000 €",
                   link: "/courses/tU1vW2xY",
                 },
                 {
@@ -186,6 +192,7 @@ i18n
                   imgSrc: BscBA,
                   date: "25/10/24",
                   curriculum: 18,
+                  price : "3000 €",
                   featured: true,
                   link: "/courses/JZhfbff4",
                 },
@@ -197,6 +204,7 @@ i18n
                     "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
                   date: "25/10/24",
                   curriculum: 18,
+                  price : "3000 €",
                   featured: true,
                   link: "/courses/JZhfbff4",
                 },
@@ -412,7 +420,7 @@ i18n
                   ],
                   method:
                     "The programme comprises an online approach promoting the building of a community of practice via peer-to-peer learning which is asynchronous. Students have the freedom and flexibility to access the course at a time which is most convenient to them.",
-                  price: 3000,
+                  price: "3000",
                   duration: 2,
                   category: "computer sicence",
                 },
@@ -1314,7 +1322,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
-                  totalModules: 10,
+                  totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
                     title: "Analyst and teacher",

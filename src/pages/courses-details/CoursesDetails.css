@@ -642,11 +642,6 @@ figure.effect-layla:hover img {
   margin: 1rem
 }
 
-.featured-courses ul {
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-}
 
 @media (min-width:768px) {
   .timeline-steps .timeline-step:not(:last-child):after {

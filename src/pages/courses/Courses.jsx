@@ -17,9 +17,12 @@ function Courses() {
 
   const courses = useCourse({
     type: "byProperties",
-    param: ["name", "thumb", "id", "institute", "degree", "slogan"],
+    param: ["name", "thumb", "id", "institute", "degree", "slogan", "price", "totalModules"],
   });
   const [activePane, setActivePane] = useState("our_courses");
+
+
+  console.log(courses)
   return (
     <>
       <SubHeader
@@ -31,7 +34,7 @@ function Courses() {
         <div className="row page-row">
           <div className="courses-wrapper col-lg-8 col-md-12 col-12">
             <div className="featured-courses tabbed-info page-row">
-             {/*  <ul className="nav nav-tabss">
+              {/*  <ul className="nav nav-tabss">
                 <li
                   className="nav-item"
                   onClick={() => {
@@ -224,6 +227,9 @@ function Courses() {
                               <div className="description">
                                 <h2>{crs.name} </h2>
                                 <p>{crs.slogan}</p>
+
+                                <p className="mb-0">Modules : <span className="fw-bold">{crs.totalModules}</span></p>
+                                <p>Price : <span className="fw-bold">{crs.price} €</span></p>
                               </div>
                               <hr />
                               <div className="d-flex justify-content-end w-100">
@@ -246,7 +252,7 @@ function Courses() {
           </div>
           <div className="page-sidebar  col-lg-4 col-md-12">
             <div className="right_box mb-5">
-              <div >
+              <div>
                 <ApplyWidget />
               </div>
             </div>

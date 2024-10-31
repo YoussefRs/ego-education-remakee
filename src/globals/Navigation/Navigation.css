@@ -171,7 +171,6 @@ nav .ham:hover {
 .flag-switch:before, .flag-switch:after {
   position: absolute;
   color: white;
-  font-family: "Raleway", sans-serif;
   top: 8px;
   font-size: 13px;
   font-weight: 700;

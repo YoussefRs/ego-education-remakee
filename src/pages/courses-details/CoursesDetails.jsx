@@ -39,7 +39,6 @@ function CoursesDetails() {
   const [isParagraph1Visible, setIsParagraph1Visible] = useState(false);
   const [isParagraph2Visible, setIsParagraph2Visible] = useState(false);
 
-
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -49,8 +48,8 @@ function CoursesDetails() {
   };
 
   const handleItemClick = (item) => {
-    setActivePane(item);  // Update selected item
-    setIsOpen(false);        // Close dropdown after selection
+    setActivePane(item); // Update selected item
+    setIsOpen(false); // Close dropdown after selection
   };
 
   // Close dropdown if clicked outside
@@ -60,13 +59,11 @@ function CoursesDetails() {
         setIsOpen(false);
       }
     };
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-
-
 
   const handleImage1Click = () => {
     setIsImage1Visible(false);
@@ -83,7 +80,7 @@ function CoursesDetails() {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  
+
   const {
     title,
     title1,
@@ -132,8 +129,6 @@ function CoursesDetails() {
   if (!course) {
     return null;
   }
-
-  
 
   return (
     <>
@@ -322,27 +317,44 @@ function CoursesDetails() {
                     </li>
                   </ul>
 
-
                   <div className="dropdown" ref={dropdownRef}>
-      <button className="dropdown-btn" onClick={toggleDropdown}>
-                        {activePane}
-        <svg fill="#000000" width="20px" height="20px" viewBox="-8.5 0 32 32">
-          <path d="M7.28 20.040c-0.24 0-0.44-0.080-0.6-0.24l-6.44-6.44c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l5.84 5.84 5.84-5.84c0.32-0.32 0.84-0.32 1.2 0 0.32 0.32 0.32 0.84 0 1.2l-6.44 6.44c-0.16 0.16-0.4 0.24-0.6 0.24z"></path>
-        </svg>
-      </button>
+                    <button className="dropdown-btn" onClick={toggleDropdown}>
+                      {activePane}
+                      <svg
+                        fill="#000000"
+                        width="20px"
+                        height="20px"
+                        viewBox="-8.5 0 32 32"
+                      >
+                        <path d="M7.28 20.040c-0.24 0-0.44-0.080-0.6-0.24l-6.44-6.44c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l5.84 5.84 5.84-5.84c0.32-0.32 0.84-0.32 1.2 0 0.32 0.32 0.32 0.84 0 1.2l-6.44 6.44c-0.16 0.16-0.4 0.24-0.6 0.24z"></path>
+                      </svg>
+                    </button>
 
-      {isOpen && (
-        <div className="dropdown-content">
-          <div onClick={() => handleItemClick('Overview') }>Overview</div>
-          <div onClick={() => handleItemClick('Modules') }>Modules</div>
-          <div onClick={() => handleItemClick('Duration') }>Duration</div>
-          <div onClick={() => handleItemClick('Lecturer') }>Lecturer</div>
-          <div onClick={() => handleItemClick('Entry Requirement') }>Entry Requirement</div>
-          <div onClick={() => handleItemClick('Sponsor') }>Sponsor</div>
-        </div>
-      )}
-    </div>
-
+                    {isOpen && (
+                      <div className="dropdown-content">
+                        <div onClick={() => handleItemClick("Overview")}>
+                          Overview
+                        </div>
+                        <div onClick={() => handleItemClick("Modules")}>
+                          Modules
+                        </div>
+                        <div onClick={() => handleItemClick("Duration")}>
+                          Duration
+                        </div>
+                        <div onClick={() => handleItemClick("Lecturer")}>
+                          Lecturer
+                        </div>
+                        <div
+                          onClick={() => handleItemClick("Entry Requirement")}
+                        >
+                          Entry Requirement
+                        </div>
+                        <div onClick={() => handleItemClick("Sponsor")}>
+                          Sponsor
+                        </div>
+                      </div>
+                    )}
+                  </div>
 
                   <div className="tab-content">
                     <div
@@ -354,7 +366,7 @@ function CoursesDetails() {
                       <h2 className="mb-4 fw-bold">{title} </h2>
                       <div className="tab row">
                         <div className="col">
-                        {/*   <div className="mb-4 w-100">
+                          {/*   <div className="mb-4 w-100">
                             <ul className="list-unstyled no-margin-bottom">
                               <li>
                                 <strong>
@@ -466,18 +478,23 @@ function CoursesDetails() {
                                   </button>
                                 </div>
                                 <h6>
-                                To properly enrol, make sure you have all the following documents ready: 
+                                  To properly enrol, make sure you have all the
+                                  following documents ready:
                                 </h6>{" "}
-                              
                                 <br />
                                 <ul className="custom-list-style">
                                   <li className="d-flex mb-2">
-                                    <FontAwesomeIcon
-                                      icon={faCheck}
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
                                       color="#046635"
-                                      size={20}
-                                      style={{ paddingRight: 10, marginTop: 3 }}
-                                    />
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      class="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
                                     <span>
                                       Previous academic career (Exams + ECTS if
                                       you have taken exams at other universities
@@ -485,12 +502,17 @@ function CoursesDetails() {
                                     </span>
                                   </li>
                                   <li>
-                                    <FontAwesomeIcon
-                                      icon={faCheck}
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
                                       color="#046635"
-                                      size={20}
-                                      style={{ paddingRight: 10 }}
-                                    />
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      class="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
                                     <span>
                                       Degree obtained. Qualifications issued in
                                       English, Spanish, French, Italian are
@@ -498,34 +520,47 @@ function CoursesDetails() {
                                     </span>
                                   </li>
                                   <li>
-                                    <FontAwesomeIcon
-                                      icon={faCheck}
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
                                       color="#046635"
-                                      size={20}
-                                      style={{ paddingRight: 10 }}
-                                    />
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      class="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
+                                    <span>Updated CV in English.</span>
+                                  </li>
+                                  <li>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      color="#046635"
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      class="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
                                     <span>
-                                    Updated CV in English.
+                                      Copy of a valid identification document.
                                     </span>
                                   </li>
                                   <li>
-                                    <FontAwesomeIcon
-                                      icon={faCheck}
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
                                       color="#046635"
-                                      size={20}
-                                      style={{ paddingRight: 10 }}
-                                    />
-                                    <span>
-                                    Copy of a valid identification document.
-                                    </span>
-                                  </li>
-                                  <li>
-                                    <FontAwesomeIcon
-                                      icon={faCheck}
-                                      color="#046635"
-                                      size={20}
-                                      style={{ paddingRight: 10 }}
-                                    />
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      class="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
                                     <span>
                                       For other languages, the qualification
                                       must be translated into English or
@@ -533,10 +568,12 @@ function CoursesDetails() {
                                     </span>
                                   </li>
 
-                                  <br/>
+                                  <br />
                                   <li>
                                     <div class="content">
-                                    	Linguistic certifications held among the following, if not native or not possessing a degree in the following languages:
+                                      Linguistic certifications held among the
+                                      following, if not native or not possessing
+                                      a degree in the following languages:
                                       <ul className="custom-list-style">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -632,31 +669,10 @@ function CoursesDetails() {
                                       .
                                       <br />
                                       <br />
-                                      In the absence of a linguistic
-                                      certification, at the time of enrolment
-                                      there will be an entrance test to
-                                      ascertain linguistic knowledge and general
-                                      culture. In case of deficiency there will
-                                      be foundation courses.
+                                      All educational qualifications (such as high school diploma, bachelor’s, master’s) should be apostilled through a certification of value at the Maltese or Italian embassies abroad.
                                       <br />
                                       <br />
-                                      To properly enrol, all educational
-                                      qualifications (such as high school
-                                      diploma, bachelor’s, master’s) should be
-                                      apostilled through a{" "}
-                                      <span className="fw-bold ego-green">
-                                        certification of value at the Maltese or
-                                        Italian embassies abroad
-                                      </span>
-                                      .
-                                      <br />
-                                      <br />
-                                      In any case, while waiting for the
-                                      apostille or to simply understand if one
-                                      is eligible, a normal copy of the
-                                      aforementioned qualifications is enough.
-                                      <br />
-                                      <br />
+              
                                       Once registration is complete, our team
                                       will review your documents and information
                                       within 72 hours. We&#39;ll email you an
@@ -751,7 +767,10 @@ function CoursesDetails() {
                                   </button>
                                 </div>
                                 <h6>
-                                In any case, while waiting for the apostille or to simply understand if one is eligible, a normal copy of the following qualifications is enough:
+                                  In any case, while waiting for the apostille
+                                  or to simply understand if one is eligible, a
+                                  normal copy of the following qualifications is
+                                  enough:
                                 </h6>{" "}
                                 <br />
                                 <ul className="custom-list-style">
@@ -775,9 +794,7 @@ function CoursesDetails() {
                                       size={20}
                                       style={{ paddingRight: 10 }}
                                     />
-                                    <span>
-                                    Updated CV in English.
-                                    </span>
+                                    <span>Updated CV in English.</span>
                                   </li>
                                   <li>
                                     <FontAwesomeIcon
@@ -787,23 +804,30 @@ function CoursesDetails() {
                                       style={{ paddingRight: 10 }}
                                     />
                                     <span>
-                                    Degree obtained. Qualifications issued in English, Spanish, French, Italian are accepted.
+                                      Degree obtained. Qualifications issued in
+                                      English, Spanish, French, Italian are
+                                      accepted.
                                     </span>
                                   </li>
                                 </ul>
                                 <h6 className="mb-5">
-                                The student will receive via email the evaluation of their academic and/or work credits and will assign them their study plan and year of enrolment
-                               </h6>{" "}
-                               <button className="text-white button-green" onClick={openModal}>
-          {button}
-        </button>
-
-        <Modal
-        title="My Modal"
-        show={showModal}
-        onHide={closeModal}
-        size="lg"
-      ></Modal>
+                                  The student will receive via email the
+                                  evaluation of their academic and/or work
+                                  credits and will assign them their study plan
+                                  and year of enrolment
+                                </h6>{" "}
+                                <button
+                                  className="text-white button-green"
+                                  onClick={openModal}
+                                >
+                                  {button}
+                                </button>
+                                <Modal
+                                  title="My Modal"
+                                  show={showModal}
+                                  onHide={closeModal}
+                                  size="lg"
+                                ></Modal>
                               </article>
                             )}
                           </div>
@@ -883,11 +907,12 @@ function CoursesDetails() {
                         </main>
                       </div> */}
                       <p>
-                        Programme can be delivered full time <span className="fw-bold">(18 months) </span>
+                        Programme can be delivered full time{" "}
+                        <span className="fw-bold">(18 months) </span>
                         depending on the availability of students.
                       </p>
                       <div className="row">
-                       {/*  <div className="col mb-2">
+                        {/*  <div className="col mb-2">
                           {" "}
                           <div class="outer">
                             <div class="progress dark">
@@ -910,42 +935,85 @@ function CoursesDetails() {
                             </div>
                           </div>
                         </div> */}
-                       
-    <div class="row">
-        <div class="col">
-            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">Semester 1</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Module 1/2/3/4</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">Semester 2</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Module 5/6 + dissertation kick off</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">Semester 3</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Complete dissertation</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-                        <div class="inner-circle-extra"></div>
-                        <p class="h6 mt-3 mb-1">Final</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Graduation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+                        <div class="row">
+                          <div class="col">
+                            <div
+                              class="timeline-steps aos-init aos-animate"
+                              data-aos="fade-up"
+                            >
+                              <div class="timeline-step">
+                                <div
+                                  class="timeline-content"
+                                  data-toggle="popover"
+                                  data-trigger="hover"
+                                  data-placement="top"
+                                  title=""
+                                  data-content="And here's some amazing content. It's very engaging. Right?"
+                                  data-original-title="2003"
+                                >
+                                  <div class="inner-circle"></div>
+                                  <p class="h6 mt-3 mb-1">Semester 1</p>
+                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                    Module 1/2/3/4
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="timeline-step">
+                                <div
+                                  class="timeline-content"
+                                  data-toggle="popover"
+                                  data-trigger="hover"
+                                  data-placement="top"
+                                  title=""
+                                  data-content="And here's some amazing content. It's very engaging. Right?"
+                                  data-original-title="2005"
+                                >
+                                  <div class="inner-circle"></div>
+                                  <p class="h6 mt-3 mb-1">Semester 2</p>
+                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                    Module 5/6 + dissertation kick off
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="timeline-step">
+                                <div
+                                  class="timeline-content"
+                                  data-toggle="popover"
+                                  data-trigger="hover"
+                                  data-placement="top"
+                                  title=""
+                                  data-content="And here's some amazing content. It's very engaging. Right?"
+                                  data-original-title="2005"
+                                >
+                                  <div class="inner-circle"></div>
+                                  <p class="h6 mt-3 mb-1">Semester 3</p>
+                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                    Complete dissertation
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="timeline-step">
+                                <div
+                                  class="timeline-content"
+                                  data-toggle="popover"
+                                  data-trigger="hover"
+                                  data-placement="top"
+                                  title=""
+                                  data-content="And here's some amazing content. It's very engaging. Right?"
+                                  data-original-title="2010"
+                                >
+                                  <div class="inner-circle-extra"></div>
+                                  <p class="h6 mt-3 mb-1">Final</p>
+                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                    Graduation
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div
