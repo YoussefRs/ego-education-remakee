@@ -23,7 +23,7 @@
 }
 
 * {
-  font-family: "Gotham Medium", sans-serif;
+  /* font-family: "Gotham Medium", sans-serif; */
 }
 
 a {
@@ -57,7 +57,7 @@ h2 {
 }
 
 p {
-  font-family: "Gotham Medium" !important;
+  font-family: "Gotham Thin";
   /* letter-spacing: 0.8px; */
   opacity: 0.9;
   

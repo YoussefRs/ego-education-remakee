@@ -313,11 +313,18 @@
   
 }
 
+._font {
+  font-size: 1.4rem;
+}
+.slick-dots {
+  bottom: -40px !important;
+}
+
 .slick-dots li button:before {
   content: " ";
   background: #d8d8d8;
   opacity: 1;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .slick-dots li.slick-active button:before {
   content: "";
@@ -417,7 +424,7 @@
   position: absolute;
   top: 0px;
   left: 80%;
-  width: 300px;
+  width: 250px;
   transform: translateX(-50%);
   z-index: 3;
   height: 100%;

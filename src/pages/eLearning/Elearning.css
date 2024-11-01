@@ -22,7 +22,7 @@
 
 .header-image {
   max-height: 50vh;
-  width: 450px;
+  max-width: 300px;
   /* border-radius: 20px; */
 }
 .header-overlay{
@@ -35,7 +35,7 @@
   & h1 {
     font-size: 1.5rem;
     color: #26394e;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-transform: capitalize;
     & span {
       color: #046635;
@@ -59,6 +59,11 @@
 
 .envelop {
   position: relative;
+}
+
+.maxed-width {
+  max-width: 1240px;
+  margin: 0 auto !important;
 }
 
 .envelop::before {

@@ -15,12 +15,12 @@ function Elearning() {
           <div className="container-fluid p-0">
             <hr className="section-hr mt-5 mb-5" />
             <div className="envelop px-5 pt-2">
-              <div className="row justify-content-between mt-5">
+              <div className="row justify-content-between mt-5 maxed-width ">
                 <div className="col-md-6" id="content_">
                   <div id="content-text_">
                     <h1>
-                      <u>Make</u> every lecture
-                      <span> count</span>
+                      Make every lecture
+                      <span><u>count</u> </span>
                     </h1>
                     <h2>
                       Watch videolectures come to life with interactive elements
@@ -45,7 +45,7 @@ function Elearning() {
             </div>
 
             <div className="px-5 py-2 ">
-              <div className="pt-5 row justify-content-between">
+              <div className="pt-5 row justify-content-between maxed-width">
                 <div className="col-md-5 col-md-offset-1">
                   <a className="about-video" href="#" id="content_">
                     <img
@@ -60,8 +60,8 @@ function Elearning() {
                 <div className="col-md-6">
                   <div id="content-text_">
                     <h1>
-                      <u>Collaborate </u>and Grow
-                      <span> Together</span>
+                      Collaborate and Grow
+                      <span> <u>Together</u></span>
                     </h1>
                     <h2>
                       Study in groups and teams with our in-built social
@@ -75,12 +75,12 @@ function Elearning() {
             </div>
 
             <div className="envelop px-5 py-2">
-              <div className="row pt-5 justify-content-between">
+              <div className="row pt-5 justify-content-between maxed-width">
                 <div className="col-md-6" id="content_">
                   <div id="content-text_">
                     <h1>
-                      <u>Join </u>a global community of
-                      <span> learners</span>
+                      Join a global community of
+                      <span> <u>learners</u></span>
                     </h1>
                     <h2>
                       Students can connect with each other all over the world in

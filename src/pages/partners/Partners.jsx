@@ -29,11 +29,11 @@ function Partners() {
             Partnerships
           </h2>
         </div>
-        <div className="row p-5" style={{ backgroundColor: "#f2f8f1" }}>
-          <div className="col-2 partners-row">
+        <div className="row" style={{ backgroundColor: "#f2f8f1", padding : "3rem 15rem" }}>
+          <div className="col-3 partners-row">
             <img src={Italio} alt="Person" />
           </div>
-          <div className="col-8 d-flex flex-column gap-4 py-2">
+          <div className="col-7 d-flex flex-column gap-4 py-2">
             <span>Italo Brasileira</span>
             <a>https://italo.com.br</a>
             <p>
@@ -44,11 +44,11 @@ function Partners() {
             </p>
           </div>
         </div>
-        <div className="row p-5">
-          <div className="col-2 partners-row">
+        <div className="row" style={{padding : "3rem 15rem" }}>
+          <div className="col-3 partners-row">
             <img src={uni} alt="Person" />
           </div>
-          <div className="col-8 d-flex flex-column gap-4 py-2">
+          <div className="col-7 d-flex flex-column gap-4 py-2">
             <span>UniJaguaribe</span>
             <a>https://unijaguaribe.edu.br</a>
             <p>
@@ -81,11 +81,11 @@ function Partners() {
             Academic Partnerships
           </h2>
         </div>
-        <div className="row p-5">
-          <div className="col-2 partners-row">
+        <div className="row" style={{ backgroundColor: "#f2f8f1", padding : "3rem 15rem" }}>
+          <div className="col-3 partners-row">
             <img src={tech} alt="Person" />
           </div>
-          <div className="col-8 d-flex flex-column gap-4 py-2">
+          <div className="col-7 d-flex flex-column gap-4 py-2">
             <span>TechBricks</span>
             <a>https://techbricks.io</a>
             <p>
@@ -109,11 +109,11 @@ function Partners() {
             </p>
           </div>
         </div> */}
-        <div className="row p-5">
-          <div className="col-2 partners-row">
+        <div className="row" style={{ padding : "3rem 15rem" }}>
+          <div className="col-3 partners-row">
             <img src={hetg} alt="Person" />
           </div>
-          <div className="col-8 d-flex flex-column gap-4 py-2">
+          <div className="col-7 d-flex flex-column gap-4 py-2">
             <span>UniCampus HETG</span>
             <a>https://www.unicampushetg.ch</a>
             <p>
@@ -123,11 +123,11 @@ function Partners() {
             </p>
           </div>
         </div>
-        <div className="row p-5" style={{ backgroundColor: "#f2f8f1" }}>
-          <div className="col-2 partners-row">
+        <div className="row" style={{ backgroundColor: "#f2f8f1", padding : "3rem 15rem" }}>
+          <div className="col-3 partners-row">
             <img src={idea} alt="Person" />
           </div>
-          <div className="col-8 d-flex flex-column gap-4 py-2">
+          <div className="col-7 d-flex flex-column gap-4 py-2">
             <span>IdeaEuropa</span>
             <a>https://www.ideaeuropa.it</a>
             <p>
@@ -147,11 +147,11 @@ function Partners() {
             Agreements
           </h2>
         </div>
-        <div className="row p-5" style={{ backgroundColor: "#f2f8f1" }}>
-          <div className="col-2 partners-row">
+        <div className="row" style={{ backgroundColor: "#f2f8f1", padding : "3rem 15rem" }}>
+          <div className="col-3 partners-row">
             <img src={uim} alt="Person" />
           </div>
-          <div className="col-8 d-flex flex-column gap-4 py-2">
+          <div className="col-7 d-flex flex-column gap-4 py-2">
             <span>UIM</span>
             <a>http://www.uim.it</a>
             <p>
