@@ -52,7 +52,7 @@
   box-shadow: 0px 16px 31.9px 0px rgba(0, 0, 0, 0.24);
   color: white;
   line-height: 1.5;
-  font-family: "Gotham Medium", sans-serif;
+  /* font-family: "Gotham Medium", sans-serif; */
   /* border-radius: 20px !important; */
   margin-bottom: 4rem;
 
@@ -170,13 +170,13 @@
 .feature-content {
   padding-left: 100px;
   & h4 {
-    font-family: "Gotham Medium", sans-serif;
-    font-weight: 500;
+    /* font-family: "Gotham Medium", sans-serif; */
+    /* font-weight: 500; */
   }
 
   & p {
     font-size: 14px;
-    font-family: "Gotham Thin" !important;  
+    /* font-family: "Gotham Thin" !important;   */
   }
 }
 

@@ -21,11 +21,12 @@
   src: local("Gotham Thin"),
     url("../assets/fonts/Gotham-Thin.otf") format("truetype");
 }
-
-* {
-  font-family: "Gotham Thin" !important;  
-  /* font-weight: 300; */
+@font-face {
+  font-family: "Gotham Book";
+  src: local("Gotham Book"),
+    url("../assets/fonts/Gotham-Book.otf") format("truetype");
 }
+
 
 a {
   font-weight: 400;
@@ -33,6 +34,7 @@ a {
   text-decoration: none !important;
   cursor: pointer;
   /* width: max-content; */
+  font-family: "Gotham Book" !important;  
 }
 .ego-green {
   color : #046635
@@ -48,18 +50,17 @@ h1 {
   color: white;
   font-size: clamp(1.875rem, 1.597rem + 1.5337vw, 3.4375rem);
   text-transform: capitalize;
-  font-weight: 600;
+  /* font-weight: 600; */
+  font-family: "Gotham Medium" !important;  
 }
 
 h2 {
-  font-weight: 400;
+  font-family: "Gotham Book" !important;  
   font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
 }
 
 p {
-  font-family: "Gotham Thin";
-  opacity: 0.9;
-  
+  font-family: "Gotham Thin" !important;  
 }
 
 ul {
@@ -80,6 +81,8 @@ button {
   /* transition: all 0.3s ease-in-out; */
   text-decoration: none;
   border: none;
+  font-family: "Gotham Book" !important;  
+  
 }
 button:hover {
   /* transform: scale(0.9); */
