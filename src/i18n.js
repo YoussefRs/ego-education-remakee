@@ -1554,6 +1554,7 @@ i18n
             courseSlider: {
               title: "EXPLORAR TODOS OS CURSOS",
               subtitle: "Explore Nossos",
+              upcomingtitle: "Próximos",
               specialWord: "Cursos",
               curriculum: "Modulo",
               readMore: "Leia Mais",
@@ -1586,10 +1587,94 @@ i18n
               ],
             },
             homeLecturers: {
-              title: "PROFESSORES",
-              subtitle: "Conheça os Nossos",
-              specialWord: "Professores",
-            },
+              title: "DOCENTES",
+              subtitle: "Conheça Nossos",
+              specialWord: "Docentes",
+              lecturers: [
+                {
+                  name: "Antonio Minelli",
+                  title: "Diretor de Tecnologia",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli é o Diretor de Tecnologia da ETLForma, uma das principais organizações de treinamento em TI da Itália. Ele supervisionou projetos tecnológicos para grandes clientes, incluindo Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e o Ministério do Meio Ambiente da Itália. Como um veterano em tecnologia, Antonio traz uma riqueza de experiência prática para cada palestra.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg"
+                },
+                {
+                  name: "Alessandro Iacuelli",
+                  title: "Analista e Professor",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli é Analista e Professor na ETLForma, onde compartilha sua experiência adquirida ao trabalhar com empresas como Thales Alenia Space, um líder global na indústria espacial e segundo parceiro industrial na Estação Espacial Internacional. Alessandro também conduziu pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos utilizando inteligência artificial. Sua paixão por resolver problemas complexos inspira cada aula.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp"
+                },
+                {
+                  name: "Manuele Monti",
+                  title: "Fundador e CEO",
+                  organization: "TechBricks",
+                  description:
+                    "Manuele Monti é o Fundador e CEO da TechBricks, uma aceleradora e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de lançar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester e gerente de portfólio para o gigante global de energia GDF Suez (agora Engie). O espírito empreendedor de Manuele e sua visão sobre o potencial da tecnologia para mudanças positivas energizam todo o seu ensino.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp"
+                }
+              ]
+            }
+,            
+UpcomingCourseSlider: {
+  title: "EXPLORAR TODOS OS CURSOS",
+  upcomingtitle: "Próximos",
+  subtitle: "Navegue Nossos",
+  upcomingsubtitle: "Nossos Próximos",
+  specialWord: "Cursos",
+  curriculum: "Módulos",
+  readMore: "Leia Mais",
+  courses: [
+    {
+      title: "Doutorado em Direito e Criminologia",
+      description:
+        "O Doutorado em Direito e Criminologia é um grau avançado de pesquisa acadêmica focado na exploração do sistema jurídico, comportamento criminal e respostas sociais ao crime.",
+      imgSrc:
+        "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
+      date: "12/08/24",
+      curriculum: 7,
+      price: "3000 €",
+      link: "/courses/aB3cD4eF"
+    },
+    {
+      title: "Bacharelado em Psicologia da Saúde Geral",
+      description:
+        "O Bacharelado em Psicologia da Saúde Geral é um curso de graduação que explora a relação entre fatores psicológicos e saúde física. Os alunos aprendem como elementos psicológicos, comportamentais e sociais afetam a saúde, doenças e cuidados de saúde.",
+      imgSrc:
+        "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
+      date: "12/09/24",
+      curriculum: 8,
+      price: "3000 €",
+      link: "/courses/tU1vW2xY"
+    },
+    {
+      title: "Mestrado em Administração de Empresas",
+      description:
+        "Lidere com Conhecimento: Domine a Ciência da Administração de Empresas, Moldando o Cenário Empresarial do Amanhã.",
+      imgSrc: BscBA,
+      date: "25/10/24",
+      curriculum: 18,
+      price: "3000 €",
+      featured: true,
+      link: "/courses/JZhfbff4"
+    },
+    {
+      title: "Bacharelado em Biomedicina",
+      description:
+        "O Bacharelado em Biomedicina é um curso de graduação focado em entender a base biológica e molecular da saúde e da doença. O programa combina elementos de biologia, química e ciência médica para explorar como o corpo humano funciona, como as doenças se desenvolvem e como podem ser tratadas.",
+      imgSrc:
+        "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
+      date: "25/10/24",
+      curriculum: 18,
+      price: "3000 €",
+      featured: true,
+      link: "/courses/JZhfbff4"
+    }
+  ]
+}
+,
             courseDetails: {
               coursesData: [
                 {
