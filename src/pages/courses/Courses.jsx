@@ -21,8 +21,6 @@ function Courses() {
   });
   const [activePane, setActivePane] = useState("our_courses");
 
-
-  console.log(courses)
   return (
     <>
       <SubHeader
@@ -199,9 +197,9 @@ function Courses() {
                   </div> */}
                 </div>
                 <div
-                  className={`tab-pane ${
+                 /*  className={`tab-pane ${
                     activePane === "our_courses" ? "active" : ""
-                  }`}
+                  }`} */
                   id="tab2"
                 >
                   <div className="row course-list">

@@ -22,9 +22,9 @@ function Navigation({ show }) {
   const { i18n } = useTranslation();
   const { t } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  // };
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -49,6 +49,49 @@ function Navigation({ show }) {
     };
   }, []);
 
+  const languages = [
+    { code: "en", name: "English", flag: "https://cdn.parcellab.com/img/flags/us.png" },
+    { code: "br", name: "Español", flag: "https://cdn.parcellab.com/img/flags/br.png" },
+    { code: "it", name: "Italiano", flag: "https://cdn.parcellab.com/img/flags/it.png" },
+  ];
+
+  // Load selected language from localStorage or use default
+  const [selectedLang, setSelectedLang] = useState(() => {
+    const savedLang = localStorage.getItem("selectedLanguage");
+    return savedLang ? JSON.parse(savedLang) : languages[0]; // Default to English
+  });
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Apply the saved language on mount
+  useEffect(() => {
+    i18n.changeLanguage(selectedLang.code);
+  }, [selectedLang]);
+
+  const handleLangChange = (lang) => {
+    setSelectedLang(lang);
+    localStorage.setItem("selectedLanguage", JSON.stringify(lang));
+    i18n.changeLanguage(lang.code);
+    setIsDropdownOpen(false); // Close dropdown after selection
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+
   return (
     <nav ref={navRef}>
       <section className="flex_content">
@@ -72,21 +115,30 @@ function Navigation({ show }) {
         ))}
       </section>
       <section className="flex_content d-flex alingn-items-center justify-content-between">
-        {/* <div className="flag-switch">
-          <input
-            type="checkbox"
-            id="check2"
-            defaultChecked={i18n.language === "en"}
-            onChange={(e) => {
-              if (e.target.checked) {
-                changeLanguage("en");
-              } else {
-                changeLanguage("br");
-              }
-            }}
-          />
-          <label for="check2"></label>
-        </div> */}
+      <div id="mini-nav" ref={dropdownRef}>
+      <div className="_dropdown pull-right">
+        <button onClick={toggleDropdown} className="dropdown-toggle" style={{ background: "transparent", padding: "5px", border: "2px solid white", width: "100%" }}>
+          <span id="current-lang">
+            <img src={selectedLang.flag} className="flag" alt={`Flag representing ${selectedLang.name}`} />
+          </span>
+          <span className="caret"></span>
+        </button>
+
+        {isDropdownOpen && (
+          <ul id="lang-switcher-list" className="_dropdown-menu" style={{ paddingLeft: 0 }}>
+            {languages
+              .filter(lang => lang.code !== selectedLang.code) // Filter out the currently selected language
+              .map(lang => (
+                <li key={lang.code}>
+                  <a onClick={() => handleLangChange(lang)}>
+                    <img src={lang.flag} className="flag" alt={`Flag representing ${lang.name}`} />
+                  </a>
+                </li>
+              ))}
+          </ul>
+        )}
+      </div>
+    </div>
         <a
           className="ham"
           href="https://ego-education.ispringlearn.eu/login"

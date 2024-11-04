@@ -14,7 +14,7 @@
 @font-face {
   font-family: "Gotham Medium";
   src: local("Gotham Medium"),
-    url("../assets/fonts/Gotham-Black.otf") format("truetype");
+    url("../assets/fonts/Gotham-Medium.otf") format("truetype");
 }
 @font-face {
   font-family: "Gotham Thin";
@@ -23,7 +23,8 @@
 }
 
 * {
-  /* font-family: "Gotham Medium", sans-serif; */
+  font-family: "Gotham Thin" !important;  
+  /* font-weight: 300; */
 }
 
 a {
@@ -47,7 +48,6 @@ h1 {
   color: white;
   font-size: clamp(1.875rem, 1.597rem + 1.5337vw, 3.4375rem);
   text-transform: capitalize;
-  font-family: "Gotham Medium", sans-serif;
   font-weight: 600;
 }
 
@@ -58,7 +58,6 @@ h2 {
 
 p {
   font-family: "Gotham Thin";
-  /* letter-spacing: 0.8px; */
   opacity: 0.9;
   
 }
@@ -141,7 +140,6 @@ button:focus-visible {
   margin: 20px;
   font-weight: 500;
   text-transform: uppercase;
-  font-family: "Gotham Medium", sans-serif;
 }
 .container-heading::after {
   content: "";
@@ -171,7 +169,6 @@ button:focus-visible {
   color: #046635;
   font-weight: 500;
   text-transform: uppercase;
-  font-family: "Gotham Medium", sans-serif;
 }
 .container-heading-green::after {
   content: "";

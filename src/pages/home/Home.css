@@ -175,7 +175,8 @@
   }
 
   & p {
-    font-size: 13px;
+    font-size: 14px;
+    font-family: "Gotham Thin" !important;  
   }
 }
 

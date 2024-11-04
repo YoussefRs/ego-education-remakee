@@ -99,7 +99,7 @@ i18n
                   imgSrc: MsvJava,
                   date: "12/08/24",
                   curriculum: 7,
-                  price : "3000 €",
+                  price: "3000 €",
                   link: "/courses/aB3cD4eF",
                 },
                 {
@@ -109,7 +109,7 @@ i18n
                   imgSrc: MsvCS,
                   date: "12/09/24",
                   curriculum: 8,
-                  price : "3000 €",
+                  price: "3000 €",
                   link: "/courses/tU1vW2xY",
                 },
                 {
@@ -119,7 +119,7 @@ i18n
                   imgSrc: Matitle,
                   date: "12/09/24",
                   curriculum: 10,
-                  price : "3000 €",
+                  price: "3000 €",
                   link: "/courses/ghnffT988",
                 },
                 {
@@ -129,7 +129,7 @@ i18n
                   imgSrc: Eu,
                   date: "12/09/24",
                   curriculum: 7,
-                  price : "3000 €",
+                  price: "3000 €",
                   link: "/courses/ghnffTffz4",
                 },
                 /*   {
@@ -171,7 +171,7 @@ i18n
                     "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
                   date: "12/08/24",
                   curriculum: 7,
-                  price : "3000 €",
+                  price: "3000 €",
                   link: "/courses/aB3cD4eF",
                 },
                 {
@@ -182,7 +182,7 @@ i18n
                     "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
                   date: "12/09/24",
                   curriculum: 8,
-                  price : "3000 €",
+                  price: "3000 €",
                   link: "/courses/tU1vW2xY",
                 },
                 {
@@ -192,7 +192,7 @@ i18n
                   imgSrc: BscBA,
                   date: "25/10/24",
                   curriculum: 18,
-                  price : "3000 €",
+                  price: "3000 €",
                   featured: true,
                   link: "/courses/JZhfbff4",
                 },
@@ -204,7 +204,7 @@ i18n
                     "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
                   date: "25/10/24",
                   curriculum: 18,
-                  price : "3000 €",
+                  price: "3000 €",
                   featured: true,
                   link: "/courses/JZhfbff4",
                 },
@@ -510,7 +510,7 @@ i18n
                   duration: 2,
                   category: "computer sicence",
                 },
-             /*    {
+                /*    {
                   id: "JZhfbff4",
                   name: "Business Administration",
                   startDate: "15 Feb 2023",
@@ -1242,8 +1242,7 @@ i18n
                     "Become a Leader of Change: Master the Skills to Drive Innovation and Social Impact in the Evolving Third Sector.",
 
                   totalEtc: 84,
-                  thumb:
-                    MA,
+                  thumb: MA,
                   degree: "Master Degree",
                   modules: [
                     {
@@ -1253,20 +1252,21 @@ i18n
                       ects: 6,
                     },
                     {
-                      title:
-                        "Non-Profit Legislation",
+                      title: "Non-Profit Legislation",
                       description:
                         "This module examines the intricacies of not-for-profit legislation, exploring  the foundational aspects of the legal framework governing the Third Sector. It covers the infrastructure and governance of the not-for-profit legislative system, the objective scope of Third Sector activities, the subjective sphere encompassing types and legal forms of entities, and the regulatory references prevalent across Member States.",
                       ects: 6,
                     },
                     {
-                      title: "Profile and Social Impact of the Third Sector, Networking and Organisational Dynamics",
+                      title:
+                        "Profile and Social Impact of the Third Sector, Networking and Organisational Dynamics",
                       description:
                         "This module explores critical aspects of the Third Sector, delving into the management of local stakeholders and the bureaucratic and fiscal requirements essential for establishing a non-profit organisation. It addresses the creation of a community, emphasising the principles of co-programming, co-planning, accreditation, and partnership.",
                       ects: 6,
                     },
                     {
-                      title: "Vision, Mission, Management and Control of a Non-Profit Organisation",
+                      title:
+                        "Vision, Mission, Management and Control of a Non-Profit Organisation",
                       description:
                         "This module examines key aspects of non-profit organisational dynamics, including volunteering and labor relations, fundraising methodologies, challenges in personnel management for both volunteers and employees, assets management, and the structures related to organisation, administration, and accounting. Additionally, it addresses financial management with a focus on cash management and the analysis of funding costs.",
                       ects: 6,
@@ -1307,7 +1307,6 @@ i18n
                         "The dissertation is a compulsory element of Master in Non-Profit Management and Leadership. Dissertation is based on a major piece of work that involves applying material encountered in the taught component of the degree, and extending that knowledge with the student's contribution, under the guidance of a supervisor. This component of Masters degree provides opportunity for students to pursue a single topic in depth and to demonstrate evidence of research ability at a Masters level. The topic is typically a current problem in the broad area of their MSc programme. The dissertation usually involves experimental or theoretical research, or a substantial literature survey on a specific topic.",
                       ects: 24,
                     },
-                 
                   ],
                   institute: "Ego Education",
                   method:
@@ -1350,8 +1349,7 @@ i18n
                     "Build the expertise to manage innovative projects that shape the future of the EU.",
 
                   totalEtc: 90,
-                  thumb:
-                  eubanner,
+                  thumb: eubanner,
                   degree: "Master Degree",
                   modules: [
                     {
@@ -1368,19 +1366,22 @@ i18n
                       ects: 12,
                     },
                     {
-                      title: "Project initiation, planning, implementation, control and closure ",
+                      title:
+                        "Project initiation, planning, implementation, control and closure ",
                       description:
                         "This module explores Project Management and control covering the development and implementation methodologies of a European project from a project management point of view.",
                       ects: 12,
                     },
                     {
-                      title: "The Europe Funding schemes in the 2021-2027 Multiannual Financial Framework ",
+                      title:
+                        "The Europe Funding schemes in the 2021-2027 Multiannual Financial Framework ",
                       description:
                         "This module explores the Funding schemes in the 2021-2027 Multiannual Financial Framework 2021/2027 Programme, covering its foundational aspects, advantages, structure, funding modalities, and initiatives. A dedicated glossary ensures a comprehensive understanding of key terms.",
                       ects: 12,
                     },
                     {
-                      title: "Rules of the participation in the agenda 2021/2027 ",
+                      title:
+                        "Rules of the participation in the agenda 2021/2027 ",
                       description:
                         "This module provides an in-depth exploration of the rules and procedures governing participation in EU programs within the framework of the Agenda 2021/2027.",
                       ects: 12,
@@ -1397,8 +1398,6 @@ i18n
                         "The dissertation is a compulsory element of Master of EU Project Design and Management. Dissertation is based on a major piece of work that involves applying material encountered in the taught component of the degree, and extending that knowledge with the student's contribution, under the guidance of a supervisor. This component of Master’s degree provides opportunity for students to pursue a single topic in depth and to demonstrate evidence of research ability at a Masters level. The topic is typically a current problem in the broad area of their MSc programme. The dissertation usually involves experimental or theoretical research, or a substantial literature survey on a specific topic.",
                       ects: 30,
                     },
-                   
-                 
                   ],
                   institute: "Ego Education",
                   method:
@@ -1426,8 +1425,7 @@ i18n
               line1: "Request Evaluation",
               line2:
                 "Take the first step toward your future: request a free evaluation of your academic career and let us create a personalized study plan tailored to your goals.",
-              line3:
-                "evaluation@ego-education.com",
+              line3: "evaluation@ego-education.com",
               button: "Request Evaluation",
             },
             contact: {
@@ -1627,7 +1625,7 @@ i18n
                   thumb:
                     "https://dce0qyjkutl4h.cloudfront.net/wp-content/webp-express/webp-images/uploads/2023/08/Java-enterprise-solutions.jpg.webp",
                   degree: "Mestrado",
-                  institute: "Ego",
+                  institute: "Ego Education",
                   modules: [
                     {
                       title: "Java Básico",
@@ -1758,7 +1756,7 @@ i18n
                       ects: 24,
                     },
                   ],
-                  institute: "Ego",
+                  institute: "Ego Education",
                   method:
                     "O programa compreende uma abordagem online promovendo a construção de uma comunidade de prática por meio de aprendizado entre pares que é assíncrono. Os alunos têm liberdade e flexibilidade para acessar o curso no momento que for mais conveniente para eles.",
                   price: 3000,
@@ -1766,6 +1764,202 @@ i18n
                   category: "ciência da computação",
                 },
                 {
+                  id: "ghnffT988",
+                  name: "Mestrado em Gestão e Liderança de Organizações sem Fins Lucrativos",
+                  duration: "2 anos",
+                  location: "Online",
+                  totalModules: 10,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analista e professor",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli é analista e professor na ETLForma, onde compartilha sua experiência adquirida em empresas como Thales Alenia Space, um líder global na indústria espacial e segundo parceiro industrial na Estação Espacial Internacional. Alessandro também realizou pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos usando inteligência artificial. Sua paixão por resolver problemas complexos inspira cada aula.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "Gerente de Organização sem Fins Lucrativos/Diretor Executivo",
+                    "Gerente de Projetos para Iniciativas sem Fins Lucrativos",
+                    "Consultor de Organizações sem Fins Lucrativos",
+                    "Redator de Projetos/Desenvolvedor de Fundos",
+                    "Especialista em Advocacy e Relações Públicas",
+                    "Analista de Impacto Social",
+                    "Coordenador de Engajamento Comunitário",
+                    "Oficial de Relações Governamentais",
+                    "Gerente de Recursos Humanos em Organizações sem Fins Lucrativos",
+                  ],
+                  media: {
+                    type: "imagem",
+                    source: MA,
+                  },
+                  description:
+                    "O curso de mestrado visa formar líderes que estejam cientes dos novos desafios no Terceiro Setor e sejam capazes de navegar pelo cenário normativo em constante evolução das organizações sociais. Essas organizações desempenham um papel crucial na sociedade pós-pandemia, exigindo tanto expertise técnica quanto liderança visionária.",
+                  slogan:
+                    "Torne-se um Líder da Mudança: Domine as Habilidades para Impulsionar a Inovação e o Impacto Social no Evolutivo Terceiro Setor.",
+
+                  totalEtc: 84,
+                  thumb: MA,
+                  degree: "Mestrado",
+                  modules: [
+                    {
+                      title: "Governança e Gestão de Riscos",
+                      description:
+                        "Este módulo explora a interseção crítica entre políticas públicas, bem-estar e o papel desempenhado pelo setor sem fins lucrativos, especialmente em resposta à crise do bem-estar. Examina a evolução das empresas sociais após essa crise e oferece um histórico abrangente do setor sem fins lucrativos.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Legislação para Organizações sem Fins Lucrativos",
+                      description:
+                        "Este módulo examina as complexidades da legislação para o setor sem fins lucrativos, explorando os aspectos fundamentais do arcabouço legal que rege o Terceiro Setor. Cobre a infraestrutura e a governança do sistema legislativo sem fins lucrativos, o escopo objetivo das atividades do Terceiro Setor, a esfera subjetiva abrangendo tipos e formas jurídicas de entidades, e as referências regulamentares presentes nos Estados-Membros.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Perfil e Impacto Social do Terceiro Setor, Networking e Dinâmica Organizacional",
+                      description:
+                        "Este módulo explora aspectos críticos do Terceiro Setor, abordando a gestão de stakeholders locais e os requisitos burocráticos e fiscais essenciais para estabelecer uma organização sem fins lucrativos. Aborda a criação de uma comunidade, enfatizando os princípios de co-programação, co-planejamento, credenciamento e parceria.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Visão, Missão, Gestão e Controle de uma Organização sem Fins Lucrativos",
+                      description:
+                        "Este módulo examina aspectos-chave da dinâmica organizacional sem fins lucrativos, incluindo relações de voluntariado e trabalho, metodologias de arrecadação de fundos, desafios na gestão de pessoal para voluntários e funcionários, gestão de ativos e as estruturas relacionadas à organização, administração e contabilidade. Além disso, aborda a gestão financeira com foco na gestão de caixa e análise de custos de financiamento.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Gestão e Desenvolvimento de Recursos Humanos",
+                      description:
+                        "Este módulo explora as complexidades da gestão e desenvolvimento de recursos humanos no contexto do Terceiro Setor. Examina a psicologia do trabalho, incluindo aspectos do contrato psicológico, gestão de grupos e liderança específicas para organizações sem fins lucrativos. Aborda a comunicação social como uma ferramenta vital para disseminação de informações, diálogo e participação de stakeholders. Explora a dinâmica de tomada de decisões em grupo, considerações éticas e princípios de liderança e gestão de equipes, concluindo com um exame do planejamento sucessório.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Gestão de Projetos",
+                      description:
+                        "Este módulo explora o espectro completo da gestão de projetos no contexto do Terceiro Setor. Cobre todo o ciclo do projeto, desde a iniciação e definição até o planejamento, execução, implementação, controle e conclusão. Além disso, o módulo aborda estratégias de captação de recursos, fornecendo um guia para identificar fontes de financiamento e navegar por chamadas de propostas nacionais e internacionais. Os alunos também aprenderão as complexidades do desenvolvimento de projetos, desde a fase de ideação até a criação de uma proposta convincente. O módulo ainda aborda a avaliação de impacto dos projetos no campo social e explora diversos mecanismos de apoio financeiro, incluindo doações liberais e outras formas.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Organização de Eventos Associativos",
+                      description:
+                        "Este módulo examina as complexidades da organização de eventos associativos dentro do quadro do Terceiro Setor. Explora os componentes essenciais do planejamento de eventos, incluindo logística, coordenação e execução. O módulo aborda os aspectos críticos das estratégias de comunicação e promoção voltadas para eventos associativos. Cobre a definição de equipes e a gestão eficaz de voluntários, enfatizando o papel da colaboração no sucesso do evento.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Foco em Direitos Humanos",
+                      description:
+                        "Este módulo explora a interseção crítica entre políticas públicas, bem-estar e o papel desempenhado pelo setor sem fins lucrativos, especialmente em resposta à crise do bem-estar. Examina a evolução das empresas sociais após essa crise e oferece um histórico abrangente do setor sem fins lucrativos.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Métodos de Pesquisa",
+                      description:
+                        "Este módulo é projetado para participantes que precisam obter uma compreensão crítica das abordagens e habilidades de pesquisa e desenvolver a capacidade de utilizar métodos de pesquisa em seus estudos ou em suas vidas profissionais, ajudando aqueles que precisam realizar pesquisas como parte de seus estudos de pós-graduação.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Dissertação",
+                      description:
+                        "A dissertação é um elemento obrigatório do Mestrado em Gestão e Liderança de Organizações sem Fins Lucrativos. A dissertação é baseada em um trabalho significativo que envolve a aplicação do material abordado na parte teórica do curso, estendendo esse conhecimento com a contribuição do aluno, sob a orientação de um supervisor. Esta componente do curso de mestrado oferece a oportunidade para os alunos explorarem um tema específico em profundidade e demonstrarem evidências de habilidade de pesquisa em nível de mestrado. O tema é tipicamente um problema atual na área abrangente do programa de Mestrado. A dissertação geralmente envolve pesquisa experimental ou teórica, ou uma pesquisa bibliográfica substancial sobre um tópico específico.",
+                      ects: 24,
+                    },
+                  ],
+                  institute: "Ego Education",
+                  method:
+                    "O programa compreende uma abordagem online promovendo a construção de uma comunidade de prática via aprendizado entre pares de forma assíncrona. Os alunos têm liberdade e flexibilidade para acessar o curso em um horário que seja mais conveniente para eles.",
+                  price: 3000,
+                  duration: 2,
+                  category: "Negócios",
+                },
+                {
+                  id: "ghnffTffz4",
+                  name: "Mestrado em Gestão de Projetos Europeus",
+                  duration: "2 anos",
+                  location: "Online",
+                  totalModules: 7,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analista e professor",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli é Analista e professor na ETLForma, onde compartilha sua expertise adquirida em empresas como a Thales Alenia Space, líder global na indústria espacial e segundo parceiro industrial da Estação Espacial Internacional. Alessandro também conduziu pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos usando inteligência artificial. Sua paixão por resolver problemas complexos inspira cada aula.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "Gestores de Projetos Europeus",
+                    "Gerente de Desenvolvimento de Negócios",
+                    "Coordenador de Projetos Internacionais",
+                    "Consultor em Gestão de Projetos",
+                    "Pesquisador Acadêmico ou Professor",
+                    "Analista ou Consultor de Políticas da UE",
+                    "Diretor de Projetos em ONGs",
+                    "Empreendedor em Iniciativas Financiadas pela UE",
+                  ],
+                  media: {
+                    type: "image",
+                    source: eubanner,
+                  },
+                  description:
+                    "O Mestrado em Gestão de Projetos Europeus é projetado para indivíduos que desejam se destacar na área dinâmica de gestão de projetos, com foco específico em projetos europeus. O programa foi elaborado para atender às necessidades de profissionais que buscam aprimorar suas habilidades e conhecimentos na gestão de projetos no contexto da União Europeia.",
+                  slogan:
+                    "Desenvolva a expertise para gerenciar projetos inovadores que moldam o futuro da UE.",
+                  totalEtc: 90,
+                  thumb: eubanner,
+                  degree: "Grau de Mestre",
+                  modules: [
+                    {
+                      title: "A União Europeia e seu Sistema Institucional",
+                      description:
+                        "Este módulo aborda os aspectos multifacetados da União Europeia (UE), explorando sua gênese, fundações históricas e fundamentos ideológicos. Ele traça as etapas evolutivas das Comunidades Europeias, explora as reformas institucionais que levaram à União Europeia e examina criticamente o processo de Constituição Europeia, culminando no Tratado de Lisboa.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Introdução à Gestão de Projetos e Análise de Quadro Lógico",
+                      description:
+                        "Este módulo serve como uma introdução abrangente à gestão de projetos, proporcionando aos alunos uma compreensão básica do conceito, princípios e aspectos práticos da gestão de projetos. Cobre áreas essenciais como a natureza dos projetos, componentes de gestão de projetos, princípios fundamentais, propostas de projetos, papel do cliente e o papel crucial dos gestores de projetos. A segunda parte do módulo se concentra na Análise de Quadro Lógico (LFA), explorando sua aplicação no desenvolvimento de projetos, criação de Escritórios de Gestão de Projetos (PMOs) e resolução de conflitos por meio da mediação.",
+                      ects: 12,
+                    },
+                    {
+                      title:
+                        "Iniciação, Planejamento, Implementação, Controle e Encerramento de Projetos",
+                      description:
+                        "Este módulo explora a Gestão de Projetos e o controle, cobrindo as metodologias de desenvolvimento e implementação de um projeto europeu do ponto de vista da gestão de projetos.",
+                      ects: 12,
+                    },
+                    {
+                      title:
+                        "Esquemas de Financiamento da Europa no Quadro Financeiro Plurianual 2021-2027",
+                      description:
+                        "Este módulo explora os Esquemas de Financiamento no Quadro Financeiro Plurianual 2021-2027, cobrindo seus aspectos fundamentais, vantagens, estrutura, modalidades de financiamento e iniciativas. Um glossário dedicado assegura uma compreensão abrangente dos termos-chave.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Regras de Participação na Agenda 2021-2027",
+                      description:
+                        "Este módulo oferece uma exploração aprofundada das regras e procedimentos que regem a participação em programas da UE no âmbito da Agenda 2021-2027.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Métodos de Pesquisa",
+                      description:
+                        "Este módulo é projetado para equipar os alunos com as habilidades essenciais e o conhecimento necessários para planejar, pesquisar e escrever uma dissertação com sucesso.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Dissertação",
+                      description:
+                        "A dissertação é um elemento obrigatório do Mestrado em Design e Gestão de Projetos da UE. A dissertação é baseada em um trabalho significativo que envolve a aplicação do material abordado no componente didático do curso, além de expandir esse conhecimento com a contribuição do aluno, sob a orientação de um orientador. Esse componente do Mestrado oferece uma oportunidade para os alunos se aprofundarem em um único tópico e demonstrarem evidências de capacidade de pesquisa em nível de Mestrado. O tema é geralmente um problema atual na área abrangente do programa de Mestrado. A dissertação geralmente envolve pesquisa experimental ou teórica, ou uma pesquisa bibliográfica substancial sobre um tema específico.",
+                      ects: 30,
+                    },
+                  ],
+                  institute: "Ego Education",
+                  method:
+                    "O programa é composto por uma abordagem online que promove a construção de uma comunidade de prática por meio de aprendizado entre pares, de forma assíncrona. Os alunos têm a liberdade e flexibilidade para acessar o curso no momento que for mais conveniente para eles.",
+                  price: 3000,
+                  duration: 2,
+                  category: "Negócios",
+                },
+
+                /*  {
                   id: "gH5iJ6kL",
                   name: "Administração de Empresas",
                   startDate: "15 Fev 2023",
@@ -2133,7 +2327,7 @@ i18n
                     "https://plus.unsplash.com/premium_photo-1682124416359-d48d59ad6916?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2NpZW5jZSUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
                   degree: "Doutorado",
                   institute: "Pegaso",
-                },
+                }, */
               ],
               button: "Leer Más",
               title: "Visão Geral",

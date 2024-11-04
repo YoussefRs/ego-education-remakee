@@ -128,7 +128,7 @@ nav .ham:hover {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1050px) {
   nav {
     padding: 0.5rem 1rem;
     z-index: 999;
@@ -223,7 +223,7 @@ nav .ham:hover {
   transform: translate(0, 0);
 }
 .flag-switch input:checked + label:before {
-  background-color: #1FA9D6;
+  background-color: #fff;
 }
 
 /* MEDIA QUERIES */
@@ -294,4 +294,57 @@ nav .ham:hover {
     width: 22px;
     height: 22px;
   }
+}
+
+
+
+
+
+
+
+#mini-nav {
+  height: 30px;
+  margin-bottom: 25px;
+  /* background: #f5f5f5; */
+}
+#mini-nav > div {
+  line-height: 30px;
+  direction: ltr;
+}
+
+#mini-nav #lang-switcher {
+  cursor: default;
+  height: 30px;
+  padding: 0px 10px;
+  border: 0px;
+  background-color: transparent;
+  float: right;
+}
+
+#mini-nav #lang-switcher-list {
+  overflow-y: scroll;
+  max-height: 90vh;
+}
+
+#mini-nav #lang-switcher:hover {
+  background-color: #ddd;
+}
+
+#mini-nav a {
+  margin: 0 5px;
+}
+#mini-nav ul {
+  background-color: #fff; 
+  cursor: pointer;
+ }
+
+
+ #lang-switcher-list {
+  max-height: 200px; /* Adjust height as necessary */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Firefox */
+}
+
+#lang-switcher-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

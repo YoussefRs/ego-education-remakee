@@ -17,10 +17,10 @@ function HomeFeatures_2() {
   );
   return (
     <div
-      className="features-video pt-110 pb-110"
+      className="features-video pt-110 pb-110 mb-4"
       style={{
         backgroundImage:
-          "url(https://wallpaperboat.com/wp-content/uploads/2020/10/30/58688/graduation-04.jpg)",
+          "url(https://wallpapercave.com/wp/wp9150122.jpg)",
       }}
     >
       <div className="video-overlay"></div>

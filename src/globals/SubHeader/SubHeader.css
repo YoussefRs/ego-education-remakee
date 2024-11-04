@@ -15,7 +15,7 @@ header {
   display: flex; /* Added */
 
   & .heading-title {
-    font-size: clamp(1.875rem, 1.4525rem + 2.3313vw, 4.25rem);
+    font-size: clamp(1.875rem, 1.4525rem + 2.3313vw, 2.5rem);
     text-transform: none;
     margin: 0 0 clamp(0.75rem, 0.6346rem + 0.5128vw, 1.25rem);
     /* word-break: break-all; */

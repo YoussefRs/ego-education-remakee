@@ -18,9 +18,11 @@ import Partners from "./pages/partners/Partners";
 import ConfirmPolicy from "./pages/enrollment/ConfirmPolicy";
 import Policy from "./pages/policy/Policy";
 import Dashboard from "./pages/dash/Dashboard";
+import { useTranslation } from "react-i18next";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
+  
 
   return (
     <>
@@ -34,6 +36,22 @@ function Layout({ children }) {
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const { i18n } = useTranslation();
+
+  const languages = [
+    { code: "en", name: "English", flag: "https://cdn.parcellab.com/img/flags/us.png" },
+    { code: "br", name: "Español", flag: "https://cdn.parcellab.com/img/flags/br.png" },
+    { code: "it", name: "Italiano", flag: "https://cdn.parcellab.com/img/flags/it.png" },
+  ];
+
+  const [selectedLang, setSelectedLang] = useState(() => {
+    const savedLang = localStorage.getItem("selectedLanguage");
+    return savedLang ? JSON.parse(savedLang) : languages[0]; // Default to English
+  });
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLang.code);
+  }, [selectedLang]);
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();
