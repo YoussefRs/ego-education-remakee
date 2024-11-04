@@ -117,7 +117,7 @@ function Navigation({ show }) {
       <section className="flex_content d-flex alingn-items-center justify-content-between">
       <div id="mini-nav" ref={dropdownRef}>
       <div className="_dropdown pull-right">
-        <button onClick={toggleDropdown} className="dropdown-toggle" style={{ background: "transparent", padding: "5px", border: "2px solid white", width: "100%" }}>
+        <button onClick={toggleDropdown} className="dropdown-toggle" style={{ background: "transparent", padding: "6px 5px", border: "2px solid white", width: "100%" }}>
           <span id="current-lang">
             <img src={selectedLang.flag} className="flag" alt={`Flag representing ${selectedLang.name}`} />
           </span>

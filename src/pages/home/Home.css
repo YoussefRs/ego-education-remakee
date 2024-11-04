@@ -589,7 +589,7 @@
   color: white;
 }
 .single-video-box > p {
-  color: rgba(255, 255, 255, 0.644);
+  /* color: rgba(255, 255, 255, 0.644); */
 }
 .features-video-icon {
   display: inline-block;

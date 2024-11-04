@@ -23,6 +23,7 @@
   text-transform: uppercase;
   text-align: left;
   color: #046635;
+  font-family: "Gotham Book" !important;  
 }
 .wdt-heading-subtitle:before {
   content: "";
@@ -283,6 +284,7 @@ textarea.input {
   transition: 0.3s;
   margin: 0;
   width: 100%;
+  font-family: "Gotham Book" !important;  
 }
 
 .btnn:hover {
