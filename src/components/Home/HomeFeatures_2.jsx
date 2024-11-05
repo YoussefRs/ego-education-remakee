@@ -18,13 +18,19 @@ function HomeFeatures_2() {
   return (
     <div
       className="features-video pt-110 pb-110 mb-4"
-      style={{
-        backgroundImage:
-          "url(https://wallpapercave.com/wp/wp9150122.jpg)",
-      }}
+     
     >
+
+<div
+    className="blurred-bg"
+    style={{
+      backgroundImage: "url(https://wallpapercave.com/wp/wp9150122.jpg)",
+    }}
+  ></div>
+
+
       <div className="video-overlay"></div>
-      <div className="container" data-aos={"fade-up"}>
+      <div className="container" data-aos={"fade-up"} style={{position : "relative" , zIndex : 3}}>
         <div className="row ">
           <div className="col-xl-6 col-lg-6 col-md-2"></div>
           <div className="col-xl-6 col-lg-6 col-md-10">

@@ -20,7 +20,7 @@ i18n
   .use(i18nextBrowserLanguagedetector)
   .use(initReactI18next)
   .init({
-    debug: false,
+    debug: true,
     lng: "en",
     fallbackLng: "en",
     returnObjects: true,
@@ -101,6 +101,7 @@ i18n
                   curriculum: 7,
                   price: "3000 €",
                   link: "/courses/aB3cD4eF",
+                  location : "Online"
                 },
                 {
                   title: "MSc in Information Security",
@@ -111,6 +112,7 @@ i18n
                   curriculum: 8,
                   price: "3000 €",
                   link: "/courses/tU1vW2xY",
+                  location : "Online"
                 },
                 {
                   title: "MA in Nonprofit Management & Leadership",
@@ -121,6 +123,7 @@ i18n
                   curriculum: 10,
                   price: "3000 €",
                   link: "/courses/ghnffT988",
+                  location : "Online"
                 },
                 {
                   title: "MSc in European Project Management",
@@ -131,6 +134,7 @@ i18n
                   curriculum: 7,
                   price: "3000 €",
                   link: "/courses/ghnffTffz4",
+                  location : "Online",
                 },
                 /*   {
                   title: "Business Administration",
@@ -276,7 +280,8 @@ i18n
                   name: "MSc in Java Programming",
                   // startDate: "01 Jan 2023",
                   duration: "2 years",
-                  location: "In Campus",
+                  location: "Online",
+                  loc : "Location",
                   totalEtc: 90,
                   lecturer: {
                     name: "Antonio Minelli",
@@ -430,6 +435,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
+                  loc : "Location",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1213,6 +1219,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
+                  loc : "Location",
                   totalModules: 10,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1321,6 +1328,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
+                  loc : "Location",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1566,6 +1574,7 @@ i18n
                   imgSrc: MsvJava,
                   date: "12/08/24",
                   curriculum: 3,
+                  location : "Online"
                 },
                 {
                   title: "Mestrado em Segurança da Informação",
@@ -1574,6 +1583,7 @@ i18n
                   imgSrc: MsvCS,
                   date: "12/09/24",
                   curriculum: 8,
+                  location : "Online"
                 },
                 /*  {
                   title: "Administração de Empresas",
@@ -1682,7 +1692,8 @@ UpcomingCourseSlider: {
                   name: "Mestrado em Ciência da Programação Java",
                   startDate: "01 Jan 2023",
                   duration: "2 anos",
-                  location: "Presencial",
+                  location: "Online",
+                  loc : "localização",
                   totalEtc: 90,
                   cur: "2",
                   admission: {
@@ -1773,6 +1784,7 @@ UpcomingCourseSlider: {
                   startDate: "05 Jun 2023",
                   duration: "2 anos",
                   location: "Online",
+                  loc : "localização",
                   totalModules: 7,
                   career: [
                     "Gerente de Segurança da Informação",
@@ -1853,6 +1865,7 @@ UpcomingCourseSlider: {
                   name: "Mestrado em Gestão e Liderança de Organizações sem Fins Lucrativos",
                   duration: "2 anos",
                   location: "Online",
+                  loc : "localização",
                   totalModules: 10,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1960,6 +1973,7 @@ UpcomingCourseSlider: {
                   name: "Mestrado em Gestão de Projetos Europeus",
                   duration: "2 anos",
                   location: "Online",
+                  loc : "localização",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
