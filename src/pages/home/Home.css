@@ -585,13 +585,23 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
-  width: 45.4%; /* Cover only the left half */
-  background-image: inherit; /* Use the same background image */
+  width: 55%; 
+  background-image: inherit; 
   background-size: cover;
-  background-position: left; /* Align the background image */
-  filter: blur(5px); /* Adjust the blur level */
+  background-position: left; 
+  filter: blur(5px); 
+}
+@media (max-width : 991px) {
+  #feat {
+    width: 100% !important;
+  }
+}
+
+#apply-page {
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .video-overlay {

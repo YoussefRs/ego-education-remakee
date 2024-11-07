@@ -23,7 +23,7 @@
   justify-content: center;  
   color: #22281e !important;
   font-size: clamp(12px, 1vw, 14px);
-  font-weight: 600;
+  /* font-weight: 600; */
   margin: 0;
   padding: 0 20px 0 15px;
   position: relative;
@@ -103,7 +103,7 @@
   color: #046635 !important;
   background: none;
   border-bottom: 2px solid #046635;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .course-list {

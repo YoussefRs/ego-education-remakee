@@ -50,7 +50,7 @@ function HomeFeatures() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 d-flex align-items-center flex-column justify-content-center gap-4">
+          <div className="col-md-6 d-flex align-items-center flex-column justify-content-center gap-4" id="feat">
             <div className="section-header">
               <h2 className="container-heading text-start" data-aos={"slide-left"}>
                 {t("home.homeFeatures.sectionHeader.title")}

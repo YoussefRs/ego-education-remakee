@@ -34,7 +34,7 @@ function ConfirmPolicy() {
         path={[{ url: "/", label: "home" }]}
         current={"Entry Requirement"}
       />
-      <div className="p-5 row">
+      <div className="p-5 row" id="apply-page">
         <div className="col-lg-8 mb-5">
           <h6>
             To properly enrol, make sure you have all the following documents

@@ -27,7 +27,7 @@ nav a {
   padding: 0.8rem 0;
   color: #fff !important;
   margin: 0 1.5rem;
-  font-weight: 400;
+  /* font-weight: 400; */
   position: relative;
   white-space: nowrap;
 }
