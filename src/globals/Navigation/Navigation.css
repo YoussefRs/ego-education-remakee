@@ -31,7 +31,7 @@ nav a {
   /* font-weight: 400; */
   position: relative;
   white-space: nowrap;
-  font-family: 'Gotham Medium' !important;
+  font-family: 'Gotham' !important;
 }
 
 nav .active {

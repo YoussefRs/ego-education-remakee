@@ -8,7 +8,7 @@ export default function InfoWidget({ course }) {
   return (
     <div className="container course-info ">
       <div className="row">
-        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham Light"}}>
+        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -27,7 +27,7 @@ export default function InfoWidget({ course }) {
         </div>
       </div>
       <div className="row">
-        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham Light"}}>
+        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham"}}>
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export default function InfoWidget({ course }) {
         </div>
       </div>
       <div className="row">
-        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham Light"}}>
+        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -65,7 +65,7 @@ export default function InfoWidget({ course }) {
         </div>
       </div>
       <div className="row">
-        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham Light"}}>
+        <div className="col d-flex align-items-center gap-2" style={{fontFamily : "Gotham"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -80,7 +80,7 @@ export default function InfoWidget({ course }) {
           {price} 
         </div>
         <div className="col">
-          <span style={{fontFamily : "Gotham Book"}}>{course?.price}</span>
+          <span style={{fontFamily : "Gotham"}}>{course?.price}</span>
         </div>
       </div>
     </div>
