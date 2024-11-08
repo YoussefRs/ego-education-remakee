@@ -36,9 +36,9 @@ function HomeFeatures_2() {
           <div className="col-xl-6 col-lg-6 col-md-10">
             <div className="section-title mb-4">
               <div className="section-title mb-4 ">
-                <h2 className="container-heading text-start" >
+              {/*   <h2 className="container-heading text-start" >
                   {title}
-                </h2>
+                </h2> */}
                 <h1 className="container-title-extra text-white fw-bold mb-4">
                   {subtitle} <span style={{color: "#ffd23c"}}>{specialWord}</span> {normalWord}
                 </h1>

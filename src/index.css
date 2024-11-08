@@ -50,7 +50,7 @@ h2 {
 }
 
 h3,h4, h5, h6, label {
-  font-family: "Gotham Book" !important;  font-weight: 500 !important;
+  font-family: "Gotham Medium" !important;
 }
 
 p {
@@ -109,22 +109,7 @@ button:focus-visible {
   text-decoration: none;
   border: none;
 }
-.button-white {
-  display: inline-block;
-  width: max-content;
-  font:  16px/24px "Gotham Medium" !important;
-  background: #fff;
-  /* border-radius: 10px !important; */
-  color: #000;
-  padding: 12px 28px;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  border: none;
-}
+
 .button-green:hover {
   /* border: 1px solid #046635;
   background-color: #fff;

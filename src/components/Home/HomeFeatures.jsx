@@ -52,9 +52,9 @@ function HomeFeatures() {
           </div>
           <div className="col-md-6 d-flex align-items-center flex-column justify-content-center gap-4" id="feat">
             <div className="section-header">
-              <h2 className="container-heading text-start" data-aos={"slide-left"}>
+             {/*  <h2 className="container-heading text-start" data-aos={"slide-left"}>
                 {t("home.homeFeatures.sectionHeader.title")}
-              </h2>
+              </h2> */}
               <h1 className="container-title-extra text-start text-white" data-aos={"slide-left"}>
                 {t("home.homeFeatures.sectionHeader.subtitle")}{" "}
                 <span style={{ color: "#ffd23c" }}>life</span>

@@ -12,6 +12,7 @@ nav {
   /* background-color: #046635; */
   transition: 0.5s;
   /* margin-bottom: 0.5rem; */
+  font-family: 'Gotham Medium' !important;
 }
 
 .fixed_nav {
@@ -30,6 +31,7 @@ nav a {
   /* font-weight: 400; */
   position: relative;
   white-space: nowrap;
+  font-family: 'Gotham Medium' !important;
 }
 
 nav .active {
@@ -114,6 +116,7 @@ nav .ham:hover {
     list-style: none;
     & a {
       color: white;
+      font-family: 'Gotham Medium';
     }
     & a:hover {
       color: #046635 !important;
