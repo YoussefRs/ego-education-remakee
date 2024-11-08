@@ -127,7 +127,9 @@
       font-weight: 600;
       margin-left: 0;
       margin-bottom: 1.5rem;
-      font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem)
+      font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
+      font-family: 'Gotham Medium' !important;
+      
     }
   }
   & a {

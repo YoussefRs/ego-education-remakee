@@ -44,9 +44,8 @@ h1 {
 }
 
 h2 {
-  font-family: "Gotham Book" !important;  
+  font-family: "Gotham" !important;  
   font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
-  font-weight: 500 !important;
 }
 
 h3,h4, h5, h6, label {
