@@ -59,7 +59,7 @@ function CourseSlider() {
       <a
         href="/courses"
         className="m-2 text-black fw-bold"
-        style={{ paddingRight: 5, textDecoration: "underline" }}
+        style={{ paddingRight: 5, textDecoration: "underline", fontFamily : 'Gotham Light' }}
       >
         view more
       </a>

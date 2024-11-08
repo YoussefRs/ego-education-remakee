@@ -55,7 +55,7 @@ function HomeFeatures() {
              {/*  <h2 className="container-heading text-start" data-aos={"slide-left"}>
                 {t("home.homeFeatures.sectionHeader.title")}
               </h2> */}
-              <h1 className="container-title-extra text-start text-white" data-aos={"slide-left"}>
+              <h1 className="container-title-extra text-start text-white" data-aos={"slide-left"} style={{ fontFamily : 'Gotham Light'}}>
                 {t("home.homeFeatures.sectionHeader.subtitle")}{" "}
                 <span style={{ color: "#ffd23c" }}>life</span>
               </h1>
@@ -68,7 +68,7 @@ function HomeFeatures() {
               <FontAwesomeIcon icon={faFlask}  className="feature-icon" />
 
               <div className="feature-content">
-                <h4>{t("home.homeFeatures.features.0.title")}</h4>
+                <h4 style={{ fontFamily : 'Gotham Light'}}>{t("home.homeFeatures.features.0.title")}</h4>
                 <p>{t("home.homeFeatures.features.0.description")}</p>
               </div>
             </div>
@@ -76,7 +76,7 @@ function HomeFeatures() {
             <div className="feature" data-aos={"zoom-in"}>
               <FontAwesomeIcon icon={faUsers} className="feature-icon" />
               <div className="feature-content">
-                <h4>{t("home.homeFeatures.features.1.title")}</h4>
+                <h4 style={{ fontFamily : 'Gotham Light'}}>{t("home.homeFeatures.features.1.title")}</h4>
                 <p>{t("home.homeFeatures.features.1.description")}</p>
               </div>
             </div>
@@ -84,7 +84,7 @@ function HomeFeatures() {
             <div className="feature" data-aos={"zoom-in"}>
               <FontAwesomeIcon icon={faComments} className="feature-icon" />
               <div className="feature-content">
-                <h4>{t("home.homeFeatures.features.2.title")}</h4>
+                <h4 style={{ fontFamily : 'Gotham Light'}}>{t("home.homeFeatures.features.2.title")}</h4>
                 <p>{t("home.homeFeatures.features.2.description")}</p>
               </div>
             </div>
