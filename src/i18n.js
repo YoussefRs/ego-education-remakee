@@ -1458,7 +1458,7 @@ i18n
             tab: "Our Courses",
           },
           about: {
-            title: "ABOUTS US",
+            title: "ABOUT US",
             subtitle: "Remarkable Research & Outstanding Teaching",
             specialWord: "Expertise",
             egoWord: "eGO Education",
