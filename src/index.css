@@ -22,7 +22,7 @@ a {
   text-decoration: none !important;
   cursor: pointer;
   /* width: max-content; */
-  font-family: "Gotham Book" !important;  
+  font-family: "Gotham Book";  
 }
 .ego-green {
   color : #046635
