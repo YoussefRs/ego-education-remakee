@@ -104,7 +104,7 @@ function CourseSlider() {
                   </div>
 
                   <div className="slide-content-inner mb-4">
-                    <h2 className="text-start">{course.title}</h2>
+                    <h2 className="text-start" style={{ fontFamily : 'Gotham Light' }}>{course.title}</h2>
                     <p className="text-start text-white">
                       {course.description}
                     </p>

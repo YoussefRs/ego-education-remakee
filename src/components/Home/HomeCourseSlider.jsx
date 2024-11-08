@@ -22,7 +22,7 @@ function HomeCourseSlider() {
   <div className="row">
     <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
       
-     <h1 className="container-title text-black fw-bold ">
+     <h1 className="container-title text-black fw-bold " style={{ fontFamily : 'Gotham Light' }}>
              {subtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
           </h1>
     </div>
