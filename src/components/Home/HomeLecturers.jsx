@@ -14,17 +14,18 @@ function HomeLecturers() {
   }, []);
   return (
     <>
-      <h2
+      {/* <h2
         className="container-heading-green"
         data-aos={"zoom-in"}
         data-aos-delay={"600"}
       >
         {title}
-      </h2>
+      </h2> */}
       <h1
         className="container-title-extra text-center fw-bold"
         data-aos={"zoom-in"}
         data-aos-delay={"600"}
+        style={{fontFamily : 'Gotham Light'}}
       >
         {subtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
       </h1>
