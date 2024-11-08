@@ -39,17 +39,17 @@ h1 {
   font-size: clamp(1.875rem, 1.597rem + 1.5337vw, 3.4375rem);
   text-transform: capitalize;
   /* font-weight: 600; */
-  font-family: "Gotham Medium" !important;  
-  font-weight: 600 !important;
+  font-family: "Gotham";  
+  font-weight: 600;
 }
 
 h2 {
-  font-family: "Gotham" !important;  
+  font-family: "Gotham";  
   font-size: clamp(1.2rem, 1.597rem + 1.5337vw, 1.5rem);
 }
 
 h3,h4, h5, h6, label {
-  font-family: "Gotham Medium" !important;
+  font-family: "Gotham Medium";
 }
 
 p {
