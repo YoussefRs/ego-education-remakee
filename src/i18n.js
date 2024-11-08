@@ -427,7 +427,7 @@ i18n
                     "The programme comprises an online approach promoting the building of a community of practice via peer-to-peer learning which is asynchronous. Students have the freedom and flexibility to access the course at a time which is most convenient to them.",
                   price: "€3000",
                   duration: 2,
-                  category: "computer sicence",
+                  category: "computer science",
                 },
                 {
                   id: "tU1vW2xY",
@@ -514,7 +514,7 @@ i18n
                     "The programme comprises an online approach promoting the building of a community of practice via peer-to-peer learning which is asynchronous. Students have the freedom and flexibility to access the course at a time which is most convenient to them.",
                   price: "€3000",
                   duration: 2,
-                  category: "computer sicence",
+                  category: "computer science",
                 },
                 /*    {
                   id: "JZhfbff4",
