@@ -273,6 +273,37 @@ i18n
                 },
               ],
             },
+            homeTeam: {
+              title: "TEAM",
+              subtitle: "Meet Our",
+              specialWord: "Team",
+              lecturers: [
+                {
+                  name: "Antonio Minelli",
+                  title: "Chief Technology Officer",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli is the Chief Technology Officer at ETLForma, one of Italy's leading IT training organizations. He has overseen technology projects for major clients including Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia, and the Italian Ministry of the Environment. As a seasoned technology veteran, Antonio brings a wealth of real-world experience to every lecture.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
+                },
+                {
+                  name: "Alessandro Iacuelli",
+                  title: "Analyst and teacher",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                },
+                {
+                  name: "Manuele Monti",
+                  title: "Founder and CEO",
+                  organization: "TechBricks",
+                  description:
+                    "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
+                },
+              ],
+            },
             courseDetails: {
               coursesData: [
                 {
@@ -1626,8 +1657,39 @@ i18n
                   img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp"
                 }
               ]
-            }
-,            
+            },
+
+            homeTeam: {
+              title: "EQUIPE",
+              subtitle: "Conheça Nossa",
+              specialWord: "Equipe",
+              lecturers: [
+                {
+                  name: "Antonio Minelli",
+                  title: "Diretor de Tecnologia",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli é o Diretor de Tecnologia na ETLForma, uma das principais organizações de treinamento em TI da Itália. Ele supervisionou projetos de tecnologia para grandes clientes como Telecom Italia, Vodafone, IBM Itália, Nespresso, Finmeccanica, Sony Italia e o Ministério Italiano do Meio Ambiente. Como um veterano experiente em tecnologia, Antonio traz uma riqueza de experiência prática para cada aula.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
+                },
+                {
+                  name: "Alessandro Iacuelli",
+                  title: "Analista e professor",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli é Analista e professor na ETLForma, onde compartilha sua experiência adquirida trabalhando com empresas como Thales Alenia Space, líder global na indústria espacial e segundo maior parceiro industrial da Estação Espacial Internacional. Alessandro também conduziu pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos com inteligência artificial. Sua paixão por resolver problemas complexos inspira todas as suas aulas.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                },
+                {
+                  name: "Manuele Monti",
+                  title: "Fundador e CEO",
+                  organization: "TechBricks",
+                  description:
+                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de lançar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester e gestor de portfólio para a gigante global de energia GDF Suez (agora Engie). O espírito empreendedor de Manuele e sua visão do potencial transformador da tecnologia energizam todas as suas aulas.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
+                },
+              ],
+            },        
 UpcomingCourseSlider: {
   title: "EXPLORAR TODOS OS CURSOS",
   upcomingtitle: "Próximos",
