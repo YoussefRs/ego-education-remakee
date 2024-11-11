@@ -19,6 +19,8 @@ import ConfirmPolicy from "./pages/enrollment/ConfirmPolicy";
 import Policy from "./pages/policy/Policy";
 import Dashboard from "./pages/dash/Dashboard";
 import { useTranslation } from "react-i18next";
+import Cookies from "./components/Home/CookieConsent";
+import CookieConsent from "./components/Home/CookieConsent";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -73,6 +75,8 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <CookieConsent />
+
       {loading ? (
         <Loading />
       ) : (
