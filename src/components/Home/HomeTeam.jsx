@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import director from "../../assets/Team/ADP.jpg";
+import cordinator from "../../assets/Team/CV.png";
 import marketing from "../../assets/Team/MI.jpg";
 import enrol from "../../assets/Team/MA.jpg";
 import logo from "../../assets/Logos/logo-ego-black.png";
@@ -8,24 +9,21 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function HomeTeam() {
+  useEffect(() => {
+    AOS.init({
+      once: false,
+      duration: 500,
+    });
+  }, []);
 
-    useEffect(() => {
-        AOS.init({
-          once: false,
-          duration: 500,
-        });
-      }, []);
-
-    const { t } = useTranslation();
-    const { title, subtitle, specialWord, lecturers } = t("home.homeTeam");
-
+  const { t } = useTranslation();
+  const { title, subtitle, specialWord, lecturers } = t("home.homeTeam");
 
   const teamMembers = [
     {
       name: "Ernesto Pallotta",
       role: "Rector",
-      imgSrc:
-      logo,
+      imgSrc: logo,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",
@@ -51,8 +49,7 @@ function HomeTeam() {
     {
       name: "Gianpiero Rebellato",
       role: "CEO",
-      imgSrc:
-        logo,
+      imgSrc: logo,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",
@@ -65,8 +62,7 @@ function HomeTeam() {
     {
       name: "Youssef Rouissi",
       role: "IT Director",
-      imgSrc:
-        logo,
+      imgSrc: logo,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",
@@ -106,8 +102,7 @@ function HomeTeam() {
     {
       name: "Claudio Vullo",
       role: "Country Manager - Brasil",
-      imgSrc:
-      logo,
+      imgSrc: cordinator,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",
@@ -126,7 +121,7 @@ function HomeTeam() {
           className="container-title-extra text-center fw-bold"
           data-aos={"zoom-in"}
           data-aos-delay={"600"}
-          style={{ fontFamily: "Gotham Light", marginBottom : "3rem" }}
+          style={{ fontFamily: "Gotham Light", marginBottom: "3rem" }}
         >
           {subtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
           {/* test */}
