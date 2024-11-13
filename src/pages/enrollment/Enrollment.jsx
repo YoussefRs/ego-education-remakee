@@ -64,7 +64,8 @@ function Enrollment() {
         <div className="row mb-5">
           <div className="col">
             <select>
-              <option value="option1" onChange={handleInputChange}></option>
+              <option value="" >Choose program</option>
+              <option value="MSc in Information Security" onChange={handleInputChange}>MSc in Information Security</option>
             </select>
           </div>
           <div className="col">
