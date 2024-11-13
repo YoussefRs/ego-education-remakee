@@ -129,6 +129,7 @@ function CoursesDetails() {
   if (!course) {
     return null;
   }
+  
 
   return (
     <>
@@ -156,7 +157,17 @@ function CoursesDetails() {
                       <br />
                     </strong>
                     <p>{course?.slogan}</p>
-                    <Link onClick={openModal}>Apply</Link>
+                    {course?.name === "MSc in Information Security" ? (
+        // Use Link for the "MSc in Information Security" course
+        <Link to={`/apply/${course.id}`} state={{ course }} className="apply-link">
+          Apply
+        </Link>
+      ) : (
+        // Use button to open modal for other courses
+        <button onClick={openModal} className="apply-link">
+          Apply
+        </button>
+      )}
                   </div>
                 </div>
               </div>

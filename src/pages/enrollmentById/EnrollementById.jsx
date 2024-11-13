@@ -7,10 +7,10 @@ function EnrollementById() {
   const location = useLocation();
   const { course, degree, inst } = location.state;
   const [formData, setFormData] = useState({
-    course: course,
+    course: course.name,
     lng: "english",
-    degree: degree,
-    inst: inst,
+    degree: course.degree,
+    inst: course.institute,
     firstName: "",
     lastName: "",
     email: "",
@@ -50,20 +50,21 @@ function EnrollementById() {
     // setFormData({...initialFormData});
   };
 
+
   return (
     <>
       <SubHeader
         title={"Enrollment"}
         path={[{ url: "/enrollment", label: "enrollment" }]}
-        current={`${course}`}
+        current={`${course.name}`}
       />
       <div className="container enrollment d-flex flex-column">
         <h1 className="mb-4">Enrollment Informations</h1>
         <div className="row mb-5">
           <div className="col">
             <select>
-              <option value="option1" onChange={handleInputChange}>
-                {course}{" "}
+              <option value={course.name} onChange={handleInputChange}>
+                {course.name}{" "}
               </option>
             </select>
           </div>
@@ -81,15 +82,15 @@ function EnrollementById() {
         <div className="row mb-5">
           <div className="col">
             <select>
-              <option value="option8" onChange={handleInputChange}>
-                {degree}{" "}
+              <option value={course.degree} onChange={handleInputChange}>
+                {course.degree}{" "}
               </option>
             </select>
           </div>
           <div className="col">
             <select>
               <option value="option5" onChange={handleInputChange}>
-                {inst}{" "}
+                {course.institute}{" "}
               </option>
             </select>
           </div>
