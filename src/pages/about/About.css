@@ -1,3 +1,11 @@
+.about-us-container {
+  max-width: 1440px;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
 .about-us {
   display: flex;
   flex-direction: column;
@@ -417,5 +425,68 @@ textarea.input {
 
   .btnn {
     padding: 0.45rem 1.2rem;
+  }
+}
+
+
+ul.featured {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  color: white;
+}
+ul.featured * {
+  box-sizing: border-box;
+}
+ul.featured .right div {
+  margin-top: 15px;
+}
+.left {
+  background-image: url(../../assets/Team/ERNESTOFULL.png);
+  max-height: 380px;
+  height: 370px;
+}
+.right-top{
+  background-image: url(../../assets/Team/ADP.jpg);
+}
+
+.right-bottom {
+  background-image: url(../../assets/Logos/logo-ego-black.png);
+  max-width: 120px;
+  width: 100px;
+  margin: 0 auto;
+}
+ul.featured .left, ul.featured .right-top, ul.featured .right-bottom {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+ul.featured .text {
+  width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 30% 15px 15px 15px;
+}
+
+@media screen and (min-width: 660px) {
+  ul.featured {
+    display: table;
+    height: 100%;
+  }
+  ul.featured li {
+    display: table-cell;
+    vertical-align: bottom;
+  }
+  ul.featured li.left {
+    width: 66.666%;
+  }
+  ul.featured li.right {
+    width: 33.333%;
+  }
+  ul.featured li.right div {
+    min-height: 50%;
+    margin-top: 0;
   }
 }

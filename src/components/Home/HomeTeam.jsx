@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import director from "../../assets/Team/ADP.jpg";
 import cordinator from "../../assets/Team/CV.png";
+import rector from "../../assets/Team/ERNESTOFULL.png";
 import marketing from "../../assets/Team/MI.jpg";
 import enrol from "../../assets/Team/MA.jpg";
 import logo from "../../assets/Logos/logo-ego-black.png";
@@ -23,7 +24,7 @@ function HomeTeam() {
     {
       name: "Ernesto Pallotta",
       role: "Rector",
-      imgSrc: logo,
+      imgSrc: rector,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",

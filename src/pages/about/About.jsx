@@ -3,6 +3,8 @@ import "./About.css";
 import SubHeader from "../../globals/SubHeader/SubHeader";
 import PartnersSlider from "../../globals/Sliders/PartnersSlider";
 import CourseSlider from "../../globals/Sliders/CourseSlider";
+import rector from "../../assets/Team/ERNESTOFULL.png";
+import director from "../../assets/Team/ADP.jpg";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,30 +27,60 @@ function About() {
         path={[{ url: "/about", label: "Home" }]}
         current={"About"}
       />
-      <div className="it-about-area p-relative mt-5">
+      <div className="about-us-container">
+      <div className="it-about-area p-relative mt-5 margin-auto">
         <div class="container it-about-ctr" data-aos={"zoom-in"}>
           <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6">
-              <div class="it-about-thumb-box p-relative">
+              {/* <div class="it-about-thumb-box p-relative">
                 <div class="it-about-thumb-1 d-none d-xl-block">
                   <img
-                    src="https://ordainit.com/educate/assets/img/about/xthumb-1.jpg.pagespeed.ic.lMYKGt0Rh-.webp"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
                     alt=""
                   />
                 </div>
                 <div class="it-about-thumb-2 d-none d-xl-block">
                   <img
-                    src="https://ordainit.com/educate/assets/img/about/xthumb-2.jpg.pagespeed.ic.vXEBNNCjSj.webp"
+                    src={rector}
                     alt=""
                   />
                 </div>
                 <div class="it-about-main-thumb text-xl-end text-center">
                   <img
-                    src="https://ordainit.com/educate/assets/img/about/xthumb-3.jpg.pagespeed.ic.LWub8q9OcZ.webp"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
                     alt=""
                   />
                 </div>
-              </div>
+              </div> */}
+
+              <ul class="featured">
+                <li class="left">
+                  <div class="text">
+                    {/* <h2>The amazing title</h2>
+      <p>Lorem ipsum dolor</p> */}
+                  </div>
+                </li>
+                <li class="right">
+                  <div class="right-top">
+                    <div class="text">
+                      {/* <h2>Another title</h2>
+        <p>Lorem ipsum</p> */}
+                    </div>
+                  </div>
+                  <div class="right-bottom">
+                    <div class="text">
+                      {/* <h2>A third Title</h2>
+                      <p>
+                        Lorem Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Nostrum debitis dignissimos eaque
+                        autem adipisci quis laudantium eum fuga laborum voluptas
+                        ducimus illum sequi numquam quaerat tenetur velit, dicta
+                        ullam pariatur?
+                      </p> */}
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="col-xl-6 col-lg-6">
               <div class="it-about-right-box">
@@ -132,25 +164,23 @@ function About() {
           </div>
         </div>
       </div>
-     
 
       <div className="swiper-container" data-aos={"zoom-in"}>
-<div className="container mt-5" data-aos={"zoom-in"} >
-  <div className="row">
-    <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
-      
-     <h1 className="container-title text-black fw-bold ">
-     Explore Our Innovative <span style={{ color: "#046635" }}>Courses</span>
-          </h1>
-    </div>
+        <div className="container mt-5" data-aos={"zoom-in"}>
+          <div className="row">
+            <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
+              <h1 className="container-title text-black fw-bold ">
+                Explore Our Innovative{" "}
+                <span style={{ color: "#046635" }}>Courses</span>
+              </h1>
+            </div>
 
-    <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
-    
-<CourseSlider />
-    </div>
-  </div>
-</div>
-</div>
+            <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
+              <CourseSlider />
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="lecturers-section-about d-flex flex-column py-5">
         <h2
@@ -243,6 +273,7 @@ function About() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
