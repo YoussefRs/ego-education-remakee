@@ -823,6 +823,18 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  position: relative;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  img {
+    width: 100%;
+  }
 }
 
 /* .team-9:hover { */

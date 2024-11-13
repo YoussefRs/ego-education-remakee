@@ -3,8 +3,6 @@ import "./About.css";
 import SubHeader from "../../globals/SubHeader/SubHeader";
 import PartnersSlider from "../../globals/Sliders/PartnersSlider";
 import CourseSlider from "../../globals/Sliders/CourseSlider";
-import rector from "../../assets/Team/ERNESTOFULL.png";
-import director from "../../assets/Team/ADP.jpg";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";

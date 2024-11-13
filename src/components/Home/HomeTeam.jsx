@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import director from "../../assets/Team/ADP.jpg";
+import director from "../../assets/Team/fullwhitedaniele.png";
 import cordinator from "../../assets/Team/CV.png";
 import rector from "../../assets/Team/ERNESTOFULL.png";
-import marketing from "../../assets/Team/MI.jpg";
+import marketing from "../../assets/Team/fullwhitemario.png";
 import enrol from "../../assets/Team/MA.jpg";
 import logo from "../../assets/Logos/logo-ego-black.png";
 import { useTranslation } from "react-i18next";
@@ -135,6 +135,13 @@ function HomeTeam() {
                 <div className="team-img">
                   <img src={member.imgSrc} alt={`${member.name} Image`} />
                 </div>
+
+                {member.imgSrc != logo && (
+
+                <div className="logo-img">
+                  <img src={logo} />
+                </div>
+                )}
                 <div className="team-content">
                   <h2>{member.name}</h2>
                   <h3>{member.role}</h3>
