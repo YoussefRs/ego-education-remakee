@@ -129,7 +129,6 @@ function CoursesDetails() {
   if (!course) {
     return null;
   }
-  
 
   return (
     <>
@@ -158,16 +157,18 @@ function CoursesDetails() {
                     </strong>
                     <p>{course?.slogan}</p>
                     {course?.name === "MSc in Information Security" ? (
-        // Use Link for the "MSc in Information Security" course
-        <Link to={`/apply/${course.id}`} state={{ course }} className="apply-link">
-          Apply
-        </Link>
-      ) : (
-        // Use button to open modal for other courses
-        <button onClick={openModal} className="apply-link">
-          Apply
-        </button>
-      )}
+                      <Link
+                        to={`/apply/${course.id}`}
+                        state={{ course }}
+                        className="apply-link"
+                      >
+                        Apply
+                      </Link>
+                    ) : (
+                      <button onClick={openModal} className="apply-link">
+                        Apply
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -680,10 +681,13 @@ function CoursesDetails() {
                                       .
                                       <br />
                                       <br />
-                                      All educational qualifications (such as high school diploma, bachelor’s, master’s) should be apostilled through a certification of value at the Maltese or Italian embassies abroad.
+                                      All educational qualifications (such as
+                                      high school diploma, bachelor’s, master’s)
+                                      should be apostilled through a
+                                      certification of value at the Maltese or
+                                      Italian embassies abroad.
                                       <br />
                                       <br />
-              
                                       Once registration is complete, our team
                                       will review your documents and information
                                       within 72 hours. We&#39;ll email you an
