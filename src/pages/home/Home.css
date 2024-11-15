@@ -19,6 +19,11 @@
   text-align: left;
   z-index: 1;
   margin-bottom: 4rem;
+
+  @media (max-width: 520px) {
+    min-height: fit-content;
+    padding: 5rem 0;
+  }
 }
 
 #home:after {
@@ -870,12 +875,18 @@
   /* letter-spacing: 1px; */
   margin-bottom: 5px;
   
+  @media (max-width : 1200px) {
+    font-size: 15px;
+  }
 }
 
 .team-9 .team-content h3 {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 0;
+  @media (max-width : 1200px) {
+    font-size: 13px;
+  }
 }
 
 .team-9 .team-overlay {
