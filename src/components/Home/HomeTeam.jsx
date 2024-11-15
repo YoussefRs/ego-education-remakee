@@ -35,7 +35,7 @@ function HomeTeam() {
       },
     },
     {
-      name: "Agostino Daniele Pallotta",
+      name: "A.Daniele Pallotta",
       role: "General Director",
       imgSrc: director,
       description: "Some text goes here that describes about team member",
