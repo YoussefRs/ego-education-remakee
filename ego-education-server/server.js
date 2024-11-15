@@ -29,6 +29,9 @@ const cors = require("cors");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+require("dotenv").config();
+
+const PORT = process.env.PORT;
 
 //set directory of where we store files
 
@@ -103,6 +106,12 @@ app.get("/candidates", (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Server is running");
+app.get("/", (req, res) => {
+  return res.status(200).json({
+    msg: "working"
+  })
+})
+
+app.listen(PORT, () => {
+  console.log(`Server is running ${PORT}`);
 });
