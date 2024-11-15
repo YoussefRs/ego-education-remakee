@@ -681,7 +681,7 @@
 }
 
 #lecturers .card .user-content .user-name {
-  margin-right: 150px;
+  margin-right: auto;
   margin-bottom: 2rem;
 }
 
@@ -950,4 +950,16 @@
 
 .team-9 .team-social a:hover {
   background: #222222;
+}
+
+._home_feature_el {
+  font-size: clamp(.9rem, 1rem + 1vw, 1.75rem) !important;
+}
+
+._home_lecturer_name {
+  font-size: clamp(1rem, 1rem + 1vw, 1.4rem) !important;
+}
+
+._home_lecturer_desc {
+  font-size: clamp(.7rem, 1rem + 1vw, 1rem) !important;
 }

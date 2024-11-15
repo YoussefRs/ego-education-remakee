@@ -47,13 +47,13 @@ function HomeLecturers() {
                       />
                     </div> */}
                     <div className="user-content">
-                      <h5 className="text-capitalize user-name">
+                      <h5 className="text-capitalize user-name _home_lecturer_name">
                         {lecturer?.name}
                       </h5>
                       {/* <p className=" text-capitalize text-muted small blockquote-footer">
                         {lecturer?.title}
                       </p> */}
-                      <p className="small text-muted mb-0">
+                      <p className="small text-muted mb-0 _home_lecturer_desc">
                        {lecturer?.description}
                       </p>
                     </div>

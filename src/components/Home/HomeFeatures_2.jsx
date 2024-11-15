@@ -55,8 +55,8 @@ function HomeFeatures_2() {
                 <i>
                   <FontAwesomeIcon icon={feature?.icon} color="#ffd23c"/>
                 </i>
-                <h5 style={{fontFamily : 'Gotham Light'}}>{feature?.title} </h5>
-                <p  style={{ fontSize: "14px" }}>{feature?.description}</p>
+                <h5 style={{fontFamily : 'Gotham Light'}} className="_home_feature_el">{feature?.title} </h5>
+                <p  style={{ fontSize: "14px" }} className="_home_feature_el_desc">{feature?.description}</p>
               </div>
             ))}
           </div>
