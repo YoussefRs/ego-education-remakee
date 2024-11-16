@@ -36,9 +36,15 @@ const PORT = process.env.PORT;
 //set directory of where we store files
 
 const uploadDirectory = "./public/images";
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // This allows requests from any origin
+  })
+);
 app.use(express.json());
 app.use("/public/images", express.static(uploadDirectory));
+
+app.use(express.static(path.join(__dirname, "dist")));
 
 const con = mysql.createConnection({
   host: "127.0.0.1",
@@ -70,6 +76,8 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+app.use(express.static(path.join(__dirname, "../dist")));
 
 //app.post('/upload', upload.single('file'), (req, res) => {
 //  console.log(req.body)
@@ -106,11 +114,11 @@ app.get("/candidates", (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
   return res.status(200).json({
-    msg: "working"
-  })
-})
+    msg: "working",
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running ${PORT}`);

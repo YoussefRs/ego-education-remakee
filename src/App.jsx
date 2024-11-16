@@ -56,7 +56,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://137.184.237.80:8080/');
+        const response = await axios.get('http://localhost:8080/test');
 
         console.log(response.data)
       } catch (err) {
