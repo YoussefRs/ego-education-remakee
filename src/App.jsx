@@ -21,6 +21,7 @@ import Dashboard from "./pages/dash/Dashboard";
 import { useTranslation } from "react-i18next";
 import Cookies from "./components/Home/CookieConsent";
 import CookieConsent from "./components/Home/CookieConsent";
+import axios from "axios";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -50,6 +51,23 @@ function App() {
     const savedLang = localStorage.getItem("selectedLanguage");
     return savedLang ? JSON.parse(savedLang) : languages[0]; // Default to English
   });
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://137.184.237.80:8080/');
+
+        console.log(response.data)
+      } catch (err) {
+        console.log(err) // Handle error
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
 
   useEffect(() => {
     i18n.changeLanguage(selectedLang.code);
