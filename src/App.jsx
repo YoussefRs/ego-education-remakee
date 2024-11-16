@@ -24,7 +24,6 @@ import CookieConsent from "./components/Home/CookieConsent";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
-  
 
   return (
     <>
@@ -41,9 +40,21 @@ function App() {
   const { i18n } = useTranslation();
 
   const languages = [
-    { code: "en", name: "English", flag: "https://cdn.parcellab.com/img/flags/us.png" },
-    { code: "br", name: "Español", flag: "https://cdn.parcellab.com/img/flags/br.png" },
-    { code: "it", name: "Italiano", flag: "https://cdn.parcellab.com/img/flags/it.png" },
+    {
+      code: "en",
+      name: "English",
+      flag: "https://cdn.parcellab.com/img/flags/us.png",
+    },
+    {
+      code: "br",
+      name: "Español",
+      flag: "https://cdn.parcellab.com/img/flags/br.png",
+    },
+    {
+      code: "it",
+      name: "Italiano",
+      flag: "https://cdn.parcellab.com/img/flags/it.png",
+    },
   ];
 
   const [selectedLang, setSelectedLang] = useState(() => {
@@ -51,31 +62,25 @@ function App() {
     return savedLang ? JSON.parse(savedLang) : languages[0]; // Default to English
   });
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://137.184.237.80:8080/");
 
-  import { useEffect } from 'react';
+        // Check if the response is successful
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://137.184.237.80:8080/');
-      
-      // Check if the response is successful
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+        const data = await response.json(); // Parse the JSON response
+        console.log(data);
+      } catch (err) {
+        console.error("Error fetching data:", err); // Handle error
       }
-      
-      const data = await response.json(); // Parse the JSON response
-      console.log(data);
-    } catch (err) {
-      console.error('Error fetching data:', err); // Handle error
-    }
-  };
+    };
 
-  fetchData();
-}, []);
-
-
-
+    fetchData();
+  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(selectedLang.code);
