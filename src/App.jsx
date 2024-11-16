@@ -21,7 +21,6 @@ import Dashboard from "./pages/dash/Dashboard";
 import { useTranslation } from "react-i18next";
 import Cookies from "./components/Home/CookieConsent";
 import CookieConsent from "./components/Home/CookieConsent";
-import axios from "axios";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -53,19 +52,28 @@ function App() {
   });
 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://137.184.237.80:8080/');
+  import { useEffect } from 'react';
 
-        console.log(response.data)
-      } catch (err) {
-        console.log(err) // Handle error
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://137.184.237.80:8080/');
+      
+      // Check if the response is successful
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    };
+      
+      const data = await response.json(); // Parse the JSON response
+      console.log(data);
+    } catch (err) {
+      console.error('Error fetching data:', err); // Handle error
+    }
+  };
 
-    fetchData();
-  }, []);
+  fetchData();
+}, []);
+
 
 
 
