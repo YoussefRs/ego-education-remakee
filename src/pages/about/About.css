@@ -1,5 +1,6 @@
 .about-us-container {
   max-width: 100vw;
+  overflow: hidden;
 }
 
 .margin-auto {
