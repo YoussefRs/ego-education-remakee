@@ -1,10 +1,10 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import i18nextBrowserLanguagedetector from "i18next-browser-languagedetector";
-import MsvJava from "./assets/Courses/MSCJAVA.png";
-import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.png";
-import BscBA from "./assets/Courses/BScinBusinessAdministration.png";
-import Eu from "./assets/Courses/Eu.png";
+import MsvJava from "./assets/Courses/MSCJAVA.webp";
+import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.webp";
+import BscBA from "./assets/Courses/BScinBusinessAdministration.webp";
+import Eu from "./assets/Courses/Eu.webp";
 import MA from "./assets/Home/banner/MA.png";
 import JAVA from "./assets/Home/banner/JAVA.png";
 import Matitle from "./assets/Home/banner/MA-title.png";
