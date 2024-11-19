@@ -44,13 +44,13 @@ app.use(
 app.use(express.json());
 app.use("/public/images", express.static(uploadDirectory));
 
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "../dist")));
 
 const con = mysql.createConnection({
-  host: "127.0.0.1",
+  host: "localhost",
   user: "root",
   password: "youssefdb!",
-  database: "ego_education",
+  database: "my_new_database",
 });
 
 con.connect(function (err) {
