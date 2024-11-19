@@ -2,13 +2,13 @@ import React from "react";
 import "./Partners.css";
 import SubHeader from "../../globals/SubHeader/SubHeader";
 import Italio from "../../assets/partners/ItaloBrasileira.png";
-import uni from "../../assets/partners/uni.png";
+import uni from "../../assets/partners/uni.webp";
 import pegaso from "../../assets/partners/Pegaso.jpg";
 import tech from "../../assets/partners/techricks.png";
 import etl from "../../assets/partners/etlforma.jpg";
 import hetg from "../../assets/partners/hetg.jpeg";
 import idea from "../../assets/partners/ideaeuropa.png";
-import uim from "../../assets/partners/uim.png";
+import uim from "../../assets/partners/uim.webp";
 
 function Partners() {
   const partners = [

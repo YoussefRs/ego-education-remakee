@@ -46,7 +46,7 @@ section.footer {
 }
 .footer-col-2 .col-contents .contact-row span {
   font-size: 16px;
-  font-family: "Gotham Book";
+  font-family: "Gotham";
 }
 .footer-col-2 .col-contents .contact-row span:nth-child(1) {
   color: var(--light-heading-clr);

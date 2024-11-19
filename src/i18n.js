@@ -5,11 +5,11 @@ import MsvJava from "./assets/Courses/MSCJAVA.webp";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.webp";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.webp";
 import Eu from "./assets/Courses/Eu.webp";
-import MA from "./assets/Home/banner/MA.png";
-import JAVA from "./assets/Home/banner/JAVA.png";
+import MA from "./assets/Home/banner/MA.webp";
+import JAVA from "./assets/Home/banner/JAVA.webp";
 import Matitle from "./assets/Home/banner/MA-title.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
-import eubanner from "./assets/Home/banner/eubanner.png";
+import eubanner from "./assets/Home/banner/eubanner.webp";
 import {
   faLaptopCode,
   faPersonChalkboard,
