@@ -53,7 +53,7 @@ console.log(formData)
         }
       }
 
-      const response = await axios.post("http://localhost:8080/create", data, {
+      const response = await axios.post("https://www.ego-education.cloud/create", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
