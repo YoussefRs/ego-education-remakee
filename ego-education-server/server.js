@@ -44,13 +44,13 @@ app.use(
 app.use(express.json());
 app.use("/public/images", express.static(uploadDirectory));
 
-app.use(express.static(path.join(__dirname, "../dist")));
+
 
 const con = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
   password: "youssefdb!",
-  database: "my_new_database",
+  database: "ego_education",
 });
 
 con.connect(function (err) {
@@ -85,22 +85,65 @@ app.use(express.static(path.join(__dirname, "../dist")));
 //  return res.json({Status: "Success"});
 //})
 
-app.post("/create", upload.single("file"), (req, res) => {
-  const filePath = `/public/images/${req.file.filename}`; // Adjust the path as per your file structure
-  const sql =
-    "INSERT INTO candidates (`name`,`email`,`image`, `salary`,`address`) VALUES (?)";
-  const values = [
-    req.body.name,
-    req.body.email,
-    filePath,
-    req.body.salary,
-    req.body.address,
-  ];
-  con.query(sql, [values], (err, result) => {
-    if (err) return res.json({ Error: "Error singup query" });
-    return res.json({ Status: "Success" });
-  });
+app.post("/create", upload.fields([
+  { name: "file1", maxCount: 1 },
+  { name: "file2", maxCount: 1 },
+  { name: "file3", maxCount: 1 },
+  { name: "file4", maxCount: 1 },
+  { name: "file5", maxCount: 1 }
+]), (req, res) => {
+  try {
+    const { name, email, course, lng, phone, date, country, city, gender, address, zip, processingAuthorization, withdrawalAuthorization, advertisingAuthorization } = req.body;
+
+    // Collect uploaded file paths
+    const uploadedFiles = {};
+    ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
+      if (req.files[fileField]) {
+        uploadedFiles[fileField] = req.files[fileField][0].path;
+      }
+    });
+
+    // SQL query to insert data into the database
+    const sql = `
+      INSERT INTO candidates 
+      (name, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, file1, file2, file3, file4, file5, processing_authorization, withdrawal_authorization, advertising_authorization)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    const values = [
+      name,
+      email,
+      course,
+      lng,
+      phone,
+      date,
+      country,
+      city,
+      gender,
+      address,
+      zip,
+      uploadedFiles.file1 || null,
+      uploadedFiles.file2 || null,
+      uploadedFiles.file3 || null,
+      uploadedFiles.file4 || null,
+      uploadedFiles.file5 || null,
+      processingAuthorization === "true",
+      withdrawalAuthorization === "true",
+      advertisingAuthorization === "true",
+    ];
+
+    con.query(sql, values, (err, result) => {
+      if (err) {
+        console.error("Database Error:", err);
+        return res.status(500).json({ Error: "Error in signup query" });
+      }
+      res.json({ Status: "Success", Data: result });
+    });
+  } catch (error) {
+    console.error("Server Error:", error);
+    res.status(500).json({ Error: "Server error occurred" });
+  }
 });
+
 
 // Endpoint to fetch all users
 app.get("/candidates", (req, res) => {
@@ -119,6 +162,8 @@ app.get("/test", (req, res) => {
     msg: "working",
   });
 });
+
+app.use(express.static(path.join(__dirname, "../dist")));
 
 app.listen(PORT, () => {
   console.log(`Server is running ${PORT}`);

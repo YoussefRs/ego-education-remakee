@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import SubHeader from "../../globals/SubHeader/SubHeader";
 import Modal from "../../globals/Modal/Modal";
 import { useModal } from "../../globals/Modal/useModal";
+import axios from "axios";
 
 function Enrollment() {
   const { showModal, openModal, closeModal } = useModal();
   const [formData, setFormData] = useState({
     course: "",
     lng: "",
-    degree: "",
-    inst: "",
-    firstName: "",
+    name: "",
     lastName: "",
     email: "",
     repeatEmail: "",
@@ -30,6 +29,7 @@ function Enrollment() {
     file4: null,
     file5: null,
   });
+
   // Function to handle form input changes
   const handleInputChange = (event) => {
     const { name, value, type, checked, files } = event.target;
@@ -39,14 +39,32 @@ function Enrollment() {
         type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
   };
+console.log(formData)
+  const handleSubmit = async () => {
+    try {
+      const data = new FormData();
+      for (const key in formData) {
+        if (key.startsWith("file")) {
+          if (formData[key]) {
+            data.append(key, formData[key]);
+          }
+        } else {
+          data.append(key, formData[key]);
+        }
+      }
 
-  // Function to send form data to the backend
-  const handleSubmit = () => {
-    // Send formData to the backend using fetch or axios
-    console.log("Form Data:", formData);
-    // Reset form after submission if needed
-    // setFormData({...initialFormData});
+      const response = await axios.post("http://localhost:8080/create", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
+
   return (
     <>
       <SubHeader
@@ -54,54 +72,44 @@ function Enrollment() {
         path={[{ url: "/enrollment", label: "home" }]}
         current={"Apply"}
       />
-      <Modal
-        title="My Modal"
-        show={showModal}
-        onHide={closeModal}
-      ></Modal>
+      <Modal title="My Modal" show={showModal} onHide={closeModal}></Modal>
       <div className="container enrollment d-flex flex-column">
         <h1 className="mb-4">Enrollment Information</h1>
         <div className="row mb-5">
           <div className="col">
-            <select>
-              <option value="" >Choose program</option>
-              <option value="MSc in Information Security" onChange={handleInputChange}>MSc in Information Security</option>
-            </select>
-          </div>
-          <div className="col">
-            <select>
-              <option value="option2" onChange={handleInputChange}>
-                English{" "}
-              </option>
-              <option value="option3" onChange={handleInputChange}>
-                Italian{" "}
+            <select
+              name="course"
+              value={formData.course}
+              onChange={handleInputChange}
+            >
+              <option value="">Choose program</option>
+              <option value="MSc in Information Security">
+                MSc in Information Security
               </option>
             </select>
           </div>
-        </div>
-        <div className="row mb-5">
           <div className="col">
-            <select>
-              <option value="option8" onChange={handleInputChange}></option>
+            <select
+              name="lng"
+              value={formData.lng}
+              onChange={handleInputChange}
+            >
+              <option value="">Choose language</option>
+              <option value="English">English</option>
+              <option value="Italian">Italian</option>
             </select>
           </div>
-          <div className="col">
-            <select>
-              <option value="option5" onChange={handleInputChange}></option>
-            </select>
-          </div>
         </div>
+        <div className="row"></div>
         <div className="row mb-5">
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="first-name">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="First Name*"
                 type="text"
-                name="first-name"
+                name="name"
+                value={formData.name}
                 onChange={handleInputChange}
               />
             </span>
@@ -110,12 +118,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="lastname">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Last Name*"
                 type="text"
-                name="last-name"
+                name="lastName"
+                value={formData.lastName}
                 onChange={handleInputChange}
               />
             </span>
@@ -126,12 +132,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="email">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Email*"
                 type="email"
                 name="email"
+                value={formData.email}
                 onChange={handleInputChange}
               />
             </span>
@@ -140,12 +144,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="email-email">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Repeat Email*"
                 type="email"
-                name="email-email"
+                name="repeatEmail"
+                value={formData.repeatEmail}
                 onChange={handleInputChange}
               />
             </span>
@@ -156,12 +158,11 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="phone">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Telephone / Mobile*"
                 type="number"
                 name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
               />
             </span>
           </div>
@@ -169,12 +170,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="date">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Repeat Email*"
+                placeholder="Date of Birth*"
                 type="date"
                 name="date"
+                value={formData.date}
                 onChange={handleInputChange}
               />
             </span>
@@ -187,9 +186,9 @@ function Enrollment() {
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                  {formData.file1 || "Choose file"}
+                {formData.file1 ? formData.file1.name : "Choose file"}
                 </span>
-                <input type="file" onChange={handleInputChange} />
+                <input type="file" name="file1" onChange={handleInputChange} />
               </label>
             </fieldset>
           </div>
@@ -199,9 +198,9 @@ function Enrollment() {
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                  {formData.file2 || "Choose file"}
+                {formData.file2 ? formData.file2.name : "Choose file"}
                 </span>
-                <input type="file" onChange={handleInputChange} />
+                <input type="file" name="file2" onChange={handleInputChange} />
               </label>
             </fieldset>
           </div>
@@ -213,9 +212,9 @@ function Enrollment() {
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                  {formData.file3 || "Choose file"}
+                {formData.file3 ? formData.file3.name : "Choose file"}
                 </span>
-                <input type="file" onChange={handleInputChange} />
+                <input type="file" name="file3" onChange={handleInputChange} />
               </label>
             </fieldset>
           </div>
@@ -225,9 +224,9 @@ function Enrollment() {
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                  {formData.file4 || "Choose file"}
+                {formData.file4 ? formData.file4.name : "Choose file"}
                 </span>
-                <input type="file" onChange={handleInputChange} />
+                <input type="file" name="file4" onChange={handleInputChange} />
               </label>
             </fieldset>
           </div>
@@ -239,9 +238,9 @@ function Enrollment() {
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                  {formData.file4 || "Choose file"}
+                {formData.file5 ? formData.file5.name : "Choose file"}
                 </span>
-                <input type="file" onChange={handleInputChange} />
+                <input type="file" name="file5" onChange={handleInputChange} />
               </label>
             </fieldset>
           </div>
@@ -252,12 +251,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="country">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Country Of Birth*"
                 type="text"
                 name="country"
+                value={formData.country}
                 onChange={handleInputChange}
               />
             </span>
@@ -266,12 +263,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="city">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="City Of birth*"
+                placeholder="City Of Birth*"
                 type="text"
                 name="city"
+                value={formData.city}
                 onChange={handleInputChange}
               />
             </span>
@@ -279,21 +274,25 @@ function Enrollment() {
         </div>
         <div className="row mb-5">
           <div className="col">
-            <select name="gender" onChange={handleInputChange}>
+            <select
+              name="gender"
+              value={formData.gender}
+              onChange={handleInputChange}
+            >
+              <option value="">Choose gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
+              <option value="Female">Other</option>
             </select>
           </div>
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="address">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Address*"
                 type="text"
                 name="address"
+                value={formData.address}
                 onChange={handleInputChange}
               />
             </span>
@@ -304,12 +303,10 @@ function Enrollment() {
             <span class="wpcf7-form-control-wrap" data-name="zip">
               <input
                 size="40"
-                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
                 placeholder="Zip Code*"
                 type="text"
                 name="zip"
+                value={formData.zip}
                 onChange={handleInputChange}
               />
             </span>
@@ -322,6 +319,7 @@ function Enrollment() {
               <input
                 type="checkbox"
                 name="processingAuthorization"
+                checked={formData.processingAuthorization}
                 onChange={handleInputChange}
               />
               I hereby authorise the processing of my personal data for purposes
@@ -335,6 +333,7 @@ function Enrollment() {
               <input
                 type="checkbox"
                 name="withdrawalAuthorization"
+                checked={formData.withdrawalAuthorization}
                 onChange={handleInputChange}
               />
               It is possible to exercise the right of withdrawal and receive a
@@ -348,6 +347,7 @@ function Enrollment() {
               <input
                 type="checkbox"
                 name="advertisingAuthorization"
+                checked={formData.advertisingAuthorization}
                 onChange={handleInputChange}
               />
               I hereby authorise the processing of my personal data for sending
@@ -357,7 +357,7 @@ function Enrollment() {
         </div>
         <div className="row mt-5 mb-5">
           <div className="col">
-            <button onClick={openModal}>Confirm</button>
+            <button onClick={handleSubmit}>Confirm</button>
           </div>
         </div>
       </div>
