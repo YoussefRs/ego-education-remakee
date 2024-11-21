@@ -10,8 +10,8 @@ const AppicantRow = ({ data }) => {
         <div className="_fname">{data.firstName}</div>
         <div className="_lname">{data.lastName}</div>
         <div className="_email">{data.email}</div>
-        <div className="_tel">{data.telephone}</div>
-        <div className="_dob">{data.dateOfBirth}</div>
+        <div className="_tel">{data.phone}</div>
+        <div className="_dob">{data.date_of_birth}</div>
         <div
           className="_details"
           onClick={() => {

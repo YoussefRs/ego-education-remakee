@@ -49,6 +49,7 @@
 .dash_container ._dash_table_box ._dash_table ._header ._details,
 .dash_container ._dash_table_box ._dash_table ._body ._applicant_row ._details {
     width: 10%;
+    cursor: pointer;
 }
 
 /* } */
@@ -93,5 +94,5 @@
 }
 
 .dash_container ._dash_table_box ._dash_table {
-    min-width: 1400px;
+    min-width: 100%;
 }

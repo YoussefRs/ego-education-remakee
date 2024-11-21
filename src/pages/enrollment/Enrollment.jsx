@@ -9,7 +9,7 @@ function Enrollment() {
   const [formData, setFormData] = useState({
     course: "",
     lng: "",
-    name: "",
+    firstName: "",
     lastName: "",
     email: "",
     repeatEmail: "",
@@ -39,7 +39,7 @@ function Enrollment() {
         type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
   };
-console.log(formData)
+  
   const handleSubmit = async () => {
     try {
       const data = new FormData();
@@ -108,8 +108,8 @@ console.log(formData)
                 size="40"
                 placeholder="First Name*"
                 type="text"
-                name="name"
-                value={formData.name}
+                name="firstName"
+                value={formData.firstName}
                 onChange={handleInputChange}
               />
             </span>
@@ -186,7 +186,7 @@ console.log(formData)
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                {formData.file1 ? formData.file1.name : "Choose file"}
+                  {formData.file1 ? formData.file1.name : "Choose file"}
                 </span>
                 <input type="file" name="file1" onChange={handleInputChange} />
               </label>
@@ -198,7 +198,7 @@ console.log(formData)
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                {formData.file2 ? formData.file2.name : "Choose file"}
+                  {formData.file2 ? formData.file2.name : "Choose file"}
                 </span>
                 <input type="file" name="file2" onChange={handleInputChange} />
               </label>
@@ -212,7 +212,7 @@ console.log(formData)
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                {formData.file3 ? formData.file3.name : "Choose file"}
+                  {formData.file3 ? formData.file3.name : "Choose file"}
                 </span>
                 <input type="file" name="file3" onChange={handleInputChange} />
               </label>
@@ -224,7 +224,7 @@ console.log(formData)
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                {formData.file4 ? formData.file4.name : "Choose file"}
+                  {formData.file4 ? formData.file4.name : "Choose file"}
                 </span>
                 <input type="file" name="file4" onChange={handleInputChange} />
               </label>
@@ -238,7 +238,7 @@ console.log(formData)
 
               <label class="__lk-fileInput">
                 <span data-default="Choose file">
-                {formData.file5 ? formData.file5.name : "Choose file"}
+                  {formData.file5 ? formData.file5.name : "Choose file"}
                 </span>
                 <input type="file" name="file5" onChange={handleInputChange} />
               </label>

@@ -7,7 +7,8 @@ USE ego_education;
 -- Create the candidates table
 CREATE TABLE candidates (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     course VARCHAR(255),
     language VARCHAR(50),

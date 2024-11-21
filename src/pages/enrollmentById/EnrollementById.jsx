@@ -31,7 +31,7 @@ function EnrollementById() {
     file4: null,
     file5: null,
   });
-  console.log(formData);
+  
   // Function to handle form input changes
   const handleInputChange = (event) => {
     const { name, value, type, checked, files } = event.target;

@@ -5,6 +5,7 @@ import logo from "../../assets/Logos/logo-ego-white.png";
 import { useNavigate } from "react-router-dom";
 import AppicantRow from "./components/ApplicantRow/AppicantRow";
 import LoginModal from "./components/LoginModal/LoginModal";
+import axios from "axios";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -228,6 +229,26 @@ const Dashboard = () => {
     setShowModal(true);
   }, []);
 
+  const [candidates, setCandidates] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchCandidates = async () => {
+      try {
+        const response = await axios.get("https://www.ego-education.cloud/candidates"); // Adjust the URL if necessary
+        setCandidates(response.data.Data); // Assuming your backend response is structured with Data key
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching candidates:", err);
+        setError("Failed to fetch candidates. Please try again later.");
+        setLoading(false);
+      }
+    };
+
+    fetchCandidates();
+  }, []);
+
   return (
     <>
       {authState && (
@@ -279,7 +300,7 @@ const Dashboard = () => {
                 </div> */}
               </div>
               <div className="_body">
-                {data.map((dt, i) => (
+                {candidates.map((dt, i) => (
                   <AppicantRow data={dt} key={i} />
                 ))}
               </div>

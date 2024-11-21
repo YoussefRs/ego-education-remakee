@@ -1,27 +1,3 @@
-// const express = require("express");
-// const app = express();
-// const cookieParser = require("cookie-parser");
-// const cors = require("cors");
-// const candidate = require("./router/candidateRoute");
-// const { createConnection } = require("./config/db");
-
-// createConnection();
-
-// app.use(
-//   cors({
-//     origin: "*",
-//     optionSuccessStatus: 200,
-//   })
-// );
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-// app.use(cookieParser());
-
-// app.use("/form", candidate);
-
-// app.listen(9090, () => {
-//   console.log("Server alive on port 9090");
-// });
 const express = require("express");
 const app = express();
 const mysql = require("mysql2");
@@ -41,16 +17,14 @@ app.use(
     origin: "*", // This allows requests from any origin
   })
 );
-app.use(express.json());
+app.use(express.json({ limit: "100mb" }));
 app.use("/public/images", express.static(uploadDirectory));
 
-
-
 const con = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "youssefdb!",
-  database: "ego_education",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 con.connect(function (err) {
@@ -79,95 +53,136 @@ const upload = multer({ storage });
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
-//app.post('/upload', upload.single('file'), (req, res) => {
-//  console.log(req.body)
-//  console.log(req.file)
-//  return res.json({Status: "Success"});
-//})
+app.post(
+  "/create",
+  upload.fields([
+    { name: "file1", maxCount: 1 },
+    { name: "file2", maxCount: 1 },
+    { name: "file3", maxCount: 1 },
+    { name: "file4", maxCount: 1 },
+    { name: "file5", maxCount: 1 },
+  ]),
+  (req, res) => {
+    try {
+      const {
+        firstName,
+        lastName,
+        email,
+        course,
+        lng,
+        phone,
+        date,
+        country,
+        city,
+        gender,
+        address,
+        zip,
+        processingAuthorization,
+        withdrawalAuthorization,
+        advertisingAuthorization,
+      } = req.body;
 
-app.post("/create", upload.fields([
-  { name: "file1", maxCount: 1 },
-  { name: "file2", maxCount: 1 },
-  { name: "file3", maxCount: 1 },
-  { name: "file4", maxCount: 1 },
-  { name: "file5", maxCount: 1 }
-]), (req, res) => {
-  try {
-    const { name, email, course, lng, phone, date, country, city, gender, address, zip, processingAuthorization, withdrawalAuthorization, advertisingAuthorization } = req.body;
+      // Collect uploaded file paths
+      const uploadedFiles = {};
+      ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
+        if (req.files[fileField]) {
+          uploadedFiles[fileField] = req.files[fileField][0].path;
+        }
+      });
 
-    // Collect uploaded file paths
-    const uploadedFiles = {};
-    ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
-      if (req.files[fileField]) {
-        uploadedFiles[fileField] = req.files[fileField][0].path;
-      }
-    });
-
-    // SQL query to insert data into the database
-    const sql = `
+      // SQL query to insert data into the database
+      const sql = `
       INSERT INTO candidates 
-      (name, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, file1, file2, file3, file4, file5, processing_authorization, withdrawal_authorization, advertising_authorization)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      (firstName, lastName, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, file1, file2, file3, file4, file5, processing_authorization, withdrawal_authorization, advertising_authorization)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    const values = [
-      name,
-      email,
-      course,
-      lng,
-      phone,
-      date,
-      country,
-      city,
-      gender,
-      address,
-      zip,
-      uploadedFiles.file1 || null,
-      uploadedFiles.file2 || null,
-      uploadedFiles.file3 || null,
-      uploadedFiles.file4 || null,
-      uploadedFiles.file5 || null,
-      processingAuthorization === "true",
-      withdrawalAuthorization === "true",
-      advertisingAuthorization === "true",
-    ];
+      const values = [
+        firstName,
+        lastName,
+        email,
+        course,
+        lng,
+        phone,
+        date,
+        country,
+        city,
+        gender,
+        address,
+        zip,
+        uploadedFiles.file1 || null,
+        uploadedFiles.file2 || null,
+        uploadedFiles.file3 || null,
+        uploadedFiles.file4 || null,
+        uploadedFiles.file5 || null,
+        processingAuthorization === "true",
+        withdrawalAuthorization === "true",
+        advertisingAuthorization === "true",
+      ];
 
-    con.query(sql, values, (err, result) => {
-      if (err) {
-        console.error("Database Error:", err);
-        return res.status(500).json({ Error: "Error in signup query" });
-      }
-      res.json({ Status: "Success", Data: result });
-    });
-  } catch (error) {
-    console.error("Server Error:", error);
-    res.status(500).json({ Error: "Server error occurred" });
+      con.query(sql, values, (err, result) => {
+        if (err) {
+          console.error("Database Error:", err);
+          return res.status(500).json({ Error: "Error in signup query" });
+        }
+        res.json({ Status: "Success", Data: result });
+      });
+    } catch (error) {
+      console.error("Server Error:", error);
+      res.status(500).json({ Error: "Server error occurred" });
+    }
   }
-});
-
+);
 
 // Endpoint to fetch all users
 app.get("/candidates", (req, res) => {
-  const sql = "SELECT * FROM candidates"; // Assuming 'user' is the table name
-  con.query(sql, (err, result) => {
+  const sql = `
+    SELECT 
+      id, firstName, lastName, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, 
+      file1, file2, file3, file4, file5, 
+      processing_authorization, withdrawal_authorization, advertising_authorization
+    FROM candidates
+  `;
+
+  con.query(sql, (err, results) => {
     if (err) {
-      console.error("Error fetching users:", err);
-      return res.status(500).json({ error: "Error fetching users" });
+      console.error("Database Error:", err);
+      return res.status(500).json({ Error: "Error fetching data" });
     }
-    return res.status(200).json(result); // Return the fetched users
+    res.json({ Status: "Success", Data: results });
   });
 });
 
-app.get("/test", (req, res) => {
-  return res.status(200).json({
-    msg: "working",
+app.get("/candidate/:id", (req, res) => {
+  const candidateId = req.params.id;
+
+  const sql = `
+    SELECT 
+      id, name, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, 
+      file1, file2, file3, file4, file5, 
+      processing_authorization, withdrawal_authorization, advertising_authorization
+    FROM candidates
+    WHERE id = ?
+  `;
+
+  con.query(sql, [candidateId], (err, result) => {
+    if (err) {
+      console.error("Database Error:", err);
+      return res.status(500).json({ Error: "Error fetching data" });
+    }
+
+    if (result.length === 0) {
+      return res.status(404).json({ Error: "Candidate not found" });
+    }
+
+    res.json({ Status: "Success", Data: result[0] });
   });
 });
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
 // Handle all other routes by serving index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist", "index.html"));
 });
 
 app.listen(PORT, () => {

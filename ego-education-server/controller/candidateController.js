@@ -29,7 +29,6 @@ async function submitForm(req, res) {
   try {
     const formData = req.body; // Form data (first name, last name, etc.)
     const fileData = req.file; 
-    console.log(fileData)
 
     // Check if file was uploaded
     if (!fileData) {
