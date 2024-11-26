@@ -73,7 +73,8 @@ function Enrollment() {
   const handleSubmit = async () => {
     try {
       setLoading(true);
-setShowApplyModal(true);
+      setShowApplyModal(true); // Open modal immediately when submit is clicked
+  
       const data = new FormData();
       for (const key in formData) {
         if (key.startsWith("file")) {
@@ -84,17 +85,18 @@ setShowApplyModal(true);
           data.append(key, formData[key]);
         }
       }
-
-      const response = await axios.post(`${apiUrl}/create`, data, {
+  
+      await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+  
       setFormData(initialData);
     } catch (error) {
       console.log("Error submitting form:", error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Update the loading state when the request finishes
     }
   };
 
