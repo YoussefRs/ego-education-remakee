@@ -73,6 +73,7 @@ function Enrollment() {
   const handleSubmit = async () => {
     try {
       setLoading(true);
+setShowApplyModal(true);
       const data = new FormData();
       for (const key in formData) {
         if (key.startsWith("file")) {
@@ -89,7 +90,6 @@ function Enrollment() {
           "Content-Type": "multipart/form-data",
         },
       });
-      setShowApplyModal(true);
       setFormData(initialData);
     } catch (error) {
       console.log("Error submitting form:", error);
