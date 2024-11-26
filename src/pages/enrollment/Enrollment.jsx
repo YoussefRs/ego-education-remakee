@@ -74,7 +74,7 @@ function Enrollment() {
     try {
       setLoading(true);
       setShowApplyModal(true); // Open modal immediately when submit is clicked
-  
+
       const data = new FormData();
       for (const key in formData) {
         if (key.startsWith("file")) {
@@ -85,13 +85,13 @@ function Enrollment() {
           data.append(key, formData[key]);
         }
       }
-  
+
       await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-  
+
       setFormData(initialData);
     } catch (error) {
       console.log("Error submitting form:", error);
@@ -396,7 +396,9 @@ function Enrollment() {
         </div>
         <div className="row mt-5 mb-5">
           <div className="col">
-            <button onClick={handleSubmit}>Confirm</button>
+            <button onClick={handleSubmit} disabled={loading}>
+              {loading ? "..." : "Submit"}{" "}
+            </button>
           </div>
         </div>
       </div>
