@@ -73,8 +73,8 @@ function Enrollment() {
   const handleSubmit = async () => {
     try {
       setLoading(true);
-      setShowApplyModal(true); // Open modal immediately when submit is clicked
-
+      setShowApplyModal(true); // Open modal immediately
+  
       const data = new FormData();
       for (const key in formData) {
         if (key.startsWith("file")) {
@@ -85,20 +85,24 @@ function Enrollment() {
           data.append(key, formData[key]);
         }
       }
-
+  
       await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
+  
       setFormData(initialData);
     } catch (error) {
       console.log("Error submitting form:", error);
     } finally {
-      setLoading(false); // Update the loading state when the request finishes
+      // Delay to ensure the loading screen is visible
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000); // Adjust delay time as needed (e.g., 1 second)
     }
   };
+  
 
   const hideApplyModal = () => {
     setShowApplyModal(false);
