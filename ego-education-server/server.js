@@ -266,7 +266,7 @@ app.post(
         });
       });
     } catch (error) {
-      console.error("Server Error:", error);
+      console.log("Server Error:", error);
       res.status(500).json({ Error: "Server error occurred" });
     }
   }

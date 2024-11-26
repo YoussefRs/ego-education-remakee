@@ -5,11 +5,14 @@ import { useModal } from "../../globals/Modal/useModal";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
 import "./enrolment.css";
+import Loading from "../../globals/Loading/Loading";
+import logo from "../../assets/Logos/logo-ego-black.png";
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
   const { showModal, openModal, closeModal } = useModal();
   const [showApplyModal, setShowApplyModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const initialData = {
     course: "",
     lng: "",
@@ -69,6 +72,7 @@ function Enrollment() {
 
   const handleSubmit = async () => {
     try {
+      setLoading(true);
       const data = new FormData();
       for (const key in formData) {
         if (key.startsWith("file")) {
@@ -89,6 +93,8 @@ function Enrollment() {
       setFormData(initialData);
     } catch (error) {
       console.log("Error submitting form:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -394,29 +400,41 @@ function Enrollment() {
       </div>
 
       <Modal
-        size="lg"
+        size="md"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={showApplyModal}
         onHide={hideApplyModal}
       >
         <section id="lead-capture">
-          <section class="visuals"></section>
+          <section class="visuals">
+            <img src={logo} />
+          </section>
           <section class="readables">
             <div id="please">
-              <h2> Thank you for your application!</h2>
-              <br />
-              We sincerely appreciate your interest in joining us. Your
-              application has been received successfully. An email confirmation
-              has been sent to you, and we will carefully review your
-              application. Our team will get back to you as soon as possible
-              with the next steps.
-              <br />
-              <br />
-              <span>
-                Thank you for your patience, and we look forward to connecting
-                with you soon!
-              </span>
+              {loading ? (
+                <span>
+                  Please wait while your file is being uploaded. This may take a
+                  moment depending on the size of the file. Thank you for your
+                  patience!
+                </span>
+              ) : (
+                <>
+                  <h2> Thank you for your application!</h2>
+                  <br />
+                  We sincerely appreciate your interest in joining us. Your
+                  application has been received successfully. An email
+                  confirmation has been sent to you, and we will carefully
+                  review your application. Our team will get back to you as soon
+                  as possible with the next steps.
+                  <br />
+                  <br />
+                  <span>
+                    Thank you for your patience, and we look forward to
+                    connecting with you soon!
+                  </span>
+                </>
+              )}
             </div>
           </section>
         </section>

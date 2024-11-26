@@ -2,7 +2,8 @@ section#lead-capture {
   background: #ffffff;
   box-shadow: 0 10px 30px #e8e3d5;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
   padding: 12px;
   width: 100%;
@@ -11,16 +12,17 @@ section#lead-capture {
 section#lead-capture .visuals,
 section#lead-capture .readables {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 section#lead-capture .visuals {
-  background: url(../../assets/Logos/logo-ego-black.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 12px;
-  width: 40%;
 }
 section#lead-capture .readables {
-  width: 60%;
+  width: 100%;
   padding: 0px 0 24px 24px;
 }
 section#lead-capture .readables li {
