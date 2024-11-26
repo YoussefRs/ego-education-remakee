@@ -258,7 +258,7 @@ app.post(
 
         transporter.sendMail(mailOptions, (emailErr, info) => {
           if (emailErr) {
-            console.error("Email Error:", emailErr);
+            console.log("Email Error:", emailErr);
             return res.status(500).json({ Error: "Error sending email" });
           }
 
