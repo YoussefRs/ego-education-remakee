@@ -396,7 +396,11 @@ function Enrollment() {
         </div>
         <div className="row mt-5 mb-5">
           <div className="col">
-            <button onClick={handleSubmit} disabled={loading}>
+            <button
+              onClick={handleSubmit}
+              style={{ opacity: loading ? 0.5 : 1 }}
+              disabled={loading}
+            >
               {loading ? "..." : "Submit"}{" "}
             </button>
           </div>
