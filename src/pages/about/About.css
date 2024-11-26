@@ -444,13 +444,14 @@ ul.featured * {
 ul.featured .right div {
   margin-top: 15px;
 }
-.left {
-  background-image: url(../../assets/Team/ERNESTOFULL.png);
+.left_ {
+  background-image: url(../../assets/Team/ERNESTOFULL.webp);
   max-height: 380px;
   height: 370px;
 }
 .right-top{
-  background-image: url(../../assets/Team/fullwhitedaniele.png);
+  background-image: url(../../assets/Team/fullwhitedaniele.webp);
+  
 }
 
 .right-bottom {
@@ -459,7 +460,7 @@ ul.featured .right div {
   width: 100px;
   margin: 0 auto;
 }
-ul.featured .left, ul.featured .right-top, ul.featured .right-bottom {
+ul.featured .left_, ul.featured .right-top, ul.featured .right-bottom {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -480,7 +481,7 @@ ul.featured .text {
     display: table-cell;
     vertical-align: bottom;
   }
-  ul.featured li.left {
+  ul.featured li.left_ {
     width: 66.666%;
   }
   ul.featured li.right {

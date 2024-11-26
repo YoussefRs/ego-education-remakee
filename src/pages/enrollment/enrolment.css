@@ -1,0 +1,156 @@
+section#lead-capture {
+  background: #ffffff;
+  box-shadow: 0 10px 30px #e8e3d5;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  padding: 12px;
+  width: 100%;
+  gap: 36px;
+}
+section#lead-capture .visuals,
+section#lead-capture .readables {
+  width: 100%;
+}
+section#lead-capture .visuals {
+  background: url(../../assets/Logos/logo-ego-black.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  width: 40%;
+}
+section#lead-capture .readables {
+  width: 60%;
+  padding: 0px 0 24px 24px;
+}
+section#lead-capture .readables li {
+  list-style: "✔   ";
+  line-height: 1.75;
+  letter-spacing: 0.25px;
+}
+section#lead-capture .readables li::marker {
+  color: #00c000;
+}
+section#lead-capture .readables form {
+  border-radius: 12px;
+  display: flex;
+}
+section#lead-capture .readables form input[type="email"],
+section#lead-capture .readables form :-webkit-autofill {
+  border-radius: 12px;
+  background: #faf9f6;
+  box-shadow: inset 2px 0 15px rgba(113, 104, 78, 0.15);
+  border: none;
+  padding: 0 18px;
+  line-height: 44px;
+  width: 100%;
+  color: #008d00;
+  -webkit-text-fill-color: #008d00;
+  -webkit-transition: 400ms ease all 0s;
+  transition: 400ms ease all 0s;
+}
+section#lead-capture .readables form input[type="email"]::placeholder,
+section#lead-capture .readables form :-webkit-autofill::placeholder {
+  color: rgba(113, 104, 78, 0.5);
+  -webkit-transition: 400ms ease all 500ms;
+  transition: 400ms ease all 500ms;
+}
+section#lead-capture .readables form input[type="email"]:focus,
+section#lead-capture .readables form :-webkit-autofill:focus {
+  outline: transparent;
+  box-shadow: inset 0 0 1px 1px rgba(182, 177, 162, 0.5),
+    inset 2px 0 15px rgba(0, 100, 0, 0.33);
+  color: #008d00;
+}
+section#lead-capture .readables form input[type="email"]:focus::placeholder,
+section#lead-capture .readables form :-webkit-autofill:focus::placeholder {
+  color: rgba(113, 104, 78, 0.2);
+}
+section#lead-capture .readables form input[type="email"]:valid,
+section#lead-capture .readables form :-webkit-autofill:valid {
+  border-radius: 12px 0 0 12px;
+  -webkit-transition: 400ms ease all 500ms;
+  transition: 400ms ease all 500ms;
+  box-shadow: inset 0 0 1px 1px rgba(0, 192, 0, 0.5),
+    inset 2px 0 15px rgba(0, 100, 0, 0.33);
+}
+section#lead-capture .readables form input[type="submit"] {
+  border-radius: 0 12px 12px 0;
+  border: none;
+  background: #009f00;
+  padding: 0;
+  width: 0;
+  opacity: 0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 400ms ease padding 0s, 400ms ease width 0s, 400ms ease opacity 0s,
+    400ms ease background 0s;
+}
+section#lead-capture
+  .readables
+  form
+  input[type="email"]:valid
+  ~ input[type="submit"] {
+  padding: 0 18px;
+  width: 120px;
+  opacity: 1;
+  transition: 400ms ease padding 500ms, 400ms ease width 500ms,
+    400ms ease opacity 500ms, 400ms ease background 0s;
+}
+section#lead-capture
+  .readables
+  form
+  input[type="email"]:valid
+  ~ input[type="submit"]:hover {
+  background: #00b300;
+}
+section#lead-capture .readables span.fine-print {
+  opacity: 0.75;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  margin: 18px 0 0;
+  position: relative;
+  text-align: center;
+  padding: 0 0 0 32px;
+  text-align: left;
+}
+section#lead-capture .readables span.fine-print div.lock-icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  opacity: 0.333;
+}
+section#lead-capture #please {
+  transition: 400ms opacity 0ms;
+}
+section#lead-capture #thanks {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 100%;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: 400ms opacity 400ms;
+}
+@media screen and (max-width: 800px) {
+  section#lead-capture #lead-capture {
+    flex-direction: row;
+  }
+  section#lead-capture .visuals {
+    display: none;
+  }
+  section#lead-capture .readables {
+    width: 100%;
+    padding-right: 24px;
+  }
+  section#lead-capture span.fine-print {
+    max-width: 42ch;
+  }
+}

@@ -52,7 +52,7 @@ function About() {
               </div> */}
 
               <ul class="featured">
-                <li class="left">
+                <li class="left_">
                   <div class="text">
                     {/* <h2>The amazing title</h2>
       <p>Lorem ipsum dolor</p> */}

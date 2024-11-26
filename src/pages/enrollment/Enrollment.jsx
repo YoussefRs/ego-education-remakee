@@ -1,11 +1,38 @@
 import React, { useState } from "react";
 import SubHeader from "../../globals/SubHeader/SubHeader";
-import Modal from "../../globals/Modal/Modal";
+import CModal from "../../globals/Modal/Modal";
 import { useModal } from "../../globals/Modal/useModal";
 import axios from "axios";
+import { Modal } from "react-bootstrap";
+import "./enrolment.css";
 
 function Enrollment() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const { showModal, openModal, closeModal } = useModal();
+  const [showApplyModal, setShowApplyModal] = useState(false);
+  const initialData = {
+    course: "",
+    lng: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    repeatEmail: "",
+    phone: "",
+    date: "",
+    country: "",
+    city: "",
+    gender: "",
+    address: "",
+    zip: "",
+    processingAuthorization: false,
+    withdrawalAuthorization: false,
+    advertisingAuthorization: false,
+    file1: null,
+    file2: null,
+    file3: null,
+    file4: null,
+    file5: null,
+  };
   const [formData, setFormData] = useState({
     course: "",
     lng: "",
@@ -39,7 +66,7 @@ function Enrollment() {
         type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
   };
-  
+
   const handleSubmit = async () => {
     try {
       const data = new FormData();
@@ -53,16 +80,20 @@ function Enrollment() {
         }
       }
 
-      const response = await axios.post("https://www.ego-education.cloud/create", data, {
+      const response = await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      console.log("Response:", response.data);
+      setShowApplyModal(true);
+      setFormData(initialData);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
+  };
+
+  const hideApplyModal = () => {
+    setShowApplyModal(false);
   };
 
   return (
@@ -72,7 +103,7 @@ function Enrollment() {
         path={[{ url: "/enrollment", label: "home" }]}
         current={"Apply"}
       />
-      <Modal title="My Modal" show={showModal} onHide={closeModal}></Modal>
+      <CModal title="My Modal" show={showModal} onHide={closeModal}></CModal>
       <div className="container enrollment d-flex flex-column">
         <h1 className="mb-4">Enrollment Information</h1>
         <div className="row mb-5">
@@ -361,6 +392,35 @@ function Enrollment() {
           </div>
         </div>
       </div>
+
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={showApplyModal}
+        onHide={hideApplyModal}
+      >
+        <section id="lead-capture">
+          <section class="visuals"></section>
+          <section class="readables">
+            <div id="please">
+              <h2> Thank you for your application!</h2>
+              <br />
+              We sincerely appreciate your interest in joining us. Your
+              application has been received successfully. An email confirmation
+              has been sent to you, and we will carefully review your
+              application. Our team will get back to you as soon as possible
+              with the next steps.
+              <br />
+              <br />
+              <span>
+                Thank you for your patience, and we look forward to connecting
+                with you soon!
+              </span>
+            </div>
+          </section>
+        </section>
+      </Modal>
     </>
   );
 }

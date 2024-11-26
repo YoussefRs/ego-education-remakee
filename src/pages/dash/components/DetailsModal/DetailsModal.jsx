@@ -4,8 +4,12 @@ import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const DetailsModal = ({ data, show, handleClose }) => {
+
+  const apiUrl = import.meta.env.VITE_API_URL;
+
+  
   const handleDownload = (filePath) => {
-    const url = `http://localhost:8080/${filePath}`;
+    const url = `${apiUrl}/${filePath}`;
     window.open(url, "_blank");
   };
 
@@ -46,59 +50,59 @@ const DetailsModal = ({ data, show, handleClose }) => {
     >
       <Modal.Header closeButton>
         <Modal.Title>
-          {data.firstName} {data.lastName}
+          {data?.firstName} {data?.lastName}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="_detail_row">
           <p className="_detail_label">Email:</p>
-          <p className="_detail_value">{data.email}</p>
+          <p className="_detail_value">{data?.email}</p>
         </div>
         <div className="_detail_row">
           <p className="_detail_label">Telephone:</p>
-          <p className="_detail_value">{data.phone}</p>
+          <p className="_detail_value">{data?.phone}</p>
         </div>
         <div className="_detail_row">
           <p className="_detail_label">Date of birth:</p>
-          <p className="_detail_value">{data.date_of_birth}</p>
+          <p className="_detail_value">{data?.date_of_birth}</p>
         </div>
-        {data.gender && (
+        {data?.gender && (
           <div className="_detail_row">
             <p className="_detail_label">Gender:</p>
-            <p className="_detail_value">{data.gender}</p>
+            <p className="_detail_value">{data?.gender}</p>
           </div>
         )}
-        {data.country_of_birth && (
+        {data?.country_of_birth && (
           <div className="_detail_row">
             <p className="_detail_label">Country of birth:</p>
-            <p className="_detail_value">{data.country_of_birth}</p>
+            <p className="_detail_value">{data?.country_of_birth}</p>
           </div>
         )}
-        {data.city_of_birth && (
+        {data?.city_of_birth && (
           <div className="_detail_row">
             <p className="_detail_label">City of birth:</p>
-            <p className="_detail_value">{data.city_of_birth}</p>
+            <p className="_detail_value">{data?.city_of_birth}</p>
           </div>
         )}
 
-        {data.address && (
+        {data?.address && (
           <div className="_detail_row">
             <p className="_detail_label">Address:</p>
-            <p className="_detail_value">{data.address}</p>
+            <p className="_detail_value">{data?.address}</p>
           </div>
         )}
-        {data.zip_code && (
+        {data?.zip_code && (
           <div className="_detail_row">
             <p className="_detail_label">Zip code:</p>
-            <p className="_detail_value">{data.zip_code}</p>
+            <p className="_detail_value">{data?.zip_code}</p>
           </div>
         )}
         <div className="_pdf_boxes">
           {renderFileDownloadButton("Academic Career", "file1")}
           {renderFileDownloadButton("Degree Obtained", "file2")}
           {renderFileDownloadButton("CV", "file3")}
-          {renderFileDownloadButton("Additional Document 1", "file4")}
-          {renderFileDownloadButton("Additional Document 2", "file5")}
+          {renderFileDownloadButton("Copy of a valid identification document", "file4")}
+          {renderFileDownloadButton("Linguistic certification", "file5")}
         </div>
       </Modal.Body>
     </Modal>

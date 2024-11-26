@@ -9,6 +9,7 @@ import axios from "axios";
 import DetailsModal from "./components/DetailsModal/DetailsModal";
 
 const Dashboard = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [showModalCandidate, setShowModalCandidate] = useState(false);
@@ -232,14 +233,28 @@ const Dashboard = () => {
   }, []);
 
   const [candidates, setCandidates] = useState([]);
+  const [candidate, setCandidate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  function formatDate(dateString) {
+    const date = new Date(dateString); // Convert the ISO string to a Date object
+    const options = { 
+      weekday: 'long', // e.g., Monday
+      year: 'numeric', 
+      month: 'long', // e.g., November
+      day: 'numeric'  // e.g., 25
+    };
+  
+    // Format the date as a localized string
+    return date.toLocaleDateString('en-US', options);
+  }
 
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await axios.get("https://www.ego-education.cloud/candidates"); // Adjust the URL if necessary
-        setCandidates(response.data.Data); // Assuming your backend response is structured with Data key
+        const response = await axios.get(`${apiUrl}/candidates`); 
+        setCandidates(response.data.Data); 
         setLoading(false);
       } catch (err) {
         console.error("Error fetching candidates:", err);
@@ -254,6 +269,58 @@ const Dashboard = () => {
   const handleClose = () => {
     setShowModalCandidate(false);
   };
+
+  const deleteCandidate = async (candidateId) => {
+    try {
+      const response = await axios.delete(`${apiUrl}/candidates/${candidateId}`);
+      alert("Candidate deleted successfully!");
+    } catch (error) {
+      console.error("Error deleting candidate:", error);
+      alert(error.response?.data?.Error || "An error occurred while deleting the candidate.");
+    }
+  };
+
+
+  const filterLinks = (data) => {
+    return data.map(row => {
+      const filteredRow = { ...row };  // Clone the row to avoid modifying the original data
+      Object.keys(filteredRow).forEach(key => {
+        // If the value is a URL (using a basic check for links), replace it with an empty string
+        if (typeof filteredRow[key] === 'string' && filteredRow[key].startsWith('http')) {
+          filteredRow[key] = '';  // Remove the link or replace it with any placeholder like "[Link Removed]"
+        }
+      });
+      return filteredRow;
+    });
+  };
+
+// Function to export the data to CSV
+function exportToCSV(filename, data) {
+  const csvRows = [];
+
+  // Extract the headers (keys from the first object)
+  const headers = Object.keys(data[0]);
+  csvRows.push(headers.join(','));
+
+  // Loop through the data and generate rows
+  data.forEach(row => {
+      const values = headers.map(header => row[header]);
+      csvRows.push(values.join(','));
+  });
+
+  // Create a Blob from the CSV string
+  const csvString = csvRows.join('\n');
+  const blob = new Blob([csvString], { type: 'text/csv' });
+
+  // Create a link element to trigger the download
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+
+  // Trigger a click to start the download
+  link.click();
+}
+
 
   return (
     <>
@@ -744,7 +811,7 @@ const Dashboard = () => {
                             stroke-linejoin="round"
                           />
                         </svg>
-                        <span>1 Jan - 1 Feb 2022</span>
+                        <span onClick={exportToCSV}>Export CSV</span>
                       </div>
                     </div>
                     <table class="transaction-history">
@@ -810,8 +877,10 @@ const Dashboard = () => {
                         </th>
                         <th>Action</th>
                       </tr>
+                    {candidates?.map((cd, i) => (
 
-                      <tr>
+                  
+                      <tr key={i}>
                         <td>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -827,29 +896,12 @@ const Dashboard = () => {
                               d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
                             />
                           </svg>
-                          Bank Transfer
+                         {cd.firstName} {cd.lastName}
                         </td>
-                        <td>Jan 06,2022</td>
-                        <td>$2,000.00</td>
+                        <td>{cd.email}</td>
+                        <td>{formatDate(cd.created_at)} </td>
                         <td>
-                          <svg
-                            class="status"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              width="16"
-                              height="16"
-                              rx="8"
-                              fill="#DB2719"
-                              fill-opacity="0.3"
-                            />
-                            <circle cx="8" cy="8" r="4" fill="#DB2719" />
-                          </svg>
-                          On Hold
+                          {cd.course}
                         </td>
                         <td>
                           <svg
@@ -860,7 +912,10 @@ const Dashboard = () => {
                             class="bi bi-eye-fill"
                             viewBox="0 0 16 16"
                             style={{ marginRight: 15, cursor: "pointer" }}
-                            onClick={() => setShowModalCandidate(true)}
+                            onClick={() => {
+                              setShowModalCandidate(true)
+                              setCandidate(cd)
+                            }}
                           >
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
@@ -873,11 +928,13 @@ const Dashboard = () => {
                             class="bi bi-trash3-fill"
                             viewBox="0 0 16 16"
                             style={{ cursor: "pointer" }}
+                            onClick={() => deleteCandidate(cd.id)}
                           >
                             <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
                           </svg>
                         </td>
                       </tr>
+                        ))}
                     </table>
                   </div>
                 </div>
@@ -1106,7 +1163,7 @@ const Dashboard = () => {
       />
 
       <DetailsModal
-        data={candidates}
+        data={candidate}
         show={showModalCandidate}
         handleClose={() => {
           setShowModalCandidate(false);

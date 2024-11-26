@@ -71,6 +71,7 @@
     color: #046635;
     font-weight: 700;
     margin-right: .75rem;
+    font-size: 16px;
 }
 
 .details_modal ._pdf_boxes {
@@ -127,7 +128,7 @@
 @media (min-width: 768px) {
     .details_modal ._pdf_boxes ._pdf_boxe {
         width: calc((100% - 2rem) / 2);
-        height: 250px;
+        /* height: 250px; */
         margin-bottom: 1rem;
         padding: 15px;
     }
@@ -146,4 +147,8 @@
     }
 }
 
-.details_modal {}
+.details_modal {
+    ._detail_value {
+        font-size: 16px;
+    }
+}

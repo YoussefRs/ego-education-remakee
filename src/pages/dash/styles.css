@@ -331,6 +331,7 @@ tr > td {
     font-size: 14px;
     letter-spacing: -2%;
     padding: 8px 0;
+    text-transform: capitalize;
 }
 
 tr > td:first-child {
