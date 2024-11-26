@@ -88,7 +88,7 @@ function Enrollment() {
       setShowApplyModal(true);
       setFormData(initialData);
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.log("Error submitting form:", error);
     }
   };
 
