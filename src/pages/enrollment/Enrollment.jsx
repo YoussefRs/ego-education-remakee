@@ -13,6 +13,8 @@ function Enrollment() {
   const { showModal, openModal, closeModal } = useModal();
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
   const initialData = {
     course: "",
     lng: "",
@@ -70,11 +72,44 @@ function Enrollment() {
     }));
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.course) newErrors.course = "Course is required.";
+    if (!formData.firstName) newErrors.firstName = "First name is required.";
+    if (!formData.lastName) newErrors.lastName = "Last name is required.";
+    if (!formData.email) newErrors.email = "Email is required.";
+    if (formData.email && !/^\S+@\S+\.\S+$/.test(formData.email))
+      newErrors.email = "Invalid email format.";
+    if (formData.email !== formData.repeatEmail)
+      newErrors.repeatEmail = "Emails do not match.";
+    if (!formData.phone) newErrors.phone = "Phone number is required.";
+    if (!formData.date) newErrors.date = "Date of birth is required.";
+    if (!formData.file1) newErrors.file1 = "Academic career file is required.";
+    if (!formData.file2) newErrors.file2 = "Degree obtained file is required.";
+    if (!formData.file3) newErrors.file3 = "CV file is required.";
+    if (!formData.file4)
+      newErrors.file4 = "Valid identification document is required.";
+    if (!formData.country) newErrors.country = "Country of birth is required.";
+    if (!formData.city) newErrors.city = "City of birth is required.";
+    if (!formData.gender) newErrors.gender = "Gender is required.";
+    if (!formData.address) newErrors.address = "Address is required.";
+    if (!formData.zip) newErrors.zip = "ZIP code is required.";
+    if (!formData.processingAuthorization)
+      newErrors.processingAuthorization = "Authorization is required.";
+
+    setErrors(newErrors);
+
+    // Return true if no errors, otherwise false
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async () => {
     try {
+      if (!validateForm()) return;
       setLoading(true);
-      setShowApplyModal(true); // Open modal immediately
-  
+      setShowApplyModal(true); // Open modal immediately when submit is clicked
+
       const data = new FormData();
       for (const key in formData) {
         if (key.startsWith("file")) {
@@ -85,24 +120,20 @@ function Enrollment() {
           data.append(key, formData[key]);
         }
       }
-  
+
       await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-  
+
       setFormData(initialData);
     } catch (error) {
       console.log("Error submitting form:", error);
     } finally {
-      // Delay to ensure the loading screen is visible
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000); // Adjust delay time as needed (e.g., 1 second)
+      setLoading(false); // Update the loading state when the request finishes
     }
   };
-  
 
   const hideApplyModal = () => {
     setShowApplyModal(false);
@@ -124,12 +155,14 @@ function Enrollment() {
               name="course"
               value={formData.course}
               onChange={handleInputChange}
+              required
             >
               <option value="">Choose program</option>
               <option value="MSc in Information Security">
                 MSc in Information Security
               </option>
             </select>
+            {errors.course && <div className="error">{errors.course}</div>}
           </div>
           <div className="col">
             <select
@@ -154,8 +187,12 @@ function Enrollment() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.firstName && (
+              <div className="error">{errors.firstName}</div>
+            )}
           </div>
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="lastname">
@@ -166,8 +203,10 @@ function Enrollment() {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.lastName && <div className="error">{errors.lastName}</div>}
           </div>
         </div>
         <div className="row mb-5">
@@ -180,8 +219,10 @@ function Enrollment() {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.email && <div className="error">{errors.email}</div>}
           </div>
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="email-email">
@@ -192,8 +233,12 @@ function Enrollment() {
                 name="repeatEmail"
                 value={formData.repeatEmail}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.repeatEmail && (
+              <div className="error">{errors.repeatEmail}</div>
+            )}
           </div>
         </div>
         <div className="row mb-5">
@@ -206,8 +251,10 @@ function Enrollment() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.phone && <div className="error">{errors.phone}</div>}
           </div>
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="date">
@@ -218,8 +265,10 @@ function Enrollment() {
                 name="date"
                 value={formData.date}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.date && <div className="error">{errors.date}</div>}
           </div>
         </div>
         <div className="row mb-5">
@@ -231,8 +280,15 @@ function Enrollment() {
                 <span data-default="Choose file">
                   {formData.file1 ? formData.file1.name : "Choose file"}
                 </span>
-                <input type="file" name="file1" onChange={handleInputChange} />
+                <input
+                  type="file"
+                  name="file1"
+                  onChange={handleInputChange}
+                  required
+                />
               </label>
+
+              {errors.file1 && <div className="error">{errors.file1}</div>}
             </fieldset>
           </div>
           <div className="col d-flex justify-content-center">
@@ -243,8 +299,14 @@ function Enrollment() {
                 <span data-default="Choose file">
                   {formData.file2 ? formData.file2.name : "Choose file"}
                 </span>
-                <input type="file" name="file2" onChange={handleInputChange} />
+                <input
+                  type="file"
+                  name="file2"
+                  onChange={handleInputChange}
+                  required
+                />
               </label>
+              {errors.file2 && <div className="error">{errors.file2}</div>}
             </fieldset>
           </div>
         </div>
@@ -257,8 +319,14 @@ function Enrollment() {
                 <span data-default="Choose file">
                   {formData.file3 ? formData.file3.name : "Choose file"}
                 </span>
-                <input type="file" name="file3" onChange={handleInputChange} />
+                <input
+                  type="file"
+                  name="file3"
+                  onChange={handleInputChange}
+                  required
+                />
               </label>
+              {errors.file3 && <div className="error">{errors.file3}</div>}
             </fieldset>
           </div>
           <div className="col d-flex justify-content-center">
@@ -269,8 +337,14 @@ function Enrollment() {
                 <span data-default="Choose file">
                   {formData.file4 ? formData.file4.name : "Choose file"}
                 </span>
-                <input type="file" name="file4" onChange={handleInputChange} />
+                <input
+                  type="file"
+                  name="file4"
+                  onChange={handleInputChange}
+                  required
+                />
               </label>
+              {errors.file4 && <div className="error">{errors.file4}</div>}
             </fieldset>
           </div>
         </div>
@@ -299,8 +373,10 @@ function Enrollment() {
                 name="country"
                 value={formData.country}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.country && <div className="error">{errors.country}</div>}
           </div>
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="city">
@@ -311,8 +387,10 @@ function Enrollment() {
                 name="city"
                 value={formData.city}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.city && <div className="error">{errors.city}</div>}
           </div>
         </div>
         <div className="row mb-5">
@@ -321,12 +399,14 @@ function Enrollment() {
               name="gender"
               value={formData.gender}
               onChange={handleInputChange}
+              required
             >
               <option value="">Choose gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Female">Other</option>
             </select>
+            {errors.gender && <div className="error">{errors.gender}</div>}
           </div>
           <div className="col">
             <span class="wpcf7-form-control-wrap" data-name="address">
@@ -339,6 +419,7 @@ function Enrollment() {
                 onChange={handleInputChange}
               />
             </span>
+            {errors.address && <div className="error">{errors.address}</div>}
           </div>
         </div>
         <div className="row mb-5">
@@ -351,8 +432,10 @@ function Enrollment() {
                 name="zip"
                 value={formData.zip}
                 onChange={handleInputChange}
+                required
               />
             </span>
+            {errors.zip && <div className="error">{errors.zip}</div>}
           </div>
         </div>
         <h1 className="mt-5 mb-4">Privacy</h1>
@@ -366,7 +449,7 @@ function Enrollment() {
                 onChange={handleInputChange}
               />
               I hereby authorise the processing of my personal data for purposes
-              related to the performance of institutional activities (Read more)
+              related to the performance of institutional activities.
             </label>
           </div>
         </div>
@@ -380,7 +463,7 @@ function Enrollment() {
                 onChange={handleInputChange}
               />
               It is possible to exercise the right of withdrawal and receive a
-              refund of the fees paid within 7 days of registration
+              refund of the fees paid within 7 days of registration.
             </label>
           </div>
         </div>
@@ -394,7 +477,7 @@ function Enrollment() {
                 onChange={handleInputChange}
               />
               I hereby authorise the processing of my personal data for sending
-              advertising material (Read more)
+              advertising material.
             </label>
           </div>
         </div>
@@ -402,10 +485,20 @@ function Enrollment() {
           <div className="col">
             <button
               onClick={handleSubmit}
-              style={{ opacity: loading ? 0.5 : 1 }}
-              disabled={loading}
+              className={`submit-btn ${
+                formData.advertisingAuthorization &&
+                formData.withdrawalAuthorization &&
+                formData.processingAuthorization
+                  ? ""
+                  : "disabled"
+              }`}
+              disabled={
+                !formData.advertisingAuthorization ||
+                !formData.withdrawalAuthorization ||
+                !formData.processingAuthorization
+              }
             >
-              {loading ? "..." : "Submit"}{" "}
+              {loading ? "..." : "Submit"}
             </button>
           </div>
         </div>
