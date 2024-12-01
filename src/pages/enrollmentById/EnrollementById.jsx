@@ -180,7 +180,7 @@ const handleSubmit = async () => {
         <div className="row"></div>
         <div className="row mb-5">
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="first-name">
+            <span className="wpcf7-form-control-wrap" data-name="first-name">
               <input
                 size="40"
                 placeholder="First Name*"
@@ -196,7 +196,7 @@ const handleSubmit = async () => {
             )}
           </div>
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="lastname">
+            <span className="wpcf7-form-control-wrap" data-name="lastname">
               <input
                 size="40"
                 placeholder="Last Name*"
@@ -212,7 +212,7 @@ const handleSubmit = async () => {
         </div>
         <div className="row mb-5">
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="email">
+            <span className="wpcf7-form-control-wrap" data-name="email">
               <input
                 size="40"
                 placeholder="Email*"
@@ -226,7 +226,7 @@ const handleSubmit = async () => {
             {errors.email && <div className="error">{errors.email}</div>}
           </div>
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="email-email">
+            <span className="wpcf7-form-control-wrap" data-name="email-email">
               <input
                 size="40"
                 placeholder="Repeat Email*"
@@ -244,7 +244,7 @@ const handleSubmit = async () => {
         </div>
         <div className="row mb-5">
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="phone">
+            <span className="wpcf7-form-control-wrap" data-name="phone">
               <input
                 size="40"
                 placeholder="Telephone / Mobile*"
@@ -258,7 +258,7 @@ const handleSubmit = async () => {
             {errors.phone && <div className="error">{errors.phone}</div>}
           </div>
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="date">
+            <span className="wpcf7-form-control-wrap" data-name="date">
               <input
                 size="40"
                 placeholder="Date of Birth*"
@@ -277,7 +277,7 @@ const handleSubmit = async () => {
             <fieldset>
               <legend>Academic career*</legend>
 
-              <label class="__lk-fileInput">
+              <label className="__lk-fileInput">
                 <span data-default="Choose file">
                   {formData.file1 ? formData.file1.name : "Choose file"}
                 </span>
@@ -296,7 +296,7 @@ const handleSubmit = async () => {
             <fieldset>
               <legend>Degree obtained*</legend>
 
-              <label class="__lk-fileInput">
+              <label className="__lk-fileInput">
                 <span data-default="Choose file">
                   {formData.file2 ? formData.file2.name : "Choose file"}
                 </span>
@@ -316,7 +316,7 @@ const handleSubmit = async () => {
             <fieldset>
               <legend>CV*</legend>
 
-              <label class="__lk-fileInput">
+              <label className="__lk-fileInput">
                 <span data-default="Choose file">
                   {formData.file3 ? formData.file3.name : "Choose file"}
                 </span>
@@ -334,7 +334,7 @@ const handleSubmit = async () => {
             <fieldset>
               <legend>Copy of a valid identification document*</legend>
 
-              <label class="__lk-fileInput">
+              <label className="__lk-fileInput">
                 <span data-default="Choose file">
                   {formData.file4 ? formData.file4.name : "Choose file"}
                 </span>
@@ -354,7 +354,7 @@ const handleSubmit = async () => {
             <fieldset>
               <legend>Linguistic certification (if obtained)</legend>
 
-              <label class="__lk-fileInput">
+              <label className="__lk-fileInput">
                 <span data-default="Choose file">
                   {formData.file5 ? formData.file5.name : "Choose file"}
                 </span>
@@ -366,7 +366,7 @@ const handleSubmit = async () => {
         <h1 className="mt-5 mb-4">Additional Information</h1>
         <div className="row mb-5">
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="country">
+            <span className="wpcf7-form-control-wrap" data-name="country">
               <input
                 size="40"
                 placeholder="Country Of Birth*"
@@ -380,7 +380,7 @@ const handleSubmit = async () => {
             {errors.country && <div className="error">{errors.country}</div>}
           </div>
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="city">
+            <span className="wpcf7-form-control-wrap" data-name="city">
               <input
                 size="40"
                 placeholder="City Of Birth*"
@@ -410,7 +410,7 @@ const handleSubmit = async () => {
             {errors.gender && <div className="error">{errors.gender}</div>}
           </div>
           <div className="col">
-            <span class="wpcf7-form-control-wrap" data-name="address">
+            <span className="wpcf7-form-control-wrap" data-name="address">
               <input
                 size="40"
                 placeholder="Address*"
@@ -425,7 +425,7 @@ const handleSubmit = async () => {
         </div>
         <div className="row mb-5">
           <div className="col-6">
-            <span class="wpcf7-form-control-wrap" data-name="zip">
+            <span className="wpcf7-form-control-wrap" data-name="zip">
               <input
                 size="40"
                 placeholder="Zip Code*"
@@ -513,10 +513,10 @@ const handleSubmit = async () => {
         onHide={hideApplyModal}
       >
         <section id="lead-capture">
-          <section class="visuals">
+          <section className="visuals">
             <img src={logo} />
           </section>
-          <section class="readables">
+          <section className="readables">
             <div id="please">
               {loading ? (
                 <span>

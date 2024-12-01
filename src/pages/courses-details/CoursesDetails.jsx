@@ -243,7 +243,7 @@ function CoursesDetails() {
                           width="16"
                           height="16"
                           fill="currentColor"
-                          class="bi bi-clock"
+                          className="bi bi-clock"
                           viewBox="0 0 16 16"
                         >
                           <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
@@ -421,10 +421,10 @@ function CoursesDetails() {
                       {/* <h2 className="mb-4 fw-bold">Entry Requirements</h2> */}
                       <div className="tab row">
                         <div className="col">
-                          <div class="content">
+                          <div className="content">
                             {isImage1Visible && isImage2Visible && (
-                              <div class="grid">
-                                <figure class="effect-layla">
+                              <div className="grid">
+                                <figure className="effect-layla">
                                   <img
                                     src="https://t3.ftcdn.net/jpg/04/11/83/68/360_F_411836831_iAmsQWfsq1NZoid8XwiM60iz0WDTjGsI.jpg"
                                     alt="img06"
@@ -436,7 +436,7 @@ function CoursesDetails() {
                                     <a onClick={handleImage1Click}>View more</a>
                                   </figcaption>
                                 </figure>
-                                <figure class="effect-layla">
+                                <figure className="effect-layla">
                                   <img
                                     src="https://media.istockphoto.com/id/1353308759/photo/businesswoman-hand-using-laptop-computer-with-document-management-icon.jpg?b=1&s=612x612&w=0&k=20&c=5YFpNOseQK2jcjmY733eGP0y830EK4tqhSx-W8JSb9o="
                                     alt="img03"
@@ -474,15 +474,15 @@ function CoursesDetails() {
                                       width="16"
                                       height="16"
                                       fill="currentColor"
-                                      class="bi bi-box-arrow-left"
+                                      className="bi bi-box-arrow-left"
                                       viewBox="0 0 16 16"
                                     >
                                       <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
                                       />
                                       <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
                                       />
                                     </svg>
@@ -502,7 +502,7 @@ function CoursesDetails() {
                                       width="25"
                                       height="25"
                                       fill="currentColor"
-                                      class="bi bi-dot"
+                                      className="bi bi-dot"
                                       viewBox="0 0 16 16"
                                     >
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -520,7 +520,7 @@ function CoursesDetails() {
                                       width="25"
                                       height="25"
                                       fill="currentColor"
-                                      class="bi bi-dot"
+                                      className="bi bi-dot"
                                       viewBox="0 0 16 16"
                                     >
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -538,7 +538,7 @@ function CoursesDetails() {
                                       width="25"
                                       height="25"
                                       fill="currentColor"
-                                      class="bi bi-dot"
+                                      className="bi bi-dot"
                                       viewBox="0 0 16 16"
                                     >
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -552,7 +552,7 @@ function CoursesDetails() {
                                       width="25"
                                       height="25"
                                       fill="currentColor"
-                                      class="bi bi-dot"
+                                      className="bi bi-dot"
                                       viewBox="0 0 16 16"
                                     >
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -568,7 +568,7 @@ function CoursesDetails() {
                                       width="25"
                                       height="25"
                                       fill="currentColor"
-                                      class="bi bi-dot"
+                                      className="bi bi-dot"
                                       viewBox="0 0 16 16"
                                     >
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -582,7 +582,7 @@ function CoursesDetails() {
 
                                   <br />
                                   <li>
-                                    <div class="content">
+                                    <div className="content">
                                       Linguistic certifications held among the
                                       following, if not native or not possessing
                                       a degree in the following languages:
@@ -593,7 +593,7 @@ function CoursesDetails() {
                                           width="25"
                                           height="25"
                                           fill="currentColor"
-                                          class="bi bi-dot"
+                                          className="bi bi-dot"
                                           viewBox="0 0 16 16"
                                         >
                                           <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -613,7 +613,7 @@ function CoursesDetails() {
                                                     width="25"
                                                     height="10"
                                                     fill="currentColor"
-                                                    class="bi bi-dot"
+                                                    className="bi bi-dot"
                                                     viewBox="0 0 16 16"
                                                   >
                                                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -632,7 +632,7 @@ function CoursesDetails() {
                                           width="25"
                                           height="25"
                                           fill="currentColor"
-                                          class="bi bi-dot"
+                                          className="bi bi-dot"
                                           viewBox="0 0 16 16"
                                         >
                                           <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -652,7 +652,7 @@ function CoursesDetails() {
                                                     width="25"
                                                     height="10"
                                                     fill="currentColor"
-                                                    class="bi bi-dot"
+                                                    className="bi bi-dot"
                                                     viewBox="0 0 16 16"
                                                   >
                                                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -766,15 +766,15 @@ function CoursesDetails() {
                                       width="16"
                                       height="16"
                                       fill="currentColor"
-                                      class="bi bi-box-arrow-left"
+                                      className="bi bi-box-arrow-left"
                                       viewBox="0 0 16 16"
                                     >
                                       <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
                                       />
                                       <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
                                       />
                                     </svg>
@@ -929,9 +929,9 @@ function CoursesDetails() {
                       <div className="row">
                         {/*  <div className="col mb-2">
                           {" "}
-                          <div class="outer">
-                            <div class="progress dark">
-                              <div class="left">
+                          <div className="outer">
+                            <div className="progress dark">
+                              <div className="left">
                                 <div className="fw-bold">Part Time</div>
                                 <div>Semester 1</div>
                                 <div>Semester 2</div>
@@ -939,7 +939,7 @@ function CoursesDetails() {
                                 <div>Semester 4</div>
                                 <div>Semester 5</div>
                               </div>
-                              <div class="right">
+                              <div className="right">
                                 <div className="fw-bold">32 Months</div>
                                 <div>Module 1, 2</div>
                                 <div>Module 3, 4</div>
@@ -951,15 +951,15 @@ function CoursesDetails() {
                           </div>
                         </div> */}
 
-                        <div class="row">
-                          <div class="col">
+                        <div className="row">
+                          <div className="col">
                             <div
-                              class="timeline-steps aos-init aos-animate"
+                              className="timeline-steps aos-init aos-animate"
                               data-aos="fade-up"
                             >
-                              <div class="timeline-step">
+                              <div className="timeline-step">
                                 <div
-                                  class="timeline-content"
+                                  className="timeline-content"
                                   data-toggle="popover"
                                   data-trigger="hover"
                                   data-placement="top"
@@ -967,17 +967,17 @@ function CoursesDetails() {
                                   data-content="And here's some amazing content. It's very engaging. Right?"
                                   data-original-title="2003"
                                 >
-                                  <div class="inner-circle"></div>
-                                  <p class="h6 mt-3 mb-1">Semester 1</p>
-                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                  <div className="inner-circle"></div>
+                                  <p className="h6 mt-3 mb-1">Semester 1</p>
+                                  <p className="h6 text-muted mb-0 mb-lg-0">
                                     Module 1/2/3/4
                                   </p>
                                 </div>
                               </div>
 
-                              <div class="timeline-step">
+                              <div className="timeline-step">
                                 <div
-                                  class="timeline-content"
+                                  className="timeline-content"
                                   data-toggle="popover"
                                   data-trigger="hover"
                                   data-placement="top"
@@ -985,16 +985,16 @@ function CoursesDetails() {
                                   data-content="And here's some amazing content. It's very engaging. Right?"
                                   data-original-title="2005"
                                 >
-                                  <div class="inner-circle"></div>
-                                  <p class="h6 mt-3 mb-1">Semester 2</p>
-                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                  <div className="inner-circle"></div>
+                                  <p className="h6 mt-3 mb-1">Semester 2</p>
+                                  <p className="h6 text-muted mb-0 mb-lg-0">
                                     Module 5/6 + dissertation kick off
                                   </p>
                                 </div>
                               </div>
-                              <div class="timeline-step">
+                              <div className="timeline-step">
                                 <div
-                                  class="timeline-content"
+                                  className="timeline-content"
                                   data-toggle="popover"
                                   data-trigger="hover"
                                   data-placement="top"
@@ -1002,16 +1002,16 @@ function CoursesDetails() {
                                   data-content="And here's some amazing content. It's very engaging. Right?"
                                   data-original-title="2005"
                                 >
-                                  <div class="inner-circle"></div>
-                                  <p class="h6 mt-3 mb-1">Semester 3</p>
-                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                  <div className="inner-circle"></div>
+                                  <p className="h6 mt-3 mb-1">Semester 3</p>
+                                  <p className="h6 text-muted mb-0 mb-lg-0">
                                     Complete dissertation
                                   </p>
                                 </div>
                               </div>
-                              <div class="timeline-step">
+                              <div className="timeline-step">
                                 <div
-                                  class="timeline-content"
+                                  className="timeline-content"
                                   data-toggle="popover"
                                   data-trigger="hover"
                                   data-placement="top"
@@ -1019,9 +1019,9 @@ function CoursesDetails() {
                                   data-content="And here's some amazing content. It's very engaging. Right?"
                                   data-original-title="2010"
                                 >
-                                  <div class="inner-circle-extra"></div>
-                                  <p class="h6 mt-3 mb-1">Final</p>
-                                  <p class="h6 text-muted mb-0 mb-lg-0">
+                                  <div className="inner-circle-extra"></div>
+                                  <p className="h6 mt-3 mb-1">Final</p>
+                                  <p className="h6 text-muted mb-0 mb-lg-0">
                                     Graduation
                                   </p>
                                 </div>

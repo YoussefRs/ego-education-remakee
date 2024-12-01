@@ -117,7 +117,7 @@ function HomeTeam() {
 
   return (
     <>
-      <div class="team-container">
+      <div className="team-container">
         <h1
           className="container-title-extra text-center fw-bold"
           data-aos={"zoom-in"}
@@ -128,7 +128,7 @@ function HomeTeam() {
           {/* test */}
         </h1>
 
-        <div class="row">
+        <div className="row">
           {teamMembers.map((member, index) => (
             <div className="column" key={index} data-aos={"flip-up"}>
               <div className="team-9">

@@ -49,7 +49,7 @@ function ConfirmPolicy() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-dot"
+                className="bi bi-dot"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -66,7 +66,7 @@ function ConfirmPolicy() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-dot"
+                className="bi bi-dot"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -83,7 +83,7 @@ function ConfirmPolicy() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-dot"
+                className="bi bi-dot"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -97,7 +97,7 @@ function ConfirmPolicy() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-dot"
+                className="bi bi-dot"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -111,7 +111,7 @@ function ConfirmPolicy() {
                 width="25"
                 height="25"
                 fill="currentColor"
-                class="bi bi-dot"
+                className="bi bi-dot"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -123,7 +123,7 @@ function ConfirmPolicy() {
             </li>
             <br />
             <li>
-              <div class="content">
+              <div className="content">
                 Linguistic certifications held among the following, if not
                 native or not possessing a degree in the following languages:
                 <ul className="custom-list-style">
@@ -133,7 +133,7 @@ function ConfirmPolicy() {
                     width="25"
                     height="25"
                     fill="currentColor"
-                    class="bi bi-dot"
+                    className="bi bi-dot"
                     viewBox="0 0 16 16"
                   >
                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -150,7 +150,7 @@ function ConfirmPolicy() {
                             width="25"
                             height="10"
                             fill="currentColor"
-                            class="bi bi-dot"
+                            className="bi bi-dot"
                             viewBox="0 0 16 16"
                           >
                             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -168,7 +168,7 @@ function ConfirmPolicy() {
                     width="25"
                     height="25"
                     fill="currentColor"
-                    class="bi bi-dot"
+                    className="bi bi-dot"
                     viewBox="0 0 16 16"
                   >
                     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
@@ -185,7 +185,7 @@ function ConfirmPolicy() {
                             width="25"
                             height="10"
                             fill="currentColor"
-                            class="bi bi-dot"
+                            className="bi bi-dot"
                             viewBox="0 0 16 16"
                           >
                             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />

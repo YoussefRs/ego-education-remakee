@@ -7,7 +7,6 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
 
-
 const nodemailer = require("nodemailer");
 
 const PORT = process.env.PORT;
@@ -107,8 +106,8 @@ app.post(
       // SQL query to insert data into the database
       const sql = `
         INSERT INTO candidates 
-        (firstName, lastName, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, file1, file2, file3, file4, file5, processing_authorization, withdrawal_authorization, advertising_authorization)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (firstName, lastName, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, file1, file2, file3, file4, file5, processing_authorization, withdrawal_authorization, advertising_authorization, status)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending')
       `;
       const values = [
         firstName,
@@ -252,8 +251,6 @@ app.post(
           </body>
           </html>
         `,
-        
-          
         };
 
         transporter.sendMail(mailOptions, (emailErr, info) => {
@@ -272,6 +269,185 @@ app.post(
   }
 );
 
+app.post("/accept/:id", (req, res) => {
+  try {
+    const candidateId = req.params.id; // Extract candidate ID from route parameter
+    const { email, firstName, lastName, course } = req.body;
+
+    // SQL query to update candidate status
+    const sql = `UPDATE candidates SET status = 'Accepted' WHERE id = ?`;
+
+    con.query(sql, [candidateId], (err, result) => {
+      if (err) {
+        console.error("Database Error:", err);
+        return res
+          .status(500)
+          .json({ Error: "Error updating candidate status" });
+      }
+
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ Error: "Candidate not found" });
+      }
+
+      // Prepare acceptance email
+      const mailOptions = {
+        from: process.env.ARUBA_EMAIL, // Sender address
+        to: email, // Recipient's email
+        subject: "Application Accepted", // Email subject
+        html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            /* Add styles similar to the email above */
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="email-header">
+              <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
+              <h1>Application Accepted</h1>
+            </div>
+            <div class="email-body">
+              <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
+              <p>Congratulations! Your application for the <strong>${course}</strong> course has been accepted.</p>
+              <p>We are excited to have you on board and will contact you shortly with further details.</p>
+              <p>Best regards,</p>
+              <p><strong>eGO Education</strong></p>
+            </div>
+           <div class="email-footer">
+                <table class="email-footer-table">
+                  <tr>
+                    <!-- Logo Section -->
+                    <td class="email-footer-logo">
+                      <img width="80" height="80" src="www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
+                    </td>
+                    <!-- Contact Details Section -->
+                    <td class="email-footer-text">
+                      <p><strong>Enrolment Office</strong></p>
+                      <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                      <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+          </div>
+        </body>
+        </html>
+      `,
+      };
+
+      // Send email
+      transporter.sendMail(mailOptions, (emailErr, info) => {
+        if (emailErr) {
+          console.log("Email Error:", emailErr);
+          return res.status(500).json({ Error: "Error sending email" });
+        }
+
+        res.json({
+          Status: "Success",
+          Message: "Candidate accepted and email sent",
+        });
+      });
+    });
+  } catch (error) {
+    console.log("Server Error:", error);
+    res.status(500).json({ Error: "Server error occurred" });
+  }
+});
+
+app.post("/reject/:id", (req, res) => {
+  try {
+    const candidateId = req.params.id; // Extract candidate ID from route parameter
+    const { email, firstName, lastName, course } = req.body;
+
+    // SQL query to update candidate status
+    const sql = `UPDATE candidates SET status = 'Rejected' WHERE id = ?`;
+
+    con.query(sql, [candidateId], (err, result) => {
+      if (err) {
+        console.error("Database Error:", err);
+        return res
+          .status(500)
+          .json({ Error: "Error updating candidate status" });
+      }
+
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ Error: "Candidate not found" });
+      }
+
+      // Prepare rejection email
+      const mailOptions = {
+        from: process.env.ARUBA_EMAIL, // Sender address
+        to: email, // Recipient's email
+        subject: "Application Rejected", // Email subject
+        html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            /* Add relevant email styles */
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="email-header">
+              <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo" style="width: 150px;">
+              <h1>Application Rejected</h1>
+            </div>
+            <div class="email-body">
+              <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
+              <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
+              <p>We encourage you to reapply in the future and wish you all the best in your endeavors.</p>
+              <p>Best regards,</p>
+              <p><strong>eGO Education</strong></p>
+            </div>
+             <div class="email-footer">
+                <table class="email-footer-table">
+                  <tr>
+                    <!-- Logo Section -->
+                    <td class="email-footer-logo">
+                      <img width="80" height="80" src="www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
+                    </td>
+                    <!-- Contact Details Section -->
+                    <td class="email-footer-text">
+                      <p><strong>Enrolment Office</strong></p>
+                      <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                      <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+          </div>
+        </body>
+        </html>
+      `,
+      };
+
+      // Send email
+      transporter.sendMail(mailOptions, (emailErr, info) => {
+        if (emailErr) {
+          console.log("Email Error:", emailErr);
+          return res.status(500).json({ Error: "Error sending email" });
+        }
+
+        res.json({
+          Status: "Success",
+          Message: "Candidate rejected and email sent",
+        });
+      });
+    });
+  } catch (error) {
+    console.log("Server Error:", error);
+    res.status(500).json({ Error: "Server error occurred" });
+  }
+});
+
+
 app.delete("/candidates/:id", (req, res) => {
   const candidateId = req.params.id;
 
@@ -281,7 +457,7 @@ app.delete("/candidates/:id", (req, res) => {
       file1, file2, file3, file4, file5 
     FROM candidates 
     WHERE id = ?
-  `; 
+  `;
 
   con.query(sqlFetchFiles, [candidateId], (fetchErr, results) => {
     if (fetchErr) {
@@ -320,7 +496,10 @@ app.delete("/candidates/:id", (req, res) => {
             return res.status(500).json({ Error: "Error deleting candidate" });
           }
 
-          res.json({ Status: "Success", Message: "Candidate and files deleted successfully" });
+          res.json({
+            Status: "Success",
+            Message: "Candidate and files deleted successfully",
+          });
         });
       })
       .catch((err) => {

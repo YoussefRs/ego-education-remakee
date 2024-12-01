@@ -297,6 +297,7 @@ body {
     justify-content: center;
     border: 1px solid #C3D4E9;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .date-selector span {

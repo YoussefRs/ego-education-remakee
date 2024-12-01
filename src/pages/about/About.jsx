@@ -27,23 +27,23 @@ function About() {
       />
       <div className="about-us-container">
       <div className="it-about-area p-relative mt-5 margin-auto">
-        <div class="container it-about-ctr" data-aos={"zoom-in"}>
-          <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6">
-              {/* <div class="it-about-thumb-box p-relative">
-                <div class="it-about-thumb-1 d-none d-xl-block">
+        <div className="container it-about-ctr" data-aos={"zoom-in"}>
+          <div className="row align-items-center">
+            <div className="col-xl-6 col-lg-6">
+              {/* <div className="it-about-thumb-box p-relative">
+                <div className="it-about-thumb-1 d-none d-xl-block">
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
                     alt=""
                   />
                 </div>
-                <div class="it-about-thumb-2 d-none d-xl-block">
+                <div className="it-about-thumb-2 d-none d-xl-block">
                   <img
                     src={rector}
                     alt=""
                   />
                 </div>
-                <div class="it-about-main-thumb text-xl-end text-center">
+                <div className="it-about-main-thumb text-xl-end text-center">
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
                     alt=""
@@ -51,22 +51,22 @@ function About() {
                 </div>
               </div> */}
 
-              <ul class="featured">
-                <li class="left_">
-                  <div class="text">
+              <ul className="featured">
+                <li className="left_">
+                  <div className="text">
                     {/* <h2>The amazing title</h2>
       <p>Lorem ipsum dolor</p> */}
                   </div>
                 </li>
-                <li class="right">
-                  <div class="right-top">
-                    <div class="text">
+                <li className="right">
+                  <div className="right-top">
+                    <div className="text">
                       {/* <h2>Another title</h2>
         <p>Lorem ipsum</p> */}
                     </div>
                   </div>
-                  <div class="right-bottom">
-                    <div class="text">
+                  <div className="right-bottom">
+                    <div className="text">
                       {/* <h2>A third Title</h2>
                       <p>
                         Lorem Lorem ipsum dolor sit amet, consectetur
@@ -80,18 +80,18 @@ function About() {
                 </li>
               </ul>
             </div>
-            <div class="col-xl-6 col-lg-6">
-              <div class="it-about-right-box">
-                <div class="it-about-title-box mb-4">
-                  <span class="it-section-subtitle wdt-heading-subtitle ">
+            <div className="col-xl-6 col-lg-6">
+              <div className="it-about-right-box">
+                <div className="it-about-title-box mb-4">
+                  <span className="it-section-subtitle wdt-heading-subtitle ">
                     {title}{" "}
                   </span>
-                  <h4 class="it-section-title mt-2">
+                  <h4 className="it-section-title mt-2">
                     {subtitle}{" "}
                     <strong style={{ color: "#046635" }}>{specialWord}</strong>
                   </h4>
                 </div>
-                <div class="it-about-text pb-10">
+                <div className="it-about-text pb-10">
                   <p>
                     <span style={{ color: "#046635" }}>{egoWord}</span> {s1}
                   </p>
@@ -111,11 +111,11 @@ function About() {
       </div>
       <PartnersSlider />
       <div className="it-about-area p-relative our-mission py-5">
-        <div class="container it-about-ctr">
-          <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6" data-aos={"slide-right"}>
-              <div class="it-about-right-box">
-                <span class="wdt-heading-subtitle mb-4">OUR MISSION</span>
+        <div className="container it-about-ctr">
+          <div className="row align-items-center">
+            <div className="col-xl-6 col-lg-6" data-aos={"slide-right"}>
+              <div className="it-about-right-box">
+                <span className="wdt-heading-subtitle mb-4">OUR MISSION</span>
                 <p>
                   Our mission is to train the world to come: several
                   institutions have underlined the necessity of continuous
@@ -148,9 +148,9 @@ function About() {
                 </p>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6" data-aos={"slide-left"}>
-              <div class="it-about-thumb-box  p-relative">
-                <div class="it-about-main-thumb text-xl-end text-center">
+            <div className="col-xl-6 col-lg-6" data-aos={"slide-left"}>
+              <div className="it-about-thumb-box  p-relative">
+                <div className="it-about-main-thumb text-xl-end text-center">
                   <img
                     src="https://images.pexels.com/photos/3747519/pexels-photo-3747519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt=""
@@ -198,19 +198,19 @@ function About() {
         <div className="container d-flex align-items-center justify-content-center">
           <div className="row">
             {lecturers?.map((lecturer, i) => (
-              <div class="col-lg-4 col-md-6 col-sm-12 " data-aos={"flip-up"}>
-                <div class="card mb-3" style={{ width: "20rem" }}>
+              <div className="col-lg-4 col-md-6 col-sm-12 " data-aos={"flip-up"}>
+                <div className="card mb-3" style={{ width: "20rem" }}>
                   <img
-                    class="card-img-top"
+                    className="card-img-top"
                     src={lecturer.img}
                     height="380"
                     alt="Card image cap"
                   />
-                  <div class="lecturer-detail">
-                    <h5 class="card-title heading text-center">
+                  <div className="lecturer-detail">
+                    <h5 className="card-title heading text-center">
                       {lecturer.name}{" "}
                     </h5>
-                    <span class="subheading">{lecturer.title}</span>
+                    <span className="subheading">{lecturer.title}</span>
                     <blockquote>
                       <p>{lecturer.description} </p>
                     </blockquote>
@@ -222,19 +222,19 @@ function About() {
         </div>
       </div>
       <div className="contact-section-about py-5">
-        <div class="container d-flex justify-content-center align-items-center">
-          <div class="form w-100">
+        <div className="container d-flex justify-content-center align-items-center">
+          <div className="form w-100">
             <div
               data-aos={"flip-left"}
-              class="it-about-title-box  p-5 d-flex justify-content-center align-items-center flex-column"
+              className="it-about-title-box  p-5 d-flex justify-content-center align-items-center flex-column"
             >
               <span
-                class="it-section-subtitle wdt-heading-subtitle"
+                className="it-section-subtitle wdt-heading-subtitle"
                 style={{ placeSelf: "flex-start" }}
               >
                 CONTACT US FOR
               </span>
-              <h4 class="it-section-title mt-2 mb-5">
+              <h4 className="it-section-title mt-2 mb-5">
                 Seamless Collaboration & Personilized Learning.
               </h4>
               <img
@@ -243,30 +243,30 @@ function About() {
               />
             </div>
 
-            <div class="contact-form" data-aos={"flip-right"}>
+            <div className="contact-form" data-aos={"flip-right"}>
               <form action="index.html" autocomplete="off">
-                <h3 class="title">Contact us</h3>
-                <div class="input-container">
-                  <input type="text" name="name" class="input" />
+                <h3 className="title">Contact us</h3>
+                <div className="input-container">
+                  <input type="text" name="name" className="input" />
                   <label for="">Full Name</label>
                   <span>Full Name</span>
                 </div>
-                <div class="input-container">
-                  <input type="email" name="email" class="input" />
+                <div className="input-container">
+                  <input type="email" name="email" className="input" />
                   <label for="">Email</label>
                   <span>Email</span>
                 </div>
-                <div class="input-container">
-                  <input type="tel" name="phone" class="input" />
+                <div className="input-container">
+                  <input type="tel" name="phone" className="input" />
                   <label for="">Phone</label>
                   <span>Phone</span>
                 </div>
-                <div class="input-container textarea">
-                  <textarea name="message" class="input"></textarea>
+                <div className="input-container textarea">
+                  <textarea name="message" className="input"></textarea>
                   <label for="">Message</label>
                   <span>Message</span>
                 </div>
-                <input type="submit" value="Send" class="btnn" />
+                <input type="submit" value="Send" className="btnn" />
               </form>
             </div>
           </div>
