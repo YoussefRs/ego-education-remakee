@@ -361,7 +361,7 @@ app.post("/accept/:id", (req, res) => {
 app.post("/reject/:id", (req, res) => {
   try {
     const candidateId = req.params.id; // Extract candidate ID from route parameter
-    const { email, firstName, lastName, course } = req.body;
+    const { email, firstName, lastName, course, reasons } = req.body;
 
     // SQL query to update candidate status
     const sql = `UPDATE candidates SET status = 'Rejected' WHERE id = ?`;
@@ -377,6 +377,11 @@ app.post("/reject/:id", (req, res) => {
       if (result.affectedRows === 0) {
         return res.status(404).json({ Error: "Candidate not found" });
       }
+
+      // Convert reasons array into HTML list
+      const reasonsList = reasons
+        .map((reason) => `<li>${reason}</li>`)
+        .join("");
 
       // Prepare rejection email
       const mailOptions = {
@@ -402,6 +407,8 @@ app.post("/reject/:id", (req, res) => {
             <div class="email-body">
               <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
               <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
+              <p>The following reasons were cited:</p>
+              <ul>${reasonsList}</ul>
               <p>We encourage you to reapply in the future and wish you all the best in your endeavors.</p>
               <p>Best regards,</p>
               <p><strong>eGO Education</strong></p>
@@ -446,6 +453,7 @@ app.post("/reject/:id", (req, res) => {
     res.status(500).json({ Error: "Server error occurred" });
   }
 });
+
 
 
 app.delete("/candidates/:id", (req, res) => {

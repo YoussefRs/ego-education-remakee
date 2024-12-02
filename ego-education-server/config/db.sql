@@ -17,6 +17,7 @@ CREATE TABLE candidates (
     country_of_birth VARCHAR(100),
     city_of_birth VARCHAR(100),
     gender ENUM('Male', 'Female', 'Other'),
+    status VARCHAR(50),
     address TEXT,
     zip_code VARCHAR(20),
     file1 VARCHAR(255),

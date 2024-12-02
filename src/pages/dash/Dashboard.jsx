@@ -991,6 +991,7 @@ const Dashboard = () => {
         handleClose={() => {
           setShowModalCandidate(false);
         }}
+        setShowModalCandidate={setShowModalCandidate}
       />
     </>
   );
