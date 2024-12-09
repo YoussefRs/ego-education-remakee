@@ -90,7 +90,7 @@ function News() {
               </Slider>
             </div>
     
-            <div className="col-12 col-lg-6 s_img pl-md-1 mb-3 mb-lg-4">
+            <div className="col-12 col-lg-6 s_img pl-md-1">
               <div className="row">
                 {slides.map((slide, index) => (
                   <div key={index} className="col-6 ">
