@@ -3,6 +3,7 @@ import director from "../../assets/Team/fullwhitedaniele.webp";
 import cordinator from "../../assets/Team/CV.webp";
 import rector from "../../assets/Team/ERNESTOFULL.webp";
 import marketing from "../../assets/Team/fullwhitemario.webp";
+import info from "../../assets/Team/ysf.webp";
 import enrol from "../../assets/Team/MA.webp";
 import logo from "../../assets/Logos/logo-ego-black.png";
 import { useTranslation } from "react-i18next";
@@ -63,7 +64,7 @@ function HomeTeam() {
     {
       name: "Youssef Rouissi",
       role: "IT Director",
-      imgSrc: logo,
+      imgSrc: info,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",
