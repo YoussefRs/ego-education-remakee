@@ -10,12 +10,14 @@ import PartnersSlider from '../../globals/Sliders/PartnersSlider'
 import HomeUpcoming from '../../components/Home/HomeUpcoming'
 import Events from '../events/Events'
 import HomeTeam from '../../components/Home/HomeTeam'
+import News from '../news/News'
 
 function Home() {
   
   return (
     <div style={{overflowX: "hidden"}}>
         <HomeHero />
+        <News />
         {/* <HomeAbout />  */}
         <HomeCourseSlider />
         <HomeFeatures />
