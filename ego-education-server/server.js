@@ -22,12 +22,27 @@ app.use(
 app.use(express.json({ limit: "100mb" }));
 app.use("/public/images", express.static(uploadDirectory));
 
-const con = mysql.createConnection({
+const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10, // Adjust the limit based on your app's needs
+  queueLimit: 0, // No limit on queued connection requests
 });
+
+const promisePool = pool.promise();
+
+// Test connection after creating promisePool
+(async () => {
+  try {
+    await promisePool.query("SELECT 1");
+    console.log("Database connected successfully!");
+  } catch (err) {
+    console.error("Database connection failed:", err);
+  }
+})();
 
 // Setup your Aruba email transporter
 const transporter = nodemailer.createTransport({
@@ -40,13 +55,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-con.connect(function (err) {
-  if (err) {
-    console.log("Error in Connection");
-  } else {
-    console.log("Connected");
-  }
-});
 
 // Create the upload directory if it doesn't exist
 if (!fs.existsSync(uploadDirectory)) {
@@ -75,7 +83,7 @@ app.post(
     { name: "file4", maxCount: 1 },
     { name: "file5", maxCount: 1 },
   ]),
-  (req, res) => {
+  async (req, res) => {
     try {
       const {
         firstName,
@@ -132,11 +140,8 @@ app.post(
         advertisingAuthorization === "true",
       ];
 
-      con.query(sql, values, (err, result) => {
-        if (err) {
-          console.error("Database Error:", err);
-          return res.status(500).json({ Error: "Error in signup query" });
-        }
+     // Execute the query
+     const [result] = await promisePool.query(sql, values);
 
         // Send confirmation email
         const mailOptions = {
@@ -253,15 +258,14 @@ app.post(
         `,
         };
 
-        transporter.sendMail(mailOptions, (emailErr, info) => {
-          if (emailErr) {
-            console.log("Email Error:", emailErr);
-            return res.status(500).json({ Error: "Error sending email" });
-          }
+        const info = await transporter.sendMail(mailOptions);
 
-          res.json({ Status: "Success", Data: result });
+        res.status(200).json({
+          Status: "Success",
+          Data: result,
+          EmailInfo: info,
         });
-      });
+      
     } catch (error) {
       console.log("Server Error:", error);
       res.status(500).json({ Error: "Server error occurred" });
@@ -269,94 +273,117 @@ app.post(
   }
 );
 
-app.post("/accept/:id", (req, res) => {
+app.post("/accept/:id", async (req, res) => {
+  const candidateId = req.params.id; // Extract candidate ID from route parameter
+  const { email, firstName, lastName, course } = req.body;
+
   try {
-    const candidateId = req.params.id; // Extract candidate ID from route parameter
-    const { email, firstName, lastName, course } = req.body;
+    // Update candidate status in the database
+    const sqlUpdateStatus = `UPDATE candidates SET status = 'Accepted' WHERE id = ?`;
+    const [updateResult] = await promisePool.query(sqlUpdateStatus, [candidateId]);
 
-    // SQL query to update candidate status
-    const sql = `UPDATE candidates SET status = 'Accepted' WHERE id = ?`;
+    if (updateResult.affectedRows === 0) {
+      return res.status(404).json({ Error: "Candidate not found" });
+    }
 
-    con.query(sql, [candidateId], (err, result) => {
-      if (err) {
-        console.error("Database Error:", err);
-        return res
-          .status(500)
-          .json({ Error: "Error updating candidate status" });
-      }
-
-      if (result.affectedRows === 0) {
-        return res.status(404).json({ Error: "Candidate not found" });
-      }
-
-      // Prepare acceptance email
-      const mailOptions = {
-        from: process.env.ARUBA_EMAIL, // Sender address
-        to: email, // Recipient's email
-        subject: "Application Accepted", // Email subject
-        html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>
-            /* Add styles similar to the email above */
-          </style>
-        </head>
-        <body>
-          <div class="email-container">
-            <div class="email-header">
-              <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
-              <h1>Application Accepted</h1>
-            </div>
-            <div class="email-body">
-              <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
-              <p>Congratulations! Your application for the <strong>${course}</strong> course has been accepted.</p>
-              <p>We are excited to have you on board and will contact you shortly with further details.</p>
-              <p>Best regards,</p>
-              <p><strong>eGO Education</strong></p>
-            </div>
-           <div class="email-footer">
-                <table class="email-footer-table">
-                  <tr>
-                    <!-- Logo Section -->
-                    <td class="email-footer-logo">
-                      <img width="80" height="80" src="www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
-                    </td>
-                    <!-- Contact Details Section -->
-                    <td class="email-footer-text">
-                      <p><strong>Enrolment Office</strong></p>
-                      <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
-                      <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
-                    </td>
-                  </tr>
-                </table>
-              </div>
+    // Prepare the acceptance email
+    const mailOptions = {
+      from: process.env.ARUBA_EMAIL, // Sender address
+      to: email, // Recipient's email
+      subject: "Application Accepted", // Email subject
+      html: `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          .email-container {
+            font-family: Arial, sans-serif;
+            color: #333;
+          }
+          .email-header {
+            background-color: #008cba;
+            padding: 20px;
+            text-align: center;
+          }
+          .email-header img {
+            max-height: 80px;
+          }
+          .email-body {
+            padding: 20px;
+          }
+          .email-footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+          }
+          .email-footer-table {
+            margin: auto;
+            text-align: left;
+          }
+          .email-footer-logo img {
+            max-width: 100%;
+            height: auto;
+          }
+          .email-footer-text {
+            padding-left: 10px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="email-container">
+          <div class="email-header">
+            <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
+            <h1>Application Accepted</h1>
           </div>
-        </body>
-        </html>
+          <div class="email-body">
+            <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
+            <p>Congratulations! Your application for the <strong>${course}</strong> course has been accepted.</p>
+            <p>We are excited to have you on board and will contact you shortly with further details.</p>
+            <p>Best regards,</p>
+            <p><strong>eGO Education</strong></p>
+          </div>
+          <div class="email-footer">
+            <table class="email-footer-table">
+              <tr>
+                <td class="email-footer-logo">
+                  <img width="80" height="80" src="https://www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
+                </td>
+                <td class="email-footer-text">
+                  <p><strong>Enrolment Office</strong></p>
+                  <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                  <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </body>
+      </html>
       `,
-      };
+    };
 
-      // Send email
-      transporter.sendMail(mailOptions, (emailErr, info) => {
-        if (emailErr) {
-          console.log("Email Error:", emailErr);
-          return res.status(500).json({ Error: "Error sending email" });
-        }
+    // Send the email
+    transporter.sendMail(mailOptions, (emailErr, info) => {
+      if (emailErr) {
+        console.error("Email Error:", emailErr);
+        return res.status(500).json({ Error: "Error sending email" });
+      }
 
-        res.json({
-          Status: "Success",
-          Message: "Candidate accepted and email sent",
-        });
+      res.json({
+        Status: "Success",
+        Message: "Candidate accepted and email sent",
       });
     });
   } catch (error) {
-    console.log("Server Error:", error);
+    console.error("Server Error:", error);
     res.status(500).json({ Error: "Server error occurred" });
   }
 });
+
 
 app.post("/reject/:id", (req, res) => {
   try {
@@ -456,22 +483,18 @@ app.post("/reject/:id", (req, res) => {
 
 
 
-app.delete("/candidates/:id", (req, res) => {
+app.delete("/candidates/:id", async (req, res) => {
   const candidateId = req.params.id;
 
-  // Fetch all file paths associated with the candidate
-  const sqlFetchFiles = `
-    SELECT 
-      file1, file2, file3, file4, file5 
-    FROM candidates 
-    WHERE id = ?
-  `;
-
-  con.query(sqlFetchFiles, [candidateId], (fetchErr, results) => {
-    if (fetchErr) {
-      console.error("Database Error:", fetchErr);
-      return res.status(500).json({ Error: "Error fetching candidate files" });
-    }
+  try {
+    // Fetch all file paths associated with the candidate
+    const sqlFetchFiles = `
+      SELECT 
+        file1, file2, file3, file4, file5 
+      FROM candidates 
+      WHERE id = ?
+    `;
+    const [results] = await promisePool.query(sqlFetchFiles, [candidateId]);
 
     if (results.length === 0) {
       return res.status(404).json({ Error: "Candidate not found" });
@@ -480,85 +503,78 @@ app.delete("/candidates/:id", (req, res) => {
     const filePaths = Object.values(results[0]).filter(Boolean); // Extract file paths, ignoring null values.
 
     // Delete all the files from the server
-    const fileDeletionPromises = filePaths.map((filePath) => {
+    for (const filePath of filePaths) {
       const fullPath = path.join(__dirname, filePath.replace(/\\/g, "/")); // Normalize Windows-style paths.
-      return new Promise((resolve, reject) => {
-        fs.unlink(fullPath, (fileErr) => {
-          if (fileErr && fileErr.code !== "ENOENT") {
-            // Ignore "file not found" errors.
-            console.error("File Deletion Error:", fileErr);
-            return reject(fileErr);
-          }
-          resolve();
-        });
-      });
+      try {
+        await fs.promises.unlink(fullPath); // Use `fs.promises` for file deletion.
+      } catch (fileErr) {
+        if (fileErr.code !== "ENOENT") {
+          // Ignore "file not found" errors.
+          console.error("File Deletion Error:", fileErr);
+          throw fileErr;
+        }
+      }
+    }
+
+    // Delete the candidate record from the database
+    const sqlDeleteCandidate = `DELETE FROM candidates WHERE id = ?`;
+    await promisePool.query(sqlDeleteCandidate, [candidateId]);
+
+    res.json({
+      Status: "Success",
+      Message: "Candidate and files deleted successfully",
     });
-
-    Promise.all(fileDeletionPromises)
-      .then(() => {
-        // Delete the candidate record from the database
-        const sqlDeleteCandidate = `DELETE FROM candidates WHERE id = ?`;
-        con.query(sqlDeleteCandidate, [candidateId], (deleteErr) => {
-          if (deleteErr) {
-            console.error("Database Error:", deleteErr);
-            return res.status(500).json({ Error: "Error deleting candidate" });
-          }
-
-          res.json({
-            Status: "Success",
-            Message: "Candidate and files deleted successfully",
-          });
-        });
-      })
-      .catch((err) => {
-        console.error("Error deleting files:", err);
-        res.status(500).json({ Error: "Error deleting one or more files" });
-      });
-  });
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ Error: "Error processing request" });
+  }
 });
 
+
 // Endpoint to fetch all users
-app.get("/candidates", (req, res) => {
+app.get("/candidates", async (req, res) => {
   const sql = `
     SELECT 
       *
     FROM candidates
   `;
 
-  con.query(sql, (err, results) => {
-    if (err) {
-      console.error("Database Error:", err);
-      return res.status(500).json({ Error: "Error fetching data" });
-    }
+  try {
+    const [results] = await promisePool.query(sql);
     res.json({ Status: "Success", Data: results });
-  });
+  } catch (err) {
+    console.error("Database Error:", err);
+    res.status(500).json({ Error: "Error fetching data" });
+  }
 });
 
-app.get("/candidate/:id", (req, res) => {
+
+app.get("/candidate/:id", async (req, res) => {
   const candidateId = req.params.id;
 
-  const sql = `
-    SELECT 
-      id, name, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, 
-      file1, file2, file3, file4, file5, 
-      processing_authorization, withdrawal_authorization, advertising_authorization
-    FROM candidates
-    WHERE id = ?
-  `;
+  try {
+    const sql = `
+      SELECT 
+        id, name, email, course, language, phone, date_of_birth, country_of_birth, city_of_birth, gender, address, zip_code, 
+        file1, file2, file3, file4, file5, 
+        processing_authorization, withdrawal_authorization, advertising_authorization
+      FROM candidates
+      WHERE id = ?
+    `;
 
-  con.query(sql, [candidateId], (err, result) => {
-    if (err) {
-      console.error("Database Error:", err);
-      return res.status(500).json({ Error: "Error fetching data" });
-    }
+    const [result] = await promisePool.query(sql, [candidateId]);
 
     if (result.length === 0) {
       return res.status(404).json({ Error: "Candidate not found" });
     }
 
     res.json({ Status: "Success", Data: result[0] });
-  });
+  } catch (err) {
+    console.error("Database Error:", err);
+    res.status(500).json({ Error: "Error fetching data" });
+  }
 });
+
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
