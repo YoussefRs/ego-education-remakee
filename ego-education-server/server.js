@@ -303,9 +303,13 @@ app.post("/accept/:id", async (req, res) => {
             color: #333;
           }
           .email-header {
-            background-color: #008cba;
+            background-color: #046635;
             padding: 20px;
             text-align: center;
+            color : #fff;
+          }
+            .email-header h1 {
+           color : #fff;
           }
           .email-header img {
             max-height: 80px;
@@ -314,7 +318,7 @@ app.post("/accept/:id", async (req, res) => {
             padding: 20px;
           }
           .email-footer {
-            background-color: #f4f4f4;
+            background-color: #fff;
             padding: 20px;
             text-align: center;
             font-size: 12px;
@@ -421,49 +425,52 @@ app.post("/reject/:id", async (req, res) => {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <style>
-            body {
-              font-family: Arial, sans-serif;
-              margin: 0;
-              padding: 0;
-              background-color: #f4f4f4;
-              color: #333;
-            }
-            .email-container {
-              max-width: 600px;
-              margin: 20px auto;
-              background: #fff;
-              padding: 20px;
-              border-radius: 8px;
-              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            .email-header img {
-              width: 150px;
-              margin-bottom: 20px;
-            }
-            .email-body {
-              margin-bottom: 20px;
-            }
-            .email-body ul {
-              padding-left: 20px;
-            }
-            .email-footer {
-              font-size: 12px;
-              text-align: center;
-              margin-top: 20px;
-              color: #555;
-            }
-            .email-footer a {
-              color: #007bff;
-              text-decoration: none;
-            }
-          </style>
+          .email-container {
+            font-family: Arial, sans-serif;
+            color: #333;
+          }
+          .email-header {
+            background-color: #046635;
+            padding: 20px;
+            text-align: center;
+            color : #fff;
+          }
+
+           .email-header h1 {
+           color : #fff;
+          }
+          .email-header img {
+            max-height: 80px;
+          }
+          .email-body {
+            padding: 20px;
+          }
+          .email-footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+          }
+          .email-footer-table {
+            margin: auto;
+            text-align: left;
+          }
+          .email-footer-logo img {
+            max-width: 100%;
+            height: auto;
+          }
+          .email-footer-text {
+            padding-left: 10px;
+          }
+        </style>
         </head>
         <body>
           <div class="email-container">
             <div class="email-header">
-              <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
-              <h1>Application Rejected</h1>
-            </div>
+            <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
+            <h1>Application Rejected</h1>
+          </div>
             <div class="email-body">
               <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
               <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
@@ -474,10 +481,19 @@ app.post("/reject/:id", async (req, res) => {
               <p><strong>eGO Education</strong></p>
             </div>
             <div class="email-footer">
-              <p><strong>Enrolment Office</strong></p>
-              <p>Email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
-              <p>Website: <a href="https://ego-education.com">ego-education.com</a></p>
-            </div>
+            <table class="email-footer-table">
+              <tr>
+                <td class="email-footer-logo">
+                  <img width="80" height="80" src="https://www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
+                </td>
+                <td class="email-footer-text">
+                  <p><strong>Enrolment Office</strong></p>
+                  <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                  <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
+                </td>
+              </tr>
+            </table>
+          </div>
           </div>
         </body>
         </html>
@@ -501,7 +517,6 @@ app.post("/reject/:id", async (req, res) => {
     res.status(500).json({ Error: "Server error occurred" });
   }
 });
-
 
 app.delete("/candidates/:id", async (req, res) => {
   const candidateId = req.params.id;

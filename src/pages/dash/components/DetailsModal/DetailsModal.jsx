@@ -57,6 +57,8 @@ const DetailsModal = ({ data, show, handleClose, setShowModalCandidate }) => {
       });
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      handleClose();
     }
   };
 
