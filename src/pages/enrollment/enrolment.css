@@ -7,7 +7,7 @@ section#lead-capture {
   overflow: hidden;
   padding: 12px;
   width: 100%;
-  gap: 36px;
+  gap: 16px;
 }
 section#lead-capture .visuals,
 section#lead-capture .readables {
@@ -20,6 +20,10 @@ section#lead-capture .visuals {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 12px;
+
+  img {
+    height: 70px;
+  }
 }
 section#lead-capture .readables {
   width: 100%;

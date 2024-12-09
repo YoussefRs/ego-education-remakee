@@ -542,6 +542,9 @@ function Enrollment() {
               )}
             </div>
           </section>
+          <section>
+            <button onClick={() => setShowApplyModal(false)}>Close</button>
+          </section>
         </section>
       </Modal>
     </>
