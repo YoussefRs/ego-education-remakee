@@ -22,6 +22,7 @@ import { useTranslation } from "react-i18next";
 import Cookies from "./components/Home/CookieConsent";
 import CookieConsent from "./components/Home/CookieConsent";
 import axios from "axios";
+import SingleNew from "./pages/news/SingleNew";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -89,7 +90,8 @@ function App() {
             path="/"
             element={
               <Layout>
-                <Home />
+                {/* <Home /> */}
+                <SingleNew />
               </Layout>
             }
           />
