@@ -90,8 +90,8 @@ function App() {
             path="/"
             element={
               <Layout>
-                {/* <Home /> */}
-                <SingleNew />
+                <Home />
+                {/* <SingleNew /> */}
               </Layout>
             }
           />
