@@ -384,120 +384,116 @@ app.post("/accept/:id", async (req, res) => {
   }
 });
 
-app.post("/reject/:id", (req, res) => {
-  try {
-    const candidateId = req.params.id; // Extract candidate ID from route parameter
-    const { email, firstName, lastName, course, reasons } = req.body;
+app.post("/reject/:id", async (req, res) => {
+  const candidateId = req.params.id; // Extract candidate ID from route parameter
+  const { email, firstName, lastName, course, reasons } = req.body;
 
-    if (!email || !firstName || !lastName || !course) {
-      return res.status(400).json({ Error: "Missing required fields" });
+  if (!email || !firstName || !lastName || !course) {
+    return res.status(400).json({ Error: "Missing required fields" });
+  }
+
+  // Validate reasons and convert to HTML list
+  const reasonsList =
+    Array.isArray(reasons) && reasons.length > 0
+      ? reasons.map((reason) => `<li>${reason}</li>`).join("")
+      : "<li>No specific reasons provided.</li>";
+
+  try {
+    // Update candidate status in the database
+    const sqlUpdateStatus = `UPDATE candidates SET status = 'Rejected' WHERE id = ?`;
+    const [updateResult] = await promisePool.query(sqlUpdateStatus, [
+      candidateId,
+    ]);
+
+    if (updateResult.affectedRows === 0) {
+      return res.status(404).json({ Error: "Candidate not found" });
     }
 
-    // Validate reasons and convert to HTML list
-    const reasonsList =
-      Array.isArray(reasons) && reasons.length > 0
-        ? reasons.map((reason) => `<li>${reason}</li>`).join("")
-        : "<li>No specific reasons provided.</li>";
-
-    // SQL query to update candidate status
-    const sql = `UPDATE candidates SET status = 'Rejected' WHERE id = ?`;
-
-    con.query(sql, [candidateId], (err, result) => {
-      if (err) {
-        console.error("Database Error:", err);
-        return res
-          .status(500)
-          .json({ Error: "Error updating candidate status" });
-      }
-
-      if (result.affectedRows === 0) {
-        return res.status(404).json({ Error: "Candidate not found" });
-      }
-
-      // Prepare rejection email
-      const mailOptions = {
-        from: process.env.ARUBA_EMAIL, // Sender address
-        to: email, // Recipient's email
-        subject: "Application Rejected", // Email subject
-        html: `
-          <!DOCTYPE html>
-          <html>
-          <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-          .email-container {
-            font-family: Arial, sans-serif;
-            color: #333;
-          }
-          .email-header {
-            background-color: #008cba;
-            padding: 20px;
-            text-align: center;
-          }
-          .email-header img {
-            max-height: 80px;
-          }
-          .email-body {
-            padding: 20px;
-          }
-          .email-footer {
-            background-color: #f4f4f4;
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-          }
-          .email-footer-table {
-            margin: auto;
-            text-align: left;
-          }
-          .email-footer-logo img {
-            max-width: 100%;
-            height: auto;
-          }
-          .email-footer-text {
-            padding-left: 10px;
-          }
-        </style>
-      </head>
-          <body>
-            <div class="email-container">
-              <div class="email-header">
-                <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
-                <h1>Application Rejected</h1>
-              </div>
-              <div class="email-body">
-                <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
-                <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
-                <p>The following reasons were cited:</p>
-                <ul>${reasonsList}</ul>
-                <p>We encourage you to reapply in the future and wish you all the best in your endeavors.</p>
-                <p>Best regards,</p>
-                <p><strong>eGO Education</strong></p>
-              </div>
-              <div class="email-footer">
-                <p><strong>Enrolment Office</strong></p>
-                <p>Email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
-                <p>Website: <a href="https://ego-education.com">ego-education.com</a></p>
-              </div>
+    // Prepare the rejection email
+    const mailOptions = {
+      from: process.env.ARUBA_EMAIL, // Sender address
+      to: email, // Recipient's email
+      subject: "Application Rejected", // Email subject
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f4f4f4;
+              color: #333;
+            }
+            .email-container {
+              max-width: 600px;
+              margin: 20px auto;
+              background: #fff;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .email-header img {
+              width: 150px;
+              margin-bottom: 20px;
+            }
+            .email-body {
+              margin-bottom: 20px;
+            }
+            .email-body ul {
+              padding-left: 20px;
+            }
+            .email-footer {
+              font-size: 12px;
+              text-align: center;
+              margin-top: 20px;
+              color: #555;
+            }
+            .email-footer a {
+              color: #007bff;
+              text-decoration: none;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="email-header">
+              <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
+              <h1>Application Rejected</h1>
             </div>
-          </body>
-          </html>
-        `,
-      };
+            <div class="email-body">
+              <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
+              <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
+              <p>The following reasons were cited:</p>
+              <ul>${reasonsList}</ul>
+              <p>We encourage you to reapply in the future and wish you all the best in your endeavors.</p>
+              <p>Best regards,</p>
+              <p><strong>eGO Education</strong></p>
+            </div>
+            <div class="email-footer">
+              <p><strong>Enrolment Office</strong></p>
+              <p>Email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+              <p>Website: <a href="https://ego-education.com">ego-education.com</a></p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
+    };
 
-      // Send email
-      transporter.sendMail(mailOptions, (emailErr, info) => {
-        if (emailErr) {
-          console.error("Email Error:", emailErr);
-          return res.status(500).json({ Error: "Error sending email" });
-        }
+    // Send the email
+    transporter.sendMail(mailOptions, (emailErr, info) => {
+      if (emailErr) {
+        console.error("Email Error:", emailErr);
+        return res.status(500).json({ Error: "Error sending email" });
+      }
 
-        res.json({
-          Status: "Success",
-          Message: "Candidate rejected and email sent",
-        });
+      res.json({
+        Status: "Success",
+        Message: "Candidate rejected and email sent",
       });
     });
   } catch (error) {
@@ -505,6 +501,7 @@ app.post("/reject/:id", (req, res) => {
     res.status(500).json({ Error: "Server error occurred" });
   }
 });
+
 
 app.delete("/candidates/:id", async (req, res) => {
   const candidateId = req.params.id;
