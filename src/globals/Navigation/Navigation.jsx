@@ -6,7 +6,7 @@ import Logo from "../../assets/Logos/logo-ego-white.png";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function Navigation({ show }) {
+function Navigation({ show, backgroundColor }) {
   const navItems = [
     { key: "home", link: "/" },
     { key: "courses", link: "/courses" },
@@ -93,7 +93,7 @@ function Navigation({ show }) {
 
 
   return (
-    <nav ref={navRef}>
+    <nav ref={navRef} style={{backgroundColor}}>
       <section className="flex_content">
         <figure className="logo fixed_flex">
           <Link to={"/"} className="p-0">

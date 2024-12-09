@@ -14,26 +14,26 @@ function HomeCourseSlider() {
   }, []);
   const { t } = useTranslation();
   const { title, subtitle, specialWord } = t("home.courseSlider");
-  
 
   return (
     <div className="swiper-container" data-aos={"zoom-in"}>
-<div className="container mt-5" data-aos={"zoom-in"} >
-  <div className="row">
-    <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
-      
-     <h1 className="container-title text-black fw-bold " style={{ fontFamily : 'Gotham Light' }}>
-             {subtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
-          </h1>
-    </div>
+      <div className="container" data-aos={"zoom-in"}>
+        <div className="row">
+          <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
+            <h1
+              className="container-title text-black fw-bold "
+              style={{ fontFamily: "Gotham Light" }}
+            >
+              {subtitle} <span style={{ color: "#046635" }}>{specialWord}</span>
+            </h1>
+          </div>
 
-    <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
-    
-<CourseSlider />
+          <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
+            <CourseSlider />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
   );
 }
 
