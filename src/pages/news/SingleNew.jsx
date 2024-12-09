@@ -17,7 +17,7 @@ function SingleNew() {
                 <img
                   class="img-fluid w-100"
                   src={n1}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", height: 350 }}
                 />
                 <div class="bg-white border border-top-0 p-4">
                   <div class="mb-3">
