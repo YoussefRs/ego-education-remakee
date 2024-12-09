@@ -26,11 +26,13 @@ import SingleNew from "./pages/news/SingleNew";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
-  
+
+  const location = useLocation();
+  const backgroundColor = location.pathname === '/news' ? '#046635' : '';
 
   return (
     <>
-      <Navigation show={setShowSideMenu} />
+      <Navigation show={setShowSideMenu} backgroundColor={backgroundColor}/>
       <SideBar show={showSideMenu} handleShow={setShowSideMenu} />
       {children}
       <Footer />
@@ -43,18 +45,27 @@ function App() {
   const { i18n } = useTranslation();
 
   const languages = [
-    { code: "en", name: "English", flag: "https://cdn.parcellab.com/img/flags/us.png" },
-    { code: "br", name: "Español", flag: "https://cdn.parcellab.com/img/flags/br.png" },
-    { code: "it", name: "Italiano", flag: "https://cdn.parcellab.com/img/flags/it.png" },
+    {
+      code: "en",
+      name: "English",
+      flag: "https://cdn.parcellab.com/img/flags/us.png",
+    },
+    {
+      code: "br",
+      name: "Español",
+      flag: "https://cdn.parcellab.com/img/flags/br.png",
+    },
+    {
+      code: "it",
+      name: "Italiano",
+      flag: "https://cdn.parcellab.com/img/flags/it.png",
+    },
   ];
 
   const [selectedLang, setSelectedLang] = useState(() => {
     const savedLang = localStorage.getItem("selectedLanguage");
     return savedLang ? JSON.parse(savedLang) : languages[0]; // Default to English
   });
-
-
-
 
   useEffect(() => {
     i18n.changeLanguage(selectedLang.code);
@@ -91,7 +102,14 @@ function App() {
             element={
               <Layout>
                 <Home />
-                {/* <SingleNew /> */}
+              </Layout>
+            }
+          />
+          <Route
+            path="/news"
+            element={
+              <Layout>
+                <SingleNew />
               </Layout>
             }
           />
