@@ -342,8 +342,8 @@ function Enrollment() {
               <span data-default="Choose file">
                 {formData.file1 ? formData.file1.name : ""}
               </span>
-              {errors.file1 && <div className="error">{errors.file1}</div>}
             </fieldset>
+            {errors.file1 && <div className="error">{errors.file1}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
               <input type="file" name="file1" onChange={handleInputChange} />
@@ -356,8 +356,8 @@ function Enrollment() {
             <fieldset>
               <legend>Degree obtained*</legend>
               <span>{formData.file2 ? formData.file2.name : ""}</span>
-              {errors.file2 && <div className="error">{errors.file2}</div>}
             </fieldset>
+            {errors.file2 && <div className="error">{errors.file2}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
               <input type="file" name="file2" onChange={handleInputChange} />
@@ -372,8 +372,8 @@ function Enrollment() {
             <fieldset>
               <legend>CV*</legend>
               <span>{formData.file3 ? formData.file3.name : ""}</span>
-              {errors.file3 && <div className="error">{errors.file3}</div>}
             </fieldset>
+            {errors.file3 && <div className="error">{errors.file3}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
               <input type="file" name="file3" onChange={handleInputChange} />
@@ -386,8 +386,8 @@ function Enrollment() {
             <fieldset>
               <legend>Copy of a valid identification document*</legend>
               <span>{formData.file4 ? formData.file4.name : ""}</span>
-              {/* {errors.file4 && <div className="error">{errors.file4}</div>} */}
             </fieldset>
+            {errors.file4 && <div className="error">{errors.file4}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
               <input type="file" name="file4" onChange={handleInputChange} />
@@ -403,6 +403,7 @@ function Enrollment() {
               <legend>Linguistic certification (if obtained)</legend>
               <span>{formData.file5 ? formData.file5.name : ""}</span>
             </fieldset>
+            {errors.file5 && <div className="error">{errors.file5}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
               <input type="file" name="file5" onChange={handleInputChange} />

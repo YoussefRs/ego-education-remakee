@@ -123,6 +123,16 @@
     background-repeat: no-repeat;
   }
 
+  & .error {
+    width: var(--field-width);
+    position: absolute;
+    left: calc(50% + 3rem);
+    color: #DC3545 !important;
+    transform: translateX(-50%);
+    text-align: start;
+    bottom: -1.5rem;
+  }
+
   & input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
   }
