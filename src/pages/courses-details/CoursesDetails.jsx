@@ -252,7 +252,7 @@ function CoursesDetails() {
                         {tab4}
                       </Link>
                     </li>
-                    <li
+                    {/* <li
                       className="nav-item"
                       onClick={() => {
                         setActivePane("Lecturer");
@@ -276,7 +276,7 @@ function CoursesDetails() {
                         </svg>
                         {tab5}
                       </Link>
-                    </li>
+                    </li> */}
                     <li
                       className="nav-item"
                       onClick={() => {
@@ -353,9 +353,9 @@ function CoursesDetails() {
                         <div onClick={() => handleItemClick("Duration")}>
                           Duration
                         </div>
-                        <div onClick={() => handleItemClick("Lecturer")}>
+                        {/* <div onClick={() => handleItemClick("Lecturer")}>
                           Lecturer
-                        </div>
+                        </div> */}
                         <div
                           onClick={() => handleItemClick("Entry Requirement")}
                         >
@@ -1031,7 +1031,7 @@ function CoursesDetails() {
                         </div>
                       </div>
                     </div>
-                    <div
+                    {/* <div
                       className={`tab-pane ${
                         activePane === "Lecturer" ? "active" : ""
                       }`}
@@ -1064,7 +1064,7 @@ function CoursesDetails() {
                           </div>
                         </main>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div
                       className={`tab-pane ${
