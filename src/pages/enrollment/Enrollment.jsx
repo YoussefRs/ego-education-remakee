@@ -8,6 +8,9 @@ import "./enrolment.css";
 import Loading from "../../globals/Loading/Loading";
 import logo from "../../assets/Logos/logo-ego-black.png";
 
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css"; // Styles for phone input
+
 import {
   CertificateIcon,
   EmailIcon,
@@ -87,6 +90,10 @@ function Enrollment() {
       [name]:
         type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
+  };
+
+  const handlePhoneChange = (value) => {
+    setFormData((prev) => ({ ...prev, phone: value }));
   };
 
   const validateForm = () => {
@@ -171,6 +178,8 @@ function Enrollment() {
       setInputType("text");
     }
   };
+
+  console.warn(formData.phone);
 
   return (
     <>
@@ -299,14 +308,18 @@ function Enrollment() {
               <PhoneIcon width={"77%"} />
             </div>
             <span className="wpcf7-form-control-wrap" data-name="phone">
-              <input
-                size="40"
-                placeholder="Telephone / Mobile*"
-                type="number"
-                name="phone"
+              <PhoneInput
+                country={"us"} // Default country
                 value={formData.phone}
-                onChange={handleInputChange}
-                required
+                onChange={handlePhoneChange}
+                inputProps={{
+                  name: "phone",
+                  required: true,
+                  placeholder: "Telephone / Mobile*",
+                }}
+                enableSearch={true} // Search countries in dropdown
+                countryCodeEditable={false} // Prevent manual editing of country code
+                la
               />
             </span>
             {errors.phone && <div className="error">{errors.phone}</div>}

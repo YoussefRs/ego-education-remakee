@@ -84,7 +84,6 @@
   & input,
   & input[type="number"] {
     width: var(--field-width);
-
     outline: none;
     background-color: transparent;
     font-size: var(--wdtFontSize_Base);
@@ -97,6 +96,51 @@
     -webkit-border-radius: var(--wdtRadius_Zero);
     border-radius: var(--wdtRadius_Zero);
     color: var(--wdtHeadAltColor);
+  }
+
+  & .react-tel-input {
+    width: var(--field-width) !important;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15) !important;
+    padding: 16px 1rem 16px 2.5rem;
+    height: 100%;
+
+    & .special-label {
+      display: none;
+    }
+
+    & .form-control {
+      border: none;
+      width: 100%;
+      outline: none !important;
+      background-color: transparent !important;
+      font-size: var(--wdtFontSize_Base) !important;
+      font-weight: var(--wdtFontWeight_Ext) !important;
+      line-height: normal !important;
+      color: var(--wdtHeadAltColor) !important;
+
+      &:focus,
+      &:hover {
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+
+    & .flag-dropdown {
+      border: none !important;
+      background-color: transparent !important;
+    }
+
+    & .search {
+      opacity: 1 !important;
+      border-radius: 0 !important;
+      gap: 0 !important;
+      padding: 10px !important;
+    }
+
+    & .search-box {
+      width: 100% !important;
+    }
   }
 
   & select {
