@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import SubHeader from "../../globals/SubHeader/SubHeader";
 import CModal from "../../globals/Modal/Modal";
 import { useModal } from "../../globals/Modal/useModal";
@@ -7,6 +7,23 @@ import { Modal } from "react-bootstrap";
 import "./enrolment.css";
 import Loading from "../../globals/Loading/Loading";
 import logo from "../../assets/Logos/logo-ego-black.png";
+
+import {
+  CertificateIcon,
+  EmailIcon,
+  FileIcon,
+  IdIcon,
+  LangIcon,
+  NameIcon,
+  PhoneIcon,
+  ProgramIcon,
+  CalendarIcon,
+  UploadIcon,
+  AddressIcon,
+  CityIcon,
+  CountryIcon,
+  GenderIcon,
+} from "./Svgs";
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -139,6 +156,26 @@ function Enrollment() {
     setShowApplyModal(false);
   };
 
+  const [inputType, setInputType] = useState("text");
+  const dateInputRef = useRef(null);
+
+  const handleFocus = () => {
+    setInputType("date");
+    setTimeout(() => {
+      dateInputRef.current?.showPicker();
+    }, 100);
+  };
+
+  const handleBlur = () => {
+    if (!formData.date) {
+      setInputType("text");
+    }
+  };
+
+  const handleOpenCalendar = () => {
+    dateInputRef.current?.showPicker();
+  };
+
   return (
     <>
       <SubHeader
@@ -147,10 +184,14 @@ function Enrollment() {
         current={"Apply"}
       />
       <CModal title="My Modal" show={showModal} onHide={closeModal}></CModal>
+
       <div className="container enrollment d-flex flex-column">
         <h1 className="mb-4">Enrollment Information</h1>
         <div className="row mb-5">
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <ProgramIcon />
+            </div>
             <select
               name="course"
               value={formData.course}
@@ -164,7 +205,10 @@ function Enrollment() {
             </select>
             {errors.course && <div className="error">{errors.course}</div>}
           </div>
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <LangIcon />
+            </div>
             <select
               name="lng"
               value={formData.lng}
@@ -178,7 +222,10 @@ function Enrollment() {
         </div>
         <div className="row"></div>
         <div className="row mb-5">
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <NameIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="first-name">
               <input
                 size="40"
@@ -194,7 +241,10 @@ function Enrollment() {
               <div className="error">{errors.firstName}</div>
             )}
           </div>
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <NameIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="lastname">
               <input
                 size="40"
@@ -210,7 +260,10 @@ function Enrollment() {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <EmailIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="email">
               <input
                 size="40"
@@ -224,7 +277,10 @@ function Enrollment() {
             </span>
             {errors.email && <div className="error">{errors.email}</div>}
           </div>
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <EmailIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="email-email">
               <input
                 size="40"
@@ -242,7 +298,10 @@ function Enrollment() {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <PhoneIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="phone">
               <input
                 size="40"
@@ -256,115 +315,110 @@ function Enrollment() {
             </span>
             {errors.phone && <div className="error">{errors.phone}</div>}
           </div>
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <CalendarIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="date">
               <input
+                ref={dateInputRef}
                 size="40"
                 placeholder="Date of Birth*"
-                type="date"
+                type={inputType}
                 name="date"
                 value={formData.date}
                 onChange={handleInputChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
                 required
               />
             </span>
             {errors.date && <div className="error">{errors.date}</div>}
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col d-flex justify-content-center">
+        <div className="row mb-5 align-items-center">
+          <div className="col d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <FileIcon width={"77%"} />
+            </div>
             <fieldset>
               <legend>Academic career*</legend>
-
-              <label className="__lk-fileInput">
-                <span data-default="Choose file">
-                  {formData.file1 ? formData.file1.name : "Choose file"}
-                </span>
-                <input
-                  type="file"
-                  name="file1"
-                  onChange={handleInputChange}
-                  required
-                />
-              </label>
-
+              <span data-default="Choose file">
+                {formData.file1 ? formData.file1.name : ""}
+              </span>
               {errors.file1 && <div className="error">{errors.file1}</div>}
             </fieldset>
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input type="file" name="file1" onChange={handleInputChange} />
+            </label>
           </div>
-          <div className="col d-flex justify-content-center">
+          <div className="col d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <FileIcon width={"77%"} />
+            </div>
             <fieldset>
               <legend>Degree obtained*</legend>
-
-              <label className="__lk-fileInput">
-                <span data-default="Choose file">
-                  {formData.file2 ? formData.file2.name : "Choose file"}
-                </span>
-                <input
-                  type="file"
-                  name="file2"
-                  onChange={handleInputChange}
-                  required
-                />
-              </label>
+              <span>{formData.file2 ? formData.file2.name : ""}</span>
               {errors.file2 && <div className="error">{errors.file2}</div>}
             </fieldset>
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input type="file" name="file2" onChange={handleInputChange} />
+            </label>
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col d-flex justify-content-center">
+        <div className="row mb-5 align-items-center">
+          <div className="col d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <FileIcon width={"77%"} />
+            </div>
             <fieldset>
               <legend>CV*</legend>
-
-              <label className="__lk-fileInput">
-                <span data-default="Choose file">
-                  {formData.file3 ? formData.file3.name : "Choose file"}
-                </span>
-                <input
-                  type="file"
-                  name="file3"
-                  onChange={handleInputChange}
-                  required
-                />
-              </label>
+              <span>{formData.file3 ? formData.file3.name : ""}</span>
               {errors.file3 && <div className="error">{errors.file3}</div>}
             </fieldset>
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input type="file" name="file3" onChange={handleInputChange} />
+            </label>
           </div>
-          <div className="col d-flex justify-content-center">
+          <div className="col d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <IdIcon width={"77%"} />
+            </div>
             <fieldset>
               <legend>Copy of a valid identification document*</legend>
-
-              <label className="__lk-fileInput">
-                <span data-default="Choose file">
-                  {formData.file4 ? formData.file4.name : "Choose file"}
-                </span>
-                <input
-                  type="file"
-                  name="file4"
-                  onChange={handleInputChange}
-                  required
-                />
-              </label>
-              {errors.file4 && <div className="error">{errors.file4}</div>}
+              <span>{formData.file4 ? formData.file4.name : ""}</span>
+              {/* {errors.file4 && <div className="error">{errors.file4}</div>} */}
             </fieldset>
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input type="file" name="file4" onChange={handleInputChange} />
+            </label>
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col-6 d-flex justify-content-center">
+        <div className="row mb-5 align-items-center">
+          <div className="col-6 d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <CertificateIcon width={"77%"} />
+            </div>
             <fieldset>
               <legend>Linguistic certification (if obtained)</legend>
-
-              <label className="__lk-fileInput">
-                <span data-default="Choose file">
-                  {formData.file5 ? formData.file5.name : "Choose file"}
-                </span>
-                <input type="file" name="file5" onChange={handleInputChange} />
-              </label>
+              <span>{formData.file5 ? formData.file5.name : ""}</span>
             </fieldset>
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input type="file" name="file5" onChange={handleInputChange} />
+            </label>
           </div>
         </div>
         <h1 className="mt-5 mb-4">Additional Information</h1>
         <div className="row mb-5">
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <CountryIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="country">
               <input
                 size="40"
@@ -378,7 +432,10 @@ function Enrollment() {
             </span>
             {errors.country && <div className="error">{errors.country}</div>}
           </div>
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <CityIcon width={"77%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="city">
               <input
                 size="40"
@@ -394,21 +451,10 @@ function Enrollment() {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col">
-            <select
-              name="gender"
-              value={formData.gender}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">Choose gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Female">Other</option>
-            </select>
-            {errors.gender && <div className="error">{errors.gender}</div>}
-          </div>
-          <div className="col">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <AddressIcon width={"60%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="address">
               <input
                 size="40"
@@ -421,9 +467,10 @@ function Enrollment() {
             </span>
             {errors.address && <div className="error">{errors.address}</div>}
           </div>
-        </div>
-        <div className="row mb-5">
-          <div className="col-6">
+          <div className="col __enrollment_field">
+            <div className="__icon">
+              <AddressIcon width={"60%"} />
+            </div>
             <span className="wpcf7-form-control-wrap" data-name="zip">
               <input
                 size="40"
@@ -436,6 +483,25 @@ function Enrollment() {
               />
             </span>
             {errors.zip && <div className="error">{errors.zip}</div>}
+          </div>
+        </div>
+        <div className="row mb-5">
+          <div className="col-6 __enrollment_field">
+            <div className="__icon">
+              <GenderIcon width={"77%"} />
+            </div>
+            <select
+              name="gender"
+              value={formData.gender}
+              onChange={handleInputChange}
+              required
+            >
+              <option value="">Choose gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Female">Other</option>
+            </select>
+            {errors.gender && <div className="error">{errors.gender}</div>}
           </div>
         </div>
         <h1 className="mt-5 mb-4">Privacy</h1>
@@ -497,6 +563,7 @@ function Enrollment() {
                 !formData.withdrawalAuthorization ||
                 !formData.processingAuthorization
               }
+              style={{width: "150px"}}
             >
               {loading ? "..." : "Submit"}
             </button>

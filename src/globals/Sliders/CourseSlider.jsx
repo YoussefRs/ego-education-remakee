@@ -58,12 +58,12 @@ function CourseSlider() {
     <div className="d-flex flex-column align-items-end w-100">
       <a
         href="/courses"
-        className="m-2 text-black fw-bold"
+        className="-2 text-black fw-bold"
         style={{ paddingRight: 5, textDecoration: "underline", fontFamily : 'Gotham Light' }}
       >
         view more
       </a>
-      <Slider {...settings} className="container">
+      <Slider {...settings} className="container p-sm-auto p-0">
         {shuffledCourses?.map((course, index) => (
           <div className="swiper-slide" key={index}>
             <img src={course.imgSrc} className="slide-image" alt="" />
