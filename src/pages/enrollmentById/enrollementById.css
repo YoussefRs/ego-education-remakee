@@ -55,6 +55,14 @@
   --wdtFontWeight_Ext: 500;
   --wdtFontSize_Ext: 14px;
   --wdtLineHeight_Ext: 1.15;
+
+  @media (min-width: 1200px) {
+    --field-width: 60%;
+  }
+
+  @media (max-width: 1199px) {
+    --field-width: 90%;
+  }
 }
 
 .wpcf7-form-control-wrap {
@@ -75,7 +83,8 @@
 
   & input,
   & input[type="number"] {
-    width: 60%;
+    width: var(--field-width);
+
     outline: none;
     background-color: transparent;
     font-size: var(--wdtFontSize_Base);
@@ -91,7 +100,8 @@
   }
 
   & select {
-    width: 60%;
+    width: var(--field-width);
+
     padding: 16px 1rem 16px 2.5rem;
     /* color: var(--wdtHeadAltColor); */
     background-color: #fff !important;
@@ -121,25 +131,20 @@
 .__enrollment_field {
   position: relative;
 
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+
   & .__icon {
     position: absolute;
     width: 1.5rem;
-    left: calc(20% + 0.5rem);
+    left: calc(((100% - var(--field-width)) / 2) + 0.5rem);
     top: 50%;
     transform: translateY(-50%);
 
     & svg {
       max-width: 100%;
     }
-  }
-
-  & .__calc {
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   & fieldset {
@@ -149,7 +154,7 @@
   & .__upload_icon {
     position: absolute;
     width: 1rem;
-    right: calc(20% + 0.75rem);
+    right: calc(((100% - var(--field-width)) / 2) + 0.75rem);
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -167,7 +172,7 @@
 
 fieldset {
   text-align: left;
-  width: 60%;
+  width: var(--field-width);
   border-bottom: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15) !important;
 
   & legend {
@@ -210,7 +215,12 @@ fieldset {
   text-align: left;
   width: 80%;
 
+  @media (max-width: 1199px) {
+    width: 90%;
+  }
+
   & input {
     width: 2%;
+    margin-right: .75rem;
   }
 }

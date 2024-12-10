@@ -172,10 +172,6 @@ function Enrollment() {
     }
   };
 
-  const handleOpenCalendar = () => {
-    dateInputRef.current?.showPicker();
-  };
-
   return (
     <>
       <SubHeader
@@ -187,8 +183,8 @@ function Enrollment() {
 
       <div className="container enrollment d-flex flex-column">
         <h1 className="mb-4">Enrollment Information</h1>
-        <div className="row mb-5">
-          <div className="col __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <ProgramIcon />
             </div>
@@ -205,7 +201,7 @@ function Enrollment() {
             </select>
             {errors.course && <div className="error">{errors.course}</div>}
           </div>
-          <div className="col __enrollment_field">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <LangIcon />
             </div>
@@ -221,8 +217,8 @@ function Enrollment() {
           </div>
         </div>
         <div className="row"></div>
-        <div className="row mb-5">
-          <div className="col __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <NameIcon width={"77%"} />
             </div>
@@ -241,7 +237,7 @@ function Enrollment() {
               <div className="error">{errors.firstName}</div>
             )}
           </div>
-          <div className="col __enrollment_field">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <NameIcon width={"77%"} />
             </div>
@@ -259,8 +255,8 @@ function Enrollment() {
             {errors.lastName && <div className="error">{errors.lastName}</div>}
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <EmailIcon width={"77%"} />
             </div>
@@ -277,7 +273,7 @@ function Enrollment() {
             </span>
             {errors.email && <div className="error">{errors.email}</div>}
           </div>
-          <div className="col __enrollment_field">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <EmailIcon width={"77%"} />
             </div>
@@ -297,8 +293,8 @@ function Enrollment() {
             )}
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <PhoneIcon width={"77%"} />
             </div>
@@ -315,7 +311,7 @@ function Enrollment() {
             </span>
             {errors.phone && <div className="error">{errors.phone}</div>}
           </div>
-          <div className="col __enrollment_field">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <CalendarIcon width={"77%"} />
             </div>
@@ -336,8 +332,8 @@ function Enrollment() {
             {errors.date && <div className="error">{errors.date}</div>}
           </div>
         </div>
-        <div className="row mb-5 align-items-center">
-          <div className="col d-flex justify-content-center __enrollment_field">
+        <div className="row mb-md-5 align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
             <div className="__icon">
               <FileIcon width={"77%"} />
             </div>
@@ -353,7 +349,7 @@ function Enrollment() {
               <input type="file" name="file1" onChange={handleInputChange} />
             </label>
           </div>
-          <div className="col d-flex justify-content-center __enrollment_field">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
             <div className="__icon">
               <FileIcon width={"77%"} />
             </div>
@@ -368,8 +364,8 @@ function Enrollment() {
             </label>
           </div>
         </div>
-        <div className="row mb-5 align-items-center">
-          <div className="col d-flex justify-content-center __enrollment_field">
+        <div className="row mb-md-5 align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
             <div className="__icon">
               <FileIcon width={"77%"} />
             </div>
@@ -383,7 +379,7 @@ function Enrollment() {
               <input type="file" name="file3" onChange={handleInputChange} />
             </label>
           </div>
-          <div className="col d-flex justify-content-center __enrollment_field">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
             <div className="__icon">
               <IdIcon width={"77%"} />
             </div>
@@ -398,8 +394,8 @@ function Enrollment() {
             </label>
           </div>
         </div>
-        <div className="row mb-5 align-items-center">
-          <div className="col-6 d-flex justify-content-center __enrollment_field">
+        <div className="row mb-md-5 align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
             <div className="__icon">
               <CertificateIcon width={"77%"} />
             </div>
@@ -414,8 +410,8 @@ function Enrollment() {
           </div>
         </div>
         <h1 className="mt-5 mb-4">Additional Information</h1>
-        <div className="row mb-5">
-          <div className="col __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <CountryIcon width={"77%"} />
             </div>
@@ -432,7 +428,7 @@ function Enrollment() {
             </span>
             {errors.country && <div className="error">{errors.country}</div>}
           </div>
-          <div className="col __enrollment_field">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <CityIcon width={"77%"} />
             </div>
@@ -450,8 +446,8 @@ function Enrollment() {
             {errors.city && <div className="error">{errors.city}</div>}
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <AddressIcon width={"60%"} />
             </div>
@@ -467,7 +463,7 @@ function Enrollment() {
             </span>
             {errors.address && <div className="error">{errors.address}</div>}
           </div>
-          <div className="col __enrollment_field">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <AddressIcon width={"60%"} />
             </div>
@@ -485,8 +481,8 @@ function Enrollment() {
             {errors.zip && <div className="error">{errors.zip}</div>}
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col-6 __enrollment_field">
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
               <GenderIcon width={"77%"} />
             </div>
@@ -563,7 +559,7 @@ function Enrollment() {
                 !formData.withdrawalAuthorization ||
                 !formData.processingAuthorization
               }
-              style={{width: "150px"}}
+              style={{ width: "150px" }}
             >
               {loading ? "..." : "Submit"}
             </button>
