@@ -308,7 +308,8 @@ app.post("/accept/:id", async (req, res) => {
             text-align: center;
             color : #fff;
           }
-            .email-header h1 {
+
+           .email-header h1 {
            color : #fff;
           }
           .email-header img {
