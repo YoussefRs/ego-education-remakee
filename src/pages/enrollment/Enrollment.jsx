@@ -30,6 +30,7 @@ import {
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
+  const inputRefs = useRef({});
   const { showModal, openModal, closeModal } = useModal();
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -98,33 +99,88 @@ function Enrollment() {
 
   const validateForm = () => {
     const newErrors = {};
+    let firstInvalidInput = null;
 
-    if (!formData.course) newErrors.course = "Course is required.";
-    if (!formData.firstName) newErrors.firstName = "First name is required.";
-    if (!formData.lastName) newErrors.lastName = "Last name is required.";
-    if (!formData.email) newErrors.email = "Email is required.";
-    if (formData.email && !/^\S+@\S+\.\S+$/.test(formData.email))
+    if (!formData.course) {
+      newErrors.course = "Course is required.";
+      firstInvalidInput = firstInvalidInput || "course";
+    }
+
+    if (!formData.firstName) {
+      newErrors.firstName = "First name is required.";
+      firstInvalidInput = firstInvalidInput || "firstName";
+    }
+    if (!formData.lastName) {
+      newErrors.lastName = "Last name is required.";
+      firstInvalidInput = firstInvalidInput || "lastName";
+    }
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+      firstInvalidInput = firstInvalidInput || "email";
+    }
+    if (formData.email && !/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Invalid email format.";
-    if (formData.email !== formData.repeatEmail)
+      firstInvalidInput = firstInvalidInput || "email";
+    }
+    if (formData.email !== formData.repeatEmail) {
       newErrors.repeatEmail = "Emails do not match.";
-    if (!formData.phone) newErrors.phone = "Phone number is required.";
-    if (!formData.date) newErrors.date = "Date of birth is required.";
-    if (!formData.file1) newErrors.file1 = "Academic career file is required.";
-    if (!formData.file2) newErrors.file2 = "Degree obtained file is required.";
-    if (!formData.file3) newErrors.file3 = "CV file is required.";
-    if (!formData.file4)
-      newErrors.file4 = "Valid identification document is required.";
-    if (!formData.country) newErrors.country = "Country of birth is required.";
-    if (!formData.city) newErrors.city = "City of birth is required.";
-    if (!formData.gender) newErrors.gender = "Gender is required.";
-    if (!formData.address) newErrors.address = "Address is required.";
-    if (!formData.zip) newErrors.zip = "ZIP code is required.";
-    if (!formData.processingAuthorization)
-      newErrors.processingAuthorization = "Authorization is required.";
+      firstInvalidInput = firstInvalidInput || "repeatEmail";
+    }
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required.";
+      firstInvalidInput = firstInvalidInput || "phone";
+    }
+    if (!formData.date) {
+      newErrors.date = "Date of birth is required.";
+      firstInvalidInput = firstInvalidInput || "date";
+    }
+    if (!formData.file1) {
+      newErrors.file1 = "Academic career file is required.";
+      firstInvalidInput = firstInvalidInput || "file1";
+    }
+    if (!formData.file2) {
+      newErrors.file2 = "Degree obtained file is required.";
+      firstInvalidInput = firstInvalidInput || "file2";
+    }
+    if (!formData.file3) {
+      newErrors.file3 = "CV file is required.";
+      firstInvalidInput = firstInvalidInput || "file3";
+    }
+    if (!formData.file4) {
+      newErrors.file4 = "Valid identification document file is required.";
+      firstInvalidInput = firstInvalidInput || "file4";
+    }
+    if (!formData.country) {
+      newErrors.country = "Country of birth is required.";
+      firstInvalidInput = firstInvalidInput || "country";
+    }
+    if (!formData.city) {
+      newErrors.city = "City of birth is required.";
+      firstInvalidInput = firstInvalidInput || "city";
+    }
+    if (!formData.address) {
+      newErrors.address = "Address of birth is required.";
+      firstInvalidInput = firstInvalidInput || "address";
+    }
+    if (!formData.zip) {
+      newErrors.zip = "Zip code of birth is required.";
+      firstInvalidInput = firstInvalidInput || "zip";
+    }
+    if (!formData.gender) {
+      newErrors.gender = "Gender is required.";
+      firstInvalidInput = firstInvalidInput || "gender";
+    }
 
+    // Set errors and scroll to first invalid input
     setErrors(newErrors);
 
-    // Return true if no errors, otherwise false
+    if (firstInvalidInput) {
+      inputRefs.current[firstInvalidInput]?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+
     return Object.keys(newErrors).length === 0;
   };
 
@@ -178,8 +234,7 @@ function Enrollment() {
       setInputType("text");
     }
   };
-
-  console.warn(formData.phone);
+  console.log(inputRefs);
 
   return (
     <>
@@ -201,6 +256,7 @@ function Enrollment() {
               name="course"
               value={formData.course}
               onChange={handleInputChange}
+              ref={(el) => (inputRefs.current.course = el)}
               required
             >
               <option value="">Choose program</option>
@@ -219,10 +275,11 @@ function Enrollment() {
               value={formData.lng}
               onChange={handleInputChange}
             >
-              <option value="">Choose language</option>
+              <option>Choose language</option>
               <option value="English">English</option>
               <option value="Italian">Italian</option>
             </select>
+            {errors.lng && <div className="error">{errors.lng}</div>}
           </div>
         </div>
         <div className="row"></div>
@@ -238,6 +295,7 @@ function Enrollment() {
                 type="text"
                 name="firstName"
                 value={formData.firstName}
+                ref={(el) => (inputRefs.current.firstName = el)}
                 onChange={handleInputChange}
                 required
               />
@@ -257,6 +315,7 @@ function Enrollment() {
                 type="text"
                 name="lastName"
                 value={formData.lastName}
+                ref={(el) => (inputRefs.current.lastName = el)}
                 onChange={handleInputChange}
                 required
               />
@@ -276,6 +335,7 @@ function Enrollment() {
                 type="email"
                 name="email"
                 value={formData.email}
+                ref={(el) => (inputRefs.current.email = el)}
                 onChange={handleInputChange}
                 required
               />
@@ -293,6 +353,7 @@ function Enrollment() {
                 type="email"
                 name="repeatEmail"
                 value={formData.repeatEmail}
+                ref={(el) => (inputRefs.current.repeatEmail = el)}
                 onChange={handleInputChange}
                 required
               />
@@ -317,6 +378,7 @@ function Enrollment() {
                   required: true,
                   placeholder: "Telephone / Mobile*",
                 }}
+                ref={(el) => (inputRefs.current.phone = el)}
                 enableSearch={true} // Search countries in dropdown
                 countryCodeEditable={false} // Prevent manual editing of country code
                 la
@@ -359,7 +421,12 @@ function Enrollment() {
             {errors.file1 && <div className="error">{errors.file1}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
-              <input type="file" name="file1" onChange={handleInputChange} />
+              <input
+                type="file"
+                name="file1"
+                onChange={handleInputChange}
+                ref={(el) => (inputRefs.current.file1 = el)}
+              />
             </label>
           </div>
           <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
@@ -373,7 +440,12 @@ function Enrollment() {
             {errors.file2 && <div className="error">{errors.file2}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
-              <input type="file" name="file2" onChange={handleInputChange} />
+              <input
+                type="file"
+                name="file2"
+                onChange={handleInputChange}
+                ref={(el) => (inputRefs.current.file2 = el)}
+              />
             </label>
           </div>
         </div>
@@ -389,7 +461,12 @@ function Enrollment() {
             {errors.file3 && <div className="error">{errors.file3}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
-              <input type="file" name="file3" onChange={handleInputChange} />
+              <input
+                type="file"
+                name="file3"
+                onChange={handleInputChange}
+                ref={(el) => (inputRefs.current.file3 = el)}
+              />
             </label>
           </div>
           <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
@@ -403,7 +480,12 @@ function Enrollment() {
             {errors.file4 && <div className="error">{errors.file4}</div>}
             <label className="__upload_icon" data-default="Choose file">
               <UploadIcon />
-              <input type="file" name="file4" onChange={handleInputChange} />
+              <input
+                type="file"
+                name="file4"
+                onChange={handleInputChange}
+                ref={(el) => (inputRefs.current.file4 = el)}
+              />
             </label>
           </div>
         </div>
