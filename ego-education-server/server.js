@@ -102,6 +102,8 @@ app.post(
         advertisingAuthorization,
       } = req.body;
 
+      
+
       // Collect uploaded file paths
       const uploadedFiles = {};
       ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {

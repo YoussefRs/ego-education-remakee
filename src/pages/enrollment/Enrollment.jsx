@@ -97,9 +97,11 @@ function Enrollment() {
     setFormData((prev) => ({ ...prev, phone: value }));
   };
 
-  const validateForm = () => {
-    const newErrors = {};
+  const validateForm = (backendErrors = {}) => {
+    const newErrors = { ...backendErrors }; // Merge backend errors into newErrors
     let firstInvalidInput = null;
+
+    console.log(newErrors);
 
     if (!formData.course) {
       newErrors.course = "Course is required.";
@@ -114,18 +116,23 @@ function Enrollment() {
       newErrors.lastName = "Last name is required.";
       firstInvalidInput = firstInvalidInput || "lastName";
     }
+
+    // If backend provides an email error, overwrite the existing email error
+    if (backendErrors && backendErrors.email) {
+      newErrors.email = backendErrors.email; // Set the backend error message
+    }
+
     if (!formData.email) {
       newErrors.email = "Email is required.";
       firstInvalidInput = firstInvalidInput || "email";
-    }
-    if (formData.email && !/^\S+@\S+\.\S+$/.test(formData.email)) {
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Invalid email format.";
       firstInvalidInput = firstInvalidInput || "email";
-    }
-    if (formData.email !== formData.repeatEmail) {
+    } else if (formData.email !== formData.repeatEmail) {
       newErrors.repeatEmail = "Emails do not match.";
       firstInvalidInput = firstInvalidInput || "repeatEmail";
     }
+
     if (!formData.phone) {
       newErrors.phone = "Phone number is required.";
       firstInvalidInput = firstInvalidInput || "phone";
@@ -188,10 +195,10 @@ function Enrollment() {
     try {
       if (!validateForm()) return;
       setLoading(true);
-      setShowApplyModal(true); // Open modal immediately when submit is clicked
+      setShowApplyModal(true);
 
       const data = new FormData();
-      for (const key in formData) {
+      Object.keys(formData).forEach((key) => {
         if (key.startsWith("file")) {
           if (formData[key]) {
             data.append(key, formData[key]);
@@ -199,21 +206,32 @@ function Enrollment() {
         } else {
           data.append(key, formData[key]);
         }
-      }
+      });
 
-      await axios.post(`${apiUrl}/create`, data, {
+      const response = await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      setFormData(initialData);
+      setFormData(initialData); // Reset form
     } catch (error) {
-      console.log("Error submitting form:", error);
+      console.error("Error submitting form:", error);
+
+      // Handle backend errors
+      if (error.response && error.response.data) {
+        console.log("Backend Error:", error.response.data.Error); // Email already exists
+        setError("email", {
+          type: "manual",
+          message: error.response.data.Error,
+        }); // Revalidate form with backend errors
+      }
     } finally {
-      setLoading(false); // Update the loading state when the request finishes
+      setLoading(false);
     }
   };
+
+  console.log("err", errors)
 
   const hideApplyModal = () => {
     setShowApplyModal(false);
@@ -234,7 +252,6 @@ function Enrollment() {
       setInputType("text");
     }
   };
-  console.log(inputRefs);
 
   return (
     <>
@@ -255,7 +272,16 @@ function Enrollment() {
             <select
               name="course"
               value={formData.course}
-              onChange={handleInputChange}
+              onChange={(e) => {
+                handleInputChange(e);
+                if (e.target.value) {
+                  setErrors((prevErrors) => {
+                    const updatedErrors = { ...prevErrors };
+                    delete updatedErrors.course;
+                    return updatedErrors;
+                  });
+                }
+              }}
               ref={(el) => (inputRefs.current.course = el)}
               required
             >
@@ -296,7 +322,16 @@ function Enrollment() {
                 name="firstName"
                 value={formData.firstName}
                 ref={(el) => (inputRefs.current.firstName = el)}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.firstName;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 required
               />
             </span>
@@ -316,7 +351,16 @@ function Enrollment() {
                 name="lastName"
                 value={formData.lastName}
                 ref={(el) => (inputRefs.current.lastName = el)}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.lastName;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 required
               />
             </span>
@@ -336,11 +380,21 @@ function Enrollment() {
                 name="email"
                 value={formData.email}
                 ref={(el) => (inputRefs.current.email = el)}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.email;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 required
               />
             </span>
             {errors.email && <div className="error">{errors.email}</div>}
+            {errors.email && <div className="error">{errors.email.message}</div>}
           </div>
           <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
@@ -354,7 +408,16 @@ function Enrollment() {
                 name="repeatEmail"
                 value={formData.repeatEmail}
                 ref={(el) => (inputRefs.current.repeatEmail = el)}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.repeatEmail;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 required
               />
             </span>
@@ -424,7 +487,16 @@ function Enrollment() {
               <input
                 type="file"
                 name="file1"
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file1;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 ref={(el) => (inputRefs.current.file1 = el)}
               />
             </label>
@@ -443,7 +515,16 @@ function Enrollment() {
               <input
                 type="file"
                 name="file2"
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file2;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 ref={(el) => (inputRefs.current.file2 = el)}
               />
             </label>
@@ -464,7 +545,16 @@ function Enrollment() {
               <input
                 type="file"
                 name="file3"
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file3;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 ref={(el) => (inputRefs.current.file3 = el)}
               />
             </label>
@@ -483,7 +573,16 @@ function Enrollment() {
               <input
                 type="file"
                 name="file4"
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file4;
+                      return updatedErrors;
+                    });
+                  }
+                }}
                 ref={(el) => (inputRefs.current.file4 = el)}
               />
             </label>
@@ -518,7 +617,17 @@ function Enrollment() {
                 type="text"
                 name="country"
                 value={formData.country}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.country;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.country = el)}
                 required
               />
             </span>
@@ -535,7 +644,17 @@ function Enrollment() {
                 type="text"
                 name="city"
                 value={formData.city}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.city;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.city = el)}
                 required
               />
             </span>
@@ -554,7 +673,17 @@ function Enrollment() {
                 type="text"
                 name="address"
                 value={formData.address}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.address;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.address = el)}
               />
             </span>
             {errors.address && <div className="error">{errors.address}</div>}
@@ -567,10 +696,20 @@ function Enrollment() {
               <input
                 size="40"
                 placeholder="Zip Code*"
-                type="text"
+                type="number"
                 name="zip"
                 value={formData.zip}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.zip;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.zip = el)}
                 required
               />
             </span>
@@ -585,7 +724,16 @@ function Enrollment() {
             <select
               name="gender"
               value={formData.gender}
-              onChange={handleInputChange}
+              onChange={(e) => {
+                handleInputChange(e);
+                if (e.target.value) {
+                  setErrors((prevErrors) => {
+                    const updatedErrors = { ...prevErrors };
+                    delete updatedErrors.gender;
+                    return updatedErrors;
+                  });
+                }
+              }}
               required
             >
               <option value="">Choose gender</option>
@@ -678,9 +826,9 @@ function Enrollment() {
             <div id="please">
               {loading ? (
                 <span>
-                  Please wait while your file is being uploaded. This may take a
-                  moment depending on the size of the file. Thank you for your
-                  patience!
+                  Please do not close the tab while your file is being uploaded.
+                  This may take a moment depending on the size of the file.
+                  Thank you for your patience!
                 </span>
               ) : (
                 <>
