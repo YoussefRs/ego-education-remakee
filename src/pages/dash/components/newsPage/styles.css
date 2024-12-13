@@ -126,6 +126,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    cursor: pointer;
 
                     & svg {
                         width: 20px;
@@ -145,6 +146,27 @@
                     margin-right: 0;
                 }
             }
+        }
+    }
+
+    & .__news_prev {
+        padding-top: 1.5rem;
+
+        & .__return_btn {
+            display: flex;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            cursor: pointer;
+            width: max-content;
+
+            & svg {
+                width: 20px;
+                margin-right: .75rem;
+            }
+        }
+
+        & .single_news {
+            padding: 0;
         }
     }
 }
@@ -236,5 +258,11 @@
                 color: #fff;
             }
         }
+    }
+}
+
+.__news_content {
+    & img {
+        width: 100%;
     }
 }
