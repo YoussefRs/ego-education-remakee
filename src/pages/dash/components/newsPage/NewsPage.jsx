@@ -85,8 +85,8 @@ const NewsPage = () => {
     // [{ script: "sub" }, { script: "super" }],
     // [{ font: [] }],
     [{ align: [] }],
-    ["clean"], // remove formatting button
-    ["image"],
+    ["clean"],
+    // ["image"],
   ];
 
   const [showEditModal, setShowEditModal] = useState(false);
