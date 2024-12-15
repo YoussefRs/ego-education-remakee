@@ -11,7 +11,7 @@ function SingleNew() {
       <div class="container-fluid single_news">
         <div class="container">
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-xl-8">
               {/* <!-- News Detail Start --> */}
               <div class="position-relative mb-3">
                 <img
@@ -108,7 +108,7 @@ function SingleNew() {
               {/* <!-- News Detail End --> */}
 
               {/* <!-- Comment List Start --> */}
-              <div class="mb-3">
+              {/* <div class="mb-3">
                 <div class="section-title mb-0">
                   <h4 class="m-0 text-uppercase fw-bold">
                     3 Comments
@@ -195,11 +195,11 @@ function SingleNew() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* <!-- Comment List End --> */}
 
               {/* <!-- Comment Form Start --> */}
-              <div class="mb-3">
+              {/* <div class="mb-3">
                 <div class="section-title mb-0">
                   <h4 class="m-0 text-uppercase fw-bold">
                     Leave a comment
@@ -244,11 +244,11 @@ function SingleNew() {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
               {/* <!-- Comment Form End --> */}
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-xl-4">
               {/* <!-- Popular News Start --> */}
               <div class="mb-3">
                 <div class="section-title mb-0">

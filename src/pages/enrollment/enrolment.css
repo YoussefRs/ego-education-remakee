@@ -9,6 +9,7 @@ section#lead-capture {
   width: 100%;
   gap: 16px;
 }
+
 section#lead-capture .visuals,
 section#lead-capture .readables {
   width: 100%;
@@ -16,6 +17,7 @@ section#lead-capture .readables {
   flex-direction: column;
   align-items: center;
 }
+
 section#lead-capture .visuals {
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,22 +27,27 @@ section#lead-capture .visuals {
     height: 70px;
   }
 }
+
 section#lead-capture .readables {
   width: 100%;
   padding: 0px 0 24px 24px;
 }
+
 section#lead-capture .readables li {
   list-style: "✔   ";
   line-height: 1.75;
   letter-spacing: 0.25px;
 }
+
 section#lead-capture .readables li::marker {
   color: #00c000;
 }
+
 section#lead-capture .readables form {
   border-radius: 12px;
   display: flex;
 }
+
 section#lead-capture .readables form input[type="email"],
 section#lead-capture .readables form :-webkit-autofill {
   border-radius: 12px;
@@ -55,12 +62,14 @@ section#lead-capture .readables form :-webkit-autofill {
   -webkit-transition: 400ms ease all 0s;
   transition: 400ms ease all 0s;
 }
+
 section#lead-capture .readables form input[type="email"]::placeholder,
 section#lead-capture .readables form :-webkit-autofill::placeholder {
   color: rgba(113, 104, 78, 0.5);
   -webkit-transition: 400ms ease all 500ms;
   transition: 400ms ease all 500ms;
 }
+
 section#lead-capture .readables form input[type="email"]:focus,
 section#lead-capture .readables form :-webkit-autofill:focus {
   outline: transparent;
@@ -68,10 +77,12 @@ section#lead-capture .readables form :-webkit-autofill:focus {
     inset 2px 0 15px rgba(0, 100, 0, 0.33);
   color: #008d00;
 }
+
 section#lead-capture .readables form input[type="email"]:focus::placeholder,
 section#lead-capture .readables form :-webkit-autofill:focus::placeholder {
   color: rgba(113, 104, 78, 0.2);
 }
+
 section#lead-capture .readables form input[type="email"]:valid,
 section#lead-capture .readables form :-webkit-autofill:valid {
   border-radius: 12px 0 0 12px;
@@ -80,6 +91,7 @@ section#lead-capture .readables form :-webkit-autofill:valid {
   box-shadow: inset 0 0 1px 1px rgba(0, 192, 0, 0.5),
     inset 2px 0 15px rgba(0, 100, 0, 0.33);
 }
+
 section#lead-capture .readables form input[type="submit"] {
   border-radius: 0 12px 12px 0;
   border: none;
@@ -93,24 +105,19 @@ section#lead-capture .readables form input[type="submit"] {
   transition: 400ms ease padding 0s, 400ms ease width 0s, 400ms ease opacity 0s,
     400ms ease background 0s;
 }
-section#lead-capture
-  .readables
-  form
-  input[type="email"]:valid
-  ~ input[type="submit"] {
+
+section#lead-capture .readables form input[type="email"]:valid~input[type="submit"] {
   padding: 0 18px;
   width: 120px;
   opacity: 1;
   transition: 400ms ease padding 500ms, 400ms ease width 500ms,
     400ms ease opacity 500ms, 400ms ease background 0s;
 }
-section#lead-capture
-  .readables
-  form
-  input[type="email"]:valid
-  ~ input[type="submit"]:hover {
+
+section#lead-capture .readables form input[type="email"]:valid~input[type="submit"]:hover {
   background: #00b300;
 }
+
 section#lead-capture .readables span.fine-print {
   opacity: 0.75;
   display: block;
@@ -122,6 +129,7 @@ section#lead-capture .readables span.fine-print {
   padding: 0 0 0 32px;
   text-align: left;
 }
+
 section#lead-capture .readables span.fine-print div.lock-icon svg {
   position: absolute;
   top: 0;
@@ -130,9 +138,11 @@ section#lead-capture .readables span.fine-print div.lock-icon svg {
   height: 24px;
   opacity: 0.333;
 }
+
 section#lead-capture #please {
   transition: 400ms opacity 0ms;
 }
+
 section#lead-capture #thanks {
   position: relative;
   display: flex;
@@ -145,17 +155,21 @@ section#lead-capture #thanks {
   z-index: -1;
   transition: 400ms opacity 400ms;
 }
+
 @media screen and (max-width: 800px) {
   section#lead-capture #lead-capture {
     flex-direction: row;
   }
+
   section#lead-capture .visuals {
     display: none;
   }
+
   section#lead-capture .readables {
     width: 100%;
     padding-right: 24px;
   }
+
   section#lead-capture span.fine-print {
     max-width: 42ch;
   }
@@ -175,4 +189,66 @@ section#lead-capture #thanks {
 .submit-btn.disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.__country_select {
+  width: var(--field-width);
+  height: 54px;
+  outline: none;
+  background-color: transparent;
+  font-size: var(--wdtFontSize_Base);
+  font-weight: var(--wdtFontWeight_Ext);
+  line-height: normal;
+  text-align: start;
+  border-bottom: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15);
+  padding: 16px 1rem 16px 2.5rem;
+  margin-left: 0;
+  -webkit-border-radius: var(--wdtRadius_Zero);
+  border-radius: var(--wdtRadius_Zero);
+  color: var(--wdtHeadAltColor);
+
+  & .__ph {
+    color: rgba(113, 104, 78, 0.85);
+  }
+
+  & span:last-of-type {
+    margin-left: 0.5rem;
+  }
+
+  background-image: url('data:image/svg+xml,<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0652 6.75604C15.0689 6.59153 15.0212 6.42998 14.9287 6.29385C14.8363 6.15772 14.7037 6.05377 14.5494 5.99646C14.3952 5.93915 14.2269 5.93132 14.068 5.97407C13.9091 6.01681 13.7675 6.108 13.6629 6.23497L9.5128 11.0793L5.3642 6.23497C5.29965 6.14714 5.21771 6.07359 5.12341 6.01892C5.02912 5.96424 4.92453 5.92963 4.81624 5.91724C4.70795 5.90485 4.59829 5.91495 4.49409 5.94692C4.38988 5.97888 4.29337 6.03201 4.21065 6.10299C4.12794 6.17397 4.06084 6.26126 4.01342 6.3594C3.966 6.45754 3.93937 6.56442 3.93516 6.67333C3.93096 6.78224 3.94923 6.89085 3.98895 6.99235C4.02866 7.09386 4.08891 7.18607 4.16591 7.26321L8.91133 12.8095C8.98566 12.8966 9.07791 12.9665 9.18189 13.0145C9.28586 13.0625 9.39903 13.0873 9.51353 13.0873C9.62804 13.0873 9.7412 13.0625 9.84518 13.0145C9.94915 12.9665 10.0415 12.8966 10.1158 12.8095L14.8658 7.26321C14.9903 7.1231 15.0608 6.94339 15.0652 6.75604Z" fill="%233F4053"/></svg>');
+  background-size: 20px 40px;
+  background-position: right 0.25rem center;
+  background-repeat: no-repeat;
+}
+
+.__country_select_menu {
+  position: absolute;
+  width: var(--field-width);
+  z-index: 3;
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 0;
+
+  &.__show {
+    height: 345px;
+  }
+
+  & .__option {
+    padding: 0.5rem 1rem;
+    display: flex;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: #F4F4FF70;
+    }
+
+    & span {
+      margin-left: .75rem;
+    }
+  }
 }

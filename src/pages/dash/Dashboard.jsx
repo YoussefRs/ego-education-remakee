@@ -7,18 +7,18 @@ import AppicantRow from "./components/ApplicantRow/AppicantRow";
 import LoginModal from "./components/LoginModal/LoginModal";
 import axios from "axios";
 import DetailsModal from "./components/DetailsModal/DetailsModal";
+import NewsPage from "./components/newsPage/NewsPage";
 
 const Dashboard = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [showModalCandidate, setShowModalCandidate] = useState(false);
- 
 
-  const [authState, setAuthState] = useState(false);
+  const [authState, setAuthState] = useState(true);
 
   useEffect(() => {
-    setShowModal(true);
+    // setShowModal(true);
   }, []);
 
   const [candidates, setCandidates] = useState([]);
@@ -52,7 +52,6 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-
     fetchCandidates();
   }, []);
 
@@ -118,7 +117,7 @@ const Dashboard = () => {
     link.click();
   }
 
-
+  const [currentPage, setCurrentPage] = useState("application");
 
   return (
     <>
@@ -133,7 +132,14 @@ const Dashboard = () => {
                 </div>
                 <ul className="side-nav">
                   <span className="side-nav__header">Main Menu</span>
-                  <li className="side-nav__item side-nav__item-active">
+                  <li
+                    className={`side-nav__item ${
+                      currentPage === "application"
+                        ? "side-nav__item-active"
+                        : ""
+                    }`}
+                    onClick={() => setCurrentPage("application")}
+                  >
                     <svg
                       width="22"
                       height="23"
@@ -149,7 +155,12 @@ const Dashboard = () => {
                     </svg>
                     <span>Application</span>
                   </li>
-                  <li className="side-nav__item">
+                  <li
+                    className={`side-nav__item ${
+                      currentPage === "courses" ? "side-nav__item-active" : ""
+                    }`}
+                    onClick={() => setCurrentPage("cources")}
+                  >
                     <svg
                       width="22"
                       height="23"
@@ -198,7 +209,12 @@ const Dashboard = () => {
                     </svg>
                     <span>Courses</span>
                   </li>
-                  <li className="side-nav__item">
+                  <li
+                    className={`side-nav__item ${
+                      currentPage === "news" ? "side-nav__item-active" : ""
+                    }`}
+                    onClick={() => setCurrentPage("news")}
+                  >
                     <svg
                       width="22"
                       height="23"
@@ -235,7 +251,7 @@ const Dashboard = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span>Events</span>
+                    <span>News</span>
                   </li>
                 </ul>
 
@@ -446,532 +462,538 @@ const Dashboard = () => {
               </div>
               <div className="bottom-container">
                 <div className="bottom-container__left">
-                  {/*  <div className="box total-box">
-                    <div className="total-box__left">
-                      <div className="header-container">
-                        <h3 className="section-header">Total Income</h3>
-                        <svg
-                          className="up-arrow"
-                          width="42"
-                          height="42"
-                          viewBox="0 0 42 42"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect width="42" height="42" rx="8" fill="#F6F7F9" />
-                          <path
-                            d="M27.0702 18.57L21.0002 12.5L14.9302 18.57"
-                            stroke="#7FB519"
-                            strokeWidth="2"
-                            strokeMiterlimit="10"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M21 29.5V12.67"
-                            stroke="#7FB519"
-                            strokeWidth="2"
-                            strokeMiterlimit="10"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                      <h1 className="price">
-                        $50,530.00<span className="price-currency">(USD)</span>
-                      </h1>
-                      <p>
-                        <span className="percentage-increase">20%</span> increase
-                        compared to last week
-                      </p>
-                    </div>
-                    <div className="total-box__right">
-                      <div className="header-container">
-                        <h3 className="section-header">Total Expense</h3>
-                        <svg
-                          width="42"
-                          height="42"
-                          viewBox="0 0 42 42"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect width="42" height="42" rx="8" fill="#F6F7F9" />
-                          <path
-                            d="M27.0702 23.43L21.0002 29.5L14.9302 23.43"
-                            stroke="#FF4423"
-                            strokeWidth="2"
-                            strokeMiterlimit="10"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M21 12.5V29.33"
-                            stroke="#FF4423"
-                            strokeWidth="2"
-                            strokeMiterlimit="10"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                      <h1 className="price">
-                        $50,530.00<span className="price-currency">(USD)</span>
-                      </h1>
-                      <p>
-                        <span className="percentage-decrease">10%</span> decrease
-                        compared to last week
-                      </p>
-                    </div>
-                  </div> */}
-                  <div className="box transaction-box">
-                    <div className="header-container">
-                      <h3 className="section-header">Application History</h3>
-                      <div className="d-flex gap-2">
-                        <div className="date-selector">
+                  <>
+                    {/*  <div className="box total-box">
+                      <div className="total-box__left">
+                        <div className="header-container">
+                          <h3 className="section-header">Total Income</h3>
                           <svg
+                            className="up-arrow"
+                            width="42"
+                            height="42"
+                            viewBox="0 0 42 42"
+                            fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-arrow-clockwise"
-                            viewBox="0 0 16 16"
                           >
+                            <rect width="42" height="42" rx="8" fill="#F6F7F9" />
                             <path
-                              fillRule="evenodd"
-                              d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                              d="M27.0702 18.57L21.0002 12.5L14.9302 18.57"
+                              stroke="#7FB519"
+                              strokeWidth="2"
+                              strokeMiterlimit="10"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             />
-                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                            <path
+                              d="M21 29.5V12.67"
+                              stroke="#7FB519"
+                              strokeWidth="2"
+                              strokeMiterlimit="10"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
-                          <span onClick={fetchCandidates}>Refresh</span>
                         </div>
-                        <div className="date-selector">
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6 1.5V3.75"
-                              stroke="#292D32"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M12 1.5V3.75"
-                              stroke="#292D32"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M2.625 6.8175H15.375"
-                              stroke="#292D32"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M15.75 6.375V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V6.375C2.25 4.125 3.375 2.625 6 2.625H12C14.625 2.625 15.75 4.125 15.75 6.375Z"
-                              stroke="#292D32"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M11.7713 10.275H11.778"
-                              stroke="#292D32"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M11.7713 12.525H11.778"
-                              stroke="#292D32"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M8.99686 10.275H9.00359"
-                              stroke="#292D32"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M8.99686 12.525H9.00359"
-                              stroke="#292D32"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M6.22049 10.275H6.22723"
-                              stroke="#292D32"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M6.22049 12.525H6.22723"
-                              stroke="#292D32"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          <span onClick={exportToCSV}>Export CSV</span>
-                        </div>
+                        <h1 className="price">
+                          $50,530.00<span className="price-currency">(USD)</span>
+                        </h1>
+                        <p>
+                          <span className="percentage-increase">20%</span> increase
+                          compared to last week
+                        </p>
                       </div>
-                    </div>
-                    <table className="transaction-history">
-                      <thead>
-
-                      <tr>
-                        <th>Full Name</th>
-                        <th>
-                          Email
+                      <div className="total-box__right">
+                        <div className="header-container">
+                          <h3 className="section-header">Total Expense</h3>
                           <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
+                            width="42"
+                            height="42"
+                            viewBox="0 0 42 42"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
+                            <rect width="42" height="42" rx="8" fill="#F6F7F9" />
                             <path
-                              d="M9.96004 4.47498L6.70004 7.73498C6.31504 8.11998 5.68504 8.11998 5.30004 7.73498L2.04004 4.47498"
-                              stroke="#90A3BF"
-                              strokeWidth="1.5"
+                              d="M27.0702 23.43L21.0002 29.5L14.9302 23.43"
+                              stroke="#FF4423"
+                              strokeWidth="2"
+                              strokeMiterlimit="10"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M21 12.5V29.33"
+                              stroke="#FF4423"
+                              strokeWidth="2"
                               strokeMiterlimit="10"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                             />
                           </svg>
-                        </th>
-                        <th>
-                          Application Date
-                          <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M9.96004 4.47498L6.70004 7.73498C6.31504 8.11998 5.68504 8.11998 5.30004 7.73498L2.04004 4.47498"
-                              stroke="#90A3BF"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </th>
-
-                        <th>
-                          Course
-                          <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M9.96004 4.47498L6.70004 7.73498C6.31504 8.11998 5.68504 8.11998 5.30004 7.73498L2.04004 4.47498"
-                              stroke="#90A3BF"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </th>
-                        <th>
-                          Status
-                        </th>
-                        <th>Action</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-
-                      {candidates?.map((cd, i) => (
-                        <tr key={i}>
-                          <td>
+                        </div>
+                        <h1 className="price">
+                          $50,530.00<span className="price-currency">(USD)</span>
+                        </h1>
+                        <p>
+                          <span className="percentage-decrease">10%</span> decrease
+                          compared to last week
+                        </p>
+                      </div>
+                    </div> */}
+                  </>
+                  {currentPage === "application" ? (
+                    <div className="box transaction-box">
+                      <div className="header-container">
+                        <h3 className="section-header">Application History</h3>
+                        <div className="d-flex gap-2">
+                          <div className="date-selector">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="36"
-                              height="36"
+                              width="16"
+                              height="16"
                               fill="currentColor"
-                              className="bi bi-person-circle"
+                              className="bi bi-arrow-clockwise"
                               viewBox="0 0 16 16"
                             >
-                              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                               <path
                                 fillRule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                              />
+                              <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                            </svg>
+                            <span onClick={fetchCandidates}>Refresh</span>
+                          </div>
+                          <div className="date-selector">
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6 1.5V3.75"
+                                stroke="#292D32"
+                                strokeWidth="1.5"
+                                strokeMiterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M12 1.5V3.75"
+                                stroke="#292D32"
+                                strokeWidth="1.5"
+                                strokeMiterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M2.625 6.8175H15.375"
+                                stroke="#292D32"
+                                strokeWidth="1.5"
+                                strokeMiterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M15.75 6.375V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V6.375C2.25 4.125 3.375 2.625 6 2.625H12C14.625 2.625 15.75 4.125 15.75 6.375Z"
+                                stroke="#292D32"
+                                strokeWidth="1.5"
+                                strokeMiterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M11.7713 10.275H11.778"
+                                stroke="#292D32"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M11.7713 12.525H11.778"
+                                stroke="#292D32"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M8.99686 10.275H9.00359"
+                                stroke="#292D32"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M8.99686 12.525H9.00359"
+                                stroke="#292D32"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M6.22049 10.275H6.22723"
+                                stroke="#292D32"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M6.22049 12.525H6.22723"
+                                stroke="#292D32"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                               />
                             </svg>
-                            {cd.firstName} {cd.lastName}
-                          </td>
-                          <td>{cd.email}</td>
-                          <td>{formatDate(cd.created_at)} </td>
-                          <td>{cd.course}</td>
-                          <td>{cd.status } </td>
-                          <td>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              fill="#046635"
-                              className="bi bi-eye-fill"
-                              viewBox="0 0 16 16"
-                              style={{ marginRight: 15, cursor: "pointer" }}
-                              onClick={() => {
-                                setShowModalCandidate(true);
-                                setCandidate(cd);
-                              }}
-                            >
-                              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-                              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
-                            </svg>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              fill="red"
-                              className="bi bi-trash3-fill"
-                              viewBox="0 0 16 16"
-                              style={{ cursor: "pointer" }}
-                              onClick={() => deleteCandidate(cd.id)}
-                            >
-                              <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
-                            </svg>
-                          </td>
-                        </tr>
-                      ))}
-                      </tbody>
-                    </table>
-                  </div>
+                            <span onClick={exportToCSV}>Export CSV</span>
+                          </div>
+                        </div>
+                      </div>
+                      <table className="transaction-history">
+                        <thead>
+                          <tr>
+                            <th>Full Name</th>
+                            <th>
+                              Email
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.96004 4.47498L6.70004 7.73498C6.31504 8.11998 5.68504 8.11998 5.30004 7.73498L2.04004 4.47498"
+                                  stroke="#90A3BF"
+                                  strokeWidth="1.5"
+                                  strokeMiterlimit="10"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </th>
+                            <th>
+                              Application Date
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.96004 4.47498L6.70004 7.73498C6.31504 8.11998 5.68504 8.11998 5.30004 7.73498L2.04004 4.47498"
+                                  stroke="#90A3BF"
+                                  strokeWidth="1.5"
+                                  strokeMiterlimit="10"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </th>
+
+                            <th>
+                              Course
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.96004 4.47498L6.70004 7.73498C6.31504 8.11998 5.68504 8.11998 5.30004 7.73498L2.04004 4.47498"
+                                  stroke="#90A3BF"
+                                  strokeWidth="1.5"
+                                  strokeMiterlimit="10"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {candidates?.map((cd, i) => (
+                            <tr key={i}>
+                              <td>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="36"
+                                  height="36"
+                                  fill="currentColor"
+                                  className="bi bi-person-circle"
+                                  viewBox="0 0 16 16"
+                                >
+                                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                                  />
+                                </svg>
+                                {cd.firstName} {cd.lastName}
+                              </td>
+                              <td>{cd.email}</td>
+                              <td>{formatDate(cd.created_at)} </td>
+                              <td>{cd.course}</td>
+                              <td>{cd.status} </td>
+                              <td>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  fill="#046635"
+                                  className="bi bi-eye-fill"
+                                  viewBox="0 0 16 16"
+                                  style={{ marginRight: 15, cursor: "pointer" }}
+                                  onClick={() => {
+                                    setShowModalCandidate(true);
+                                    setCandidate(cd);
+                                  }}
+                                >
+                                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  fill="red"
+                                  className="bi bi-trash3-fill"
+                                  viewBox="0 0 16 16"
+                                  style={{ cursor: "pointer" }}
+                                  onClick={() => deleteCandidate(cd.id)}
+                                >
+                                  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                                </svg>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : currentPage === "courses" ? (
+                    <div className="__dashboard_courses_page"></div>
+                  ) : currentPage === "news" ? (
+                    <NewsPage />
+                  ) : null}
                 </div>
-                {/*   <div className="bottom-container__right">
-                  <div className="box">
-                    <div className="header-container">
-                      <h3 className="section-header">Your balance</h3>
-                      <svg
-                        width="24"
-                        height="25"
-                        viewBox="0 0 24 25"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 10.4166C3.9 10.4166 3 11.3541 3 12.5C3 13.6458 3.9 14.5833 5 14.5833C6.1 14.5833 7 13.6458 7 12.5C7 11.3541 6.1 10.4166 5 10.4166Z"
-                          stroke="#1A202C"
-                          strokeWidth="1.5"
-                        />
-                        <path
-                          d="M19 10.4166C17.9 10.4166 17 11.3541 17 12.5C17 13.6458 17.9 14.5833 19 14.5833C20.1 14.5833 21 13.6458 21 12.5C21 11.3541 20.1 10.4166 19 10.4166Z"
-                          stroke="#1A202C"
-                          strokeWidth="1.5"
-                        />
-                        <path
-                          d="M12 10.4166C10.9 10.4166 10 11.3541 10 12.5C10 13.6458 10.9 14.5833 12 14.5833C13.1 14.5833 14 13.6458 14 12.5C14 11.3541 13.1 10.4166 12 10.4166Z"
-                          stroke="#1A202C"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </div>
-                    <h1 className="price">
-                      $120,435.00<span className="price-currency">(USD)</span>
-                    </h1>
-                    <p>From Jan 01, 2022 to Jan 31, 2022</p>
-                    <div className="button-box">
-                      <button className="btn btn-purple">
+                <>
+                  {/*   <div className="bottom-container__right">
+                    <div className="box">
+                      <div className="header-container">
+                        <h3 className="section-header">Your balance</h3>
                         <svg
-                          width="23"
-                          height="23"
-                          viewBox="0 0 23 23"
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M9.104 13.1771C9.104 14.1066 9.82277 14.8541 10.7044 14.8541H12.5061C13.2727 14.8541 13.8957 14.2025 13.8957 13.3879C13.8957 12.5158 13.5123 12.1996 12.9469 11.9983L10.0623 10.9921C9.49692 10.7908 9.1136 10.4841 9.1136 9.60248C9.1136 8.79748 9.7365 8.13623 10.5032 8.13623H12.3048C13.1865 8.13623 13.9053 8.88373 13.9053 9.81331"
-                            stroke="white"
+                            d="M5 10.4166C3.9 10.4166 3 11.3541 3 12.5C3 13.6458 3.9 14.5833 5 14.5833C6.1 14.5833 7 13.6458 7 12.5C7 11.3541 6.1 10.4166 5 10.4166Z"
+                            stroke="#1A202C"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                           />
                           <path
-                            d="M11.5 7.1875V15.8125"
-                            stroke="white"
+                            d="M19 10.4166C17.9 10.4166 17 11.3541 17 12.5C17 13.6458 17.9 14.5833 19 14.5833C20.1 14.5833 21 13.6458 21 12.5C21 11.3541 20.1 10.4166 19 10.4166Z"
+                            stroke="#1A202C"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                           />
                           <path
-                            d="M21.0832 11.5C21.0832 16.79 16.7898 21.0833 11.4998 21.0833C6.20984 21.0833 1.9165 16.79 1.9165 11.5C1.9165 6.20996 6.20984 1.91663 11.4998 1.91663"
-                            stroke="white"
+                            d="M12 10.4166C10.9 10.4166 10 11.3541 10 12.5C10 13.6458 10.9 14.5833 12 14.5833C13.1 14.5833 14 13.6458 14 12.5C14 11.3541 13.1 10.4166 12 10.4166Z"
+                            stroke="#1A202C"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M16.2915 2.875V6.70833H20.1248"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M21.0832 1.91663L16.2915 6.70829"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                           />
                         </svg>
-                        <span>Top Up</span>
-                      </button>
-                      <button className="btn btn-white">
+                      </div>
+                      <h1 className="price">
+                        $120,435.00<span className="price-currency">(USD)</span>
+                      </h1>
+                      <p>From Jan 01, 2022 to Jan 31, 2022</p>
+                      <div className="button-box">
+                        <button className="btn btn-purple">
+                          <svg
+                            width="23"
+                            height="23"
+                            viewBox="0 0 23 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9.104 13.1771C9.104 14.1066 9.82277 14.8541 10.7044 14.8541H12.5061C13.2727 14.8541 13.8957 14.2025 13.8957 13.3879C13.8957 12.5158 13.5123 12.1996 12.9469 11.9983L10.0623 10.9921C9.49692 10.7908 9.1136 10.4841 9.1136 9.60248C9.1136 8.79748 9.7365 8.13623 10.5032 8.13623H12.3048C13.1865 8.13623 13.9053 8.88373 13.9053 9.81331"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M11.5 7.1875V15.8125"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M21.0832 11.5C21.0832 16.79 16.7898 21.0833 11.4998 21.0833C6.20984 21.0833 1.9165 16.79 1.9165 11.5C1.9165 6.20996 6.20984 1.91663 11.4998 1.91663"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M16.2915 2.875V6.70833H20.1248"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M21.0832 1.91663L16.2915 6.70829"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <span>Top Up</span>
+                        </button>
+                        <button className="btn btn-white">
+                          <svg
+                            width="23"
+                            height="23"
+                            viewBox="0 0 23 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9.104 13.1771C9.104 14.1066 9.82277 14.8541 10.7044 14.8541H12.5061C13.2727 14.8541 13.8957 14.2025 13.8957 13.3879C13.8957 12.5158 13.5123 12.1996 12.9469 11.9983L10.0623 10.9921C9.49692 10.7908 9.1136 10.4841 9.1136 9.60248C9.1136 8.79748 9.7365 8.13623 10.5032 8.13623H12.3048C13.1865 8.13623 13.9053 8.88373 13.9053 9.81331"
+                              stroke="#1A202C"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M11.5 7.1875V15.8125"
+                              stroke="#1A202C"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M21.0832 11.5C21.0832 16.79 16.7898 21.0833 11.4998 21.0833C6.20984 21.0833 1.9165 16.79 1.9165 11.5C1.9165 6.20996 6.20984 1.91663 11.4998 1.91663"
+                              stroke="#1A202C"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M21.0833 5.74996V1.91663H17.25"
+                              stroke="#1A202C"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M16.2915 6.70829L21.0832 1.91663"
+                              stroke="#1A202C"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <span>Transfer</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="box spending-box">
+                      <div className="header-container">
+                        <h3 className="section-header">Spend by category</h3>
                         <svg
-                          width="23"
-                          height="23"
-                          viewBox="0 0 23 23"
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M9.104 13.1771C9.104 14.1066 9.82277 14.8541 10.7044 14.8541H12.5061C13.2727 14.8541 13.8957 14.2025 13.8957 13.3879C13.8957 12.5158 13.5123 12.1996 12.9469 11.9983L10.0623 10.9921C9.49692 10.7908 9.1136 10.4841 9.1136 9.60248C9.1136 8.79748 9.7365 8.13623 10.5032 8.13623H12.3048C13.1865 8.13623 13.9053 8.88373 13.9053 9.81331"
+                            d="M5 10.4166C3.9 10.4166 3 11.3541 3 12.5C3 13.6458 3.9 14.5833 5 14.5833C6.1 14.5833 7 13.6458 7 12.5C7 11.3541 6.1 10.4166 5 10.4166Z"
                             stroke="#1A202C"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                           />
                           <path
-                            d="M11.5 7.1875V15.8125"
+                            d="M19 10.4166C17.9 10.4166 17 11.3541 17 12.5C17 13.6458 17.9 14.5833 19 14.5833C20.1 14.5833 21 13.6458 21 12.5C21 11.3541 20.1 10.4166 19 10.4166Z"
                             stroke="#1A202C"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                           />
                           <path
-                            d="M21.0832 11.5C21.0832 16.79 16.7898 21.0833 11.4998 21.0833C6.20984 21.0833 1.9165 16.79 1.9165 11.5C1.9165 6.20996 6.20984 1.91663 11.4998 1.91663"
+                            d="M12 10.4166C10.9 10.4166 10 11.3541 10 12.5C10 13.6458 10.9 14.5833 12 14.5833C13.1 14.5833 14 13.6458 14 12.5C14 11.3541 13.1 10.4166 12 10.4166Z"
                             stroke="#1A202C"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M21.0833 5.74996V1.91663H17.25"
-                            stroke="#1A202C"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M16.2915 6.70829L21.0832 1.91663"
-                            stroke="#1A202C"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                           />
                         </svg>
-                        <span>Transfer</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="box spending-box">
-                    <div className="header-container">
-                      <h3 className="section-header">Spend by category</h3>
-                      <svg
-                        width="24"
-                        height="25"
-                        viewBox="0 0 24 25"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 10.4166C3.9 10.4166 3 11.3541 3 12.5C3 13.6458 3.9 14.5833 5 14.5833C6.1 14.5833 7 13.6458 7 12.5C7 11.3541 6.1 10.4166 5 10.4166Z"
-                          stroke="#1A202C"
-                          strokeWidth="1.5"
-                        />
-                        <path
-                          d="M19 10.4166C17.9 10.4166 17 11.3541 17 12.5C17 13.6458 17.9 14.5833 19 14.5833C20.1 14.5833 21 13.6458 21 12.5C21 11.3541 20.1 10.4166 19 10.4166Z"
-                          stroke="#1A202C"
-                          strokeWidth="1.5"
-                        />
-                        <path
-                          d="M12 10.4166C10.9 10.4166 10 11.3541 10 12.5C10 13.6458 10.9 14.5833 12 14.5833C13.1 14.5833 14 13.6458 14 12.5C14 11.3541 13.1 10.4166 12 10.4166Z"
-                          stroke="#1A202C"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </div>
-                    <div className="pie-chart">
-                      <canvas
-                        id="myChart2"
-                        height="220px"
-                        width="220px"
-                      ></canvas>
-                    </div>
-                    <div className="overall-spending">
-                      <h4>Overall Spending</h4>
-                      <span>$19,760,00</span>
-                    </div>
-                    <div className="pie-chart__labels">
-                      <div className="pie-chart__labels-item">
-                        <div className="label">
-                          <div className="label__color first"></div>
-                          Employees Salary
-                        </div>
-                        $8.000.00
                       </div>
-                      <div className="pie-chart__labels-item">
-                        <div className="label">
-                          <div className="label__color second"></div>
-                          Material Supplies
-                        </div>
-                        $2.130.00
+                      <div className="pie-chart">
+                        <canvas
+                          id="myChart2"
+                          height="220px"
+                          width="220px"
+                        ></canvas>
                       </div>
-                      <div className="pie-chart__labels-item">
-                        <div className="label">
-                          <div className="label__color third"></div>
-                          Company tax
-                        </div>
-                        $1.510.00
+                      <div className="overall-spending">
+                        <h4>Overall Spending</h4>
+                        <span>$19,760,00</span>
                       </div>
-                      <div className="pie-chart__labels-item">
-                        <div className="label">
-                          <div className="label__color fourth"></div>
-                          Maintenance system
+                      <div className="pie-chart__labels">
+                        <div className="pie-chart__labels-item">
+                          <div className="label">
+                            <div className="label__color first"></div>
+                            Employees Salary
+                          </div>
+                          $8.000.00
                         </div>
-                        $2.245.00
-                      </div>
-                      <div className="pie-chart__labels-item">
-                        <div className="label">
-                          <div className="label__color fifth"></div>
-                          Development System
+                        <div className="pie-chart__labels-item">
+                          <div className="label">
+                            <div className="label__color second"></div>
+                            Material Supplies
+                          </div>
+                          $2.130.00
                         </div>
-                        $4.385.00
-                      </div>
-                      <div className="pie-chart__labels-item">
-                        <div className="label">
-                          <div className="label__color sixth"></div>
-                          Production Tools
+                        <div className="pie-chart__labels-item">
+                          <div className="label">
+                            <div className="label__color third"></div>
+                            Company tax
+                          </div>
+                          $1.510.00
                         </div>
-                        $1.000.00
+                        <div className="pie-chart__labels-item">
+                          <div className="label">
+                            <div className="label__color fourth"></div>
+                            Maintenance system
+                          </div>
+                          $2.245.00
+                        </div>
+                        <div className="pie-chart__labels-item">
+                          <div className="label">
+                            <div className="label__color fifth"></div>
+                            Development System
+                          </div>
+                          $4.385.00
+                        </div>
+                        <div className="pie-chart__labels-item">
+                          <div className="label">
+                            <div className="label__color sixth"></div>
+                            Production Tools
+                          </div>
+                          $1.000.00
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div> */}
+                  </div> */}
+                </>
               </div>
             </main>
           </div>
