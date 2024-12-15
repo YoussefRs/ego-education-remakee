@@ -101,8 +101,6 @@ function Enrollment() {
     const newErrors = { ...backendErrors }; // Merge backend errors into newErrors
     let firstInvalidInput = null;
 
-    console.log(newErrors);
-
     if (!formData.course) {
       newErrors.course = "Course is required.";
       firstInvalidInput = firstInvalidInput || "course";
@@ -117,9 +115,10 @@ function Enrollment() {
       firstInvalidInput = firstInvalidInput || "lastName";
     }
 
-    // If backend provides an email error, overwrite the existing email error
-    if (backendErrors && backendErrors.email) {
-      newErrors.email = backendErrors.email; // Set the backend error message
+    // If backend provides email error, overwrite the existing email error
+    if (backendErrors.email) {
+      newErrors.email = backendErrors.email;
+      firstInvalidInput = firstInvalidInput || "email";
     }
 
     if (!formData.email) {
@@ -186,16 +185,28 @@ function Enrollment() {
         behavior: "smooth",
         block: "center",
       });
+
+      // Optionally focus the input to highlight it
+      inputRefs.current[firstInvalidInput].focus();
     }
 
-    return Object.keys(newErrors).length === 0;
+    const isValid = Object.keys(newErrors).length === 0;
+    return isValid;
   };
 
   const handleSubmit = async () => {
     try {
-      if (!validateForm()) return;
+      console.log("Starting handleSubmit...");
+      const isValid = validateForm(); // Perform initial validation
+
+      if (!isValid) {
+        console.log(
+          "Form validation failed on the frontend. Stopping submission."
+        );
+        return; // Stop if the frontend validation fails
+      }
+
       setLoading(true);
-      setShowApplyModal(true);
 
       const data = new FormData();
       Object.keys(formData).forEach((key) => {
@@ -215,23 +226,31 @@ function Enrollment() {
       });
 
       setFormData(initialData); // Reset form
+      setShowApplyModal(true);
     } catch (error) {
       console.error("Error submitting form:", error);
 
       // Handle backend errors
       if (error.response && error.response.data) {
-        console.log("Backend Error:", error.response.data.Error); // Email already exists
-        setError("email", {
-          type: "manual",
-          message: error.response.data.Error,
-        }); // Revalidate form with backend errors
+        const backendErrors = {};
+        if (error.response.data.Error) {
+          backendErrors.email = error.response.data.Error; // Capture backend error
+        }
+
+        // Revalidate the form with backend errors
+        const isValidAfterBackendErrors = validateForm(backendErrors);
+
+        if (!isValidAfterBackendErrors) {
+          console.log(
+            "Form is invalid due to backend errors. Stopping submission."
+          );
+          return; // Stop further actions if backend errors exist
+        }
       }
     } finally {
       setLoading(false);
     }
   };
-
-  console.log("err", errors)
 
   const hideApplyModal = () => {
     setShowApplyModal(false);
@@ -394,7 +413,9 @@ function Enrollment() {
               />
             </span>
             {errors.email && <div className="error">{errors.email}</div>}
-            {errors.email && <div className="error">{errors.email.message}</div>}
+            {errors.email && (
+              <div className="error">{errors.email.message}</div>
+            )}
           </div>
           <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">

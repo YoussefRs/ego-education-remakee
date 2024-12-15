@@ -73,15 +73,51 @@ const upload = multer({ storage });
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
+
+const validateEmailFirst = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    // Check if the email already exists
+    const checkEmailQuery =
+      "SELECT COUNT(*) AS count FROM candidates WHERE email = ?";
+    const [emailCheckResult] = await promisePool.query(checkEmailQuery, [
+      email,
+    ]);
+
+    if (emailCheckResult[0].count > 0) {
+      return res.status(400).json({ Error: "Email already exists" });
+    }
+
+    next(); // Proceed to the next middleware if email is valid
+  } catch (error) {
+    console.error("Email Validation Error:", error);
+    res.status(500).json({ Error: "Server error occurred" });
+  }
+};
+
+// File upload middleware
+const uploadMiddleware = upload.fields([
+  { name: "file1", maxCount: 1 },
+  { name: "file2", maxCount: 1 },
+  { name: "file3", maxCount: 1 },
+  { name: "file4", maxCount: 1 },
+  { name: "file5", maxCount: 1 },
+]);
+
+
 app.post(
   "/create",
-  upload.fields([
-    { name: "file1", maxCount: 1 },
-    { name: "file2", maxCount: 1 },
-    { name: "file3", maxCount: 1 },
-    { name: "file4", maxCount: 1 },
-    { name: "file5", maxCount: 1 },
-  ]),
+  validateEmailFirst, // Email validation middleware
+  (req, res, next) => {
+    uploadMiddleware(req, res, (err) => {
+      if (err) {
+        console.error("File upload error:", err);
+        return res.status(500).json({ Error: "File upload failed" });
+      }
+      next(); // Proceed to the main handler after file upload
+    });
+  },
   async (req, res) => {
     try {
       const {
@@ -102,15 +138,23 @@ app.post(
         advertisingAuthorization,
       } = req.body;
 
-      
+      // Check if the email already exists
+      const checkEmailQuery =
+        "SELECT COUNT(*) AS count FROM candidates WHERE email = ?";
+      const [emailCheckResult] = await promisePool.query(checkEmailQuery, [
+        email,
+      ]);
+      if (emailCheckResult[0].count > 0) {
+        return res.status(400).json({ Error: "Email already exists" });
+      }
 
       // Collect uploaded file paths
-      const uploadedFiles = {};
-      ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
-        if (req.files[fileField]) {
-          uploadedFiles[fileField] = req.files[fileField][0].path;
-        }
-      });
+        const uploadedFiles = {};
+        ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
+          if (req.files[fileField]) {
+            uploadedFiles[fileField] = req.files[fileField][0].path;
+          }
+        });
 
       // SQL query to insert data into the database
       const sql = `
