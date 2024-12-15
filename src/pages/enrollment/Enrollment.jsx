@@ -200,18 +200,13 @@ function Enrollment() {
 
   const handleSubmit = async () => {
     try {
-      console.log("Starting handleSubmit...");
       const isValid = validateForm(); // Perform initial validation
-
       if (!isValid) {
-        console.log(
-          "Form validation failed on the frontend. Stopping submission."
-        );
         return; // Stop if the frontend validation fails
       }
 
       setLoading(true);
-
+      
       const data = new FormData();
       Object.keys(formData).forEach((key) => {
         if (key.startsWith("file")) {
@@ -222,15 +217,15 @@ function Enrollment() {
           data.append(key, formData[key]);
         }
       });
-
+      
       const response = await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      setFormData(initialData); // Reset form
+      
       setShowApplyModal(true);
+      setFormData(initialData); // Reset form
     } catch (error) {
       console.error("Error submitting form:", error);
 
@@ -677,7 +672,7 @@ function Enrollment() {
                 {formData.country && formData.country !== "" ? (
                   <span>{formData.country}</span>
                 ) : (
-                  <span className="__ph">"Country Of Birth*"</span>
+                  <span className="__ph">Country Of Birth*</span>
                 )}
               </div>
             </span>
