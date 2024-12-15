@@ -27,6 +27,8 @@ import {
   CountryIcon,
   GenderIcon,
 } from "./Svgs";
+import { countries } from "../../globals/countriesData";
+import Flag from "react-world-flags";
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -34,6 +36,8 @@ function Enrollment() {
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+
+  const [showCountryMenu, setShowCountryMenu] = useState(false);
 
   const initialData = {
     course: "",
@@ -429,8 +433,11 @@ function Enrollment() {
             <div className="__icon">
               <CountryIcon width={"77%"} />
             </div>
-            <span className="wpcf7-form-control-wrap" data-name="country">
-              <input
+            <span
+              className="wpcf7-form-control-wrap d-flex justify-content-center"
+              data-name="country"
+            >
+              {/* <input
                 size="40"
                 placeholder="Country Of Birth*"
                 type="text"
@@ -438,8 +445,68 @@ function Enrollment() {
                 value={formData.country}
                 onChange={handleInputChange}
                 required
-              />
+              /> */}
+              <div
+                className="__country_select"
+                onClick={() => {
+                  setShowCountryMenu(!showCountryMenu);
+                }}
+              >
+                <Flag
+                  code={
+                    countries.find((cnt) => {
+                      return cnt.name_en === formData?.country;
+                    })?.code
+                  }
+                  fallback={<span></span>}
+                  height={"11px"}
+                  width={"16px"}
+                />
+                {formData.country && formData.country !== "" ? (
+                  <span>{formData.country}</span>
+                ) : (
+                  <span className="__ph">"Country Of Birth*"</span>
+                )}
+              </div>
             </span>
+            <div
+              className={`__country_select_menu ${
+                showCountryMenu ? "__show" : ""
+              }`}
+            >
+              <div
+                className="__option"
+                onClick={() => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    country: "",
+                  }));
+                  setShowCountryMenu(false);
+                }}
+              ></div>
+              {countries.map((cntr, i) => (
+                <div
+                  className="__option"
+                  value={cntr.code}
+                  key={i}
+                  onClick={() => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      country: cntr.name_en,
+                    }));
+                    setShowCountryMenu(false);
+                  }}
+                >
+                  <Flag
+                    code={cntr.code}
+                    fallback={<span></span>}
+                    height={"11px"}
+                    width={"16px"}
+                  />
+                  <span>{cntr.name_de}</span>
+                </div>
+              ))}
+            </div>
             {errors.country && <div className="error">{errors.country}</div>}
           </div>
           <div className="col-md-6 col-12 __enrollment_field">
