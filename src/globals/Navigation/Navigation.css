@@ -158,6 +158,11 @@ nav .ham:hover {
   align-items: center;
   justify-content: center;
 }
+
+.flag {
+  object-fit: cover;
+  width: 20px;
+}
 .flag-switch {
   position: relative;
   outline: 0;

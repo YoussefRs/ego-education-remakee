@@ -10,6 +10,7 @@ import JAVA from "./assets/Home/banner/JAVA.webp";
 import Matitle from "./assets/Home/banner/MA-title.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
 import eubanner from "./assets/Home/banner/eubanner.webp";
+import logob from "./assets/Logos/logo-ego-black.png"
 import {
   faLaptopCode,
   faPersonChalkboard,
@@ -253,7 +254,7 @@ i18n
                   organization: "ETLForma",
                   description:
                     "Antonio Minelli is the Chief Technology Officer at ETLForma, one of Italy's leading IT training organizations. He has overseen technology projects for major clients including Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia, and the Italian Ministry of the Environment. As a seasoned technology veteran, Antonio brings a wealth of real-world experience to every lecture.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
+                  img: logob,
                 },
                 {
                   name: "Alessandro Iacuelli",
@@ -261,7 +262,7 @@ i18n
                   organization: "ETLForma",
                   description:
                     "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  img: logob,
                 },
                 {
                   name: "Manuele Monti",
@@ -269,7 +270,7 @@ i18n
                   organization: "TechBricks",
                   description:
                     "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
+                  img: logob,
                 },
               ],
             },

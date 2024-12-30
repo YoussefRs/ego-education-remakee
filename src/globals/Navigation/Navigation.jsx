@@ -50,7 +50,7 @@ function Navigation({ show, backgroundColor }) {
   }, []);
 
   const languages = [
-    { code: "en", name: "English", flag: "https://cdn.parcellab.com/img/flags/us.png" },
+    { code: "en", name: "English", flag: "https://icons.iconarchive.com/icons/wikipedia/flags/48/GB-United-Kingdom-Flag-icon.png" },
     { code: "br", name: "Español", flag: "https://cdn.parcellab.com/img/flags/br.png" },
     { code: "it", name: "Italiano", flag: "https://cdn.parcellab.com/img/flags/it.png" },
   ];

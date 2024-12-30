@@ -19,7 +19,7 @@ function SingleNew() {
                   src={n1}
                   style={{ objectFit: "cover", height: 350 }}
                 />
-                <div class="bg-white border border-top-0 p-4">
+                <div class="bg-white  p-4">
                   <div class="mb-3">
                     <a
                       class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -84,7 +84,7 @@ function SingleNew() {
                     duo tempor sea kasd clita ipsum et.
                   </p>
                 </div>
-                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                <div class="d-flex justify-content-between bg-white border p-4">
                   <div class="d-flex align-items-center">
                     <img
                       class="rounded-circle mr-2"
