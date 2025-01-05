@@ -9,6 +9,7 @@ import MA from "./assets/Home/banner/MA.webp";
 import JAVA from "./assets/Home/banner/JAVA.webp";
 import Matitle from "./assets/Home/banner/MA-title.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
+import logo from "./assets/Logos/logo-ego-black.png";
 import eubanner from "./assets/Home/banner/eubanner.webp";
 import {
   faLaptopCode,
@@ -101,7 +102,7 @@ i18n
                   curriculum: 7,
                   price: "€3000",
                   link: "/courses/aB3cD4eF",
-                  location : "Online"
+                  location: "Online",
                 },
                 {
                   title: "MSc in Information Security",
@@ -112,7 +113,7 @@ i18n
                   curriculum: 8,
                   price: "€3000",
                   link: "/courses/tU1vW2xY",
-                  location : "Online"
+                  location: "Online",
                 },
                 {
                   title: "MA in Nonprofit Management & Leadership",
@@ -123,7 +124,7 @@ i18n
                   curriculum: 10,
                   price: "€3000",
                   link: "/courses/ghnffT988",
-                  location : "Online"
+                  location: "Online",
                 },
                 {
                   title: "MSc in European Project Management",
@@ -134,7 +135,7 @@ i18n
                   curriculum: 7,
                   price: "€3000",
                   link: "/courses/ghnffTffz4",
-                  location : "Online",
+                  location: "Online",
                 },
                 /*   {
                   title: "Business Administration",
@@ -253,7 +254,7 @@ i18n
                   organization: "ETLForma",
                   description:
                     "Antonio Minelli is the Chief Technology Officer at ETLForma, one of Italy's leading IT training organizations. He has overseen technology projects for major clients including Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia, and the Italian Ministry of the Environment. As a seasoned technology veteran, Antonio brings a wealth of real-world experience to every lecture.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
+                  img: logo,
                 },
                 {
                   name: "Alessandro Iacuelli",
@@ -261,7 +262,7 @@ i18n
                   organization: "ETLForma",
                   description:
                     "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  img: logo,
                 },
                 {
                   name: "Manuele Monti",
@@ -269,7 +270,7 @@ i18n
                   organization: "TechBricks",
                   description:
                     "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
+                  img: logo,
                 },
               ],
             },
@@ -312,7 +313,7 @@ i18n
                   // startDate: "01 Jan 2023",
                   duration: "2 years",
                   location: "Online",
-                  loc : "Location",
+                  loc: "Location",
                   totalEtc: 90,
                   lecturer: {
                     name: "Antonio Minelli",
@@ -466,7 +467,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
-                  loc : "Location",
+                  loc: "Location",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1250,7 +1251,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
-                  loc : "Location",
+                  loc: "Location",
                   totalModules: 10,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1359,7 +1360,7 @@ i18n
                   // startDate: "05 Jun 2023",
                   duration: "2 years",
                   location: "Online",
-                  loc : "Location",
+                  loc: "Location",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1605,7 +1606,7 @@ i18n
                   imgSrc: MsvJava,
                   date: "12/08/24",
                   curriculum: 3,
-                  location : "Online"
+                  location: "Online",
                 },
                 {
                   title: "Mestrado em Segurança da Informação",
@@ -1614,7 +1615,7 @@ i18n
                   imgSrc: MsvCS,
                   date: "12/09/24",
                   curriculum: 8,
-                  location : "Online"
+                  location: "Online",
                 },
                 /*  {
                   title: "Administração de Empresas",
@@ -1637,26 +1638,26 @@ i18n
                   title: "Diretor de Tecnologia",
                   organization: "ETLForma",
                   description:
-                    "Antonio Minelli é o Diretor de Tecnologia da ETLForma, uma das principais organizações de treinamento em TI da Itália. Ele supervisionou projetos tecnológicos para grandes clientes, incluindo Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e o Ministério do Meio Ambiente da Itália. Como um veterano em tecnologia, Antonio traz uma riqueza de experiência prática para cada palestra.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg"
+                    "Antonio Minelli é o Diretor de Tecnologia da ETLForma, uma das principais organizações de treinamento em TI da Itália. Ele supervisionou projetos tecnológicos para grandes clientes, incluindo Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e o Ministério do Meio Ambiente da Itália. Como um veterano experiente em tecnologia, Antonio traz uma riqueza de experiência prática para cada aula.",
+                  img: logo,
                 },
                 {
                   name: "Alessandro Iacuelli",
                   title: "Analista e Professor",
                   organization: "ETLForma",
                   description:
-                    "Alessandro Iacuelli é Analista e Professor na ETLForma, onde compartilha sua experiência adquirida ao trabalhar com empresas como Thales Alenia Space, um líder global na indústria espacial e segundo parceiro industrial na Estação Espacial Internacional. Alessandro também conduziu pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos utilizando inteligência artificial. Sua paixão por resolver problemas complexos inspira cada aula.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp"
+                    "Alessandro Iacuelli é Analista e Professor na ETLForma, onde compartilha sua experiência adquirida ao trabalhar com empresas como Thales Alenia Space, líder global na indústria espacial e segundo maior parceiro industrial da Estação Espacial Internacional. Alessandro também realizou pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos utilizando inteligência artificial. Sua paixão por resolver problemas complexos inspira todas as suas aulas.",
+                  img: logo,
                 },
                 {
                   name: "Manuele Monti",
                   title: "Fundador e CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti é o Fundador e CEO da TechBricks, uma aceleradora e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de lançar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester e gerente de portfólio para o gigante global de energia GDF Suez (agora Engie). O espírito empreendedor de Manuele e sua visão sobre o potencial da tecnologia para mudanças positivas energizam todo o seu ensino.",
-                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp"
-                }
-              ]
+                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de fundar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester, bem como gerente de portfólio da gigante global de energia GDF Suez (atualmente Engie). O espírito empreendedor de Manuele e sua visão do potencial positivo da tecnologia energizam todas as suas aulas.",
+                  img: logo,
+                },
+              ],
             },
 
             homeTeam: {
@@ -1689,64 +1690,63 @@ i18n
                   img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                 },
               ],
-            },        
-UpcomingCourseSlider: {
-  title: "EXPLORAR TODOS OS CURSOS",
-  upcomingtitle: "Próximos",
-  subtitle: "Navegue Nossos",
-  upcomingsubtitle: "Nossos Próximos",
-  specialWord: "Cursos",
-  curriculum: "Módulos",
-  readMore: "Leia Mais",
-  courses: [
-    {
-      title: "Doutorado em Direito e Criminologia",
-      description:
-        "O Doutorado em Direito e Criminologia é um grau avançado de pesquisa acadêmica focado na exploração do sistema jurídico, comportamento criminal e respostas sociais ao crime.",
-      imgSrc:
-        "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
-      date: "12/08/24",
-      curriculum: 7,
-      price: "€3000",
-      link: "/courses/aB3cD4eF"
-    },
-    {
-      title: "Bacharelado em Psicologia da Saúde Geral",
-      description:
-        "O Bacharelado em Psicologia da Saúde Geral é um curso de graduação que explora a relação entre fatores psicológicos e saúde física. Os alunos aprendem como elementos psicológicos, comportamentais e sociais afetam a saúde, doenças e cuidados de saúde.",
-      imgSrc:
-        "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
-      date: "12/09/24",
-      curriculum: 8,
-      price: "€3000",
-      link: "/courses/tU1vW2xY"
-    },
-    {
-      title: "Mestrado em Administração de Empresas",
-      description:
-        "Lidere com Conhecimento: Domine a Ciência da Administração de Empresas, Moldando o Cenário Empresarial do Amanhã.",
-      imgSrc: BscBA,
-      date: "25/10/24",
-      curriculum: 18,
-      price: "€3000",
-      featured: true,
-      link: "/courses/JZhfbff4"
-    },
-    {
-      title: "Bacharelado em Biomedicina",
-      description:
-        "O Bacharelado em Biomedicina é um curso de graduação focado em entender a base biológica e molecular da saúde e da doença. O programa combina elementos de biologia, química e ciência médica para explorar como o corpo humano funciona, como as doenças se desenvolvem e como podem ser tratadas.",
-      imgSrc:
-        "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
-      date: "25/10/24",
-      curriculum: 18,
-      price: "€3000",
-      featured: true,
-      link: "/courses/JZhfbff4"
-    }
-  ]
-}
-,
+            },
+            UpcomingCourseSlider: {
+              title: "EXPLORAR TODOS OS CURSOS",
+              upcomingtitle: "Próximos",
+              subtitle: "Navegue Nossos",
+              upcomingsubtitle: "Nossos Próximos",
+              specialWord: "Cursos",
+              curriculum: "Módulos",
+              readMore: "Leia Mais",
+              courses: [
+                {
+                  title: "Doutorado em Direito e Criminologia",
+                  description:
+                    "O Doutorado em Direito e Criminologia é um grau avançado de pesquisa acadêmica focado na exploração do sistema jurídico, comportamento criminal e respostas sociais ao crime.",
+                  imgSrc:
+                    "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
+                  date: "12/08/24",
+                  curriculum: 7,
+                  price: "€3000",
+                  link: "/courses/aB3cD4eF",
+                },
+                {
+                  title: "Bacharelado em Psicologia da Saúde Geral",
+                  description:
+                    "O Bacharelado em Psicologia da Saúde Geral é um curso de graduação que explora a relação entre fatores psicológicos e saúde física. Os alunos aprendem como elementos psicológicos, comportamentais e sociais afetam a saúde, doenças e cuidados de saúde.",
+                  imgSrc:
+                    "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
+                  date: "12/09/24",
+                  curriculum: 8,
+                  price: "€3000",
+                  link: "/courses/tU1vW2xY",
+                },
+                {
+                  title: "Mestrado em Administração de Empresas",
+                  description:
+                    "Lidere com Conhecimento: Domine a Ciência da Administração de Empresas, Moldando o Cenário Empresarial do Amanhã.",
+                  imgSrc: BscBA,
+                  date: "25/10/24",
+                  curriculum: 18,
+                  price: "€3000",
+                  featured: true,
+                  link: "/courses/JZhfbff4",
+                },
+                {
+                  title: "Bacharelado em Biomedicina",
+                  description:
+                    "O Bacharelado em Biomedicina é um curso de graduação focado em entender a base biológica e molecular da saúde e da doença. O programa combina elementos de biologia, química e ciência médica para explorar como o corpo humano funciona, como as doenças se desenvolvem e como podem ser tratadas.",
+                  imgSrc:
+                    "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
+                  date: "25/10/24",
+                  curriculum: 18,
+                  price: "€3000",
+                  featured: true,
+                  link: "/courses/JZhfbff4",
+                },
+              ],
+            },
             courseDetails: {
               coursesData: [
                 {
@@ -1755,7 +1755,7 @@ UpcomingCourseSlider: {
                   startDate: "01 Jan 2023",
                   duration: "2 anos",
                   location: "Online",
-                  loc : "localização",
+                  loc: "localização",
                   totalEtc: 90,
                   cur: "2",
                   admission: {
@@ -1846,7 +1846,7 @@ UpcomingCourseSlider: {
                   startDate: "05 Jun 2023",
                   duration: "2 anos",
                   location: "Online",
-                  loc : "localização",
+                  loc: "localização",
                   totalModules: 7,
                   career: [
                     "Gerente de Segurança da Informação",
@@ -1927,7 +1927,7 @@ UpcomingCourseSlider: {
                   name: "Mestrado em Gestão e Liderança de Organizações sem Fins Lucrativos",
                   duration: "2 anos",
                   location: "Online",
-                  loc : "localização",
+                  loc: "localização",
                   totalModules: 10,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -2035,7 +2035,7 @@ UpcomingCourseSlider: {
                   name: "Mestrado em Gestão de Projetos Europeus",
                   duration: "2 anos",
                   location: "Online",
-                  loc : "localização",
+                  loc: "localização",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -2530,6 +2530,18 @@ UpcomingCourseSlider: {
           },
           courseTab: {
             tab: "Nossos Cursos",
+          },
+
+          about: {
+            title: "SOBRE NÓS",
+            subtitle: "Pesquisa Notável e Ensino Excepcional",
+            specialWord: "Especialização",
+            egoWord: "eGO Educação",
+            highlight:
+              "de uma educação altamente profissionalizante oferecida inteiramente online em nível internacional.",
+            s1: "nasceu com a motivação de entrar no mercado de provedores de educação online por meio de uma oferta de treinamento excelente, presente em algumas universidades presenciais, com todas as suas limitações, mas carente ou insuficiente no mundo do e-learning.",
+            s2: "Anteriormente um centro de orientação e serviços estudantis chamado IELI, desde 2017 garantimos suporte constante aos estudantes durante sua formação: desde a orientação até os procedimentos de matrícula, do suporte técnico à assistência aos estudos – para mais de 5.000 estudantes matriculados em toda a nossa rede.",
+            s4: "é um novo projeto que ampliará o conceito por meio de um novo Instituto de Ensino Superior baseado em Malta, focado na oferta de uma educação altamente profissionalizante oferecida inteiramente online em nível internacional.",
           },
         },
       },

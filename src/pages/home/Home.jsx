@@ -18,7 +18,7 @@ function Home() {
     <div style={{overflowX: "hidden"}}>
         <HomeHero />
         {/* <HomeAbout />  */}
-        <News />
+        {/* <News /> */}
         <HomeCourseSlider />
         <HomeFeatures />
         <PartnersSlider />

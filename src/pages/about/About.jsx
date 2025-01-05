@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./About.css";
 import SubHeader from "../../globals/SubHeader/SubHeader";
+import logo from "../../assets/Logos/logo-ego-black.png";
 import PartnersSlider from "../../globals/Sliders/PartnersSlider";
 import CourseSlider from "../../globals/Sliders/CourseSlider";
 import { useTranslation } from "react-i18next";
