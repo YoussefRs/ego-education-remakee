@@ -81,7 +81,7 @@ function News() {
                           class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                           href=""
                         >
-                          Business
+                          Busines
                         </a>
                         <a class="text-white" href="">
                           Jan 01, 2045
