@@ -46,7 +46,6 @@ function News() {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: false,
     arrows: false,
     // speed: 500,
     slidesToShow: 1,

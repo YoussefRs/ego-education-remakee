@@ -26,8 +26,21 @@ function extractIdFromPathname(pathname) {
 }
 
 function CoursesDetails() {
-  const [activePane, setActivePane] = useState("Overview");
   const { t } = useTranslation();
+  const {
+    title,
+    title1,
+    title2,
+    title3,
+    title4,
+    title5,
+    tab2,
+    tab3,
+    tab4,
+    tab5,
+  } = t("home.courseDetails");
+
+  const [activePane, setActivePane] = useState(title);
   const location = useLocation();
   const courseId = extractIdFromPathname(location.pathname);
   const [course, setCourse] = useState(null);
@@ -81,18 +94,7 @@ function CoursesDetails() {
     setIsChecked(!isChecked);
   };
 
-  const {
-    title,
-    title1,
-    title2,
-    title3,
-    title4,
-    title5,
-    tab2,
-    tab3,
-    tab4,
-    tab5,
-  } = t("home.courseDetails");
+  
 
   const { button } = t("widget.apply");
 
@@ -180,12 +182,12 @@ function CoursesDetails() {
                     <li
                       className="nav-item"
                       onClick={() => {
-                        setActivePane("Overview");
+                        setActivePane(title);
                       }}
                     >
                       <Link
                         className={`nav-link ${
-                          activePane === "Overview" ? "active" : ""
+                          activePane === title ? "active" : ""
                         }`}
                       >
                         <svg
@@ -204,12 +206,12 @@ function CoursesDetails() {
                     <li
                       className="nav-item"
                       onClick={() => {
-                        setActivePane("Modules");
+                        setActivePane(tab3);
                       }}
                     >
                       <Link
                         className={`nav-link ${
-                          activePane === "Modules" ? "active" : ""
+                          activePane === tab3 ? "active" : ""
                         }`}
                       >
                         <svg
@@ -230,12 +232,12 @@ function CoursesDetails() {
                     <li
                       className="nav-item"
                       onClick={() => {
-                        setActivePane("Duration");
+                        setActivePane(tab4);
                       }}
                     >
                       <Link
                         className={`nav-link ${
-                          activePane === "Duration" ? "active" : ""
+                          activePane === tab4 ? "active" : ""
                         }`}
                       >
                         <svg
@@ -280,12 +282,12 @@ function CoursesDetails() {
                     <li
                       className="nav-item"
                       onClick={() => {
-                        setActivePane("Entry Requirement");
+                        setActivePane(tab2);
                       }}
                     >
                       <Link
                         className={`nav-link ${
-                          activePane === "Entry Requirement" ? "active" : ""
+                          activePane === tab2 ? "active" : ""
                         }`}
                       >
                         <svg
@@ -344,22 +346,22 @@ function CoursesDetails() {
 
                     {isOpen && (
                       <div className="dropdown-content">
-                        <div onClick={() => handleItemClick("Overview")}>
-                          Overview
+                        <div onClick={() => handleItemClick(title)}>
+                          {title}
                         </div>
-                        <div onClick={() => handleItemClick("Modules")}>
-                          Modules
+                        <div onClick={() => handleItemClick(tab3)}>
+                          {tab3}
                         </div>
-                        <div onClick={() => handleItemClick("Duration")}>
-                          Duration
+                        <div onClick={() => handleItemClick(tab4)}>
+                          {tab4}
                         </div>
                         {/* <div onClick={() => handleItemClick("Lecturer")}>
                           Lecturer
                         </div> */}
                         <div
-                          onClick={() => handleItemClick("Entry Requirement")}
+                          onClick={() => handleItemClick(tab2)}
                         >
-                          Entry Requirement
+                          {tab2}
                         </div>
                         <div onClick={() => handleItemClick("Sponsor")}>
                           Sponsor
@@ -371,7 +373,7 @@ function CoursesDetails() {
                   <div className="tab-content">
                     <div
                       className={`tab-pane ${
-                        activePane === "Overview" ? "active" : ""
+                        activePane === title ? "active" : ""
                       }`}
                       id="tab2"
                     >
@@ -414,7 +416,7 @@ function CoursesDetails() {
                     </div>
                     <div
                       className={`tab-pane ${
-                        activePane === "Entry Requirement" ? "active" : ""
+                        activePane === tab2 ? "active" : ""
                       }`}
                       id="tab1"
                     >
@@ -851,7 +853,7 @@ function CoursesDetails() {
                     </div>
                     <div
                       className={`tab-pane ${
-                        activePane === "Modules" ? "active" : ""
+                        activePane === tab3 ? "active" : ""
                       }`}
                       id="tab2"
                     >
@@ -896,7 +898,7 @@ function CoursesDetails() {
                     </div>
                     <div
                       className={`tab-pane ${
-                        activePane === "Duration" ? "active" : ""
+                        activePane === tab4 ? "active" : ""
                       }`}
                       id="tab2"
                     >

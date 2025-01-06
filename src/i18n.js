@@ -11,7 +11,6 @@ import Matitle from "./assets/Home/banner/MA-title.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
 import logo from "./assets/Logos/logo-ego-black.png";
 import eubanner from "./assets/Home/banner/eubanner.webp";
-import logob from "./assets/Logos/logo-ego-black.png"
 import {
   faLaptopCode,
   faPersonChalkboard,
@@ -1459,6 +1458,10 @@ i18n
               tab3: "Modules",
               tab4: "Duration",
               tab5: "Lecturer",
+              modules: "Modules",
+              location : "Location",
+              price : "Price",
+              online : "Online"
             },
           },
           widget: {
@@ -1502,6 +1505,37 @@ i18n
             /* s3: "Since 2017, with more than 5,000 students enrolled overall through our network, IELI has guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance.", */
             s4: "is a new project that will extend the concept through a new Higher Education Institute based in Malta, focused on the provision. of highly professionalising education provided entirely online at an international level.",
           },
+          footer: {
+            about: {
+              description1:
+                "formerly International E-Learning Institute Ltd) is a company established in 2017 in Malta, by deed C83113.",
+              st1: "eGO Education",
+              description2:
+                " has been accredited by the Malta Further & Higher Education Authority (MFHEA) as a Higher Education Institute in 2023 with licence n. 2023-015.",
+            },
+            contact: {
+              title: "Contact",
+              addressLabel: "Address",
+              address:
+                "40, Villa Fairholme, Sir Augustus Bartolo Street, Ta’ Xbiex XBX 1095, Malta",
+              websiteLabel: "Website",
+              website: "www.ego-education.com",
+              emailLabel: "Email",
+              email: "info@ego-education.com",
+            },
+            quickLinks: {
+              title: "Quick Links",
+              links: {
+                home: "Home",
+                courses: "Courses",
+                elearn: "eLearn",
+                partners: "Partners",
+                apply: "Apply",
+                about: "About Us",
+                policiesPrivacy: "Policy & Privacy",
+              },
+            },
+          },
         },
       },
       br: {
@@ -1518,7 +1552,7 @@ i18n
               home: "Home",
               courses: "Cursos",
               eLearning: "e-Aprender",
-              partners: "parceiros",
+              partners: "Parceiros",
               research: "Pesquisa Ego",
               apply: "Inscreva-se",
               about: "Sobre nós",
@@ -2502,6 +2536,10 @@ i18n
               tab3: "Módulos",
               tab4: "Admissão",
               tab5: "Palestrante",
+              modules: "Módulos",
+              location : "Localização",
+              price : "Preço",
+              online : "Online"
             },
           },
           widget: {
@@ -2543,6 +2581,38 @@ i18n
             s1: "nasceu com a motivação de entrar no mercado de provedores de educação online por meio de uma oferta de treinamento excelente, presente em algumas universidades presenciais, com todas as suas limitações, mas carente ou insuficiente no mundo do e-learning.",
             s2: "Anteriormente um centro de orientação e serviços estudantis chamado IELI, desde 2017 garantimos suporte constante aos estudantes durante sua formação: desde a orientação até os procedimentos de matrícula, do suporte técnico à assistência aos estudos – para mais de 5.000 estudantes matriculados em toda a nossa rede.",
             s4: "é um novo projeto que ampliará o conceito por meio de um novo Instituto de Ensino Superior baseado em Malta, focado na oferta de uma educação altamente profissionalizante oferecida inteiramente online em nível internacional.",
+          },
+
+          footer: {
+            about: {
+              description1:
+                "anteriormente International E-Learning Institute Ltd) é uma empresa estabelecida em 2017 em Malta, sob o registro C83113.",
+              st1: "eGO Education",
+              description2:
+                "foi credenciada pela Autoridade de Educação Superior e Avançada de Malta (MFHEA) como uma Instituição de Ensino Superior em 2023 com a licença nº 2023-015.",
+            },
+            contact: {
+              title: "Contato",
+              addressLabel: "Endereço",
+              address:
+                "40, Villa Fairholme, Sir Augustus Bartolo Street, Ta’ Xbiex XBX 1095, Malta",
+              websiteLabel: "Site",
+              website: "www.ego-education.com",
+              emailLabel: "Email",
+              email: "info@ego-education.com",
+            },
+            quickLinks: {
+              title: "Links Rápidos",
+              links: {
+                home: "Início",
+                courses: "Cursos",
+                elearn: "eLearn",
+                partners: "Parceiros",
+                apply: "Inscrever-se",
+                about: "Sobre Nós",
+                policiesPrivacy: "Política e Privacidade",
+              },
+            },
           },
         },
       },

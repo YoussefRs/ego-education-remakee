@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logos/logo-ego-white.png";
 import "./Footer.css";
+import { useTranslation } from "react-i18next";
+
 
 const Footer = () => {
+  const {t} = useTranslation();
+  const {about, contact, quickLinks} = t("footer")
   return (
     <>
       <section className="footer" id="footer">
@@ -14,25 +18,21 @@ const Footer = () => {
             </div>
             <div className="col-contents">
               <p>
-                <strong>eGO Education</strong> (formerly International
-                E-Learning Institute Ltd) is a company established in 2017 in
-                Malta, by deed C83113.
+                <strong>{about?.st1} </strong> {about?.description1}
               </p>
               <p>
-                <strong>eGO Education</strong> has been accredited by the Malta
-                Further & Higher Education Authority (MFHEA) as a Higher
-                Education Institute in 2023 with licence n. 2023-015.
+                <strong>{about?.st1} </strong> {about?.description2}
               </p>
             </div>
           </div>
 
           <div className="footer-col footer-col-2">
             <div className="col-title">
-              <h3>Contact</h3>
+              <h3>{contact.title} </h3>
             </div>
             <div className="col-contents">
               <div className="contact-row">
-                <span>Address</span>
+                <span>{contact.addressLabel} </span>
                 <span>
                   40, Villa Fairholme, Sir Augustus Bartolo Street, Ta’ Xbiex
                   XBX 1095, Malta
@@ -43,11 +43,11 @@ const Footer = () => {
                 <span>+012 987 23456</span>
               </div> */}
               <div className="contact-row">
-                <span>Website</span>
+                <span>{contact.websiteLabel} </span>
                 <a>www.ego-education.com</a>
               </div>
               <div className="contact-row">
-                <span>Email</span>
+                <span>{contact.emailLabel} </span>
                 <span>info@ego-education.com</span>
               </div>
             </div>
@@ -55,16 +55,16 @@ const Footer = () => {
 
           <div className="footer-col footer-col-3">
             <div className="col-title">
-              <h3>Quick Links</h3>
+              <h3>{quickLinks.title} </h3>
             </div>
             <div className="col-contents">
-              <a href="/">Home</a>
-              <a href="/courses">Courses</a>
-              <a href="/elearn">eLearn</a>
-              <a href="/partners">Partners</a>
-              <a href="/confirm">Apply</a>
-              <a href="/about">About Us</a>
-              <a href="/policies-privacy">Policy & Privacy</a>
+              <a href="/">{quickLinks.links.home} </a>
+              <a href="/courses">{quickLinks.links.courses}</a>
+              <a href="/elearn">{quickLinks.links.elearn}</a>
+              <a href="/partners">{quickLinks.links.partners}</a>
+              <a href="/confirm">{quickLinks.links.apply}</a>
+              <a href="/about">{quickLinks.links.about}</a>
+              <a href="/policies-privacy">{quickLinks.links.policiesPrivacy}</a>
             </div>
           </div>
 
