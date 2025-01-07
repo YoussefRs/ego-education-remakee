@@ -1536,6 +1536,57 @@ i18n
               },
             },
           },
+
+          "apply": {
+    "heading": "To properly enrol, make sure you have all the following documents ready:",
+    "documents": {
+      "academicCareer": "Previous academic career (Exams + ECTS if you have taken exams at other universities and have not yet graduated).",
+      "degreeObtained": "Degree obtained. Qualifications issued in English, Spanish, French, Italian are accepted.",
+      "cv": "Updated CV in English.",
+      "idDocument": "Copy of a valid identification document.",
+      "translationRequirement": "For other languages, the qualification must be translated into English or Italian."
+    },
+    "linguisticCertifications": {
+      "heading": "Linguistic certifications held among the following, if not native or not possessing a degree in the following languages:",
+      "languages": {
+        "english": "English",
+        "italian": "Italian"
+      },
+      "bachelorRequirement": "To access the Bachelor’s, at least a B2 level of knowledge of the English or Italian language is required, while for the Master’s, at least a C1 level is required."
+    },
+    "educationalQualifications": "All educational qualifications (such as high school diploma, bachelor’s, master’s) should be apostilled through a certification of value at the Maltese or Italian embassies abroad.",
+    "reviewProcess": "Once registration is complete, our team will review your documents and information within 72 hours. We'll email you an update.",
+    "paymentConfirmation": "Upon payment confirmation, you'll get your username and password via email to start your online learning journey.",
+    "welcomeMessage": "Welcome to eGO Education.",
+    "checkboxLabel": "I confirm that I have thoroughly reviewed and understood all the entry requirements.",
+    "applyButton": "Apply"
+  }, 
+  enrol : {
+    header : "Enrollment Information",
+    program : "Choose program",
+    lng : "Choose language",
+    fname : "First Name*",
+    lname : "Last Name*",
+    reamil : "Repeat Email*",
+    bday : "Date Of Birth*",
+    acc : "Academic Career*",
+    degg : "Degree obtained*",
+    cv : "CV*",
+    copy : "Copy of a valid identification document*",
+    lngg : "Linguistic certification (if obtained)",
+    header2 : "Additional Information",
+    header3 : "Privacy",
+    country : "Country Of Birth*",
+    city : "City Of Birth*",
+    address : "Address*",
+    zip : "Zid Code*",
+    gender: "Choose Gender",
+    h1: "I hereby authorise the processing of my personal data for purposes related to the performance of institutional activities.",
+    h2 : "It is possible to exercise the right of withdrawal and receive a refund of the fees paid within 7 days of registration.",
+    h3 : "I hereby authorise the processing of my personal data for sending advertising material."
+    ,btn : "Submit"
+  }
+
         },
       },
       br: {
@@ -2614,6 +2665,57 @@ i18n
               },
             },
           },
+
+          "apply": {
+    "heading": "Para se inscrever corretamente, certifique-se de ter todos os seguintes documentos prontos:",
+    "documents": {
+      "academicCareer": "Histórico acadêmico anterior (Exames + ECTS, caso tenha feito exames em outras universidades e ainda não tenha se formado).",
+      "degreeObtained": "Diploma obtido. São aceitas qualificações emitidas em inglês, espanhol, francês ou italiano.",
+      "cv": "Currículo atualizado em inglês.",
+      "idDocument": "Cópia de um documento de identificação válido.",
+      "translationRequirement": "Para outros idiomas, a qualificação deve ser traduzida para inglês ou italiano."
+    },
+    "linguisticCertifications": {
+      "heading": "Certificações linguísticas entre as seguintes, caso não seja nativo ou não possua um diploma nos seguintes idiomas:",
+      "languages": {
+        "english": "Inglês",
+        "italian": "Italiano"
+      },
+      "bachelorRequirement": "Para acessar o Bacharelado, é necessário pelo menos um nível B2 de conhecimento do idioma inglês ou italiano, enquanto para o Mestrado, é necessário pelo menos um nível C1."
+    },
+    "educationalQualifications": "Todas as qualificações educacionais (como diploma do ensino médio, bacharelado, mestrado) devem ser apostiladas através de uma certificação de valor nas embaixadas de Malta ou Itália no exterior.",
+    "reviewProcess": "Após a conclusão do registro, nossa equipe revisará seus documentos e informações em até 72 horas. Enviaremos uma atualização por e-mail.",
+    "paymentConfirmation": "Após a confirmação do pagamento, você receberá seu nome de usuário e senha por e-mail para começar sua jornada de aprendizado online.",
+    "welcomeMessage": "Bem-vindo à eGO Education.",
+    "checkboxLabel": "Confirmo que revisei e compreendi todos os requisitos de entrada.",
+    "applyButton": "Inscrever-se"
+  },
+
+  "enrol": {
+    "header": "Informações de Inscrição",
+    "program": "Escolha o programa",
+    "lng": "Escolha o idioma",
+    "fname": "Primeiro Nome*",
+    "lname": "Sobrenome*",
+    "reamil": "Repetir Email*",
+    "bday": "Data de Nascimento*",
+    "acc": "Carreira Acadêmica*",
+    "degg": "Diploma Obtido*",
+    "cv": "Currículo (CV)*",
+    "copy": "Cópia de um documento de identificação válido*",
+    "lngg": "Certificação Linguística (se obtida)",
+    "header2": "Informações Adicionais",
+    "header3": "Privacidade",
+    "country": "País de Nascimento*",
+    "city": "Cidade de Nascimento*",
+    "address": "Endereço*",
+    "zip": "Código Postal*",
+    "gender": "Escolha o Gênero",
+    "h1": "Autorizo o processamento dos meus dados pessoais para fins relacionados às atividades institucionais.",
+    "h2": "É possível exercer o direito de desistência e receber um reembolso das taxas pagas dentro de 7 dias após o registro.",
+    "h3": "Autorizo o processamento dos meus dados pessoais para o envio de material publicitário.",
+    "btn": "Enviar"
+  }
         },
       },
     },

@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SubHeader from "../../globals/SubHeader/SubHeader";
 import ContactWidget from "../../globals/Widgets/ContactWidget";
+import { useTranslation } from "react-i18next";
 
 function ConfirmPolicy() {
+  const {t} = useTranslation()
+  const {heading, documents, linguisticCertifications, educationalQualifications, reviewProcess, paymentConfirmation, welcomeMessage, checkboxLabel, applyButton} = t("apply")
   const [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -37,8 +40,7 @@ function ConfirmPolicy() {
       <div className="px-md-5 py-md-5 py-3 ps-2 pe-1 row" id="apply-page">
         <div className="col-lg-8 mb-5">
           <h6>
-            To properly enrol, make sure you have all the following documents
-            ready:
+            {heading}
           </h6>{" "}
           <br />
           <ul className="custom-list-style ps-0">
@@ -55,8 +57,7 @@ function ConfirmPolicy() {
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
               </svg>
               <span>
-                Previous academic career (Exams + ECTS if you have taken exams
-                at other universities and have not yet graduated).
+               {documents.academicCareer}
               </span>
             </li>
             <li>
@@ -72,8 +73,7 @@ function ConfirmPolicy() {
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
               </svg>
               <span>
-                Degree obtained. Qualifications issued in English, Spanish,
-                French, Italian are accepted.
+              {documents.degreeObtained}
               </span>
             </li>
             <li>
@@ -88,7 +88,7 @@ function ConfirmPolicy() {
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
               </svg>
-              <span>Updated CV in English.</span>
+              <span> {documents.cv}</span>
             </li>
             <li>
               <svg
@@ -102,7 +102,7 @@ function ConfirmPolicy() {
               >
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
               </svg>
-              <span>Copy of a valid identification document.</span>
+              <span>{documents.idDocument}</span>
             </li>
             <li>
               <svg
@@ -117,15 +117,13 @@ function ConfirmPolicy() {
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
               </svg>
               <span>
-                For other languages, the qualification must be translated into
-                English or Italian.
+              {documents.translationRequirement}
               </span>
             </li>
             <br />
             <li>
               <div className="content">
-                Linguistic certifications held among the following, if not
-                native or not possessing a degree in the following languages:
+                {linguisticCertifications.heading}
                 <ul className="custom-list-style">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -196,34 +194,27 @@ function ConfirmPolicy() {
                     </ul>
                   </li>
                 </ul>
-                To access the Bachelor’s, at least a{" "}
+                {/* To access the Bachelor’s, at least a{" "}
                 <span className="fw-bold ego-green">B2</span> level of knowledge
                 of the English or Italian language is required, while for the
                 Master’s, at least a{" "}
                 <span className="fw-bold ego-green">C1 </span>
                 level is <span className="fw-bold ego-green">required</span>
-                .
+                . */}
+                {linguisticCertifications.bachelorRequirement}
                 <br />
                 <br />
-                All educational qualifications (such as high school diploma,
-                bachelor’s, master’s) should be apostilled through a
-                certification of value at the Maltese or Italian embassies
-                abroad.
+                {educationalQualifications}
                 <br />
                 <br />
-                Once registration is complete, our team will review your
-                documents and information within 72 hours. We&#39;ll email you
-                an update.
+                {reviewProcess}
                 <br />
                 <br />
-                Upon{" "}
-                <span className="fw-bold ego-green">payment confirmation</span>
-                , you&#39;ll get your username and password via email to start
-                your online learning journey.
+                {paymentConfirmation}
                 <br />
                 <br />
                 <span className="fw-bold ego-green">
-                  Welcome to eGO Education.
+                  {welcomeMessage}
                 </span>
                 <br />
               </div>
@@ -236,8 +227,7 @@ function ConfirmPolicy() {
               checked={isChecked}
               onChange={handleCheckboxChange}
             />
-            I confirm that I have thoroughly reviewed and understood all the
-            entry requirements.
+            {checkboxLabel}
           </label>{" "}
           <br />
           <Link
@@ -250,7 +240,7 @@ function ConfirmPolicy() {
             //   inst: course.institute,
             // }}
           >
-            Apply
+            {applyButton}
           </Link>
         </div>
         <div className="col-lg-4 ">

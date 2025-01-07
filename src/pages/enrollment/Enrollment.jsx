@@ -29,9 +29,37 @@ import {
 } from "./Svgs";
 import { countries } from "../../globals/countriesData";
 import Flag from "react-world-flags";
+import { useTranslation } from "react-i18next";
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
+  const {t} = useTranslation();
+  const {
+    header,
+    program,
+    lng,
+    fname,
+    lname,
+    reamil,
+    bday,
+    acc,
+    degg,
+    cv,
+    copy,
+    lngg,
+    header2,
+    country,
+    city,
+    address,
+    zip,
+    gender,
+    h1,
+    h2,
+    h3,
+    btn
+  } = t("enrol");
+  
+
   const inputRefs = useRef({});
   const { showModal, openModal, closeModal } = useModal();
   const [showApplyModal, setShowApplyModal] = useState(false);
@@ -281,7 +309,7 @@ function Enrollment() {
       <CModal title="My Modal" show={showModal} onHide={closeModal}></CModal>
 
       <div className="container enrollment d-flex flex-column">
-        <h1 className="mb-4">Enrollment Information</h1>
+        <h1 className="mb-4">{header} </h1>
         <div className="row mb-md-5">
           <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
@@ -303,7 +331,7 @@ function Enrollment() {
               ref={(el) => (inputRefs.current.course = el)}
               required
             >
-              <option value="">Choose program</option>
+              <option value="">{program} </option>
               <option value="MSc in Information Security">
                 MSc in Information Security
               </option>
@@ -319,9 +347,10 @@ function Enrollment() {
               value={formData.lng}
               onChange={handleInputChange}
             >
-              <option>Choose language</option>
+              <option>{lng} </option>
               <option value="English">English</option>
               <option value="Italian">Italian</option>
+              <option value="Italian">Brazilian</option>
             </select>
             {errors.lng && <div className="error">{errors.lng}</div>}
           </div>
@@ -335,7 +364,7 @@ function Enrollment() {
             <span className="wpcf7-form-control-wrap" data-name="first-name">
               <input
                 size="40"
-                placeholder="First Name*"
+                placeholder={fname}
                 type="text"
                 name="firstName"
                 value={formData.firstName}
@@ -364,7 +393,7 @@ function Enrollment() {
             <span className="wpcf7-form-control-wrap" data-name="lastname">
               <input
                 size="40"
-                placeholder="Last Name*"
+                placeholder={lname}
                 type="text"
                 name="lastName"
                 value={formData.lastName}
@@ -423,7 +452,7 @@ function Enrollment() {
             <span className="wpcf7-form-control-wrap" data-name="email-email">
               <input
                 size="40"
-                placeholder="Repeat Email*"
+                placeholder={reamil}
                 type="email"
                 name="repeatEmail"
                 value={formData.repeatEmail}
@@ -477,7 +506,7 @@ function Enrollment() {
               <input
                 ref={dateInputRef}
                 size="40"
-                placeholder="Date of Birth*"
+                placeholder={bday}
                 type={inputType}
                 name="date"
                 value={formData.date}
@@ -496,7 +525,7 @@ function Enrollment() {
               <FileIcon width={"77%"} />
             </div>
             <fieldset>
-              <legend>Academic career*</legend>
+              <legend>{acc} </legend>
               <span data-default="Choose file">
                 {formData.file1 ? formData.file1.name : ""}
               </span>
@@ -526,7 +555,7 @@ function Enrollment() {
               <FileIcon width={"77%"} />
             </div>
             <fieldset>
-              <legend>Degree obtained*</legend>
+              <legend>{degg} </legend>
               <span>{formData.file2 ? formData.file2.name : ""}</span>
             </fieldset>
             {errors.file2 && <div className="error">{errors.file2}</div>}
@@ -556,7 +585,7 @@ function Enrollment() {
               <FileIcon width={"77%"} />
             </div>
             <fieldset>
-              <legend>CV*</legend>
+              <legend>{cv} </legend>
               <span>{formData.file3 ? formData.file3.name : ""}</span>
             </fieldset>
             {errors.file3 && <div className="error">{errors.file3}</div>}
@@ -584,7 +613,7 @@ function Enrollment() {
               <IdIcon width={"77%"} />
             </div>
             <fieldset>
-              <legend>Copy of a valid identification document*</legend>
+              <legend>{copy} </legend>
               <span>{formData.file4 ? formData.file4.name : ""}</span>
             </fieldset>
             {errors.file4 && <div className="error">{errors.file4}</div>}
@@ -614,7 +643,7 @@ function Enrollment() {
               <CertificateIcon width={"77%"} />
             </div>
             <fieldset>
-              <legend>Linguistic certification (if obtained)</legend>
+              <legend>{lngg} </legend>
               <span>{formData.file5 ? formData.file5.name : ""}</span>
             </fieldset>
             {errors.file5 && <div className="error">{errors.file5}</div>}
@@ -624,7 +653,7 @@ function Enrollment() {
             </label>
           </div>
         </div>
-        <h1 className="mt-5 mb-4">Additional Information</h1>
+        <h1 className="mt-5 mb-4">{header2} </h1>
         <div className="row mb-md-5">
           <div className="col-md-6 col-12 __enrollment_field">
             <div className="__icon">
@@ -672,7 +701,7 @@ function Enrollment() {
                 {formData.country && formData.country !== "" ? (
                   <span>{formData.country}</span>
                 ) : (
-                  <span className="__ph">Country Of Birth*</span>
+                  <span className="__ph">{country} </span>
                 )}
               </div>
             </span>
@@ -723,7 +752,7 @@ function Enrollment() {
             <span className="wpcf7-form-control-wrap" data-name="city">
               <input
                 size="40"
-                placeholder="City Of Birth*"
+                placeholder={city}
                 type="text"
                 name="city"
                 value={formData.city}
@@ -752,7 +781,7 @@ function Enrollment() {
             <span className="wpcf7-form-control-wrap" data-name="address">
               <input
                 size="40"
-                placeholder="Address*"
+                placeholder={address}
                 type="text"
                 name="address"
                 value={formData.address}
@@ -778,7 +807,7 @@ function Enrollment() {
             <span className="wpcf7-form-control-wrap" data-name="zip">
               <input
                 size="40"
-                placeholder="Zip Code*"
+                placeholder={zip}
                 type="number"
                 name="zip"
                 value={formData.zip}
@@ -819,7 +848,7 @@ function Enrollment() {
               }}
               required
             >
-              <option value="">Choose gender</option>
+              <option value="">{gender} </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Female">Other</option>
@@ -837,8 +866,7 @@ function Enrollment() {
                 checked={formData.processingAuthorization}
                 onChange={handleInputChange}
               />
-              I hereby authorise the processing of my personal data for purposes
-              related to the performance of institutional activities.
+              {h1}
             </label>
           </div>
         </div>
@@ -851,8 +879,7 @@ function Enrollment() {
                 checked={formData.withdrawalAuthorization}
                 onChange={handleInputChange}
               />
-              It is possible to exercise the right of withdrawal and receive a
-              refund of the fees paid within 7 days of registration.
+              {h2}
             </label>
           </div>
         </div>
@@ -865,8 +892,7 @@ function Enrollment() {
                 checked={formData.advertisingAuthorization}
                 onChange={handleInputChange}
               />
-              I hereby authorise the processing of my personal data for sending
-              advertising material.
+              {h3}
             </label>
           </div>
         </div>
@@ -888,7 +914,7 @@ function Enrollment() {
               }
               style={{ width: "150px" }}
             >
-              {loading ? "..." : "Submit"}
+              {loading ? "..." : btn}
             </button>
           </div>
         </div>
