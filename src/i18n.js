@@ -1459,9 +1459,9 @@ i18n
               tab4: "Duration",
               tab5: "Lecturer",
               modules: "Modules",
-              location : "Location",
-              price : "Price",
-              online : "Online"
+              location: "Location",
+              price: "Price",
+              online: "Online",
             },
           },
           widget: {
@@ -1537,56 +1537,65 @@ i18n
             },
           },
 
-          "apply": {
-    "heading": "To properly enrol, make sure you have all the following documents ready:",
-    "documents": {
-      "academicCareer": "Previous academic career (Exams + ECTS if you have taken exams at other universities and have not yet graduated).",
-      "degreeObtained": "Degree obtained. Qualifications issued in English, Spanish, French, Italian are accepted.",
-      "cv": "Updated CV in English.",
-      "idDocument": "Copy of a valid identification document.",
-      "translationRequirement": "For other languages, the qualification must be translated into English or Italian."
-    },
-    "linguisticCertifications": {
-      "heading": "Linguistic certifications held among the following, if not native or not possessing a degree in the following languages:",
-      "languages": {
-        "english": "English",
-        "italian": "Italian"
-      },
-      "bachelorRequirement": "To access the Bachelor’s, at least a B2 level of knowledge of the English or Italian language is required, while for the Master’s, at least a C1 level is required."
-    },
-    "educationalQualifications": "All educational qualifications (such as high school diploma, bachelor’s, master’s) should be apostilled through a certification of value at the Maltese or Italian embassies abroad.",
-    "reviewProcess": "Once registration is complete, our team will review your documents and information within 72 hours. We'll email you an update.",
-    "paymentConfirmation": "Upon payment confirmation, you'll get your username and password via email to start your online learning journey.",
-    "welcomeMessage": "Welcome to eGO Education.",
-    "checkboxLabel": "I confirm that I have thoroughly reviewed and understood all the entry requirements.",
-    "applyButton": "Apply"
-  }, 
-  enrol : {
-    header : "Enrollment Information",
-    program : "Choose program",
-    lng : "Choose language",
-    fname : "First Name*",
-    lname : "Last Name*",
-    reamil : "Repeat Email*",
-    bday : "Date Of Birth*",
-    acc : "Academic Career*",
-    degg : "Degree obtained*",
-    cv : "CV*",
-    copy : "Copy of a valid identification document*",
-    lngg : "Linguistic certification (if obtained)",
-    header2 : "Additional Information",
-    header3 : "Privacy",
-    country : "Country Of Birth*",
-    city : "City Of Birth*",
-    address : "Address*",
-    zip : "Zid Code*",
-    gender: "Choose Gender",
-    h1: "I hereby authorise the processing of my personal data for purposes related to the performance of institutional activities.",
-    h2 : "It is possible to exercise the right of withdrawal and receive a refund of the fees paid within 7 days of registration.",
-    h3 : "I hereby authorise the processing of my personal data for sending advertising material."
-    ,btn : "Submit"
-  }
-
+          apply: {
+            heading:
+              "To properly enrol, make sure you have all the following documents ready:",
+            documents: {
+              academicCareer:
+                "Previous academic career (Exams + ECTS if you have taken exams at other universities and have not yet graduated).",
+              degreeObtained:
+                "Degree obtained. Qualifications issued in English, Spanish, French, Italian are accepted.",
+              cv: "Updated CV in English.",
+              idDocument: "Copy of a valid identification document.",
+              translationRequirement:
+                "For other languages, the qualification must be translated into English or Italian.",
+            },
+            linguisticCertifications: {
+              heading:
+                "Linguistic certifications held among the following, if not native or not possessing a degree in the following languages:",
+              languages: {
+                english: "English",
+                italian: "Italian",
+              },
+              bachelorRequirement:
+                "To access the Bachelor’s, at least a B2 level of knowledge of the English or Italian language is required, while for the Master’s, at least a C1 level is required.",
+            },
+            educationalQualifications:
+              "All educational qualifications (such as high school diploma, bachelor’s, master’s) should be apostilled through a certification of value at the Maltese or Italian embassies abroad.",
+            reviewProcess:
+              "Once registration is complete, our team will review your documents and information within 72 hours. We'll email you an update.",
+            paymentConfirmation:
+              "Upon payment confirmation, you'll get your username and password via email to start your online learning journey.",
+            welcomeMessage: "Welcome to eGO Education.",
+            checkboxLabel:
+              "I confirm that I have thoroughly reviewed and understood all the entry requirements.",
+            applyButton: "Apply",
+          },
+          enrol: {
+            header: "Enrollment Information",
+            program: "Choose program",
+            lng: "Choose language",
+            fname: "First Name*",
+            lname: "Last Name*",
+            reamil: "Repeat Email*",
+            bday: "Date Of Birth*",
+            acc: "Academic Career*",
+            degg: "Degree obtained*",
+            cv: "CV*",
+            copy: "Copy of a valid identification document*",
+            lngg: "Linguistic certification (if obtained)",
+            header2: "Additional Information",
+            header3: "Privacy",
+            country: "Country Of Birth*",
+            city: "City Of Birth*",
+            address: "Address*",
+            zip: "Zid Code*",
+            gender: "Choose Gender",
+            h1: "I hereby authorise the processing of my personal data for purposes related to the performance of institutional activities.",
+            h2: "It is possible to exercise the right of withdrawal and receive a refund of the fees paid within 7 days of registration.",
+            h3: "I hereby authorise the processing of my personal data for sending advertising material.",
+            btn: "Submit",
+          },
         },
       },
       br: {
@@ -2588,9 +2597,9 @@ i18n
               tab4: "Admissão",
               tab5: "Palestrante",
               modules: "Módulos",
-              location : "Localização",
-              price : "Preço",
-              online : "Online"
+              location: "Localização",
+              price: "Preço",
+              online: "Online",
             },
           },
           widget: {
@@ -2666,56 +2675,856 @@ i18n
             },
           },
 
-          "apply": {
-    "heading": "Para se inscrever corretamente, certifique-se de ter todos os seguintes documentos prontos:",
-    "documents": {
-      "academicCareer": "Histórico acadêmico anterior (Exames + ECTS, caso tenha feito exames em outras universidades e ainda não tenha se formado).",
-      "degreeObtained": "Diploma obtido. São aceitas qualificações emitidas em inglês, espanhol, francês ou italiano.",
-      "cv": "Currículo atualizado em inglês.",
-      "idDocument": "Cópia de um documento de identificação válido.",
-      "translationRequirement": "Para outros idiomas, a qualificação deve ser traduzida para inglês ou italiano."
-    },
-    "linguisticCertifications": {
-      "heading": "Certificações linguísticas entre as seguintes, caso não seja nativo ou não possua um diploma nos seguintes idiomas:",
-      "languages": {
-        "english": "Inglês",
-        "italian": "Italiano"
-      },
-      "bachelorRequirement": "Para acessar o Bacharelado, é necessário pelo menos um nível B2 de conhecimento do idioma inglês ou italiano, enquanto para o Mestrado, é necessário pelo menos um nível C1."
-    },
-    "educationalQualifications": "Todas as qualificações educacionais (como diploma do ensino médio, bacharelado, mestrado) devem ser apostiladas através de uma certificação de valor nas embaixadas de Malta ou Itália no exterior.",
-    "reviewProcess": "Após a conclusão do registro, nossa equipe revisará seus documentos e informações em até 72 horas. Enviaremos uma atualização por e-mail.",
-    "paymentConfirmation": "Após a confirmação do pagamento, você receberá seu nome de usuário e senha por e-mail para começar sua jornada de aprendizado online.",
-    "welcomeMessage": "Bem-vindo à eGO Education.",
-    "checkboxLabel": "Confirmo que revisei e compreendi todos os requisitos de entrada.",
-    "applyButton": "Inscrever-se"
-  },
+          apply: {
+            heading:
+              "Para se inscrever corretamente, certifique-se de ter todos os seguintes documentos prontos:",
+            documents: {
+              academicCareer:
+                "Histórico acadêmico anterior (Exames + ECTS, caso tenha feito exames em outras universidades e ainda não tenha se formado).",
+              degreeObtained:
+                "Diploma obtido. São aceitas qualificações emitidas em inglês, espanhol, francês ou italiano.",
+              cv: "Currículo atualizado em inglês.",
+              idDocument: "Cópia de um documento de identificação válido.",
+              translationRequirement:
+                "Para outros idiomas, a qualificação deve ser traduzida para inglês ou italiano.",
+            },
+            linguisticCertifications: {
+              heading:
+                "Certificações linguísticas entre as seguintes, caso não seja nativo ou não possua um diploma nos seguintes idiomas:",
+              languages: {
+                english: "Inglês",
+                italian: "Italiano",
+              },
+              bachelorRequirement:
+                "Para acessar o Bacharelado, é necessário pelo menos um nível B2 de conhecimento do idioma inglês ou italiano, enquanto para o Mestrado, é necessário pelo menos um nível C1.",
+            },
+            educationalQualifications:
+              "Todas as qualificações educacionais (como diploma do ensino médio, bacharelado, mestrado) devem ser apostiladas através de uma certificação de valor nas embaixadas de Malta ou Itália no exterior.",
+            reviewProcess:
+              "Após a conclusão do registro, nossa equipe revisará seus documentos e informações em até 72 horas. Enviaremos uma atualização por e-mail.",
+            paymentConfirmation:
+              "Após a confirmação do pagamento, você receberá seu nome de usuário e senha por e-mail para começar sua jornada de aprendizado online.",
+            welcomeMessage: "Bem-vindo à eGO Education.",
+            checkboxLabel:
+              "Confirmo que revisei e compreendi todos os requisitos de entrada.",
+            applyButton: "Inscrever-se",
+          },
 
-  "enrol": {
-    "header": "Informações de Inscrição",
-    "program": "Escolha o programa",
-    "lng": "Escolha o idioma",
-    "fname": "Primeiro Nome*",
-    "lname": "Sobrenome*",
-    "reamil": "Repetir Email*",
-    "bday": "Data de Nascimento*",
-    "acc": "Carreira Acadêmica*",
-    "degg": "Diploma Obtido*",
-    "cv": "Currículo (CV)*",
-    "copy": "Cópia de um documento de identificação válido*",
-    "lngg": "Certificação Linguística (se obtida)",
-    "header2": "Informações Adicionais",
-    "header3": "Privacidade",
-    "country": "País de Nascimento*",
-    "city": "Cidade de Nascimento*",
-    "address": "Endereço*",
-    "zip": "Código Postal*",
-    "gender": "Escolha o Gênero",
-    "h1": "Autorizo o processamento dos meus dados pessoais para fins relacionados às atividades institucionais.",
-    "h2": "É possível exercer o direito de desistência e receber um reembolso das taxas pagas dentro de 7 dias após o registro.",
-    "h3": "Autorizo o processamento dos meus dados pessoais para o envio de material publicitário.",
-    "btn": "Enviar"
-  }
+          enrol: {
+            header: "Informações de Inscrição",
+            program: "Escolha o programa",
+            lng: "Escolha o idioma",
+            fname: "Primeiro Nome*",
+            lname: "Sobrenome*",
+            reamil: "Repetir Email*",
+            bday: "Data de Nascimento*",
+            acc: "Carreira Acadêmica*",
+            degg: "Diploma Obtido*",
+            cv: "Currículo (CV)*",
+            copy: "Cópia de um documento de identificação válido*",
+            lngg: "Certificação Linguística (se obtida)",
+            header2: "Informações Adicionais",
+            header3: "Privacidade",
+            country: "País de Nascimento*",
+            city: "Cidade de Nascimento*",
+            address: "Endereço*",
+            zip: "Código Postal*",
+            gender: "Escolha o Gênero",
+            h1: "Autorizo o processamento dos meus dados pessoais para fins relacionados às atividades institucionais.",
+            h2: "É possível exercer o direito de desistência e receber um reembolso das taxas pagas dentro de 7 dias após o registro.",
+            h3: "Autorizo o processamento dos meus dados pessoais para o envio de material publicitário.",
+            btn: "Enviar",
+          },
+        },
+      },
+      it: {
+        translation: {
+          home: {
+            hero: {
+              line1: "Accelera la tua carriera con una laurea online.",
+              line2: "Impara ovunque. Avanza più velocemente.",
+              line3:
+                "I nostri programmi accreditati offrono competenze richieste per ampliare le tue opportunità.",
+              button: "Esplora",
+            },
+            nav: {
+              home: "Home",
+              courses: "Corsi",
+              eLearning: "eLearn",
+              partners: "Partner",
+              research: "eGo Ricerca",
+              apply: "Candidati",
+              about: "Chi siamo",
+            },
+            homeFeatures: {
+              sectionHeader: {
+                title: "Caratteristiche",
+                subtitle: "Studia in modo flessibile intorno al tuo",
+                description:
+                  "I nostri corsi online sulla nostra piattaforma sono sempre disponibili, così puoi adattare i tuoi studi al tuo programma impegnativo.",
+              },
+              bulls: {
+                b1: "Accesso 24/7",
+                b2: "Personalizzato e Flessibile",
+                b3: "Opportunità Globali",
+              },
+              features: [
+                {
+                  title: "Corsi Online",
+                  description:
+                    "Accedi a lezioni, materiali e interagisci con colleghi e docenti in qualsiasi momento.",
+                },
+                {
+                  title: "Docenti Esperti",
+                  description:
+                    "I nostri docenti di livello mondiale hanno una vasta esperienza professionale, garantendoti un'istruzione di alta qualità e competenze pratiche.",
+                },
+                {
+                  title: "Comunità",
+                  description:
+                    "La nostra piattaforma consente agli studenti di comunicare tra loro. Grazie ai gruppi di studio, farai parte di una comunità internazionale.",
+                },
+              ],
+            },
+            courseSlider: {
+              title: "ESPLORA TUTTI I CORSI",
+              upcomingtitle: "Prossimi",
+              subtitle: "Sfoglia i nostri",
+              upcomingsubtitle: "I nostri prossimi",
+              specialWord: "Corsi",
+              curriculum: "Moduli",
+              readMore: "Leggi di più",
+              courses: [
+                {
+                  title: "MSc in Java Programming",
+                  description:
+                    "Padroneggia l'arte dello sviluppo software con il nostro programma di Master in Java Programming.",
+                  imgSrc: MsvJava,
+                  date: "12/08/24",
+                  curriculum: 7,
+                  price: "€3000",
+                  link: "/courses/aB3cD4eF",
+                  location: "Online",
+                },
+                {
+                  title: "MSc in Information Security",
+                  description:
+                    "Metti al sicuro il tuo futuro con competenze: padroneggia la scienza della sicurezza delle informazioni per proteggere il panorama digitale di domani.",
+                  imgSrc: MsvCS,
+                  date: "12/09/24",
+                  curriculum: 8,
+                  price: "€3000",
+                  link: "/courses/tU1vW2xY",
+                  location: "Online",
+                },
+                {
+                  title: "MA in Nonprofit Management & Leadership",
+                  description:
+                    "Diventa un leader del cambiamento: padroneggia le competenze per guidare l'innovazione e l'impatto sociale nel terzo settore in evoluzione.",
+                  imgSrc: Matitle,
+                  date: "12/09/24",
+                  curriculum: 10,
+                  price: "€3000",
+                  link: "/courses/ghnffT988",
+                  location: "Online",
+                },
+                {
+                  title: "MSc in European Project Management",
+                  description:
+                    "Costruisci le competenze per gestire progetti innovativi che modellano il futuro dell'UE.",
+                  imgSrc: Eu,
+                  date: "12/09/24",
+                  curriculum: 7,
+                  price: "€3000",
+                  link: "/courses/ghnffTffz4",
+                  location: "Online",
+                },
+              ],
+            },
+            UpcomingCourseSlider: {
+              title: "ESPLORA TUTTI I CORSI",
+              upcomingtitle: "Prossimi",
+              subtitle: "Sfoglia i nostri",
+              upcomingsubtitle: "I nostri prossimi",
+              specialWord: "Corsi",
+              curriculum: "Moduli",
+              readMore: "Leggi di più",
+              courses: [
+                {
+                  title: "PhD in Law & Criminology",
+                  description:
+                    "Il PhD in Law & Criminology è un titolo di ricerca avanzata accademica focalizzato sull'esplorazione del sistema legale, del comportamento criminale e delle risposte sociali al crimine.",
+                  imgSrc:
+                    "https://ccj.asu.edu/sites/default/files/2022-11/crim-phd-1920x512.png",
+                  date: "12/08/24",
+                  curriculum: 7,
+                  price: "€3000",
+                  link: "/courses/aB3cD4eF",
+                },
+                {
+                  title: "BSc in General Health Psychology",
+                  description:
+                    "Il BSc in General Health Psychology è una laurea che esplora il rapporto tra fattori psicologici e salute fisica. Gli studenti apprendono come gli elementi psicologici, comportamentali e sociali influenzano la salute, la malattia e l'assistenza sanitaria.",
+                  imgSrc:
+                    "https://media.licdn.com/dms/image/v2/D4D12AQHbALJL47mU3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687431031028?e=2147483647&v=beta&t=1lTZdI2RahAuKiZTzHgFicr_hH4sVN7ALhQGHR97szk",
+                  date: "12/09/24",
+                  curriculum: 8,
+                  price: "€3000",
+                  link: "/courses/tU1vW2xY",
+                },
+                {
+                  title: "Master Business Administration",
+                  description:
+                    "Guida con conoscenza: padroneggia la scienza dell'amministrazione aziendale, plasmando il panorama aziendale di domani.",
+                  imgSrc: BscBA,
+                  date: "25/10/24",
+                  curriculum: 18,
+                  price: "€3000",
+                  featured: true,
+                  link: "/courses/JZhfbff4",
+                },
+                {
+                  title: "BSc in Biomedicine",
+                  description:
+                    "Il BSc in Biomedicine è una laurea focalizzata sulla comprensione della base biologica e molecolare della salute e della malattia. Il programma combina elementi di biologia, chimica e scienze mediche per esplorare come funziona il corpo umano, come si sviluppano le malattie e come possono essere trattate.",
+                  imgSrc:
+                    "https://apollouniversity.edu.in/blog/wp-content/uploads/2023/03/Biomedical-Sciences.jpg",
+                  date: "25/10/24",
+                  curriculum: 18,
+                  price: "€3000",
+                  featured: true,
+                  link: "/courses/JZhfbff4",
+                },
+              ],
+            },
+            homeFeatures_2: {
+              title: "OPPORTUNITÀ",
+              subtitle: "Inizia a trasformare il tuo",
+              specialWord: "Futuro",
+              normalWord: "oggi",
+              description:
+                "Intraprendi oggi un viaggio di trasformazione e sblocca infinite opportunità per il tuo futuro. Con i nostri programmi di laurea riconosciuti a livello internazionale, ti doterai delle qualifiche essenziali per prosperare nel panorama globale odierno. Le nostre lauree sono riconosciute in tutta l'UE e facilmente convalidate nei paesi del Commonwealth, offrendoti un passaporto per diverse prospettive di carriera in tutto il mondo.",
+              features: [
+                {
+                  icon: faPersonChalkboard,
+                  title: "Qualifica Internazionale",
+                  description:
+                    "Al termine degli studi, otterrai una laurea riconosciuta a livello internazionale che ti aiuterà a qualificarti per opportunità di carriera sia a livello locale che globale.",
+                },
+                {
+                  icon: faLaptopCode,
+                  title: "Un Mondo di Opportunità",
+                  description:
+                    "Le nostre lauree sono riconosciute in tutta l'UE e facilmente convalidabili nei paesi del Commonwealth.",
+                },
+                {
+                  icon: faUserGraduate,
+                  title:
+                    "Ottieni le Qualifiche di cui hai Bisogno per Progredire",
+                  description:
+                    "Candidati ora per iniziare un master online che accelererà la tua carriera e trasformerà la tua vita in meglio.",
+                },
+              ],
+            },
+            homeLecturers: {
+              title: "DOCENTI",
+              subtitle: "Conosci i Nostri",
+              specialWord: "Docenti",
+              lecturers: [
+                {
+                  name: "Antonio Minelli",
+                  title: "Chief Technology Officer",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli è il Chief Technology Officer di ETLForma, una delle principali organizzazioni italiane di formazione IT. Ha supervisionato progetti tecnologici per importanti clienti come Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e il Ministero dell'Ambiente italiano. Con una lunga esperienza nel settore tecnologico, Antonio porta un'enorme ricchezza di esperienze pratiche in ogni lezione.",
+                  img: logo,
+                },
+                {
+                  name: "Alessandro Iacuelli",
+                  title: "Analista e Docente",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli è un analista e docente presso ETLForma, dove condivide la sua esperienza maturata lavorando con aziende come Thales Alenia Space, leader globale nel settore spaziale e secondo partner industriale della Stazione Spaziale Internazionale. Alessandro ha anche svolto ricerche come data scientist presso il Consiglio Nazionale delle Ricerche italiano, studiando algoritmi basati sull'intelligenza artificiale. La sua passione per la risoluzione di problemi complessi ispira ogni lezione.",
+                  img: logo,
+                },
+                {
+                  name: "Manuele Monti",
+                  title: "Fondatore e CEO",
+                  organization: "TechBricks",
+                  description:
+                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie). Lo spirito imprenditoriale di Manuele e la sua visione del potenziale della tecnologia per il cambiamento positivo energizzano tutto il suo insegnamento.",
+                  img: logo,
+                },
+              ],
+            },
+            homeTeam: {
+              title: "TEAM",
+              subtitle: "Conosci il Nostro",
+              specialWord: "Team",
+              lecturers: [
+                {
+                  name: "Antonio Minelli",
+                  title: "Chief Technology Officer",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli è il Chief Technology Officer di ETLForma, una delle principali organizzazioni italiane di formazione IT. Ha supervisionato progetti tecnologici per importanti clienti come Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e il Ministero dell'Ambiente italiano. Con una lunga esperienza nel settore tecnologico, Antonio porta una ricchezza di esperienze pratiche in ogni lezione.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
+                },
+                {
+                  name: "Alessandro Iacuelli",
+                  title: "Analista e Docente",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli è un analista e docente presso ETLForma, dove condivide la sua esperienza maturata lavorando con aziende come Thales Alenia Space, leader globale nel settore spaziale e secondo partner industriale della Stazione Spaziale Internazionale. Alessandro ha anche svolto ricerche come data scientist presso il Consiglio Nazionale delle Ricerche italiano, studiando algoritmi basati sull'intelligenza artificiale. La sua passione per la risoluzione di problemi complessi ispira ogni lezione.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                },
+                {
+                  name: "Manuele Monti",
+                  title: "Fondatore e CEO",
+                  organization: "TechBricks",
+                  description:
+                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie). Lo spirito imprenditoriale di Manuele e la sua visione del potenziale della tecnologia per il cambiamento positivo energizzano tutto il suo insegnamento.",
+                  img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
+                },
+              ],
+            },
+
+            courseDetails: {
+              coursesData: [
+                {
+                  id: "aB3cD4eF",
+                  name: "MSc in Programmazione Java",
+                  // startDate: "01 Gen 2023",
+                  duration: "2 anni",
+                  location: "Online",
+                  loc: "Posizione",
+                  totalEtc: 90,
+                  lecturer: {
+                    name: "Antonio Minelli",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
+                    speciality: "Chef Technology Officer",
+                    desc: "Chief Technology Officer presso ETLForma, una delle principali organizzazioni di formazione IT in Italia, Antonio ha supervisionato progetti tecnologici per importanti clienti tra cui Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e il Ministero dell'Ambiente italiano.",
+                    desc2:
+                      "Come veterano della tecnologia, Antonio porta una ricca esperienza pratica in ogni lezione.",
+                  },
+                  cur: "2",
+                  admission: {
+                    desc: "Gli studenti devono raggiungere accordi specifici con l'azienda ospitante e comunicare i seguenti dati per iscritto a Ego Education all'indirizzo mail: info@ego-education.com",
+                    req: [
+                      "corsi di laurea triennale: 50 ECTS su 90",
+                      "corsi di laurea magistrale: 50 ECTS su 90",
+                      "corso di laurea magistrale annuale in Informatica: 20 ECTS su 90",
+                    ],
+                  },
+                  media: {
+                    type: "image",
+                    source: JAVA,
+                  },
+                  career: [
+                    "Programmatore Java",
+                    "Ingegnere del Software",
+                    "Responsabile Programmazione IT/Java",
+                  ],
+                  description:
+                    "L'obiettivo del corso è consentire agli studenti di affrontare l'intero ciclo di sviluppo software, dall'analisi delle esigenze del cliente alla strutturazione del database, dalla progettazione dell'interfaccia utente alla costruzione del back-end utilizzando il modello di programmazione orientata agli oggetti e il linguaggio Java.",
+                  slogan:
+                    "Padroneggia l'arte dello sviluppo software con il nostro programma di Master in Programmazione Java.",
+                  thumb:
+                    "https://dce0qyjkutl4h.cloudfront.net/wp-content/webp-express/webp-images/uploads/2023/08/Java-enterprise-solutions.jpg.webp",
+                  degree: "Master Degree",
+                  institute: "Ego Education",
+                  modules: [
+                    {
+                      title: "Java di Base",
+                      description:
+                        "Il modulo esplora le basi della programmazione Java e della programmazione orientata agli oggetti. Il modulo di Java di Base fornisce agli studenti una solida base nella programmazione Java, adatta sia per principianti che per coloro che hanno esperienza limitata nella programmazione. Durante questo modulo, gli studenti intraprenderanno un viaggio per padroneggiare i concetti essenziali di Java, permettendo loro di analizzare criticamente il codice, comprendere i principi della programmazione orientata agli oggetti e costruire applicazioni Java di base.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Java Avanzato",
+                      description:
+                        "Il modulo presenta le tecniche per una buona programmazione Java e l'API del framework Java. Il modulo di Java Avanzato è progettato per fornire agli studenti una comprensione più profonda del linguaggio di programmazione Java, dotandoli delle competenze necessarie per affrontare progetti software complessi e sfruttare efficacemente l'ecosistema ricco di Java. Gli studenti padroneggeranno concetti avanzati di Java e framework, consentendo loro di analizzare criticamente e applicare le loro conoscenze a scenari di sviluppo software del mondo reale.",
+                      ects: 12,
+                    },
+                    {
+                      title: "DBMS e SQL",
+                      description:
+                        "Il modulo definisce le tecniche per la persistenza dei dati e per l'accesso ai dati tramite il linguaggio SQL. Il modulo DBMS e SQL offre un'esplorazione completa dei Sistemi di Gestione di Database (DBMS) e del Linguaggio di Query Strutturato (SQL). Progettato per studenti che desiderano una comprensione più profonda della gestione dei dati e della progettazione dei database, questo modulo li prepara con le competenze necessarie per analizzare criticamente le relazioni tra i dati, pianificare e implementare database su un Sistema di Gestione di Database Relazionale (RDBMS) e utilizzare comandi SQL avanzati in modo efficace.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Accesso ai Database dalle Applicazioni",
+                      description:
+                        "Il modulo definisce le tecniche per l'accesso remoto ai dati persistenti da una applicazione Java. Il modulo di Accesso ai Database dalle Applicazioni offre agli studenti un'esplorazione completa dell'intersezione critica tra lo sviluppo di applicazioni e la gestione dei database. Questo modulo prepara gli studenti con le competenze e le conoscenze necessarie per accedere, manipolare e gestire i dati memorizzati nei Sistemi di Gestione di Database Relazionale (RDBMS) da applicazioni Java. Gli studenti acquisiranno una profonda comprensione del controllo degli accessi, dei sistemi di controllo degli accessi e dell'uso del framework Java Persistence API (JPA).",
+                      ects: 12,
+                    },
+                    {
+                      title: "Applicazioni Web",
+                      description:
+                        "Il modulo copre l'implementazione di un progetto completo di applicazione software web, back-end, front-end e gestione dei sistemi di terze parti utilizzati per la persistenza dei dati. Il modulo di Applicazioni Web fornisce agli studenti un'esplorazione approfondita delle tecnologie e dei principi alla base dello sviluppo web moderno. Gli studenti svilupperanno una comprensione profonda dell'architettura delle applicazioni web, dei modelli di progettazione e delle complessità dei protocolli web. Questo modulo li prepara con le competenze e le conoscenze critiche necessarie per progettare, sviluppare e distribuire sistemi software basati sul web, con un focus specifico sul framework J2EE e sul framework Java Spring.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Metodi di Ricerca",
+                      description: "",
+                      ects: 6,
+                    },
+                    {
+                      title: "Dissertazione",
+                      description:
+                        "La dissertazione è un elemento obbligatorio del Master in Programmazione Java. La dissertazione si basa su un lavoro principale che implica l'applicazione dei materiali trattati nella componente insegnata del corso e l'estensione di tale conoscenza con il contributo dello studente, sotto la guida di un supervisore. Questo componente del Master offre agli studenti l'opportunità di perseguire un argomento in profondità e dimostrare prove delle capacità di ricerca a livello di Master. L'argomento è tipicamente un problema attuale nell'area del loro programma MSc. La dissertazione generalmente implica una ricerca sperimentale o teorica, o una sostanziale indagine sulla letteratura su un argomento specifico.",
+                      ects: 24,
+                    },
+                  ],
+                  totalModules: 7,
+                  videos: [
+                    { src: "img/vid-1.mp4", title: "Introduzione" },
+                    { src: "img/vid-2.mp4", title: "esempio video 1" },
+                    { src: "img/vid-3.mp4", title: "esempio video 2" },
+                    { src: "img/vid-4.mp4", title: "esempio video 3" },
+                  ],
+                  method:
+                    "Il programma comprende un approccio online che promuove la creazione di una comunità di pratica tramite l'apprendimento peer-to-peer, che è asincrono. Gli studenti hanno la libertà e la flessibilità di accedere al corso in un momento che è per loro più comodo.",
+                  price: "€3000",
+                  duration: 2,
+                  category: "informatica",
+                },
+                {
+                  id: "tU1vW2xY",
+                  name: "MSc in Sicurezza Informatica",
+                  // startDate: "05 Giugno 2023",
+                  duration: "2 anni",
+                  location: "Online",
+                  loc: "Posizione",
+                  totalModules: 7,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analista e docente",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli è un Analista e docente presso ETLForma, dove condivide la sua esperienza acquisita lavorando con aziende come Thales Alenia Space, leader mondiale nell'industria spaziale e secondo partner industriale nella Stazione Spaziale Internazionale. Alessandro ha anche condotto ricerche come data scientist presso il Consiglio Nazionale delle Ricerche Italiano, studiando algoritmi con intelligenza artificiale. La sua passione per risolvere problemi complessi ispira ogni lezione.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "Responsabile Sicurezza Informatica",
+                    "Responsabile Sicurezza delle Informazioni",
+                    "Analista Sicurezza Informatica",
+                    "Consulente Sicurezza Informatica",
+                    "Manager",
+                    "Leader aziendali",
+                    "Decisori politici",
+                  ],
+                  media: {
+                    type: "image",
+                    source: SECURITY,
+                  },
+                  description:
+                    "Il Master in Sicurezza Informatica fornisce una solida formazione per rispondere alle esigenze di protezione e gestione della sicurezza informatica nelle aziende e nei settori pubblici. Gli studenti apprenderanno le tecnologie e i metodi di gestione della sicurezza, incluse le tecniche di difesa dai cyber attacchi e come proteggere i dati sensibili. Saranno preparati a rispondere alle sfide complesse in continua evoluzione nel panorama delle minacce informatiche.",
+                  slogan:
+                    "Padroneggia la sicurezza informatica e preparati per le sfide globali.",
+                  thumb:
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWLWva0-DKp5IxK-HF9ZoqeT5YRas0sbZ8w&usqp=CAU",
+                  degree: "Master Degree",
+                  institute: "Ego Education",
+                  modules: [
+                    {
+                      title: "Introduzione alla Sicurezza Informatica",
+                      description:
+                        "In questo modulo, gli studenti impareranno le basi della sicurezza informatica, incluso come proteggere i sistemi da attacchi esterni e la gestione di minacce informatiche.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Tecniche di Criptografia Avanzata",
+                      description:
+                        "Questo modulo si concentra sulle tecniche avanzate di crittografia e su come applicarle per proteggere i dati durante la trasmissione.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Gestione delle Reti e Sicurezza",
+                      description:
+                        "Gli studenti apprenderanno come progettare e implementare reti sicure, proteggendo i dati in transito attraverso l'uso di firewall, VPN e altre tecnologie.",
+                      ects: 12,
+                    },
+                    {
+                      title:
+                        "Protezione dai Malware e Analisi delle Vulnerabilità",
+                      description:
+                        "Il modulo esplora le tecniche per difendersi dai malware e per identificare le vulnerabilità nei sistemi informatici.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Sicurezza delle Applicazioni Web",
+                      description:
+                        "Questo modulo tratta la protezione delle applicazioni web e dei servizi online da attacchi come SQL injection, Cross-site Scripting e altro.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Normative e Leggi sulla Privacy",
+                      description:
+                        "Gli studenti esploreranno le normative e le leggi che regolano la privacy dei dati e la sicurezza delle informazioni in vari paesi.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Progetto Finale",
+                      description:
+                        "Ogni studente avrà l'opportunità di applicare le proprie conoscenze in un progetto pratico che risolva un problema di sicurezza informatica.",
+                      ects: 24,
+                    },
+                  ],
+                  price: "€3500",
+                  duration: 2,
+                  category: "sicurezza",
+                },
+                {
+                  id: "ghnffT988",
+                  name: "MA in Nonprofit Management & Leadership",
+                  duration: "2 anni",
+                  location: "Online",
+                  loc: "Posizione",
+                  totalModules: 10,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analista e docente",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli è un analista e docente presso ETLForma, dove condivide la sua esperienza acquisita lavorando con aziende come Thales Alenia Space, leader globale nel settore spaziale e secondo partner industriale nella Stazione Spaziale Internazionale. Alessandro ha anche condotto ricerche come data scientist presso il Consiglio Nazionale delle Ricerche Italiano, studiando algoritmi con l'uso dell'intelligenza artificiale. La sua passione nel risolvere problemi complessi ispira ogni lezione.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "Responsabile/Direttore di Organizzazione Non Profit",
+                    "Project Manager per Iniziative Non Profit",
+                    "Consulente Non Profit",
+                    "Redattore di Proposte/Responsabile dello Sviluppo",
+                    "Specialista in Advocacy e Relazioni Pubbliche",
+                    "Analista di Impatto Sociale",
+                    "Coordinatore di Coinvolgimento della Comunità",
+                    "Responsabile delle Relazioni Governative",
+                    "Responsabile Risorse Umane nelle Organizzazioni Non Profit",
+                  ],
+                  media: {
+                    type: "image",
+                    source: MA,
+                  },
+                  description:
+                    "Il corso di master mira a sviluppare leader consapevoli delle nuove sfide nel Terzo Settore e abili a navigare il paesaggio normativo in evoluzione degli enti sociali. Queste organizzazioni giocano un ruolo cruciale nella società post-pandemia, richiedendo sia competenze tecniche che una leadership visionaria.",
+                  slogan:
+                    "Diventa un Leader del Cambiamento: Padroneggia le Competenze per Stimolare Innovazione e Impatto Sociale nel Terzo Settore in Evoluzione.",
+                  totalEtc: 84,
+                  thumb: MA,
+                  degree: "Laurea Magistrale",
+                  modules: [
+                    {
+                      title: "Governance e Gestione del Rischio",
+                      description:
+                        "Questo modulo esplora l'intersezione critica tra politiche pubbliche, welfare e il ruolo del settore non profit, in particolare in risposta alla crisi del welfare. Esamina l'evoluzione delle imprese sociali dopo questa crisi e fornisce una panoramica storica completa del settore non profit.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Legislazione Non Profit",
+                      description:
+                        "Questo modulo esamina le complessità della legislazione non profit, esplorando gli aspetti fondamentali del quadro legale che governa il Terzo Settore. Copre le infrastrutture e la governance del sistema legislativo non profit, l'ambito oggettivo delle attività del Terzo Settore, la sfera soggettiva che comprende i tipi e le forme legali degli enti e i riferimenti normativi prevalenti negli Stati membri.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Profilo e Impatto Sociale del Terzo Settore, Networking e Dinamiche Organizzative",
+                      description:
+                        "Questo modulo esplora aspetti critici del Terzo Settore, approfondendo la gestione degli stakeholder locali e i requisiti burocratici e fiscali essenziali per stabilire un'organizzazione non profit. Tratta della creazione di una comunità, enfatizzando i principi di co-programmazione, co-pianificazione, accreditamento e partenariato.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Visione, Missione, Gestione e Controllo di un'Organizzazione Non Profit",
+                      description:
+                        "Questo modulo esamina gli aspetti chiave delle dinamiche organizzative non profit, tra cui il volontariato e le relazioni di lavoro, le metodologie di raccolta fondi, le sfide nella gestione del personale per volontari e dipendenti, la gestione delle risorse e le strutture relative a organizzazione, amministrazione e contabilità. Inoltre, tratta della gestione finanziaria con un focus sulla gestione della liquidità e sull'analisi dei costi di finanziamento.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Gestione e Sviluppo delle Risorse Umane",
+                      description:
+                        "Questo modulo esplora le complessità della gestione e dello sviluppo delle risorse umane nel contesto del Terzo Settore. Esamina la psicologia del lavoro, compresi gli aspetti del contratto psicologico, la gestione di gruppo e la leadership specifica per le organizzazioni non profit. Tratta della comunicazione sociale come strumento vitale per la diffusione delle informazioni, il dialogo e la partecipazione degli stakeholder. Esamina le dinamiche decisionali di gruppo, le considerazioni etiche e i principi di leadership e gestione del team, concludendo con uno studio sulla pianificazione della successione.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Gestione dei Progetti",
+                      description:
+                        "Questo modulo esplora l'intero spettro della gestione dei progetti nel contesto del Terzo Settore. Copre l'intero ciclo del progetto, dall'inizio alla pianificazione, esecuzione, implementazione, controllo e conclusione. Inoltre, il modulo approfondisce le strategie di raccolta fondi, fornendo una guida per identificare le fonti di finanziamento e navigare tra le proposte a livello nazionale e internazionale. Gli studenti apprenderanno anche le complessità dello sviluppo del progetto, passando dalla fase di ideazione alla stesura di una proposta convincente. Il modulo esplora anche la valutazione dell'impatto dei progetti nel campo sociale e affronta vari meccanismi di supporto finanziario, comprese le donazioni liberali e altre forme.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Organizzazione di Eventi Associativi",
+                      description:
+                        "Questo modulo esplora le complessità dell'organizzazione di eventi associativi nel contesto del Terzo Settore. Tratta dei componenti essenziali della pianificazione degli eventi, tra cui logistica, coordinamento e esecuzione. Il modulo affronta gli aspetti critici delle strategie di comunicazione e promozione per gli eventi associativi. Copre la definizione dei team e la gestione efficace dei volontari, enfatizzando il ruolo della collaborazione nel successo dell'evento.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Focus sui Diritti Umani",
+                      description:
+                        "Questo modulo esplora l'intersezione critica tra politiche pubbliche, welfare e il ruolo del settore non profit, in particolare in risposta alla crisi del welfare. Esamina l'evoluzione delle imprese sociali dopo questa crisi e fornisce una panoramica storica completa del settore non profit.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Metodi di Ricerca",
+                      description:
+                        "Questo modulo è progettato per i partecipanti che devono acquisire una comprensione critica degli approcci e delle competenze di ricerca e per acquisire la capacità di applicare metodi di ricerca nei propri studi o nella loro vita professionale, e aiuterà coloro che devono condurre ricerche come parte dei loro studi di laurea.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Tesi di Laurea",
+                      description:
+                        "La tesi è un elemento obbligatorio del Master in Nonprofit Management e Leadership. La tesi si basa su un lavoro significativo che implica l'applicazione del materiale trattato nel componente didattico del corso di laurea, e l'estensione di tale conoscenza con il contributo dello studente, sotto la guida di un supervisore. Questo componente del master offre l'opportunità agli studenti di approfondire un singolo argomento e di dimostrare capacità di ricerca a livello di master. L'argomento è solitamente un problema attuale nell'area ampia del programma MSc. La tesi di solito comporta ricerche sperimentali o teoriche, o una sostanziale revisione della letteratura su un argomento specifico.",
+                      ects: 24,
+                    },
+                  ],
+                  institute: "Ego Education",
+                  method:
+                    "Il programma comprende un approccio online che promuove la costruzione di una comunità di pratica attraverso l'apprendimento peer-to-peer, che è asincrono. Gli studenti hanno la libertà e la flessibilità di accedere al corso nel momento che è più conveniente per loro.",
+                  price: "€3000",
+                  duration: 2,
+                  category: "Business",
+                },
+                {
+                  id: "ghnffTffz4",
+                  name: "Master in Gestione dei Progetti Europei",
+                  duration: "2 anni",
+                  location: "Online",
+                  loc: "Location",
+                  totalModules: 7,
+                  lecturer: {
+                    name: "Alessandro Iacuelli",
+                    title: "Analista e docente",
+                    organization: "ETLForma",
+                    desc: "Alessandro Iacuelli è un analista e docente presso ETLForma, dove condivide la sua esperienza acquisita lavorando con aziende come Thales Alenia Space, leader mondiale nel settore spaziale e secondo partner industriale nella Stazione Spaziale Internazionale. Alessandro ha anche condotto ricerche come data scientist con il Consiglio Nazionale delle Ricerche Italiano, studiando algoritmi tramite intelligenza artificiale. La sua passione per la risoluzione di problemi complessi ispira ogni lezione.",
+                    img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-8.webp",
+                  },
+                  career: [
+                    "Manager di Progetti Europei",
+                    "Business Development Manager",
+                    "Coordinatore di Progetti Internazionali",
+                    "Consulente in Gestione Progetti",
+                    "Ricercatore Accademico o Docente",
+                    "Analista o Consulente di Politiche UE",
+                    "Direttore di Progetti ONG",
+                    "Imprenditore in Iniziative Finanziate dall'UE",
+                  ],
+                  media: {
+                    type: "image",
+                    source: eubanner,
+                  },
+                  description:
+                    "Il Master in Gestione dei Progetti Europei è pensato per coloro che aspirano a eccellere nel dinamico campo della gestione dei progetti con un focus specifico sui progetti europei. Il programma è progettato per soddisfare le esigenze di un gruppo diversificato di professionisti che desiderano migliorare le proprie competenze e conoscenze nella gestione di progetti nel contesto dell'Unione Europea.",
+                  slogan:
+                    "Costruisci le competenze per gestire progetti innovativi che plasmano il futuro dell'UE.",
+                  totalEtc: 90,
+                  thumb: eubanner,
+                  degree: "Master",
+                  modules: [
+                    {
+                      title: "L'Unione Europea e il suo Sistema Istituzionale",
+                      description:
+                        "Questo modulo approfondisce gli aspetti multifaccettati dell'Unione Europea (UE), esplorando la sua genesi, le sue radici storiche e le sue basi ideologiche. Traccia le tappe evolutive delle Comunità Europee, esplora le riforme istituzionali che hanno portato alla creazione dell'Unione Europea e esamina criticamente il processo della Costituzione Europea, culminando nel Trattato di Lisbona.",
+                      ects: 6,
+                    },
+                    {
+                      title:
+                        "Introduzione alla Gestione dei Progetti e Analisi del Quadro Logico",
+                      description:
+                        "Questo modulo offre una comprensione completa della gestione dei progetti, fornendo agli studenti una base sui concetti, principi e aspetti pratici della gestione dei progetti. Copre aree chiave come la natura dei progetti, i componenti della gestione dei progetti, i principi fondamentali, le proposte di progetto, il ruolo del cliente e il ruolo cruciale dei project manager. La seconda parte del modulo si concentra sull'Analisi del Quadro Logico (LFA), esplorando la sua applicazione nella progettazione di progetti di sviluppo, nell'istituzione di uffici di gestione progetti (PMO) e nella risoluzione dei conflitti tramite la mediazione.",
+                      ects: 12,
+                    },
+                    {
+                      title:
+                        "Avvio, Pianificazione, Implementazione, Controllo e Chiusura del Progetto",
+                      description:
+                        "Questo modulo esplora la gestione dei progetti e il controllo, trattando le metodologie di sviluppo e implementazione di un progetto europeo dal punto di vista della gestione dei progetti.",
+                      ects: 12,
+                    },
+                    {
+                      title:
+                        "Schemi di Finanziamento dell'Europa nel Quadro Finanziario Pluriennale 2021-2027",
+                      description:
+                        "Questo modulo esplora gli schemi di finanziamento nel Quadro Finanziario Pluriennale 2021/2027, trattando gli aspetti fondamentali, i vantaggi, la struttura, le modalità di finanziamento e le iniziative. Un glossario dedicato assicura una comprensione completa dei termini chiave.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Regole di Partecipazione nell'Agenda 2021/2027",
+                      description:
+                        "Questo modulo fornisce un'esplorazione approfondita delle regole e delle procedure che governano la partecipazione ai programmi dell'UE nel quadro dell'Agenda 2021/2027.",
+                      ects: 12,
+                    },
+                    {
+                      title: "Metodi di Ricerca",
+                      description:
+                        "Questo modulo è progettato per fornire agli studenti le competenze essenziali per pianificare, ricercare e scrivere una tesi di laurea.",
+                      ects: 6,
+                    },
+                    {
+                      title: "Tesi di Laurea",
+                      description:
+                        "La tesi di laurea è un elemento obbligatorio del Master in Progettazione e Gestione di Progetti UE. La tesi si basa su un lavoro importante che implica l'applicazione del materiale appreso durante la componente didattica del programma, estendendo tale conoscenza con il contributo dello studente, sotto la guida di un supervisore. Questo componente del Master offre agli studenti l'opportunità di approfondire un singolo argomento e di dimostrare capacità di ricerca a livello di Master. L'argomento riguarda tipicamente un problema attuale nell'ambito ampio del programma MSc. La tesi di solito implica ricerche teoriche o sperimentali, o una vasta rassegna della letteratura su un argomento specifico.",
+                      ects: 30,
+                    },
+                  ],
+                  institute: "Ego Education",
+                  method:
+                    "Il programma prevede un approccio online che promuove la costruzione di una comunità di pratica attraverso l'apprendimento tra pari, che è asincrono. Gli studenti hanno la libertà e la flessibilità di accedere al corso nel momento a loro più conveniente.",
+                  price: "€3000",
+                  duration: 2,
+                  category: "Business",
+                },
+              ],
+              button: "Leggi di più",
+              title: "Panoramica",
+              title1: "Carriera",
+              title2: "Informazioni sul Corso",
+              title3: "Potresti essere anche interessato a",
+              title4: "Data di inizio",
+              title5: "Durata",
+              tab2: "Requisiti di ingresso",
+              tab3: "Moduli",
+              tab4: "Durata",
+              tab5: "Docente",
+              modules: "Moduli",
+              location: "Posizione",
+              price: "Prezzo",
+              online: "Online",
+            },
+          },
+
+          widget: {
+            apply: {
+              line1: "Richiedi una valutazione",
+              line2:
+                "Fai il primo passo verso il tuo futuro: richiedi una valutazione gratuita della tua carriera accademica e lascia che creiamo un piano di studi personalizzato su misura per i tuoi obiettivi.",
+              line3: "evaluation@ego-education.com",
+              button: "Richiedi valutazione",
+            },
+            contact: {
+              line1: "Rimani in contatto",
+              line2:
+                "Apprezziamo il tuo feedback e le tue domande, che tu abbia domande sui nostri servizi, necessiti di assistenza con il tuo ordine, o voglia semplicemente condividere i tuoi pensieri, siamo qui per aiutarti.",
+              line3: "Supporto 24/7",
+            },
+            info: {
+              category: "Categoria",
+              modules: "Moduli",
+              duration: "Durata",
+              price: "Prezzo",
+            },
+          },
+
+          degrees: {
+            d1: "Master",
+            d2: "Laurea Triennale",
+            d3: "Dottorato",
+          },
+
+          courseTab: {
+            tab: "I Nostri Corsi",
+          },
+
+          about: {
+            title: "CHI SIAMO",
+            subtitle: "Ricerca Straordinaria & Insegnamento Eccellente",
+            specialWord: "Competenza",
+            egoWord: "eGO Education",
+            highlight:
+              "di un'educazione altamente professionalizzante fornita interamente online a livello internazionale.",
+            s1: "è nata con la motivazione di entrare nel mercato dei fornitori di educazione online attraverso un'offerta formativa eccellente presente in alcune università residenziali, con tutte le loro limitazioni, ma mancante o insufficiente nel mondo dell'e-learning.",
+            s2: "In passato un centro di orientamento e servizi per studenti chiamato IELI, dal 2017 garantiamo supporto costante agli studenti durante la loro formazione: dall'orientamento alle procedure di iscrizione, dal supporto tecnico all'assistenza nello studio, a più di 5.000 studenti iscritti complessivamente attraverso la nostra rete.",
+            s4: "è un nuovo progetto che estenderà il concetto attraverso un nuovo Istituto di Educazione Superiore con sede a Malta, focalizzato sulla fornitura di un'educazione altamente professionalizzante interamente online a livello internazionale.",
+          },
+
+          footer: {
+            about: {
+              description1:
+                "precedentemente International E-Learning Institute Ltd) è una società fondata nel 2017 a Malta, con atto C83113.",
+              st1: "eGO Education",
+              description2:
+                "è stata accreditata dall'Autorità per l'Educazione Superiore e l'Istruzione Superiore di Malta (MFHEA) come Istituto di Educazione Superiore nel 2023 con licenza n. 2023-015.",
+            },
+            contact: {
+              title: "Contatti",
+              addressLabel: "Indirizzo",
+              address:
+                "40, Villa Fairholme, Sir Augustus Bartolo Street, Ta’ Xbiex XBX 1095, Malta",
+              websiteLabel: "Sito Web",
+              website: "www.ego-education.com",
+              emailLabel: "Email",
+              email: "info@ego-education.com",
+            },
+            quickLinks: {
+              title: "Link Veloci",
+              links: {
+                home: "Home",
+                courses: "Corsi",
+                elearn: "eLearn",
+                partners: "Partner",
+                apply: "Candidati",
+                about: "Chi Siamo",
+                policiesPrivacy: "Politiche & Privacy",
+              },
+            },
+          },
+
+          apply: {
+            heading:
+              "Per procedere correttamente all'iscrizione, assicurati di avere tutti i seguenti documenti pronti:",
+            documents: {
+              academicCareer:
+                "Carriera accademica precedente (Esami + ECTS se hai sostenuto esami in altre università e non ti sei ancora laureato).",
+              degreeObtained:
+                "Laurea conseguita. Sono accettate le qualifiche rilasciate in inglese, spagnolo, francese, italiano.",
+              cv: "CV aggiornato in inglese.",
+              idDocument: "Copia di un documento di identità valido.",
+              translationRequirement:
+                "Per altre lingue, la qualifica deve essere tradotta in inglese o italiano.",
+            },
+            linguisticCertifications: {
+              heading:
+                "Certificazioni linguistiche possedute tra le seguenti, se non madrelingua o non in possesso di una laurea nelle seguenti lingue:",
+              languages: {
+                english: "Inglese",
+                italian: "Italiano",
+              },
+              bachelorRequirement:
+                "Per accedere al corso di Laurea, è richiesto almeno un livello B2 di conoscenza della lingua inglese o italiana, mentre per il Master è richiesto almeno un livello C1.",
+            },
+            educationalQualifications:
+              "Tutte le qualifiche scolastiche (come il diploma di scuola superiore, laurea triennale, laurea magistrale) devono essere apostillate attraverso un certificato di valore presso le ambasciate maltesi o italiane all'estero.",
+            reviewProcess:
+              "Una volta completata la registrazione, il nostro team esaminerà i tuoi documenti e le informazioni entro 72 ore. Ti invieremo un aggiornamento via email.",
+            paymentConfirmation:
+              "Una volta confermato il pagamento, riceverai il tuo nome utente e password via email per iniziare il tuo percorso di apprendimento online.",
+            welcomeMessage: "Benvenuto in eGO Education.",
+            checkboxLabel:
+              "Confermo di aver esaminato attentamente e compreso tutti i requisiti di ingresso.",
+            applyButton: "Candidati",
+          },
+
+          enrol: {
+            header: "Informazioni sull'Iscrizione",
+            program: "Scegli il programma",
+            lng: "Scegli la lingua",
+            fname: "Nome*",
+            lname: "Cognome*",
+            reamil: "Ripeti Email*",
+            bday: "Data di Nascita*",
+            acc: "Carriera Accademica*",
+            degg: "Laurea conseguita*",
+            cv: "CV*",
+            copy: "Copia di un documento di identità valido*",
+            lngg: "Certificazione linguistica (se conseguita)",
+            header2: "Informazioni Aggiuntive",
+            header3: "Privacy",
+            country: "Paese di Nascita*",
+            city: "Città di Nascita*",
+            address: "Indirizzo*",
+            zip: "Codice Postale*",
+            gender: "Scegli il Genere",
+            h1: "Autorizzo il trattamento dei miei dati personali per scopi legati allo svolgimento delle attività istituzionali.",
+            h2: "È possibile esercitare il diritto di recesso e ricevere il rimborso delle tasse pagate entro 7 giorni dalla registrazione.",
+            h3: "Autorizzo il trattamento dei miei dati personali per l'invio di materiale pubblicitario.",
+            btn: "Invia",
+          },
         },
       },
     },
