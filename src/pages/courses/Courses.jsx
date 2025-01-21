@@ -13,7 +13,8 @@ function Courses() {
   const { t } = useTranslation();
   const { tab } = t("courseTab");
   const { d1, d2, d3 } = t("degrees");
-  const { button, modules, price, online, location } = t("home.courseDetails");
+  const { button, modules, price, online, location, enrl } =
+    t("home.courseDetails");
 
   const courses = useCourse({
     type: "byProperties",
@@ -26,6 +27,7 @@ function Courses() {
       "slogan",
       "price",
       "totalModules",
+      "enrl"
     ],
   });
   const [activePane, setActivePane] = useState("our_courses");
@@ -214,7 +216,7 @@ function Courses() {
                   <div className="row course-list">
                     <p
                       className="col-12 fw-bold h4 mt-3"
-                      style={{ color: "#046635", fontFamily : 'Gotham' }}
+                      style={{ color: "#046635", fontFamily: "Gotham" }}
                     >
                       {d1}
                     </p>
@@ -225,6 +227,7 @@ function Courses() {
                         )
                         .map((crs) => (
                           <div className="course" key={crs.id}>
+                            {console.log(crs)}
                             <Link
                               to={{
                                 pathname: `/courses/${crs.id}`,
@@ -248,7 +251,10 @@ function Courses() {
                                     <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z" />
                                     <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0" />
                                   </svg>{" "}
-                                 {modules}: <span style={{fontFamily : 'Gotham Medium'}}>{crs.totalModules}</span>
+                                  {modules}:{" "}
+                                  <span style={{ fontFamily: "Gotham Medium" }}>
+                                    {crs.totalModules}
+                                  </span>
                                 </p>
                                 <p className="mb-0 d-flex align-items-center gap-1 fw-bold">
                                   {" "}
@@ -262,7 +268,10 @@ function Courses() {
                                   >
                                     <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
                                   </svg>{" "}
-                                  {location}: <span style={{fontFamily : 'Gotham Medium'}}>{online}</span>
+                                  {location}:{" "}
+                                  <span style={{ fontFamily: "Gotham Medium" }}>
+                                    {online}
+                                  </span>
                                 </p>
                                 <p className="mb-0 d-flex align-items-center gap-1 fw-bold">
                                   {" "}
@@ -277,11 +286,33 @@ function Courses() {
                                     <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
                                     <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z"></path>
                                   </svg>{" "}
-                                  {price}: <span style={{fontFamily : 'Gotham Medium'}}>{crs.price}</span>
+                                  {price}:{" "}
+                                  <span style={{ fontFamily: "Gotham Medium" }}>
+                                    {crs.price}
+                                  </span>
+                                </p>
+                                <p className="mb-0 d-flex align-items-center gap-1 fw-bold">
+                                  {" "}
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="#046635"
+                                    class="bi bi-database-add"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                    <path d="M12.096 6.223A5 5 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.5 4.5 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.5 4.5 0 0 1-.813-.927Q8.378 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.6 4.6 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10q.393 0 .774-.024a4.5 4.5 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777M3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4" />
+                                  </svg>{" "}
+                                  {enrl}:{" "}
+                                  <span style={{ fontFamily: "Gotham Medium", color : crs.enrl == "Closed" ? "" : "#046635" }}>
+                                  {crs.enrl}
+                                  </span>
                                 </p>
                               </div>
                               <hr />
                               <div className="d-flex justify-content-end w-100">
+                               
                                 <button className="text-start">
                                   <FontAwesomeIcon
                                     icon={faGraduationCap}

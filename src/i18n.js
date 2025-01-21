@@ -315,6 +315,7 @@ i18n
                   location: "Online",
                   loc: "Location",
                   totalEtc: 90,
+                  enrl: "Closed",
                   lecturer: {
                     name: "Antonio Minelli",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-01.jpg",
@@ -469,6 +470,7 @@ i18n
                   location: "Online",
                   loc: "Location",
                   totalModules: 7,
+                  enrl: "Open",
                   lecturer: {
                     name: "Alessandro Iacuelli",
                     title: "Analyst and teacher",
@@ -1252,6 +1254,7 @@ i18n
                   duration: "2 years",
                   location: "Online",
                   loc: "Location",
+                  enrl: "Closed",
                   totalModules: 10,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -1362,6 +1365,7 @@ i18n
                   location: "Online",
                   loc: "Location",
                   totalModules: 7,
+                  enrl: "Closed",
                   lecturer: {
                     name: "Alessandro Iacuelli",
                     title: "Analyst and teacher",
@@ -1462,6 +1466,9 @@ i18n
               location: "Location",
               price: "Price",
               online: "Online",
+              enrl : "Enrolment",
+              op: "Open",
+              cl : "Closed"
             },
           },
           widget: {
@@ -1850,6 +1857,7 @@ i18n
                   startDate: "01 Jan 2023",
                   duration: "2 anos",
                   location: "Online",
+                  enrl: "Fechado",
                   loc: "localização",
                   totalEtc: 90,
                   cur: "2",
@@ -1942,6 +1950,7 @@ i18n
                   duration: "2 anos",
                   location: "Online",
                   loc: "localização",
+                  enrl: "Aberto",
                   totalModules: 7,
                   career: [
                     "Gerente de Segurança da Informação",
@@ -2023,6 +2032,7 @@ i18n
                   duration: "2 anos",
                   location: "Online",
                   loc: "localização",
+                  enrl: "Fechado",
                   totalModules: 10,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -2131,6 +2141,7 @@ i18n
                   duration: "2 anos",
                   location: "Online",
                   loc: "localização",
+                  enrl: "Fechado",
                   totalModules: 7,
                   lecturer: {
                     name: "Alessandro Iacuelli",
@@ -2600,6 +2611,9 @@ i18n
               location: "Localização",
               price: "Preço",
               online: "Online",
+              enrl : "Matrícula",
+              op: "Aberto",
+              cl : "Fechado"
             },
           },
           widget: {
@@ -2997,6 +3011,7 @@ i18n
                   // startDate: "01 Gen 2023",
                   duration: "2 anni",
                   location: "Online",
+                  enrl: "Chiuso",
                   loc: "Posizione",
                   totalEtc: 90,
                   lecturer: {
@@ -3095,6 +3110,7 @@ i18n
                   // startDate: "05 Giugno 2023",
                   duration: "2 anni",
                   location: "Online",
+                  enrl: "Aperto",
                   loc: "Posizione",
                   totalModules: 7,
                   lecturer: {
@@ -3179,6 +3195,7 @@ i18n
                   name: "MA in Nonprofit Management & Leadership",
                   duration: "2 anni",
                   location: "Online",
+                  enrl: "Chiuso",
                   loc: "Posizione",
                   totalModules: 10,
                   lecturer: {
@@ -3286,6 +3303,7 @@ i18n
                   name: "Master in Gestione dei Progetti Europei",
                   duration: "2 anni",
                   location: "Online",
+                  enrl: "Chiuso",
                   loc: "Location",
                   totalModules: 7,
                   lecturer: {
@@ -3386,6 +3404,10 @@ i18n
               location: "Posizione",
               price: "Prezzo",
               online: "Online",
+
+              enrl : "Iscrizione",
+              op: "Aperto",
+              cl : "Chiuso"
             },
           },
 
