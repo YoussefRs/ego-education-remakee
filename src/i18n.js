@@ -5,6 +5,7 @@ import MsvJava from "./assets/Courses/MSCJAVA.webp";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.webp";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.webp";
 import MAThumb from "./assets/Courses/MAthumb.webp";
+import JAVAA from "./assets/Courses/MsinJavaProgrammingTHUMBNAILS-ENG.webp";
 import Eu from "./assets/Courses/Eu.webp";
 import MSCENG from "./assets/Courses/MSCINFORMATIONSECURITYTHUMBNAILSENG.png";
 import eub from "./assets/Courses/MScinEuropeanProjectManagementTHUMBNAILSENG.png";
@@ -351,7 +352,7 @@ i18n
                     "Master the Art of Software Development with our Comprehensive Java Programming Master's Program.",
 
                   thumb:
-                    "https://dce0qyjkutl4h.cloudfront.net/wp-content/webp-express/webp-images/uploads/2023/08/Java-enterprise-solutions.jpg.webp",
+                  JAVAA,
                   degree: "Master Degree",
                   institute: "Ego Education",
                   modules: [
@@ -1887,7 +1888,7 @@ i18n
                   slogan:
                     "Domine a Arte do Desenvolvimento de Software com o Nosso Abrangente Programa de Mestrado em Programação Java.",
                   thumb:
-                    "https://dce0qyjkutl4h.cloudfront.net/wp-content/webp-express/webp-images/uploads/2023/08/Java-enterprise-solutions.jpg.webp",
+                  JAVAA,
                   degree: "Mestrado",
                   institute: "Ego Education",
                   modules: [
@@ -3048,7 +3049,7 @@ i18n
                   slogan:
                     "Padroneggia l'arte dello sviluppo software con il nostro programma di Master in Programmazione Java.",
                   thumb:
-                    "https://dce0qyjkutl4h.cloudfront.net/wp-content/webp-express/webp-images/uploads/2023/08/Java-enterprise-solutions.jpg.webp",
+                  JAVAA,
                   degree: "Master Degree",
                   institute: "Ego Education",
                   modules: [
