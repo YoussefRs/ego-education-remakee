@@ -46,8 +46,8 @@ function ApplyWidget() {
       <p>{line2}</p>
       <div className="contact-img">
         <img
-          src="https://media.istockphoto.com/id/1353308759/photo/businesswoman-hand-using-laptop-computer-with-document-management-icon.jpg?b=1&s=612x612&w=0&k=20&c=5YFpNOseQK2jcjmY733eGP0y830EK4tqhSx-W8JSb9o="
-          alt="contact"
+          src="https://www.elearninglearning.com/thumbs/large/7/9/c/79c711e6d2d1fc2f81e4a0c51871c054a704c00e.jpg"
+          alt="evaluation"
         />
       </div>
       <div className="contact-details">

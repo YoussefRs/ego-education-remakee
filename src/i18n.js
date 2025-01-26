@@ -5,6 +5,8 @@ import MsvJava from "./assets/Courses/MSCJAVA.webp";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.webp";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.webp";
 import Eu from "./assets/Courses/Eu.webp";
+import MSCENG from "./assets/Courses/MSCINFORMATIONSECURITYTHUMBNAILSENG.png";
+import eub from "./assets/Courses/MScinEuropeanProjectManagementTHUMBNAILSENG.png";
 import MA from "./assets/Home/banner/MA.webp";
 import JAVA from "./assets/Home/banner/JAVA.webp";
 import Matitle from "./assets/Home/banner/MA-title.png";
@@ -41,7 +43,7 @@ i18n
               courses: "Courses",
               eLearning: "eLearn",
               partners: "Partners",
-              research: "eGo Research",
+              research: "eGO Research",
               apply: "Apply",
               about: "About us",
             },
@@ -498,7 +500,7 @@ i18n
 
                   totalEtc: 90,
                   thumb:
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWLWva0-DKp5IxK-HF9ZoqeT5YRas0sbZ8w&usqp=CAU",
+                    MSCENG,
                   degree: "Master Degree",
                   modules: [
                     {
@@ -1393,7 +1395,7 @@ i18n
                     "Build the expertise to manage innovative projects that shape the future of the EU.",
 
                   totalEtc: 90,
-                  thumb: eubanner,
+                  thumb: eub,
                   degree: "Master Degree",
                   modules: [
                     {
@@ -1973,7 +1975,7 @@ i18n
 
                   totalEtc: 90,
                   thumb:
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWLWva0-DKp5IxK-HF9ZoqeT5YRas0sbZ8w&usqp=CAU",
+                    MSCENG,
                   degree: "Mestrado",
                   modules: [
                     {
@@ -2169,7 +2171,7 @@ i18n
                   slogan:
                     "Desenvolva a expertise para gerenciar projetos inovadores que moldam o futuro da UE.",
                   totalEtc: 90,
-                  thumb: eubanner,
+                  thumb: eub,
                   degree: "Grau de Mestre",
                   modules: [
                     {
@@ -2766,7 +2768,7 @@ i18n
               courses: "Corsi",
               eLearning: "eLearn",
               partners: "Partner",
-              research: "eGo Ricerca",
+              research: "eGO Ricerca",
               apply: "Candidati",
               about: "Chi siamo",
             },
@@ -3138,7 +3140,7 @@ i18n
                   slogan:
                     "Padroneggia la sicurezza informatica e preparati per le sfide globali.",
                   thumb:
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWLWva0-DKp5IxK-HF9ZoqeT5YRas0sbZ8w&usqp=CAU",
+                    MSCENG,
                   degree: "Master Degree",
                   institute: "Ego Education",
                   modules: [
@@ -3332,7 +3334,7 @@ i18n
                   slogan:
                     "Costruisci le competenze per gestire progetti innovativi che plasmano il futuro dell'UE.",
                   totalEtc: 90,
-                  thumb: eubanner,
+                  thumb: eub,
                   degree: "Master",
                   modules: [
                     {

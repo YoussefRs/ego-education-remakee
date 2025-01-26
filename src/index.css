@@ -1,19 +1,24 @@
 @font-face {
   font-family: "Gotham Medium";
   src: local("Gotham Medium"),
-    url("../assets/fonts/Gotham-Medium.otf") format("otf");
+    url("./assets/fonts/Gotham-Medium.otf") format("otf");
 }
 
 @font-face {
   font-family: "Gotham Book";
   src: local("Gotham Book"),
-    url("../assets/fonts/Gotham-Book.otf") format("otf");
+    url("./assets/fonts/Gotham-Book.otf") format("otf");
 }
 
 @font-face {
   font-family: "Gotham Light";
   src: local("Gotham Light"),
-    url("../assets/fonts/Gotham-Light.woff2") format("woff2");
+    url("./assets/fonts/Gotham-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gotham Bold";
+  src: local("Gotham Bold"),
+    url("./assets/fonts/Gotham-Bold.otf") format("otf");
 }
 
 
@@ -22,7 +27,7 @@ a {
   text-decoration: none !important;
   cursor: pointer;
   /* width: max-content; */
-  font-family: "Gotham";
+  font-family: "Gotham Light";
 }
 
 .ego-green {
@@ -40,8 +45,7 @@ h1 {
   color: white;
   font-size: clamp(1.875rem, 1.597rem + 1.5337vw, 3.2rem) !important;
   text-transform: capitalize;
-  /* font-weight: 600; */
-  font-family: "Gotham";
+  /* font-family: "Gotham Bold"; */
   font-weight: 600;
 }
 
@@ -57,9 +61,12 @@ h2 {
 h3,
 h4,
 h5,
-h6,
+h6 {
+  font-family: "Gotham Light";
+}
 label {
-  font-family: "Gotham Medium";
+  font-family: "Gotham Light";
+    font-weight: 600;
 }
 
 p {
@@ -72,7 +79,7 @@ ul {
 
   li {
     font-family: "Gotham Light" !important;
-    font-weight: 400 !important;
+    font-weight: 600 !important;
   }
 }
 

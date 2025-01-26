@@ -13,7 +13,7 @@ function HomeHero() {
         <div className="row">
           <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
             <div className="d-flex flex-column text-white gap-3">
-              <h1 style={{fontFamily : 'Gotham Light'}}>{line1} </h1>
+              <h1 style={{fontFamily : 'Gotham Light',  fontWeight: 600}}>{line1} </h1>
               <h2 className="text-white _font" style={{fontFamily : 'Gotham Light'}}>{line2}</h2>
               {/* <span className="mx-0">{line3}</span> */}
 

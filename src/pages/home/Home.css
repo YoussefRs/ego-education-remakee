@@ -44,7 +44,7 @@
   /* border-radius: 20px; */
 }
 
-@media(max-width: 992px) {
+@media (max-width: 992px) {
   #video_container {
     margin-top: 4rem;
   }
@@ -91,7 +91,6 @@
   .special_section .image-wrapper {
     display: none;
   }
- 
 }
 
 @media (min-width: 600px) {
@@ -293,28 +292,22 @@
 
 .swiper-container {
   margin-bottom: 4rem;
-  
-
 }
 
 .container-title {
   max-width: 300px;
   font-size: 4.5rem;
 
-  @media (max-width : 991px) {
+  @media (max-width: 991px) {
     max-width: none;
     text-align: center;
     font-size: 2.5rem;
   }
-  
 }
 
 .container-title-extra {
   /* max-width: 300px; */
   font-size: 2.5rem;
-
-  
-  
 }
 
 ._font {
@@ -506,7 +499,6 @@
     height: 300px;
     object-fit: fill;
   }
-  
 }
 
 @-webkit-keyframes slideleft {
@@ -590,13 +582,13 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 55%; 
-  background-image: inherit; 
+  width: 55%;
+  background-image: inherit;
   background-size: cover;
-  background-position: left; 
-  filter: blur(5px); 
+  background-position: left;
+  filter: blur(5px);
 }
-@media (max-width : 991px) {
+@media (max-width: 991px) {
   #feat {
     width: 100% !important;
   }
@@ -605,6 +597,12 @@
 #apply-page {
   max-width: 1320px;
   margin: 0 auto;
+
+  h6 {
+    font-family: "Gotham Light";
+    font-weight: 600;
+  }
+ 
 }
 
 .video-overlay {
@@ -695,8 +693,6 @@
   box-shadow: 0px 16px 15px 0px rgba(0, 0, 0, 0.24);
 }
 
-
-
 /* TEAM  */
 
 .team-container {
@@ -708,35 +704,32 @@
 
 @media (min-width: 576px) {
   .team-container {
-      max-width: 540px;
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .team-container {
-      max-width: 720px;
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .team-container {
-      max-width: 960px;
+    max-width: 960px;
   }
-
-  
 }
 
 @media (min-width: 1200px) {
   .team-container {
-      max-width: 1240px;
+    max-width: 1240px;
   }
 }
 
-@media (max-width : 1200px) {
+@media (max-width: 1200px) {
   .team-9 .team-img {
     width: 180px !important;
     height: 180px !important;
-    
   }
 }
 
@@ -761,25 +754,25 @@
 
 @media (min-width: 576px) {
   .team-container .column {
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%;
-      max-width: 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 
 @media (min-width: 768px) {
   .team-container .column {
-      -ms-flex: 0 0 33.333333%;
-      flex: 0 0 33.333333%;
-      max-width: 33.333333%;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
   }
 }
 
 @media (min-width: 992px) {
   .team-container .column {
-      -ms-flex: 0 0 25%;
-      flex: 0 0 25%;
-      max-width: 25%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
   }
 }
 
@@ -787,7 +780,6 @@
   width: 100%;
   text-align: center;
   padding: 45px 0 30px 0;
-  
 }
 
 .team-container .section-title::after {
@@ -806,20 +798,19 @@
   margin-bottom: 5px;
 }
 
-@media(max-width: 767.98px) {
+@media (max-width: 767.98px) {
   .team-container .section-title h1 {
-      font-size: 40px;
-      letter-spacing: 3px;
+    font-size: 40px;
+    letter-spacing: 3px;
   }
 }
 
-@media(max-width: 567.98px) {
+@media (max-width: 567.98px) {
   .team-container .section-title h1 {
-      font-size: 30px;
-      letter-spacing: 2px;
+    font-size: 30px;
+    letter-spacing: 2px;
   }
 }
-
 
 .team-9 {
   padding: 20px;
@@ -843,7 +834,7 @@
 }
 
 /* .team-9:hover { */
-  /* transform: rotateY(180deg); */
+/* transform: rotateY(180deg); */
 /* } */
 
 .team-9 .team-img {
@@ -854,7 +845,6 @@
   width: 200px;
   margin: 0 auto;
   height: 200px;
-  
 }
 
 .team-9 .team-img img {
@@ -874,17 +864,20 @@
   font-weight: 700;
   /* letter-spacing: 1px; */
   margin-bottom: 5px;
-  
-  @media (max-width : 1200px) {
+  font-family: "Gotham Light";
+  font-weight: 600;
+
+  @media (max-width: 1200px) {
     font-size: 15px;
   }
 }
 
 .team-9 .team-content h3 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0;
-  @media (max-width : 1200px) {
+  font-family: "Gotham Light";
+  @media (max-width: 1200px) {
     font-size: 13px;
   }
 }
@@ -932,7 +925,7 @@
   text-align: center;
   color: #ffffff;
   border-radius: 100%;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .team-9 .team-social a.social-tw {
@@ -964,7 +957,7 @@
 }
 
 ._home_feature_el {
-  font-size: clamp(.9rem, 1rem + 1vw, 1.75rem) !important;
+  font-size: clamp(0.9rem, 1rem + 1vw, 1.75rem) !important;
 }
 
 ._home_lecturer_name {
@@ -972,5 +965,5 @@
 }
 
 ._home_lecturer_desc {
-  font-size: clamp(.7rem, 1rem + 1vw, 1rem) !important;
+  font-size: clamp(0.7rem, 1rem + 1vw, 1rem) !important;
 }

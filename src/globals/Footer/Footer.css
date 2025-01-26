@@ -26,6 +26,8 @@ section.footer {
 .footer-col .col-title h3 {
   font-size: 24px;
   color: rgb(255, 210, 60);
+  font-family: "Gotham Light";
+  font-weight: 600;
 }
 .footer-col .col-contents {
   display: flex;
@@ -46,7 +48,7 @@ section.footer {
 }
 .footer-col-2 .col-contents .contact-row span {
   font-size: 16px;
-  font-family: "Gotham";
+  font-family: "Gotham Light";
 }
 .footer-col-2 .col-contents .contact-row span:nth-child(1) {
   color: var(--light-heading-clr);

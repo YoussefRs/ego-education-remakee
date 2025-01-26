@@ -186,6 +186,7 @@
   }
 }
 .it-about-title-box {
+  font-family: "Gotham Light";
   & img {
     width: 80%;
   }
