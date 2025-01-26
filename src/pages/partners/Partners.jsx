@@ -74,26 +74,35 @@ function Partners() {
           </h2>
         </div>
 
-        {partners.map((partner, index) => (
-          <div
-            key={index}
-            className="_partner_row"
-            style={{
-              backgroundColor: index % 2 === 0 ? "#f2f8f1" : "transparent",
-            }}
-          >
-            <div className="_part_image">
-              <img src={partner.image} alt={partner.name} />
+        <div>
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="_partner_row"
+              style={{
+                backgroundColor: index % 2 === 0 ? "#f2f8f1" : "transparent",
+              }}
+            >
+              <div className="pt">
+                <div className="_part_image">
+                  <img src={partner.image} alt={partner.name} />
+                </div>
+                <div className="_part_details">
+                  <span className="_part_name">{partner.name}</span>
+                  <a
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="_part_link"
+                  >
+                    {partner.url}
+                  </a>
+                  <p className="_part_desc">{partner.description}</p>
+                </div>
+              </div>
             </div>
-            <div className="_part_details">
-              <span className="_part_name">{partner.name}</span>
-              <a href={partner.url} target="_blank" rel="noopener noreferrer" className="_part_link">
-                {partner.url}
-              </a>
-              <p className="_part_desc">{partner.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
