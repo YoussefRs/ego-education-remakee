@@ -4,6 +4,7 @@ import i18nextBrowserLanguagedetector from "i18next-browser-languagedetector";
 import MsvJava from "./assets/Courses/MSCJAVA.webp";
 import MsvCS from "./assets/Courses/MSCINFORMATIONSECURITY.webp";
 import BscBA from "./assets/Courses/BScinBusinessAdministration.webp";
+import MAThumb from "./assets/Courses/MAthumb.webp";
 import Eu from "./assets/Courses/Eu.webp";
 import MSCENG from "./assets/Courses/MSCINFORMATIONSECURITYTHUMBNAILSENG.png";
 import eub from "./assets/Courses/MScinEuropeanProjectManagementTHUMBNAILSENG.png";
@@ -1286,7 +1287,7 @@ i18n
                     "Become a Leader of Change: Master the Skills to Drive Innovation and Social Impact in the Evolving Third Sector.",
 
                   totalEtc: 84,
-                  thumb: MA,
+                  thumb: MAThumb,
                   degree: "Master Degree",
                   modules: [
                     {
@@ -2064,7 +2065,7 @@ i18n
                     "Torne-se um Líder da Mudança: Domine as Habilidades para Impulsionar a Inovação e o Impacto Social no Evolutivo Terceiro Setor.",
 
                   totalEtc: 84,
-                  thumb: MA,
+                  thumb: MAThumb,
                   degree: "Mestrado",
                   modules: [
                     {
@@ -3227,7 +3228,7 @@ i18n
                   slogan:
                     "Diventa un Leader del Cambiamento: Padroneggia le Competenze per Stimolare Innovazione e Impatto Sociale nel Terzo Settore in Evoluzione.",
                   totalEtc: 84,
-                  thumb: MA,
+                  thumb: MAThumb,
                   degree: "Laurea Magistrale",
                   modules: [
                     {
