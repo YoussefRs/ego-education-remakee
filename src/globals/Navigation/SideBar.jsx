@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function SideBar({ show, handleShow }) {
+  const { t } = useTranslation();
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [dropdownVisible1, setDropdownVisible1] = useState(false);
   const [dropdownVisible2, setDropdownVisible2] = useState(false);
@@ -17,6 +19,9 @@ function SideBar({ show, handleShow }) {
   const toggleDropdown2 = () => {
     setDropdownVisible2(!dropdownVisible2);
   };
+
+  const { home, courses, eLearning, partners, research, apply, institute, office } =
+  t("home.nav");
 
   return (
     <menu
@@ -39,38 +44,43 @@ function SideBar({ show, handleShow }) {
       <ul className="px-0" id="_mobile-nav">
         <li>
         <a href="/">
-          Home
+          {home}
           </a>
         </li>
 
         <li>
         <a href="/courses">
-          Courses
+        {courses}
           </a>
         </li>
-        <li className="dropdown">
+        {/* <li className="dropdown">
           <a href="/elearn">
-            eLearn
+          {eLearning}
           </a>
-        </li>
+        </li> */}
         <li>
         <a href="/partners">
-          Partners
+          {partners}
           </a>
         </li>
         <li>
         <a href="/research">
-          eGO Research
+        {research}
           </a>
         </li>
         <li>
         <a href="/confirm">
-          Apply
+        {apply}
           </a>
         </li>
         <li>
-        <a href="/about">
-          About Us
+        <a href="/institute">
+          {institute}
+          </a>
+        </li>
+        <li>
+        <a href="/office">
+        {office}
           </a>
         </li>
         {/* <li className="fixed_flex">
@@ -84,9 +94,6 @@ function SideBar({ show, handleShow }) {
           <Link>Events</Link>
         </li>
 
-        <li>
-          <Link>Governance Structure</Link>
-        </li>
         <li className="dropdown">
           <a href="/policies-privacy">
             Policies & Privacy

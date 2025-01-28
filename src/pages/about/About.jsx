@@ -17,7 +17,7 @@ function About() {
   }, []);
   const { t } = useTranslation();
   const { lecturers } = t("home.homeLecturers");
-  const { title, subtitle, specialWord, s1, s2, s3, s4, highlight, egoWord } =
+  const { title, subtitle, specialWord, s1, s2, s3, s4, highlight, egoWord, ouur, lecc } =
     t("about");
   return (
     <>
@@ -184,19 +184,19 @@ function About() {
         </div>
 
         <div className="lecturers-section-about d-flex flex-column py-5">
-          <h2
+        {/*   <h2
             className="container-heading-green"
             style={{ color: "#046635" }}
             data-aos={"zoom-in"}
           >
             Our Lecturers
-          </h2>
+          </h2> */}
           <h1
             className="container-title-extra text-black fw-bold text-center mb-5"
             data-aos={"zoom-in"}
           >
-            Our Experienced
-            <span style={{ color: "#046635" }}> Lecturers</span>
+            {ouur}
+            <span style={{ color: "#046635" }}> {lecc} </span>
           </h1>
           <div className="container d-flex align-items-center justify-content-center">
             <div className="row">

@@ -47,7 +47,8 @@ i18n
               partners: "Partners",
               research: "eGO Research",
               apply: "Apply",
-              about: "About us",
+              institute: "The institute",
+              office: "Student Office",
             },
             banner: {
               line1: "Why Ego Education?",
@@ -107,6 +108,7 @@ i18n
                   price: "€3000",
                   link: "/courses/aB3cD4eF",
                   location: "Online",
+                  enrl: "Closed",
                 },
                 {
                   title: "MSc in Information Security",
@@ -118,6 +120,7 @@ i18n
                   price: "€3000",
                   link: "/courses/tU1vW2xY",
                   location: "Online",
+                  enrl: "Open",
                 },
                 {
                   title: "MA in Nonprofit Management & Leadership",
@@ -129,6 +132,7 @@ i18n
                   price: "€3000",
                   link: "/courses/ghnffT988",
                   location: "Online",
+                  enrl: "Closed",
                 },
                 {
                   title: "MSc in European Project Management",
@@ -140,6 +144,7 @@ i18n
                   price: "€3000",
                   link: "/courses/ghnffTffz4",
                   location: "Online",
+                  enrl: "Closed",
                 },
                 /*   {
                   title: "Business Administration",
@@ -351,8 +356,7 @@ i18n
                   slogan:
                     "Master the Art of Software Development with our Comprehensive Java Programming Master's Program.",
 
-                  thumb:
-                  JAVAA,
+                  thumb: JAVAA,
                   degree: "Master Degree",
                   institute: "Ego Education",
                   modules: [
@@ -501,8 +505,7 @@ i18n
                     "Secure Your Future with Expertise: Master the Science of Information Security, Safeguarding Tomorrow's Digital Landscape.",
 
                   totalEtc: 90,
-                  thumb:
-                    MSCENG,
+                  thumb: MSCENG,
                   degree: "Master Degree",
                   modules: [
                     {
@@ -1470,9 +1473,9 @@ i18n
               location: "Location",
               price: "Price",
               online: "Online",
-              enrl : "Enrolment",
+              enrl: "Enrolment",
               op: "Open",
-              cl : "Closed"
+              cl: "Closed",
             },
           },
           widget: {
@@ -1515,6 +1518,8 @@ i18n
             s2: "Formerly an orienteering and student service centre named IELI, since 2017 we guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance – to more than 5,000 students enrolled overall through our network,",
             /* s3: "Since 2017, with more than 5,000 students enrolled overall through our network, IELI has guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance.", */
             s4: "is a new project that will extend the concept through a new Higher Education Institute based in Malta, focused on the provision. of highly professionalising education provided entirely online at an international level.",
+            ouur : "Our",
+            lecc: "Lecturers"
           },
           footer: {
             about: {
@@ -1626,7 +1631,8 @@ i18n
               partners: "Parceiros",
               research: "Pesquisa Ego",
               apply: "Inscreva-se",
-              about: "Sobre nós",
+              institute: "O instituto",
+              office: "Secretaria dos Estudantes",
             },
             banner: {
               line1: "Por que Ego?",
@@ -1713,6 +1719,7 @@ i18n
                   date: "12/08/24",
                   curriculum: 3,
                   location: "Online",
+                  enrl: "Fechado",
                 },
                 {
                   title: "Mestrado em Segurança da Informação",
@@ -1722,6 +1729,32 @@ i18n
                   date: "12/09/24",
                   curriculum: 8,
                   location: "Online",
+                  enrl: "Aberto",
+                },
+                {
+                  title:
+                    "MA em Gestão e Liderança de Organizações Sem Fins Lucrativos",
+                  description:
+                    "Torne-se um líder da mudança: domine as habilidades para guiar a inovação e o impacto social no setor em evolução.",
+                  imgSrc: Matitle,
+                  date: "12/09/24",
+                  curriculum: 10,
+                  price: "€3000",
+                  link: "/courses/ghnffT988",
+                  location: "Online",
+                  enrl: "Fechado",
+                },
+                {
+                  title: "MSc em Gestão de Projetos Europeus",
+                  description:
+                    "Desenvolva as habilidades para gerenciar projetos inovadores que moldam o futuro da UE.",
+                  imgSrc: Eu,
+                  date: "12/09/24",
+                  curriculum: 7,
+                  price: "€3000",
+                  link: "/courses/ghnffTffz4",
+                  location: "Online",
+                  enrl: "Fechado",
                 },
                 /*  {
                   title: "Administração de Empresas",
@@ -1887,8 +1920,7 @@ i18n
                     "O objetivo do curso é permitir que os alunos lidem com todo o ciclo de desenvolvimento de software, desde a análise das necessidades do cliente até a estruturação do banco de dados, desde o design da interface do usuário até a construção do back-end usando o modelo de programação orientada a objetos e a linguagem Java.",
                   slogan:
                     "Domine a Arte do Desenvolvimento de Software com o Nosso Abrangente Programa de Mestrado em Programação Java.",
-                  thumb:
-                  JAVAA,
+                  thumb: JAVAA,
                   degree: "Mestrado",
                   institute: "Ego Education",
                   modules: [
@@ -1976,8 +2008,7 @@ i18n
                     "Proteja o seu Futuro com Expertise: Domine a Ciência da Segurança da Informação, Salvaguardando o Ambiente Digital de Amanhã.",
 
                   totalEtc: 90,
-                  thumb:
-                    MSCENG,
+                  thumb: MSCENG,
                   degree: "Mestrado",
                   modules: [
                     {
@@ -2615,9 +2646,9 @@ i18n
               location: "Localização",
               price: "Preço",
               online: "Online",
-              enrl : "Matrícula",
+              enrl: "Matrícula",
               op: "Aberto",
-              cl : "Fechado"
+              cl: "Fechado",
             },
           },
           widget: {
@@ -2659,6 +2690,8 @@ i18n
             s1: "nasceu com a motivação de entrar no mercado de provedores de educação online por meio de uma oferta de treinamento excelente, presente em algumas universidades presenciais, com todas as suas limitações, mas carente ou insuficiente no mundo do e-learning.",
             s2: "Anteriormente um centro de orientação e serviços estudantis chamado IELI, desde 2017 garantimos suporte constante aos estudantes durante sua formação: desde a orientação até os procedimentos de matrícula, do suporte técnico à assistência aos estudos – para mais de 5.000 estudantes matriculados em toda a nossa rede.",
             s4: "é um novo projeto que ampliará o conceito por meio de um novo Instituto de Ensino Superior baseado em Malta, focado na oferta de uma educação altamente profissionalizante oferecida inteiramente online em nível internacional.",
+            ouur : "Nossos",
+            lecc: "palestrantes"
           },
 
           footer: {
@@ -2772,7 +2805,8 @@ i18n
               partners: "Partner",
               research: "eGO Ricerca",
               apply: "Candidati",
-              about: "Chi siamo",
+              institute: "L'istituto",
+              office: "Ufficio Studenti",
             },
             homeFeatures: {
               sectionHeader: {
@@ -2823,6 +2857,7 @@ i18n
                   price: "€3000",
                   link: "/courses/aB3cD4eF",
                   location: "Online",
+                  enrl: "Chiuso",
                 },
                 {
                   title: "MSc in Information Security",
@@ -2834,6 +2869,7 @@ i18n
                   price: "€3000",
                   link: "/courses/tU1vW2xY",
                   location: "Online",
+                  enrl: "Aperto",
                 },
                 {
                   title: "MA in Nonprofit Management & Leadership",
@@ -2845,6 +2881,7 @@ i18n
                   price: "€3000",
                   link: "/courses/ghnffT988",
                   location: "Online",
+                  enrl: "Chiuso",
                 },
                 {
                   title: "MSc in European Project Management",
@@ -2856,6 +2893,7 @@ i18n
                   price: "€3000",
                   link: "/courses/ghnffTffz4",
                   location: "Online",
+                  enrl: "Chiuso",
                 },
               ],
             },
@@ -3048,8 +3086,7 @@ i18n
                     "L'obiettivo del corso è consentire agli studenti di affrontare l'intero ciclo di sviluppo software, dall'analisi delle esigenze del cliente alla strutturazione del database, dalla progettazione dell'interfaccia utente alla costruzione del back-end utilizzando il modello di programmazione orientata agli oggetti e il linguaggio Java.",
                   slogan:
                     "Padroneggia l'arte dello sviluppo software con il nostro programma di Master in Programmazione Java.",
-                  thumb:
-                  JAVAA,
+                  thumb: JAVAA,
                   degree: "Master Degree",
                   institute: "Ego Education",
                   modules: [
@@ -3141,8 +3178,7 @@ i18n
                     "Il Master in Sicurezza Informatica fornisce una solida formazione per rispondere alle esigenze di protezione e gestione della sicurezza informatica nelle aziende e nei settori pubblici. Gli studenti apprenderanno le tecnologie e i metodi di gestione della sicurezza, incluse le tecniche di difesa dai cyber attacchi e come proteggere i dati sensibili. Saranno preparati a rispondere alle sfide complesse in continua evoluzione nel panorama delle minacce informatiche.",
                   slogan:
                     "Padroneggia la sicurezza informatica e preparati per le sfide globali.",
-                  thumb:
-                    MSCENG,
+                  thumb: MSCENG,
                   degree: "Master Degree",
                   institute: "Ego Education",
                   modules: [
@@ -3409,9 +3445,9 @@ i18n
               price: "Prezzo",
               online: "Online",
 
-              enrl : "Iscrizione",
+              enrl: "Iscrizione",
               op: "Aperto",
-              cl : "Chiuso"
+              cl: "Chiuso",
             },
           },
 
@@ -3457,6 +3493,8 @@ i18n
             s1: "è nata con la motivazione di entrare nel mercato dei fornitori di educazione online attraverso un'offerta formativa eccellente presente in alcune università residenziali, con tutte le loro limitazioni, ma mancante o insufficiente nel mondo dell'e-learning.",
             s2: "In passato un centro di orientamento e servizi per studenti chiamato IELI, dal 2017 garantiamo supporto costante agli studenti durante la loro formazione: dall'orientamento alle procedure di iscrizione, dal supporto tecnico all'assistenza nello studio, a più di 5.000 studenti iscritti complessivamente attraverso la nostra rete.",
             s4: "è un nuovo progetto che estenderà il concetto attraverso un nuovo Istituto di Educazione Superiore con sede a Malta, focalizzato sulla fornitura di un'educazione altamente professionalizzante interamente online a livello internazionale.",
+             ouur : "I nostr",
+            lecc: "docenti"
           },
 
           footer: {

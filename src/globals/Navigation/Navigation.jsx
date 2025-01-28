@@ -14,7 +14,8 @@ function Navigation({ show, backgroundColor }) {
     { key: "partners", link: "/partners" },
     { key: "research", link: "/research" },
     { key: "apply", link: "/confirm" },
-    { key: "about", link: "/about" },
+    { key: "institute", link: "/institute" },
+    { key: "office", link: "/student-office" },
   ];
 
   const navRef = useRef(null);
@@ -148,6 +149,7 @@ function Navigation({ show, backgroundColor }) {
         </a>
         <a
           className="ham"
+          id="ham__"
           onClick={() => {
             show((prev) => !prev);
           }}

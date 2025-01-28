@@ -360,7 +360,7 @@
 .swiper-slide .slide-image {
   display: block;
   object-fit: cover;
-  height: 400px;
+  height: 450px;
   position: relative;
   /* width: 66%; */
   z-index: 1;
@@ -430,6 +430,10 @@
 .swiper-slide .slide-content .slide-content-inner {
   text-align: right;
 
+  h2 {
+    font-size: 1.2rem;
+  }
+
   & p {
     font-size: 13px;
   }
@@ -496,8 +500,8 @@
   }
   .swiper-slide .slide-image {
     width: 100%;
-    height: 300px;
-    object-fit: fill;
+    height: 200px;
+    object-fit: cover;
   }
 }
 
@@ -602,7 +606,6 @@
     font-family: "Gotham Light";
     font-weight: 600;
   }
- 
 }
 
 .video-overlay {

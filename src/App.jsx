@@ -122,7 +122,7 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="/institute"
             element={
               <Layout>
                 <About />

@@ -32,7 +32,7 @@ nav a {
   /* font-weight: 400; */
   position: relative;
   white-space: nowrap;
-  font-family: 'Gotham Light' 
+  font-family: 'Gotham Light'  
 }
 
 nav .active {
@@ -80,6 +80,15 @@ nav .ham {
   color: white;
   float: right;
   margin-right: 0;
+
+
+}
+
+#ham__ {
+  display: flex;
+  @media (min-width: 1190px) {
+    display: none;
+  }
 }
 
 nav .ham:hover {
@@ -117,7 +126,7 @@ nav .ham:hover {
     list-style: none;
     & a {
       color: white;
-      font-family: 'Gotham Medium';
+      font-family: 'Gotham Light';
     }
     & a:hover {
       color: #046635 !important;
@@ -132,7 +141,7 @@ nav .ham:hover {
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1190px) {
   nav {
     padding: 0.5rem 1rem;
     z-index: 9999999999999;
