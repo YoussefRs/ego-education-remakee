@@ -23,6 +23,49 @@
     transform: rotate(359deg);
   }
 }
+
+.gov-section-about {
+    .slick-next {
+        right: -2rem;
+        border-radius: 50%;
+    }
+    .slick-prev {
+        left: -2rem;
+        border-radius: 50%;
+    }
+
+    .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+        color: #046635;
+        opacity: 1;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        font-family: 'slick';
+        font-size: 20px;
+        line-height: 1;
+        opacity: .75;
+        color: #046635;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .slick-slider {
+        padding: 0;
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1200px !important;
+            width: 100%;
+        }
+    }
+    @media (min-width: 768px) {
+        .slick-slide {
+            width: 450px;
+            margin: 0 auto;
+        }
+    }
+}
 .material-card {
   position: relative;
   height: 0;
@@ -34,10 +77,10 @@
   top: calc(100% - 16px);
   left: 0;
   width: 100%;
-  padding: 10px 16px;
+  padding: 5px 16px;
   color: #fff;
   font-size: 1.4em;
-  line-height: 1.6em;
+  line-height: 1.4em;
   margin: 0;
   z-index: 10;
   -webkit-transition: all 0.3s;
@@ -97,7 +140,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 16px;
+  bottom: 0px;
   left: 16px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -280,7 +323,7 @@
 .material-card.mc-active .mc-footer {
   overflow: visible;
   position: absolute;
-  top: calc(100% - 16px);
+  top: calc(100% - 0px);
   left: 16px;
   right: 0;
   height: 82px;

@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./gov.css";
-import SubHeader from "../../globals/SubHeader/SubHeader";
 import logo from "../../assets/Logos/logo-ego-black.png";
-import PartnersSlider from "../../globals/Sliders/PartnersSlider";
-import CourseSlider from "../../globals/Sliders/CourseSlider";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 import dani from "../../assets/Team/fullwhitedaniele.webp";
 import rector from "../../assets/Team/ERNESTOFULL.webp";
+import info from "../../assets/Team/ysf.webp";
+import marketing from "../../assets/Team/fullwhitemario.webp";
+import enrol from "../../assets/Team/MA.webp";
+import cordinator from "../../assets/Team/CV.webp";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -32,6 +37,43 @@ function Governance() {
     ouur,
     lecc,
   } = t("about");
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplaySpeed: 2000,
+    className: "sample",
+    autoplay: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   const [activeCard, setActiveCard] = useState(null);
 
@@ -64,6 +106,54 @@ function Governance() {
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: logo,
     },
+    {
+      color: "Pink",
+      name: "Youssef Rouissi",
+      movie: "IT Director",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: info,
+    },
+    {
+      color: "Pink",
+      name: "Mario Ingrassia",
+      movie: "Marketing Office",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: marketing,
+    },
+    {
+      color: "Pink",
+      name: "Mounira Adel",
+      movie: "Enrolment Office",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: enrol,
+    },
+    {
+      color: "Pink",
+      name: "Claudio Vullo",
+      movie: "Country Manager - Brasil",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: cordinator,
+    },
+    {
+      color: "Pink",
+      name: "Mattia Di Tommaso",
+      movie: "Head of Department - Political Sciences, International Relations and Development Cooperation",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: logo,
+    },
+    {
+      color: "Pink",
+      name: "Francesco Basso",
+      movie: "Head of Department - Informatics",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: logo,
+    },
   ];
 
   return (
@@ -78,8 +168,11 @@ function Governance() {
 
       <section class="container">
         <div className="row active-with-click">
+
+        <Slider {...settings} >
+        
           {cardsData.map((card, index) => (
-            <div className="col-lg-4 col-md-6  col-xs-12" key={index}>
+            <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12 p-2" key={index}>
               <article
                 className={`material-card ${card.color} ${
                   activeCard === index ? "mc-active" : ""
@@ -160,6 +253,7 @@ function Governance() {
               </article>
             </div>
           ))}
+      </Slider>
         </div>
       </section>
     </div>

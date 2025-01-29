@@ -448,6 +448,8 @@ ul.featured * {
 }
 ul.featured .right div {
   margin-top: 15px;
+  max-height: 380px;
+    height: 370px;
 }
 .left_ {
   background-image: url(../../assets/Team/ERNESTOFULL.webp);
@@ -491,9 +493,21 @@ ul.featured .text {
   }
   ul.featured li.right {
     width: 33.333%;
+    
   }
   ul.featured li.right div {
     min-height: 50%;
     margin-top: 0;
+    
+  }
+}
+
+@media (max-width: 660px) {
+  .right {
+    display: none;
+  }
+
+  .left_ {
+    margin-bottom: 4rem;
   }
 }
