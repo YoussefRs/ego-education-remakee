@@ -23,6 +23,7 @@ import Cookies from "./components/Home/CookieConsent";
 import CookieConsent from "./components/Home/CookieConsent";
 import axios from "axios";
 import SingleNew from "./pages/news/SingleNew";
+import Student from "./pages/student/Student";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -195,6 +196,7 @@ function App() {
             }
           />
           <Route path="/dash" element={<Dashboard />} />
+          <Route path="/student-office" element={<Student />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
