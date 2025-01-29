@@ -49,11 +49,14 @@
   text-align: left;
 }
 
+
 .lecturers-section-about {
+  width: 100%;
+}
+.gov-section-about {
   width: 100%;
   background-color: #f2f8f1;
 }
-
 .card {
   transition: 0.4s all ease-in;
   border: none;

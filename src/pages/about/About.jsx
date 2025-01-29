@@ -7,6 +7,7 @@ import CourseSlider from "../../globals/Sliders/CourseSlider";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Governance from "./Governance";
 
 function About() {
   useEffect(() => {
@@ -183,6 +184,8 @@ function About() {
           </div>
         </div>
 
+       <Governance />
+
         <div className="lecturers-section-about d-flex flex-column py-5">
         {/*   <h2
             className="container-heading-green"
@@ -205,7 +208,7 @@ function About() {
                   className="col-lg-4 col-md-6 col-sm-12 "
                   data-aos={"flip-up"}
                 >
-                  <div className="card mb-3" style={{ width: "20rem" }}>
+                  <div className="card mb-3" >
                     <img
                       className="card-img-top"
                       src={lecturer.img}
@@ -227,6 +230,9 @@ function About() {
             </div>
           </div>
         </div>
+
+
+
         <div className="contact-section-about py-5">
           <div className="container d-flex justify-content-center align-items-center">
             <div className="form w-100">
