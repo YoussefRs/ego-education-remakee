@@ -57,8 +57,15 @@ function News() {
   };
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container mb-5 mt-5">
+      <div className="row ">
+        <h1
+          className="container-title text-black fw-bold "
+          style={{ fontFamily: '"Gotham Light"' }}
+        >
+          Browse Our <span style={{ color: "rgb(4, 102, 53)" }}>News</span>
+        </h1>
+
         <div className="col-12 col-lg-6  pb-0 slider_container">
           <Slider {...settings}>
             {slides.map((slide, index) => (
@@ -74,20 +81,24 @@ function News() {
                         />
                       </a>
                     </div>
-                    <div class="overlay">
+                    <div class="overlay border">
                       <div class="mb-2">
                         <a
-                          class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                          href=""
+                          class="badge badge-primary border  text-uppercase font-weight-semi-bold p-2"
+                          style={{
+                            backgroundColor: "#046635",
+                            marginRight: "1rem",
+                          }}
+                          href="/news"
                         >
                           Busines
                         </a>
-                        <a class="text-white" href="">
+                        <a class="text-black" href="">
                           Jan 01, 2045
                         </a>
                       </div>
                       <a
-                        class="h2 m-0 text-white text-uppercase font-weight-bold"
+                        class="h2 m-0 text-black text-uppercase font-weight-bold"
                         href="/news"
                       >
                         Lorem ipsum dolor sit amet elit. Proin vitae porta
@@ -108,7 +119,7 @@ function News() {
                 <div className="card border-0 rounded-0 text-white overflow zoom">
                   <div className="position-relative">
                     <div className="ratio_right-cover-2 image-wrapper">
-                      <a href="#">
+                      <a href="/news">
                         <img
                           className="img-fluid"
                           src={slide.image}
@@ -116,15 +127,24 @@ function News() {
                         />
                       </a>
                     </div>
-                    <div className="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                    <div
+                      className=" p-2 p-lg-3 b-0 w-100 border"
+                      style={{ fontFamily: "Gotham Light" }}
+                    >
                       <a
-                        className="p-1 badge badge-primary rounded-0"
+                        className="p-1 text-white border badge badge-primary rounded-0"
+                        style={{ backgroundColor: "#046635" }}
                         href="/news"
                       >
                         {slide.category}
                       </a>
                       <a href="/news">
-                        <h2 className="h5 text-white my-1">{slide.title}</h2>
+                        <h2
+                          className="h5 text-black my-1"
+                          style={{ fontFamily: "Gotham Light" }}
+                        >
+                          {slide.title}
+                        </h2>
                       </a>
                     </div>
                   </div>

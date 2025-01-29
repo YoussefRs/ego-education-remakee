@@ -3,6 +3,7 @@ import n2 from "../../assets/news/news-800x500-2.jpg";
 import n1 from "../../assets/news/news-800x500-1.jpg";
 import n3 from "../../assets/news/news-110x110-1.jpg";
 import ContactWidget from "../../globals/Widgets/ContactWidget";
+import ApplyWidget from "../../globals/Widgets/ApplyWidget";
 
 function SingleNew() {
   return (
@@ -250,13 +251,13 @@ function SingleNew() {
 
             <div class="col-xl-4">
               {/* <!-- Popular News Start --> */}
-              <div class="mb-3">
-                <div class="section-title mb-0">
+              <div class="mb-0">
+                {/* <div class="section-title mb-0">
                   <h4 class="m-0 text-uppercase font-weight-bold">
                     Tranding News
                   </h4>
-                </div>
-                <div class="bg-white border border-top-0 p-3">
+                </div> */}
+                {/* <div class="bg-white border border-top-0 p-3">
                   <div
                     class="d-flex align-items-center bg-white mb-3"
                     style={{ height: 110 }}
@@ -357,14 +358,17 @@ function SingleNew() {
                       </a>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
               {/* <!-- Popular News End --> */}
 
               {/* <!-- Ads Start --> */}
-              <div class="mb-3">
+              <div className="mb-4">
+
                 <ContactWidget />
               </div>
+
+                <ApplyWidget />
               {/* <!-- Ads End --> */}
             </div>
           </div>

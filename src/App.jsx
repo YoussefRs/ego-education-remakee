@@ -21,7 +21,6 @@ import Dashboard from "./pages/dash/Dashboard";
 import { useTranslation } from "react-i18next";
 import Cookies from "./components/Home/CookieConsent";
 import CookieConsent from "./components/Home/CookieConsent";
-import axios from "axios";
 import SingleNew from "./pages/news/SingleNew";
 import Student from "./pages/student/Student";
 
@@ -29,11 +28,11 @@ function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   const location = useLocation();
-  const backgroundColor = location.pathname === '/news' ? '#046635' : '';
+  const backgroundColor = location.pathname === "/news" ? "#046635" : "";
 
   return (
     <>
-      <Navigation show={setShowSideMenu} backgroundColor={backgroundColor}/>
+      <Navigation show={setShowSideMenu} backgroundColor={backgroundColor} />
       <SideBar show={showSideMenu} handleShow={setShowSideMenu} />
       {children}
       <Footer />

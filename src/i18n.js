@@ -47,7 +47,7 @@ i18n
               partners: "Partners",
               research: "eGO Research",
               apply: "Apply",
-              institute: "The institute",
+              institute: "The Institute",
               office: "Student Office",
             },
             banner: {
