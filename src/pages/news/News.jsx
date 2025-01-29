@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./news.css";
+import { useTranslation } from "react-i18next";
 
 function News() {
   const slides = [
@@ -56,6 +57,9 @@ function News() {
     prevArrow: <div className="slick-prev">&#10094;</div>,
   };
 
+  const { t } = useTranslation();
+    const { subtitle, specialWord } = t("home.news");
+
   return (
     <div className="container mb-5 mt-5">
       <div className="row ">
@@ -63,7 +67,7 @@ function News() {
           className="container-title text-black fw-bold "
           style={{ fontFamily: '"Gotham Light"' }}
         >
-          Browse Our <span style={{ color: "rgb(4, 102, 53)" }}>News</span>
+         {subtitle} <span style={{ color: "rgb(4, 102, 53)" }}>{specialWord} </span>
         </h1>
 
         <div className="col-12 col-lg-6  pb-0 slider_container">

@@ -168,6 +168,10 @@ i18n
                 }, */
               ],
             },
+            news: {
+              subtitle: "Browse Our",
+              specialWord: "News",
+            },
             UpcomingCourseSlider: {
               title: "EXPLORE ALL COURSES",
               upcomingtitle: "Upcoming",
@@ -1518,8 +1522,8 @@ i18n
             s2: "Formerly an orienteering and student service centre named IELI, since 2017 we guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance – to more than 5,000 students enrolled overall through our network,",
             /* s3: "Since 2017, with more than 5,000 students enrolled overall through our network, IELI has guaranteed constant support to students during their training: from orientation to enrolment procedures, from technical support to study assistance.", */
             s4: "is a new project that will extend the concept through a new Higher Education Institute based in Malta, focused on the provision. of highly professionalising education provided entirely online at an international level.",
-            ouur : "Our",
-            lecc: "Lecturers"
+            ouur: "Our",
+            lecc: "Lecturers",
           },
           footer: {
             about: {
@@ -1798,7 +1802,10 @@ i18n
                 },
               ],
             },
-
+            news: {
+              subtitle: "Explore Nossas",
+              specialWord: "notícias",
+            },
             homeTeam: {
               title: "EQUIPE",
               subtitle: "Conheça Nossa",
@@ -2690,8 +2697,8 @@ i18n
             s1: "nasceu com a motivação de entrar no mercado de provedores de educação online por meio de uma oferta de treinamento excelente, presente em algumas universidades presenciais, com todas as suas limitações, mas carente ou insuficiente no mundo do e-learning.",
             s2: "Anteriormente um centro de orientação e serviços estudantis chamado IELI, desde 2017 garantimos suporte constante aos estudantes durante sua formação: desde a orientação até os procedimentos de matrícula, do suporte técnico à assistência aos estudos – para mais de 5.000 estudantes matriculados em toda a nossa rede.",
             s4: "é um novo projeto que ampliará o conceito por meio de um novo Instituto de Ensino Superior baseado em Malta, focado na oferta de uma educação altamente profissionalizante oferecida inteiramente online em nível internacional.",
-            ouur : "Nossos",
-            lecc: "palestrantes"
+            ouur: "Nossos",
+            lecc: "palestrantes",
           },
 
           footer: {
@@ -2896,6 +2903,11 @@ i18n
                   enrl: "Chiuso",
                 },
               ],
+            },
+
+            news: {
+              subtitle: "Esplora le nostre",
+              specialWord: "notizie",
             },
             UpcomingCourseSlider: {
               title: "ESPLORA TUTTI I CORSI",
@@ -3493,8 +3505,8 @@ i18n
             s1: "è nata con la motivazione di entrare nel mercato dei fornitori di educazione online attraverso un'offerta formativa eccellente presente in alcune università residenziali, con tutte le loro limitazioni, ma mancante o insufficiente nel mondo dell'e-learning.",
             s2: "In passato un centro di orientamento e servizi per studenti chiamato IELI, dal 2017 garantiamo supporto costante agli studenti durante la loro formazione: dall'orientamento alle procedure di iscrizione, dal supporto tecnico all'assistenza nello studio, a più di 5.000 studenti iscritti complessivamente attraverso la nostra rete.",
             s4: "è un nuovo progetto che estenderà il concetto attraverso un nuovo Istituto di Educazione Superiore con sede a Malta, focalizzato sulla fornitura di un'educazione altamente professionalizzante interamente online a livello internazionale.",
-             ouur : "I nostr",
-            lecc: "docenti"
+            ouur: "I nostr",
+            lecc: "docenti",
           },
 
           footer: {
