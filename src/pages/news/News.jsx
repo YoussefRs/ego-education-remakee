@@ -80,6 +80,7 @@ function News() {
                       <a href="#">
                         <img
                           className="img-fluid w-100"
+                          id="big_img"
                           src={slide.image}
                           alt={`Slide ${index + 1}`}
                         />
