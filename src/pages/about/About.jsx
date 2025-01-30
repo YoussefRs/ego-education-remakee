@@ -166,9 +166,10 @@ function About() {
             </div>
           </div>
         </div>
+        <Governance />
 
-        <div className="swiper-container" data-aos={"zoom-in"}>
-          <div className="container mt-5" data-aos={"zoom-in"}>
+        <div className="swiper-container" data-aos={"zoom-in"} id="about-courses">
+          <div className="container mt-5 pt-4 pb-5" data-aos={"zoom-in"}>
             <div className="row">
               <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
                 <h1 className="container-title text-black fw-bold ">
@@ -184,7 +185,7 @@ function About() {
           </div>
         </div>
 
-       <Governance />
+      
 
         <div className="lecturers-section-about d-flex flex-column py-5">
         {/*   <h2

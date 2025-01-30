@@ -114,6 +114,37 @@ function HomeTeam() {
         youtube: "#",
       },
     },
+
+    {
+      name: "Mattia Di Tommaso",
+      role: "Head of Department",
+      sub: "Political Sciences, International Relations and Development Cooperation",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: logo,
+      socialLinks: {
+        twitter: "#",
+        facebook: "#",
+        linkedin: "#",
+        instagram: "#",
+        youtube: "#",
+      },
+    },
+    {
+      name: "Francesco Basso",
+      role: "Head of Department",
+      sub: "Informatics",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      imgSrc: logo,
+      socialLinks: {
+        twitter: "#",
+        facebook: "#",
+        linkedin: "#",
+        instagram: "#",
+        youtube: "#",
+      },
+    },
   ];
 
   return (
@@ -133,19 +164,28 @@ function HomeTeam() {
           {teamMembers.map((member, index) => (
             <div className="column" key={index} data-aos={"flip-up"}>
               <div className="team-9">
-                <div className="team-img">
+                <div
+                  className="team-img"
+                  style={{
+                    height:
+                      member.sub ==
+                      "Political Sciences, International Relations and Development Cooperation"
+                        ? 143
+                        : 200,
+                  }}
+                >
                   <img src={member.imgSrc} alt={`${member.name} Image`} />
                 </div>
 
                 {member.imgSrc != logo && (
-
-                <div className="logo-img">
-                  <img src={logo} />
-                </div>
+                  <div className="logo-img">
+                    <img src={logo} />
+                  </div>
                 )}
                 <div className="team-content">
                   <h2>{member.name}</h2>
                   <h3>{member.role}</h3>
+                  <h3>{member.sub}</h3>
                 </div>
                 <div className="team-overlay">
                   <p>{member.description}</p>

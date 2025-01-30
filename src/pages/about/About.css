@@ -49,12 +49,13 @@
   text-align: left;
 }
 
-
 .lecturers-section-about {
   width: 100%;
 }
 .gov-section-about {
   width: 100%;
+}
+#about-courses {
   background-color: #f2f8f1;
 }
 .card {
@@ -82,6 +83,10 @@
   text-align: center;
   box-sizing: border-box;
   /* border-radius: 10px; */
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 .card .lecturer-detail h5 {
   text-transform: uppercase;
@@ -210,7 +215,6 @@
   background-color: #046635;
   position: relative;
 }
-
 
 .contact-form:before {
   content: "";
@@ -350,8 +354,6 @@ textarea.input {
   opacity: 1;
 }
 
-
-
 @media (max-width: 850px) {
   .form {
     grid-template-columns: 1fr;
@@ -399,7 +401,6 @@ textarea.input {
     display: none;
   }
 
-  
   form,
   .contact-info {
     padding: 1.7rem 1.6rem;
@@ -434,7 +435,6 @@ textarea.input {
   }
 }
 
-
 ul.featured {
   width: 100%;
   margin: 0;
@@ -449,16 +449,15 @@ ul.featured * {
 ul.featured .right div {
   margin-top: 15px;
   max-height: 380px;
-    height: 370px;
+  height: 370px;
 }
 .left_ {
   background-image: url(../../assets/Team/ERNESTOFULL.webp);
   max-height: 380px;
   height: 370px;
 }
-.right-top{
+.right-top {
   background-image: url(../../assets/Team/fullwhitedaniele.webp);
-  
 }
 
 .right-bottom {
@@ -467,7 +466,9 @@ ul.featured .right div {
   width: 100px;
   margin: 0 auto;
 }
-ul.featured .left_, ul.featured .right-top, ul.featured .right-bottom {
+ul.featured .left_,
+ul.featured .right-top,
+ul.featured .right-bottom {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -493,12 +494,10 @@ ul.featured .text {
   }
   ul.featured li.right {
     width: 33.333%;
-    
   }
   ul.featured li.right div {
     min-height: 50%;
     margin-top: 0;
-    
   }
 }
 
