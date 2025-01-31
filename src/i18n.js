@@ -1528,7 +1528,7 @@ i18n
           footer: {
             about: {
               description1:
-                "formerly International E-Learning Institute Ltd) is a company established in 2017 in Malta, by deed C83113.",
+                "(formerly International E-Learning Institute Ltd) is a company established in 2017 in Malta, by deed C83113.",
               st1: "eGO Education",
               description2:
                 " has been accredited by the Malta Further & Higher Education Authority (MFHEA) as a Higher Education Institute in 2023 with licence n. 2023-015.",
@@ -2704,7 +2704,7 @@ i18n
           footer: {
             about: {
               description1:
-                "anteriormente International E-Learning Institute Ltd) é uma empresa estabelecida em 2017 em Malta, sob o registro C83113.",
+                "(anteriormente International E-Learning Institute Ltd) é uma empresa estabelecida em 2017 em Malta, sob o registro C83113.",
               st1: "eGO Education",
               description2:
                 "foi credenciada pela Autoridade de Educação Superior e Avançada de Malta (MFHEA) como uma Instituição de Ensino Superior em 2023 com a licença nº 2023-015.",

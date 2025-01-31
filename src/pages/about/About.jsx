@@ -18,8 +18,19 @@ function About() {
   }, []);
   const { t } = useTranslation();
   const { lecturers } = t("home.homeLecturers");
-  const { title, subtitle, specialWord, s1, s2, s3, s4, highlight, egoWord, ouur, lecc } =
-    t("about");
+  const {
+    title,
+    subtitle,
+    specialWord,
+    s1,
+    s2,
+    s3,
+    s4,
+    highlight,
+    egoWord,
+    ouur,
+    lecc,
+  } = t("about");
   return (
     <>
       <SubHeader
@@ -114,6 +125,7 @@ function About() {
           </div>
         </div>
         <PartnersSlider />
+
         <div className="it-about-area p-relative our-mission py-5">
           <div className="container it-about-ctr">
             <div className="row align-items-center">
@@ -168,27 +180,9 @@ function About() {
         </div>
         <Governance />
 
-        <div className="swiper-container" data-aos={"zoom-in"} id="about-courses">
-          <div className="container mt-5 pt-4 pb-5" data-aos={"zoom-in"}>
-            <div className="row">
-              <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
-                <h1 className="container-title text-black fw-bold ">
-                  Explore Our Innovative{" "}
-                  <span style={{ color: "#046635" }}>Courses</span>
-                </h1>
-              </div>
-
-              <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
-                <CourseSlider />
-              </div>
-            </div>
-          </div>
-        </div>
-
-      
 
         <div className="lecturers-section-about d-flex flex-column py-5">
-        {/*   <h2
+          {/*   <h2
             className="container-heading-green"
             style={{ color: "#046635" }}
             data-aos={"zoom-in"}
@@ -209,7 +203,7 @@ function About() {
                   className="col-lg-4 col-md-6 col-sm-12 "
                   data-aos={"flip-up"}
                 >
-                  <div className="card mb-3" >
+                  <div className="card mb-3">
                     <img
                       className="card-img-top"
                       src={lecturer.img}
@@ -231,8 +225,27 @@ function About() {
             </div>
           </div>
         </div>
+        
+        <div
+          className="swiper-container"
+          data-aos={"zoom-in"}
+          id="about-courses"
+        >
+          <div className="container mt-5 pt-4 pb-5" data-aos={"zoom-in"}>
+            <div className="row">
+              <div className="col-md-12 col-lg-4 col-sm-12 d-flex align-items-center">
+                <h1 className="container-title text-black fw-bold ">
+                  Explore Our Innovative{" "}
+                  <span style={{ color: "#046635" }}>Courses</span>
+                </h1>
+              </div>
 
-
+              <div className="col-md-12 col-lg-8 col-sm-12 d-flex align-items-center">
+                <CourseSlider />
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="contact-section-about py-5">
           <div className="container d-flex justify-content-center align-items-center">

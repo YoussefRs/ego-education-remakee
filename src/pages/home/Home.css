@@ -703,6 +703,35 @@
   margin-right: auto;
   margin-left: auto;
   padding: 2% 15px 5% 15px;
+
+  .card {
+    height: 382px;
+    box-shadow: none;
+  }
+
+  img {
+    height: 270px;
+    /* width: 250px; */
+    margin: 0 auto;
+  }
+
+  .lecturer-detail {
+    height: 96px;
+  }
+
+  .team-socials {
+    display: none !important;
+  }
+
+  .card:hover {
+    .team-socials {
+      display: flex !important;
+    }
+  }
+
+  .card .lecturer-detail .subheading  {
+    padding-bottom: 0rem;
+  }
 }
 
 @media (min-width: 576px) {
