@@ -6,6 +6,7 @@ import { CalendarIcon, EmailIcon, NameIcon } from "../enrollment/Svgs";
 function Student() {
   return (
     <div>
+    
       <SubHeader
         title="Student Office"
         path={[{ url: "/", label: "Home" }]}

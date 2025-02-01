@@ -195,7 +195,11 @@ function App() {
             }
           />
           <Route path="/dash" element={<Dashboard />} />
-          <Route path="/student-office" element={<Student />} />
+          <Route path="/student-office" element={<Layout>
+                <Student />
+              </Layout>} />
+
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
