@@ -51,9 +51,21 @@ function Navigation({ show, backgroundColor }) {
   }, []);
 
   const languages = [
-    { code: "en", name: "English", flag: "https://icons.iconarchive.com/icons/wikipedia/flags/48/GB-United-Kingdom-Flag-icon.png" },
-    { code: "br", name: "Español", flag: "https://cdn.parcellab.com/img/flags/br.png" },
-    { code: "it", name: "Italiano", flag: "https://cdn.parcellab.com/img/flags/it.png" },
+    {
+      code: "en",
+      name: "English",
+      flag: "https://icons.iconarchive.com/icons/wikipedia/flags/48/GB-United-Kingdom-Flag-icon.png",
+    },
+    {
+      code: "br",
+      name: "Español",
+      flag: "https://cdn.parcellab.com/img/flags/br.png",
+    },
+    {
+      code: "it",
+      name: "Italiano",
+      flag: "https://cdn.parcellab.com/img/flags/it.png",
+    },
   ];
 
   // Load selected language from localStorage or use default
@@ -92,9 +104,8 @@ function Navigation({ show, backgroundColor }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
   return (
-    <nav ref={navRef} style={{backgroundColor}}>
+    <nav ref={navRef} style={{ backgroundColor }}>
       <section className="flex_content">
         <figure className="logo fixed_flex">
           <Link to={"/"} className="p-0">
@@ -116,30 +127,51 @@ function Navigation({ show, backgroundColor }) {
         ))}
       </section>
       <section className="flex_content d-flex alingn-items-center justify-content-between">
-      <div id="mini-nav" ref={dropdownRef}>
-      <div className="_dropdown pull-right">
-        <button onClick={toggleDropdown} className="dropdown-toggle" style={{ background: "transparent", padding: "6px 5px", border: "2px solid white", width: "100%" }}>
-          <span id="current-lang">
-            <img src={selectedLang.flag} className="flag" alt={`Flag representing ${selectedLang.name}`} />
-          </span>
-          <span className="caret"></span>
-        </button>
+        <div id="mini-nav" ref={dropdownRef}>
+          <div className="_dropdown pull-right">
+            <button
+              onClick={toggleDropdown}
+              className="dropdown-toggle"
+              style={{
+                background: "transparent",
+                padding: "6px 5px",
+                border: "2px solid white",
+                width: "100%",
+              }}
+            >
+              <span id="current-lang">
+                <img
+                  src={selectedLang.flag}
+                  className="flag"
+                  alt={`Flag representing ${selectedLang.name}`}
+                />
+              </span>
+              <span className="caret"></span>
+            </button>
 
-        {isDropdownOpen && (
-          <ul id="lang-switcher-list" className="_dropdown-menu" style={{ paddingLeft: 0 }}>
-            {languages
-              .filter(lang => lang.code !== selectedLang.code) // Filter out the currently selected language
-              .map(lang => (
-                <li key={lang.code}>
-                  <a onClick={() => handleLangChange(lang)}>
-                    <img src={lang.flag} className="flag" alt={`Flag representing ${lang.name}`} />
-                  </a>
-                </li>
-              ))}
-          </ul>
-        )}
-      </div>
-    </div>
+            {isDropdownOpen && (
+              <ul
+                id="lang-switcher-list"
+                className="_dropdown-menu"
+                style={{ paddingLeft: 0 }}
+              >
+                {languages
+                  .filter((lang) => lang.code !== selectedLang.code) // Filter out the currently selected language
+                  .map((lang) => (
+                    <li key={lang.code}>
+                      <a onClick={() => handleLangChange(lang)}>
+                        <img
+                          src={lang.flag}
+                          className="flag"
+                          alt={`Flag representing ${lang.name}`}
+                        />
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            )}
+          </div>
+        </div>
         <a
           className="ham"
           href="https://ego-education.ispringlearn.eu/login"

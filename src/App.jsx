@@ -23,12 +23,14 @@ import Cookies from "./components/Home/CookieConsent";
 import CookieConsent from "./components/Home/CookieConsent";
 import SingleNew from "./pages/news/SingleNew";
 import Student from "./pages/student/Student";
+import TDetails from "./pages/teamDetails/TDetails";
 
 function Layout({ children }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   const location = useLocation();
-  const backgroundColor = location.pathname === "/news" ? "#046635" : "";
+  const backgroundColor =
+    location.pathname === "/news" || "/detail" ? "#046635" : "";
 
   return (
     <>
@@ -195,11 +197,23 @@ function App() {
             }
           />
           <Route path="/dash" element={<Dashboard />} />
-          <Route path="/student-office" element={<Layout>
+          <Route
+            path="/student-office"
+            element={
+              <Layout>
                 <Student />
-              </Layout>} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/detail/:id"
+            element={
+              <Layout>
+                <TDetails />
+              </Layout>
+            }
+          />
 
-          
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}

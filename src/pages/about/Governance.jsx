@@ -14,6 +14,7 @@ import cordinator from "../../assets/Team/CV.webp";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 function Governance() {
   useEffect(() => {
@@ -83,6 +84,7 @@ function Governance() {
 
   const cardsData = [
     {
+      id: "156gy44kg4zfzf",
       color: "Pink",
       name: "Ernesto Pallotta",
       title: "Rector",
@@ -91,6 +93,7 @@ function Governance() {
       imgSrc: rector,
     },
     {
+      id: "4z4gh44j6d4j8",
       color: "Pink",
       name: "A.Daniele Pallotta",
       title: "General Director",
@@ -99,6 +102,7 @@ function Governance() {
       imgSrc: dani,
     },
     {
+      id: "t4jfkf8yt4lu8",
       color: "Pink",
       name: "Gianpiero Rebellato",
       title: "CEO",
@@ -107,6 +111,7 @@ function Governance() {
       imgSrc: logo,
     },
     {
+      id: "trdj7f8drh44ff",
       color: "Pink",
       name: "Youssef Rouissi",
       title: "IT Director",
@@ -115,6 +120,7 @@ function Governance() {
       imgSrc: info,
     },
     {
+      id: "h4dtrwr4d3j1t",
       color: "Pink",
       name: "Mario Ingrassia",
       title: "Marketing Office",
@@ -123,6 +129,7 @@ function Governance() {
       imgSrc: marketing,
     },
     {
+      id: "4az4f4j4glyu4",
       color: "Pink",
       name: "Mounira Adel",
       title: "Enrolment Office",
@@ -131,6 +138,7 @@ function Governance() {
       imgSrc: enrol,
     },
     {
+      id: "85re1h22jf22t",
       color: "Pink",
       name: "Claudio Vullo",
       title: "Country Manager - Brasil",
@@ -139,6 +147,7 @@ function Governance() {
       imgSrc: cordinator,
     },
     {
+      id: "12tyj1f1j11j",
       color: "Pink",
       name: "Mattia Di Tommaso",
       title: "Head of Department",
@@ -148,6 +157,7 @@ function Governance() {
       imgSrc: logo,
     },
     {
+      id: "4g4rs66699see",
       color: "Pink",
       name: "Francesco Basso",
       title: "Head of Department - Informatics",
@@ -170,31 +180,34 @@ function Governance() {
       <section class="container">
         <div className="row active-with-click">
           <Slider {...settings}>
-            {cardsData?.map((card, i) => (
+            {cardsData?.map((member, i) => (
               <div
                 className="col-lg-4 col-md-6 col-sm-12 "
                 data-aos={"flip-up"}
               >
-                <div className="card" style={{
-                            margin : "0.7rem",
-                          }}>
+                <div
+                  className="card"
+                  style={{
+                    margin: "0.7rem",
+                  }}
+                >
                   <img
                     className="card-img-top"
-                    src={card.imgSrc}
+                    src={member.imgSrc}
                     height="380"
                     alt="Card image cap"
                   />
                   <div className="lecturer-detail">
                     <h5 className="card-title heading text-center">
-                      {card.name}{" "}
+                      {member.name}{" "}
                     </h5>
                     <div>
-                      <span className="subheading">{card.title}</span>
+                      <span className="subheading">{member.title}</span>
                       <br />
-                      <span className="subheading">{card.sub}</span>
+                      <span className="subheading">{member.sub}</span>
                     </div>
                     <blockquote>
-                      <p>{card.description} </p>
+                      <p>{member.description} </p>
                     </blockquote>
                     <div className="d-flex align-items-center justify-content-between">
                       <div className="social d-flex align-items-center gap-4">
@@ -226,25 +239,29 @@ function Governance() {
                         {/* <a className="fa fa-fw fa-linkedin" href="#"></a>
                   <a className="fa fa-fw fa-google-plus" href="#"></a> */}
                       </div>
-                      <button style={{
+
+                      <Link to={`/detail/${member.id}`} state={member}>
+                        <button
+                          style={{
                             background: "transparent",
-                            padding : 0
-                          }}>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="30"
-                          fill="currentColor"
-                          class="bi bi-arrow-up-right-square"
-                          viewBox="0 0 16 16"
-                          
+                            padding: 0,
+                          }}
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right-square"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"
+                            />
+                          </svg>
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

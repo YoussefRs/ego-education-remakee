@@ -9,6 +9,7 @@ import logo from "../../assets/Logos/logo-ego-black.png";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 function HomeTeam() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function HomeTeam() {
 
   const headMembers = [
     {
+      id: "156gy44kg4zfzf",
       name: "Ernesto Pallotta",
       role: "Rector",
       imgSrc: rector,
@@ -36,6 +38,7 @@ function HomeTeam() {
       },
     },
     {
+      id: "4z4gh44j6d4j8",
       name: "A.Daniele Pallotta",
       role: "General Director",
       imgSrc: director,
@@ -49,6 +52,7 @@ function HomeTeam() {
       },
     },
     {
+      id: "t4jfkf8yt4lu8",
       name: "Gianpiero Rebellato",
       role: "CEO",
       imgSrc: logo,
@@ -65,6 +69,7 @@ function HomeTeam() {
 
   const subHeadMembers = [
     {
+      id: "trdj7f8drh44ff",
       name: "Youssef Rouissi",
       role: "IT Director",
       imgSrc: info,
@@ -78,6 +83,7 @@ function HomeTeam() {
       },
     },
     {
+      id: "h4dtrwr4d3j1t",
       name: "Mario Ingrassia",
       role: "Marketing Office",
       imgSrc: marketing,
@@ -91,6 +97,7 @@ function HomeTeam() {
       },
     },
     {
+      id: "4az4f4j4glyu4",
       name: "Mounira Adel",
       role: "Enrolment Office",
       imgSrc: enrol,
@@ -105,6 +112,7 @@ function HomeTeam() {
     },
 
     {
+      id: "85re1h22jf22t",
       name: "Claudio Vullo",
       role: "Country Manager - Brasil",
       imgSrc: cordinator,
@@ -119,6 +127,7 @@ function HomeTeam() {
     },
 
     {
+      id: "12tyj1f1j11j",
       name: "Mattia Di Tommaso",
       role: "Head of Department",
       sub: "Political Sciences, International Relations and Development Cooperation",
@@ -134,6 +143,7 @@ function HomeTeam() {
       },
     },
     {
+      id: "4g4rs66699see",
       name: "Francesco Basso",
       role: "Head of Department",
       sub: "Informatics",
@@ -217,26 +227,28 @@ function HomeTeam() {
                         {/* <a className="fa fa-fw fa-linkedin" href="#"></a>
                   <a className="fa fa-fw fa-google-plus" href="#"></a> */}
                       </div>
-                      <button
-                        style={{
-                          background: "transparent",
-                          padding: 0,
-                        }}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="30"
-                          fill="currentColor"
-                          class="bi bi-arrow-up-right-square"
-                          viewBox="0 0 16 16"
+                      <Link to={`/detail/${member.id}`} state={member}>
+                        <button
+                          style={{
+                            background: "transparent",
+                            padding: 0,
+                          }}
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right-square"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"
+                            />
+                          </svg>
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -299,26 +311,28 @@ function HomeTeam() {
                         {/* <a className="fa fa-fw fa-linkedin" href="#"></a>
                   <a className="fa fa-fw fa-google-plus" href="#"></a> */}
                       </div>
-                      <button
-                        style={{
-                          background: "transparent",
-                          padding: 0,
-                        }}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="30"
-                          fill="currentColor"
-                          class="bi bi-arrow-up-right-square"
-                          viewBox="0 0 16 16"
+                      <Link to={`/detail/${member.id}`} state={member}>
+                        <button
+                          style={{
+                            background: "transparent",
+                            padding: 0,
+                          }}
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            fill="currentColor"
+                            class="bi bi-arrow-up-right-square"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"
+                            />
+                          </svg>
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
