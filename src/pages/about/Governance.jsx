@@ -87,7 +87,7 @@ function Governance() {
       id: "156gy44kg4zfzf",
       color: "Pink",
       name: "Ernesto Pallotta",
-      title: "Rector",
+      role: "Rector",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: rector,
@@ -96,7 +96,7 @@ function Governance() {
       id: "4z4gh44j6d4j8",
       color: "Pink",
       name: "A.Daniele Pallotta",
-      title: "General Director",
+      role: "General Director",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: dani,
@@ -105,7 +105,7 @@ function Governance() {
       id: "t4jfkf8yt4lu8",
       color: "Pink",
       name: "Gianpiero Rebellato",
-      title: "CEO",
+      role: "CEO",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: logo,
@@ -114,7 +114,7 @@ function Governance() {
       id: "trdj7f8drh44ff",
       color: "Pink",
       name: "Youssef Rouissi",
-      title: "IT Director",
+      role: "IT Director",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: info,
@@ -123,7 +123,7 @@ function Governance() {
       id: "h4dtrwr4d3j1t",
       color: "Pink",
       name: "Mario Ingrassia",
-      title: "Marketing Office",
+      role: "Marketing Office",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: marketing,
@@ -132,7 +132,7 @@ function Governance() {
       id: "4az4f4j4glyu4",
       color: "Pink",
       name: "Mounira Adel",
-      title: "Enrolment Office",
+      role: "Enrolment Office",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: enrol,
@@ -141,7 +141,7 @@ function Governance() {
       id: "85re1h22jf22t",
       color: "Pink",
       name: "Claudio Vullo",
-      title: "Country Manager - Brasil",
+      role: "Country Manager - Brasil",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: cordinator,
@@ -150,7 +150,7 @@ function Governance() {
       id: "12tyj1f1j11j",
       color: "Pink",
       name: "Mattia Di Tommaso",
-      title: "Head of Department",
+      role: "Head of Department",
       sub: "Political Sciences, International Relations and Development Cooperation",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
@@ -160,7 +160,7 @@ function Governance() {
       id: "4g4rs66699see",
       color: "Pink",
       name: "Francesco Basso",
-      title: "Head of Department - Informatics",
+      role: "Head of Department - Informatics",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: logo,
@@ -202,7 +202,7 @@ function Governance() {
                       {member.name}{" "}
                     </h5>
                     <div>
-                      <span className="subheading">{member.title}</span>
+                      <span className="subheading">{member.role}</span>
                       <br />
                       <span className="subheading">{member.sub}</span>
                     </div>
