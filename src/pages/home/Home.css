@@ -671,6 +671,10 @@
   /* border-radius: 20px; */
   min-height: 100%;
 }
+#lecturer_ {
+  /* border-radius: 20px; */
+  height: 450px !important;
+}
 
 #lecturers .heading-border {
   position: absolute;
@@ -729,7 +733,7 @@
     }
   }
 
-  .card .lecturer-detail .subheading  {
+  .card .lecturer-detail .subheading {
     padding-bottom: 0rem;
   }
 }

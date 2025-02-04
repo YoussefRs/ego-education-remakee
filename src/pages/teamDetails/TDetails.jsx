@@ -16,9 +16,7 @@ function TDetails() {
               {member.name}
               {/* <span id="email">shashank12@mnnit.ac.in</span> */}
             </p>
-            <p id="designation_">
-              {member.role}
-            </p>
+            <p id="designation_">{member.role}</p>
             <p id="designation">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
               voluptatum fugit iure iste facere tempora itaque.
@@ -67,15 +65,10 @@ function TDetails() {
               </svg>{" "}
               Description
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad at
-              nemo nostrum corporis laboriosam qui, officia vel debitis
-              exercitationem, quas rem! Deleniti quam tenetur consequatur rem
-              repellendus veniam velit at? Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Eius maxime ducimus illum
-              accusantium, voluptate neque cumque temporibus et quasi quos qui
-              numquam sequi provident, labore at, laboriosam vitae voluptatem
-              odio.
+            <p id="designation">
+              {member.description
+                ? member.description
+                : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatum fugit iure iste facere tempora itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatum fugit iure iste facere tempora itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatum fugit iure iste facere tempora itaque."}
             </p>
           </div>
           <div class="profile-description">

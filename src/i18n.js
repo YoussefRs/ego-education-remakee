@@ -260,30 +260,33 @@ i18n
               title: "LECTURERS",
               subtitle: "Meet Our",
               specialWord: "Lecturers",
-              lecturers: [
+              members: [
                 {
+                  id : "4az4f89azf8",
                   name: "Antonio Minelli",
-                  title: "Chief Technology Officer",
+                  role: "Chief Technology Officer",
                   organization: "ETLForma",
                   description:
                     "Antonio Minelli is the Chief Technology Officer at ETLForma, one of Italy's leading IT training organizations. He has overseen technology projects for major clients including Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia, and the Italian Ministry of the Environment. As a seasoned technology veteran, Antonio brings a wealth of real-world experience to every lecture.",
-                  img: logo,
+                  imgSrc: logo,
                 },
                 {
+                  id :"f4az8fa4521",
                   name: "Alessandro Iacuelli",
-                  title: "Analyst and teacher",
+                  role: "Analyst and teacher",
                   organization: "ETLForma",
                   description:
                     "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
-                  img: logo,
+                  imgSrc: logo,
                 },
                 {
+                  id: "12azf1151zz",
                   name: "Manuele Monti",
-                  title: "Founder and CEO",
+                  role: "Founder and CEO",
                   organization: "TechBricks",
                   description:
                     "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
-                  img: logo,
+                  imgSrc: logo,
                 },
               ],
             },
