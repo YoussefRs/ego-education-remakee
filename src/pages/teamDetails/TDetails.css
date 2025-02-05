@@ -8,11 +8,10 @@
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
-  border: 1px solid #ddd;
+
   border-radius: 8px;
   max-width: 1460px;
   margin: 0 auto;
-  background-color: #f9f9f9;
   height: auto;
 
   
@@ -29,11 +28,13 @@
 .profile-image {
   max-width: 300px;
   width: 100%;
+  
 }
 .profile-image img {
   width: 100%;
   object-fit: cover;
   margin-bottom: 1rem;
+  border: 1px solid #ddd;
 }
 .profile_right {
   display: flex;

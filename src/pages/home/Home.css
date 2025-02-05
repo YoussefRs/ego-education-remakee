@@ -676,6 +676,12 @@
   height: 450px !important;
 }
 
+@media (max-width: 1400px) {
+  .card_ctr {
+    flex: 1 !important;
+  }
+}
+
 #lecturers .heading-border {
   position: absolute;
   width: 100%;
@@ -713,14 +719,19 @@
     box-shadow: none;
   }
 
+  .card:hover .lecturer-detail {
+    height: calc(60%);
+    /* border-radius: 10px; */
+  }
+
   img {
-    height: 270px;
+    height: 233px;
     /* width: 250px; */
     margin: 0 auto;
   }
 
   .lecturer-detail {
-    height: 96px;
+    height: 132px;
   }
 
   .team-socials {
@@ -1006,3 +1017,4 @@
 ._home_lecturer_desc {
   font-size: clamp(0.7rem, 1rem + 1vw, 1rem) !important;
 }
+

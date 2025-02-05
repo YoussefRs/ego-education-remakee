@@ -285,7 +285,7 @@ i18n
                   role: "Founder and CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                    "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie).",
                   imgSrc: logo,
                 },
               ],
@@ -316,7 +316,7 @@ i18n
                   title: "Founder and CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                    "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie).",
                   img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                 },
               ],
@@ -578,7 +578,7 @@ i18n
                     organization: "TechBricks",
                     desc: "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
                     desc2:
-                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie).",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                   },
                   admission: {
@@ -908,7 +908,7 @@ i18n
                     organization: "TechBricks",
                     desc: "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
                     desc2:
-                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie).",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                   },
                   totalEtc: 185,
@@ -1107,7 +1107,7 @@ i18n
                     organization: "TechBricks",
                     desc: "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science.",
                     desc2:
-                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie). Manuele's entrepreneurial spirit and vision of technology's potential for positive change energizes all of his teaching.",
+                      "Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie).",
                     img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                   },
                   career: [
@@ -1800,7 +1800,7 @@ i18n
                   title: "Fundador e CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de fundar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester, bem como gerente de portfólio da gigante global de energia GDF Suez (atualmente Engie). O espírito empreendedor de Manuele e sua visão do potencial positivo da tecnologia energizam todas as suas aulas.",
+                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de fundar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester, bem como gerente de portfólio da gigante global de energia GDF Suez (atualmente Engie).",
                   img: logo,
                 },
               ],
@@ -1835,7 +1835,7 @@ i18n
                   title: "Fundador e CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de lançar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester e gestor de portfólio para a gigante global de energia GDF Suez (agora Engie). O espírito empreendedor de Manuele e sua visão do potencial transformador da tecnologia energizam todas as suas aulas.",
+                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de lançar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester e gestor de portfólio para a gigante global de energia GDF Suez (agora Engie).",
                   img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                 },
               ],
@@ -3023,7 +3023,7 @@ i18n
                   title: "Fondatore e CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie). Lo spirito imprenditoriale di Manuele e la sua visione del potenziale della tecnologia per il cambiamento positivo energizzano tutto il suo insegnamento.",
+                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie).",
                   img: logo,
                 },
               ],
@@ -3054,7 +3054,7 @@ i18n
                   title: "Fondatore e CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie). Lo spirito imprenditoriale di Manuele e la sua visione del potenziale della tecnologia per il cambiamento positivo energizzano tutto il suo insegnamento.",
+                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie).",
                   img: "https://lizza.wpengine.com/lms/wp-content/uploads/sites/12/2024/03/New-3.webp",
                 },
               ],

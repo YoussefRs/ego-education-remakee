@@ -88,8 +88,6 @@ function Governance() {
       color: "Pink",
       name: "Ernesto Pallotta",
       role: "Rector",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: rector,
     },
     {
@@ -97,8 +95,6 @@ function Governance() {
       color: "Pink",
       name: "A.Daniele Pallotta",
       role: "General Director",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: dani,
     },
     {
@@ -106,8 +102,6 @@ function Governance() {
       color: "Pink",
       name: "Gianpiero Rebellato",
       role: "CEO",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: logo,
     },
     {
@@ -115,8 +109,6 @@ function Governance() {
       color: "Pink",
       name: "Youssef Rouissi",
       role: "IT Director",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: info,
     },
     {
@@ -124,8 +116,6 @@ function Governance() {
       color: "Pink",
       name: "Mario Ingrassia",
       role: "Marketing Office",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: marketing,
     },
     {
@@ -133,17 +123,14 @@ function Governance() {
       color: "Pink",
       name: "Mounira Adel",
       role: "Enrolment Office",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: enrol,
     },
     {
       id: "85re1h22jf22t",
       color: "Pink",
       name: "Claudio Vullo",
-      role: "Country Manager - Brasil",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      role: "Country Manager ",
+      sub: "Brasil",
       imgSrc: cordinator,
     },
     {
@@ -152,17 +139,14 @@ function Governance() {
       name: "Mattia Di Tommaso",
       role: "Head of Department",
       sub: "Political Sciences, International Relations and Development Cooperation",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
       imgSrc: logo,
     },
     {
       id: "4g4rs66699see",
       color: "Pink",
       name: "Francesco Basso",
-      role: "Head of Department - Informatics",
-      description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
+      role: "Head of Department ",
+      sub: "Informatics",
       imgSrc: logo,
     },
   ];
@@ -182,7 +166,7 @@ function Governance() {
           <Slider {...settings}>
             {cardsData?.map((member, i) => (
               <div
-                className="col-lg-4 col-md-6 col-sm-12 "
+                className="col-lg-3 col-md-3 col-sm-12 "
                 data-aos={"flip-up"}
               >
                 <div
@@ -202,9 +186,9 @@ function Governance() {
                       {member.name}{" "}
                     </h5>
                     <div>
-                      <span className="subheading">{member.role}</span>
+                      <span className="subheading" style={{fontStyle: "italic"}}>{member.role}</span>
                       <br />
-                      <span className="subheading">{member.sub}</span>
+                      <span className="subheading" style={{fontStyle: "italic"}}>{member.sub}</span>
                     </div>
                     <blockquote>
                       <p>{member.description} </p>

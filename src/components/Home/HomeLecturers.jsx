@@ -41,10 +41,10 @@ function HomeLecturers() {
           <span style={{ color: "#046635" }}> {lecc} </span>
         </h1>
         <div className="container d-flex align-items-center justify-content-center">
-          <div className="row">
+          <div className="row justify-content-center">
             {members?.map((member, i) => (
               <div
-                className="col-lg-4 col-md-6 col-sm-12 "
+                className="col-lg-3 col-sm-12 card_ctr"
                 data-aos={"flip-up"}
               >
                 <div className="card mb-3" id="lecturer_">
@@ -58,9 +58,9 @@ function HomeLecturers() {
                     <h5 className="card-title heading text-center">
                       {member.name}{" "}
                     </h5>
-                    <span className="subheading">{member.role}</span>
-                    <blockquote>
-                      <p>{member.description} </p>
+                    <span className="subheading" style={{fontStyle: "italic"}}>{member.role}</span>
+                    <blockquote className="p-0">
+                      <p >{member.description} </p>
                     </blockquote>
                     <div className="d-flex align-items-center justify-content-between">
                       <div className="social d-flex align-items-center gap-4">

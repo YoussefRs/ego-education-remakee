@@ -114,7 +114,8 @@ function HomeTeam() {
     {
       id: "85re1h22jf22t",
       name: "Claudio Vullo",
-      role: "Country Manager - Brasil",
+      role: "Country Manager ",
+      sub : "Brasil",
       imgSrc: cordinator,
       description: "Some text goes here that describes about team member",
       socialLinks: {
@@ -275,7 +276,8 @@ function HomeTeam() {
                     <h5 className="card-title heading text-center">
                       {member.name}{" "}
                     </h5>
-                    <span className="subheading">{member.role}</span>
+                    <span className="subheading" style={{fontStyle: "italic"}}>{member.role}</span>
+                    <span className="subheading" style={{fontStyle: "italic"}}>{member.sub}</span>
                     <div
                       className="d-flex align-items-end justify-content-between team-socials"
                       style={{

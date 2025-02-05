@@ -26,10 +26,10 @@ function Elearning() {
                 <div class="main-content">
                   <div class="main-header mb-4">
                     <h1
-                      class="main-heading d-inline-block text-uppercase pb-3 border-bottom"
-                      style={{ color: "#046635" }}
+                      class="main-heading d-inline-block  pb-3 border-bottom"
+                      style={{ color: "#046635", textTransform: "none" }}
                     >
-                      &lt; Elearn &gt;
+                      eLearn
                     </h1>
                   </div>
 
@@ -40,7 +40,7 @@ function Elearning() {
                         alt="Colorful Wall"
                       />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col">
                       <div class="about__text mb-5 mb-sm-4 mb-md-4">
                         <h3 className="fw-bold">
                           Make every lecture
