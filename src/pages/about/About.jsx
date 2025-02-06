@@ -35,9 +35,9 @@ function About() {
   return (
     <>
       <SubHeader
-        title={"About"}
-        path={[{ url: "/about", label: "Home" }]}
-        current={"About"}
+        title={"The Institute"}
+        path={[{ url: "/institute", label: "Home" }]}
+        current={"The Institute"}
       />
       <div className="about-us-container">
         <div className="it-about-area p-relative mt-5 margin-auto">

@@ -115,7 +115,7 @@ function HomeTeam() {
       id: "85re1h22jf22t",
       name: "Claudio Vullo",
       role: "Country Manager ",
-      sub : "Brasil",
+      sub : "Brazil",
       imgSrc: cordinator,
       description: "Some text goes here that describes about team member",
       socialLinks: {
@@ -267,16 +267,18 @@ function HomeTeam() {
               >
                 <div className="card mb-3">
                   <img
-                    className="card-img-top"
+
+                    className={member.sub === "Political Sciences, International Relations and Development Cooperation" ? "card-img-top img_spec" : "card-img-top"}
+
                     src={member.imgSrc}
                     height="380"
                     alt="Card image cap"
                   />
-                  <div className="lecturer-detail">
+                  <div className={member.sub === "Political Sciences, International Relations and Development Cooperation" ? "lecturer-detail_spec" : "lecturer-detail"} >
                     <h5 className="card-title heading text-center">
                       {member.name}{" "}
                     </h5>
-                    <span className="subheading" style={{fontStyle: "italic"}}>{member.role}</span>
+                    <span className="subheading" >{member.role}</span>
                     <span className="subheading" style={{fontStyle: "italic"}}>{member.sub}</span>
                     <div
                       className="d-flex align-items-end justify-content-between team-socials"

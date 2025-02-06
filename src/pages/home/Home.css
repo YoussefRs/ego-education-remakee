@@ -719,19 +719,95 @@
     box-shadow: none;
   }
 
+  .lecturer-detail {
+    position: absolute;
+    height: 90px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    overflow: hidden;
+    padding: 16px;
+    background-color: #14452f;
+    opacity: 0.8;
+    transition: all 0.35s;
+    text-align: center;
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    &:hover  {
+      height: calc(40%) !important;
+    }
+  }
+
   .card:hover .lecturer-detail {
     height: calc(60%);
     /* border-radius: 10px; */
   }
 
   img {
-    height: 233px;
+    height: 276px;
     /* width: 250px; */
     margin: 0 auto;
   }
 
-  .lecturer-detail {
+  .lecturer-detail_spec {
+    position: absolute;
     height: 132px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    overflow: hidden;
+    padding: 16px;
+    background-color: #14452f;
+    opacity: 0.8;
+    transition: all 0.35s;
+    text-align: center;
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    h5 {
+      text-transform: uppercase;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 3px 0;
+      color: #ffd23c;
+    }
+
+    .subheading {
+      font-weight: 300;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      color: white;
+      font-size: 13px;
+    }
+
+    blockquote {
+      padding: 1rem;
+      margin: 0;
+      font-style: italic;
+      font-size: 0.75em;
+      color: white;
+    }
+
+    &:hover  {
+      height: calc(50%);
+      /* border-radius: 10px; */
+    }
+    
+  }
+
+  .img_spec {
+    width: 200px !important;
   }
 
   .team-socials {
@@ -1017,4 +1093,3 @@
 ._home_lecturer_desc {
   font-size: clamp(0.7rem, 1rem + 1vw, 1rem) !important;
 }
-

@@ -28,9 +28,33 @@
 
 
   .card:hover .lecturer-detail {
-    height: calc(60%);
+    height: calc(45%);
     /* border-radius: 10px; */
   }
+
+  .lecturer-detail-gov {
+    height: 110px;
+  }
+  .lecturer-detail-gov1 {
+    height: 130px;
+  }
+  .lecturer-detail-gov2 {
+    height: 110px;
+  }
+  .card:hover .lecturer-detail-gov {
+    height: calc(50%);
+    /* border-radius: 10px; */
+  }
+  .card:hover .lecturer-detail-gov1 {
+    height: calc(55%);
+    /* border-radius: 10px; */
+  }
+  .card:hover .lecturer-detail-gov2 {
+    height: calc(50%);
+    /* border-radius: 10px; */
+  }
+
+
 
   .slick-next {
     right: -2rem;

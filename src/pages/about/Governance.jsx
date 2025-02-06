@@ -130,7 +130,7 @@ function Governance() {
       color: "Pink",
       name: "Claudio Vullo",
       role: "Country Manager ",
-      sub: "Brasil",
+      sub: "Brazil",
       imgSrc: cordinator,
     },
     {
@@ -181,14 +181,29 @@ function Governance() {
                     height="380"
                     alt="Card image cap"
                   />
-                  <div className="lecturer-detail">
+                  <div
+                    className={
+                      member.id === "85re1h22jf22t"
+                        ? "lecturer-detail lecturer-detail-gov"
+                        : member.id === "12tyj1f1j11j"
+                        ? "lecturer-detail lecturer-detail-gov1"
+                        : member.id === "4g4rs66699see"
+                        ? "lecturer-detail lecturer-detail-gov2"
+                        : "lecturer-detail"
+                    }
+                  >
                     <h5 className="card-title heading text-center">
                       {member.name}{" "}
                     </h5>
                     <div>
-                      <span className="subheading" style={{fontStyle: "italic"}}>{member.role}</span>
+                      <span className="subheading">{member.role}</span>
                       <br />
-                      <span className="subheading" style={{fontStyle: "italic"}}>{member.sub}</span>
+                      <span
+                        className="subheading"
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {member.sub}
+                      </span>
                     </div>
                     <blockquote>
                       <p>{member.description} </p>
