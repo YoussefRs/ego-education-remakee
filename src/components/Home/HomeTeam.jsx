@@ -268,7 +268,7 @@ function HomeTeam() {
                 <div className="card mb-3">
                   <img
 
-                    className={member.sub === "Political Sciences, International Relations and Development Cooperation" ? "card-img-top img_spec" : "card-img-top"}
+                    className="card-img-top"
 
                     src={member.imgSrc}
                     height="380"
