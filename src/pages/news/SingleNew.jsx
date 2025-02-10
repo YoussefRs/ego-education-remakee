@@ -1,7 +1,7 @@
 import React from "react";
 import n2 from "../../assets/news/news-800x500-2.jpg";
-import n1 from "../../assets/news/news-800x500-1.jpg";
-import n3 from "../../assets/news/news-110x110-1.jpg";
+import n1 from "../../assets/news/unitalo.webp";
+import n3 from "../../assets/Team/fullwhitedaniele.webp";
 import ContactWidget from "../../globals/Widgets/ContactWidget";
 import ApplyWidget from "../../globals/Widgets/ApplyWidget";
 
@@ -18,7 +18,7 @@ function SingleNew() {
                 <img
                   class="img-fluid w-100"
                   src={n1}
-                  style={{ objectFit: "cover", height: 350 }}
+                  style={{ objectFit: "cover" }}
                 />
                 <div class="bg-white  p-4">
                   <div class="mb-3">
@@ -26,75 +26,68 @@ function SingleNew() {
                       class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                       href=""
                     >
-                      Business
+                      Education
                     </a>
                     <a class="text-body" href="">
-                      Jan 01, 2045
+                      Feb 10, 2025
                     </a>
                   </div>
                   <h1 class="mb-3 text-secondary text-uppercase fw-bold text-black">
-                    Lorem ipsum dolor sit amet elit vitae porta diam...
+                    eGO Education and Italo-Brasileira Announce Strategic
+                    Academic Partnership
                   </h1>
                   <p>
-                    Voluptua est takimata stet invidunt sed rebum nonumy stet,
-                    clita aliquyam dolores vero stet consetetur elitr takimata
-                    rebum sanctus. Sit sed accusam stet sit nonumy kasd diam
-                    dolores, sanctus lorem kasd duo dolor dolor vero sit et.
-                    Labore ipsum duo sanctus amet eos et. Consetetur no sed et
-                    aliquyam ipsum justo et, clita lorem sit vero amet amet est
-                    dolor elitr, stet et no diam sit. Dolor erat justo dolore
-                    sit invidunt.
+                    eGO Education is proud to announce the signing of a
+                    strategic partnership with Italo-Brasileira, a distinguished
+                    Centro Universitario based in São Paulo, Brazil. This
+                    collaboration marks a significant milestone in expanding
+                    international academic opportunities and reinforcing global
+                    educational standards.
                   </p>
                   <h3 class="text-uppercase font-weight-bold mb-3">
-                    Lorem ipsum dolor sit amet elit
+                    Partnership Agreement Ceremony Emphasizing Academic
+                    Excellence
                   </h3>
-                  <img class="img-fluid w-50 float-left mr-4 mb-2" src={n2} />
+                  {/* <img class="img-fluid w-50 float-left mr-4 mb-2" src={n2} /> */}
                   <p>
-                    Diam dolor est labore duo invidunt ipsum clita et, sed et
-                    lorem voluptua tempor invidunt at est sanctus sanctus. Clita
-                    dolores sit kasd diam takimata justo diam lorem sed. Magna
-                    amet sed rebum eos. Clita no magna no dolor erat diam tempor
-                    rebum consetetur, sanctus labore sed nonumy diam lorem amet
-                    eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
-                    sadipscing gubergren erat. Gubergren at lorem invidunt
-                    sadipscing rebum sit amet ut ut, voluptua diam dolores at
-                    sadipscing stet. Clita dolor amet dolor ipsum vero ea ea
-                    eos. Invidunt sed diam dolores takimata dolor dolore dolore
-                    sit. Sit ipsum erat amet lorem et, magna sea at sed et eos.
-                    Accusam eirmod kasd lorem clita sanctus ut consetetur et. Et
-                    duo tempor sea kasd clita ipsum et.
+                    The agreement was formalized during a signing ceremony
+                    attended by eGO Education’s General Director, Rector, and
+                    Country Manager for Brazil, alongside their counterparts
+                    from Italo-Brasileira. The event highlighted the mutual
+                    commitment of both institutions to academic excellence and
+                    innovation in postgraduate education.
                   </p>
 
-                  <h3 class="text-uppercase font-weight-bold mb-3">
-                    Lorem ipsum dolor sit amet elit
-                  </h3>
                   <img class="img-fluid w-50 float-left mr-4 mb-2" src={n1} />
                   <p>
-                    Diam dolor est labore duo invidunt ipsum clita et, sed et
-                    lorem voluptua tempor invidunt at est sanctus sanctus. Clita
-                    dolores sit kasd diam takimata justo diam lorem sed. Magna
-                    amet sed rebum eos. Clita no magna no dolor erat diam tempor
-                    rebum consetetur, sanctus labore sed nonumy diam lorem amet
-                    eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
-                    sadipscing gubergren erat. Gubergren at lorem invidunt
-                    sadipscing rebum sit amet ut ut, voluptua diam dolores at
-                    sadipscing stet. Clita dolor amet dolor ipsum vero ea ea
-                    eos. Invidunt sed diam dolores takimata dolor dolore dolore
-                    sit. Sit ipsum erat amet lorem et, magna sea at sed et eos.
-                    Accusam eirmod kasd lorem clita sanctus ut consetetur et. Et
-                    duo tempor sea kasd clita ipsum et.
+                    eGO Education, known for its online master’s degree programs
+                    that are recognized throughout the European Union and are
+                    easily validated in Commonwealth countries, will leverage
+                    this partnership to offer enhanced learning experiences and
+                    broaden its global footprint. The collaboration with
+                    Italo-Brasileira is expected to open new avenues for
+                    cross-cultural academic exchange, research, and professional
+                    development, benefiting students and professionals across
+                    continents.
+                  </p>
+                  <p>
+                    This exciting alliance underlines our commitment to
+                    fostering accessible, high-quality education on a global
+                    scale. We look forward to the many opportunities this
+                    partnership will create for our academic communities in
+                    Brazil, Europe, and beyond.
                   </p>
                 </div>
                 <div class="d-flex justify-content-between bg-white border p-4">
                   <div class="d-flex align-items-center">
                     <img
                       class="rounded-circle mr-2"
-                      src={n1}
+                      src={n3}
                       width="25"
                       height="25"
                       alt=""
                     />
-                    <span>John Doe</span>
+                    <span>A.Daniele Pallotta - General Director</span>
                   </div>
                   {/* <div class="d-flex align-items-center">
                     <span class="ml-3">
@@ -364,11 +357,10 @@ function SingleNew() {
 
               {/* <!-- Ads Start --> */}
               <div className="mb-4">
-
                 <ContactWidget />
               </div>
 
-                <ApplyWidget />
+              <ApplyWidget />
               {/* <!-- Ads End --> */}
             </div>
           </div>

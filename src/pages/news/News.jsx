@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import n2 from "../../assets/news/news-800x500-2.jpg";
-import n1 from "../../assets/news/news-800x500-1.jpg";
+import n1 from "../../assets/news/uniitalo.webp";
 import n3 from "../../assets/news/news-800x500-3.jpg";
-import s1 from "../../assets/news/news-700x435-1.jpg";
-import s2 from "../../assets/news/news-700x435-2.jpg";
-import s3 from "../../assets/news/news-700x435-3.jpg";
-import s4 from "../../assets/news/news-700x435-4.jpg";
+import s2 from "../../assets/news/unitalo.webp";
+import n4 from "../../assets/news/unijaguaribe2.webp";
+import n5 from "../../assets/news/VillaVehia.webp";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,31 +15,35 @@ function News() {
   const slides = [
     {
       image: s2,
-      title: "Slide Title 1",
-      author: "Jennifer",
-      date: "Oct 22, 2019",
-      category: "Bussiness",
+      title:
+        "eGO Education and Italo-Brasileira Announce Strategic Academic Partnership",
+      author: "A.Daniele Pallotta",
+      date: "Oct 22, 2024",
+      category: "Education",
     },
     {
-      image: n2,
-      title: "Slide Title 2",
-      author: "Michael",
-      date: "Nov 10, 2019",
-      category: "Bussiness",
-    },
-    {
-      image: n3,
-      title: "Slide Title 3",
-      author: "Emma",
-      date: "Dec 5, 2019",
-      category: "Bussiness",
+      image: n4,
+      title:
+        "eGO Education Explores New Collaboration Opportunities with UniJaguaribe",
+      author: "A.Daniele Pallotta",
+      date: "Jun 04, 2024",
+      category: "Education",
     },
     {
       image: n1,
-      title: "Slide Title 4",
-      author: "Sophia",
-      date: "Jan 15, 2020",
-      category: "Bussiness",
+      title:
+        "eGO Education and Fabio Porta Forge Strategic Partnership in São Paulo",
+      author: "A.Daniele Pallotta",
+      date: "Jan 16, 2025",
+      category: "Education",
+    },
+    {
+      image: n5,
+      title:
+        "eGO Education Shines at QS Ranking Event for Latin America in Vila Velha",
+      author: "A.Daniele Pallotta",
+      date: "Jan 22, 2025",
+      category: "Education",
     },
   ];
 
@@ -48,17 +51,17 @@ function News() {
     dots: true,
     infinite: true,
     arrows: false,
-    // speed: 500,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     nextArrow: <div className="slick-next">&#10095;</div>,
     prevArrow: <div className="slick-prev">&#10094;</div>,
   };
 
   const { t } = useTranslation();
-    const { subtitle, specialWord } = t("home.news");
+  const { subtitle, specialWord } = t("home.news");
 
   return (
     <div className="container mb-5 mt-5">
@@ -67,7 +70,8 @@ function News() {
           className="container-title text-black fw-bold "
           style={{ fontFamily: '"Gotham Light"' }}
         >
-         {subtitle} <span style={{ color: "rgb(4, 102, 53)" }}>{specialWord} </span>
+          {subtitle}{" "}
+          <span style={{ color: "rgb(4, 102, 53)" }}>{specialWord} </span>
         </h1>
 
         <div className="col-12 col-lg-6  pb-0 slider_container">
@@ -96,18 +100,17 @@ function News() {
                           }}
                           href="/news"
                         >
-                          Busines
+                          {slide.category}
                         </a>
                         <a class="text-black" href="">
-                          Jan 01, 2045
+                          {slide.date}
                         </a>
                       </div>
                       <a
-                        class="h2 m-0 text-black text-uppercase font-weight-bold"
+                        class="h4 m-0 text-black text-uppercase fw-bold"
                         href="/news"
                       >
-                        Lorem ipsum dolor sit amet elit. Proin vitae porta
-                        diam...
+                        {slide.title}
                       </a>
                     </div>
                   </div>
@@ -145,7 +148,7 @@ function News() {
                       </a>
                       <a href="/news">
                         <h2
-                          className="h5 text-black my-1"
+                          className="h6 text-black my-1"
                           style={{ fontFamily: "Gotham Light" }}
                         >
                           {slide.title}
