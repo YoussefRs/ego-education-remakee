@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import dani from "../../assets/Team/fullwhitedaniele.webp";
 import rector from "../../assets/Team/ERNESTOFULL.webp";
 import info from "../../assets/Team/ysf.webp";
+import ceo from "../../assets/Team/GIANPIERO-REBELLATO.webp";
 import marketing from "../../assets/Team/fullwhitemario.webp";
 import enrol from "../../assets/Team/MA.webp";
 import cordinator from "../../assets/Team/CV.webp";
@@ -105,7 +106,7 @@ function Governance() {
         id: "t4jfkf8yt4lu8",
         name: "Gianpiero Rebellato",
         role: "CEO",
-        imgSrc: logo,
+        imgSrc: ceo,
         description: "Some text goes here that describes about team member",
         socialLinks: {
           twitter: "#",

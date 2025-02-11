@@ -6,6 +6,7 @@ import marketing from "../../assets/Team/fullwhitemario.webp";
 import info from "../../assets/Team/ysf.webp";
 import enrol from "../../assets/Team/MA.webp";
 import logo from "../../assets/Logos/logo-ego-black.png";
+import ceo from "../../assets/Team/GIANPIERO-REBELLATO.webp";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -55,7 +56,7 @@ function HomeTeam() {
       id: "t4jfkf8yt4lu8",
       name: "Gianpiero Rebellato",
       role: "CEO",
-      imgSrc: logo,
+      imgSrc: ceo,
       description: "Some text goes here that describes about team member",
       socialLinks: {
         twitter: "#",
