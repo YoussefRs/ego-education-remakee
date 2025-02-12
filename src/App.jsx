@@ -108,7 +108,7 @@ function App() {
             }
           />
           <Route
-            path="/news"
+            path="/news/:id"
             element={
               <Layout>
                 <SingleNew />

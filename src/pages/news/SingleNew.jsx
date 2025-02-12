@@ -4,8 +4,13 @@ import n1 from "../../assets/news/unitalo.webp";
 import n3 from "../../assets/Team/fullwhitedaniele.webp";
 import ContactWidget from "../../globals/Widgets/ContactWidget";
 import ApplyWidget from "../../globals/Widgets/ApplyWidget";
+import { useLocation } from "react-router-dom";
 
 function SingleNew() {
+
+  const location = useLocation();
+  const slide = location.state;
+
   return (
     <>
       {/* <!-- News With Sidebar Start --> */}
@@ -17,7 +22,7 @@ function SingleNew() {
               <div class="position-relative mb-3">
                 <img
                   class="img-fluid w-100"
-                  src={n1}
+                  src={slide?.image}
                   style={{ objectFit: "cover" }}
                 />
                 <div class="bg-white  p-4">
@@ -29,53 +34,29 @@ function SingleNew() {
                       Education
                     </a>
                     <a class="text-body" href="">
-                      Feb 10, 2025
+                      {slide?.date}
                     </a>
                   </div>
                   <h1 class="mb-3 text-secondary text-uppercase fw-bold text-black">
-                    eGO Education and Italo-Brasileira Announce Strategic
-                    Academic Partnership
+                   {slide?.title}
                   </h1>
                   <p>
-                    eGO Education is proud to announce the signing of a
-                    strategic partnership with Italo-Brasileira, a distinguished
-                    Centro Universitario based in São Paulo, Brazil. This
-                    collaboration marks a significant milestone in expanding
-                    international academic opportunities and reinforcing global
-                    educational standards.
+                    {slide?.p1}
                   </p>
                   <h3 class="text-uppercase font-weight-bold mb-3">
-                    Partnership Agreement Ceremony Emphasizing Academic
-                    Excellence
+                    {slide?.sub}
                   </h3>
                   {/* <img class="img-fluid w-50 float-left mr-4 mb-2" src={n2} /> */}
                   <p>
-                    The agreement was formalized during a signing ceremony
-                    attended by eGO Education’s General Director, Rector, and
-                    Country Manager for Brazil, alongside their counterparts
-                    from Italo-Brasileira. The event highlighted the mutual
-                    commitment of both institutions to academic excellence and
-                    innovation in postgraduate education.
+                  {slide?.p2}
                   </p>
 
-                  <img class="img-fluid w-50 float-left mr-4 mb-2" src={n1} />
+                  <img class="img-fluid w-50 float-left mr-4 mb-2" src={slide?.subImage} />
                   <p>
-                    eGO Education, known for its online master’s degree programs
-                    that are recognized throughout the European Union and are
-                    easily validated in Commonwealth countries, will leverage
-                    this partnership to offer enhanced learning experiences and
-                    broaden its global footprint. The collaboration with
-                    Italo-Brasileira is expected to open new avenues for
-                    cross-cultural academic exchange, research, and professional
-                    development, benefiting students and professionals across
-                    continents.
+                  {slide?.p3}
                   </p>
                   <p>
-                    This exciting alliance underlines our commitment to
-                    fostering accessible, high-quality education on a global
-                    scale. We look forward to the many opportunities this
-                    partnership will create for our academic communities in
-                    Brazil, Europe, and beyond.
+                  {slide?.p4}
                   </p>
                 </div>
                 <div class="d-flex justify-content-between bg-white border p-4">
