@@ -1,5 +1,4 @@
 import React from "react";
-import n3 from "../../../../assets/news/news-110x110-1.jpg";
 import ContactWidget from "../../../../globals/Widgets/ContactWidget";
 import DescriptionComponent from "../../../../globals/DescriptionComponent";
 import "./styles.css"

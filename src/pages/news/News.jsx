@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import n1 from "../../assets/news/uniitalo.webp";
-import n3 from "../../assets/news/news-800x500-3.jpg";
 import s2 from "../../assets/news/unitalo.webp";
 import n4 from "../../assets/news/unijaguaribe2.webp";
 import n5 from "../../assets/news/VillaVehia.webp";

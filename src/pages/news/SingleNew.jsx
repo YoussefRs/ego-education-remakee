@@ -1,5 +1,4 @@
 import React from "react";
-import n2 from "../../assets/news/news-800x500-2.jpg";
 import n1 from "../../assets/news/unitalo.webp";
 import n3 from "../../assets/Team/fullwhitedaniele.webp";
 import ContactWidget from "../../globals/Widgets/ContactWidget";
