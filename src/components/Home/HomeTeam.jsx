@@ -5,6 +5,7 @@ import rector from "../../assets/Team/ERNESTOFULL.webp";
 import marketing from "../../assets/Team/fullwhitemario.webp";
 import info from "../../assets/Team/ysf.webp";
 import enrol from "../../assets/Team/MA.webp";
+import mattia from "../../assets/Team/Mattia-di-Tommaso.webp";
 import logo from "../../assets/Logos/logo-ego-black.png";
 import ceo from "../../assets/Team/GIANPIERO-REBELLATO.webp";
 import { useTranslation } from "react-i18next";
@@ -116,7 +117,7 @@ function HomeTeam() {
       id: "85re1h22jf22t",
       name: "Claudio Vullo",
       role: "Country Manager ",
-      sub : "Brazil",
+      sub: "Brazil",
       imgSrc: cordinator,
       description: "Some text goes here that describes about team member",
       socialLinks: {
@@ -135,7 +136,7 @@ function HomeTeam() {
       sub: "Political Sciences, International Relations and Development Cooperation",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam autem sapiente eaque porro repellat amet possimus impedit, nam repudiandae error aliquid saepe, recusandae voluptatum mollitia asperiores nihil vitae aliquam! ",
-      imgSrc: logo,
+      imgSrc: mattia,
       socialLinks: {
         twitter: "#",
         facebook: "#",
@@ -268,19 +269,29 @@ function HomeTeam() {
               >
                 <div className="card mb-3">
                   <img
-
                     className="card-img-top"
-
                     src={member.imgSrc}
                     height="380"
                     alt="Card image cap"
                   />
-                  <div className={member.sub === "Political Sciences, International Relations and Development Cooperation" ? "lecturer-detail_spec" : "lecturer-detail"} >
+                  <div
+                    className={
+                      member.sub ===
+                      "Political Sciences, International Relations and Development Cooperation"
+                        ? "lecturer-detail_spec"
+                        : "lecturer-detail"
+                    }
+                  >
                     <h5 className="card-title heading text-center">
                       {member.name}{" "}
                     </h5>
-                    <span className="subheading" >{member.role}</span>
-                    <span className="subheading" style={{fontStyle: "italic"}}>{member.sub}</span>
+                    <span className="subheading">{member.role}</span>
+                    <span
+                      className="subheading"
+                      style={{ fontStyle: "italic" }}
+                    >
+                      {member.sub}
+                    </span>
                     <div
                       className="d-flex align-items-end justify-content-between team-socials"
                       style={{

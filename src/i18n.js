@@ -15,6 +15,11 @@ import Matitle from "./assets/Home/banner/MA-title.png";
 import SECURITY from "./assets/Home/banner/SECURITY.png";
 import logo from "./assets/Logos/logo-ego-black.png";
 import eubanner from "./assets/Home/banner/eubanner.webp";
+import eloisa from "./assets/Team/EloisaCasadei.webp";
+import isabel from "./assets/Team/IsabelAtienza.webp";
+import mattia from "./assets/Team/Mattia-di-Tommaso.webp";
+import oscar from "./assets/Team/Oscar-Moretti.webp";
+import tommaso from "./assets/Team/Tommaso-Usseglio.webp";
 import {
   faLaptopCode,
   faPersonChalkboard,
@@ -262,22 +267,24 @@ i18n
               specialWord: "Lecturers",
               members: [
                 {
-                  id : "4az4f89azf8",
-                  name: "Antonio Minelli",
-                  role: "Chief Technology Officer",
-                  organization: "ETLForma",
+                  id: "12a4f411eee",
+                  name: "Mattia Di Tommaso",
+                  role: "President of Idea Europa",
+                  organization: "Idea Europa",
+                  /* description:
+                    "A Law graduate, Mattia Di Tommaso is the founder and President of Idea Europa, with over ten years of experience in European project design, third-sector management, and training new professionals. As the CEO of Idea Europa Srl, he has coordinated numerous projects funded by the European Commission and founded several non-profit organizations, contributing to the sector&#39;s growth. Author of the book &quot;Prima gli Ultimi. Come il terzo settore può cambiare il mondo. Anche il tuo&quot;, he has always been committed to promoting the culture of non-profit work and social inclusion. For his dedication to training and youth mobility, he was appointed Erasmus Plus Ambassador, a recognition of his contribution to promoting European opportunities for young people.", */
                   description:
-                    "Antonio Minelli is the Chief Technology Officer at ETLForma, one of Italy's leading IT training organizations. He has overseen technology projects for major clients including Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia, and the Italian Ministry of the Environment. As a seasoned technology veteran, Antonio brings a wealth of real-world experience to every lecture.",
-                  imgSrc: logo,
+                    "A Law graduate, Mattia Di Tommaso is the founder and President of Idea Europa, with over ten years of experience in European project design, third-sector management, and training new professionals. As the CEO of Idea Europa Srl, he has coordinated numerous projects funded by the European Commission and founded several non-profit organizations, contributing to the sector's growth.",
+                  imgSrc: mattia,
                 },
                 {
-                  id :"f4az8fa4521",
-                  name: "Alessandro Iacuelli",
-                  role: "Analyst and teacher",
-                  organization: "ETLForma",
+                  id: "12aphjl451zz",
+                  name: "Isabella Atienza",
+                  role: "President of Euro Mirada",
+                  organization: "Euro Mirada",
                   description:
-                    "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
-                  imgSrc: logo,
+                    "A graduate in International Cooperation, Isabella Atienza is the President of Euro Mirada and has a strong background in international cooperation, European project design, and third-sector training. She has participated in numerous European projects focused on social inclusion and youth leadership, working to foster change through educational and cultural initiatives.",
+                  imgSrc: isabel,
                 },
                 {
                   id: "12azf1151zz",
@@ -286,6 +293,51 @@ i18n
                   organization: "TechBricks",
                   description:
                     "Manuele Monti is the Founder and CEO of TechBricks, a pioneering accelerator and startup studio focused solely on next-generation technologies like blockchain, distributed ledger, AI, big data, and data science. Prior to launching TechBricks, Manuele was a computational researcher at the University of Leicester as well as a portfolio manager for global energy giant GDF Suez (now Engie).",
+                  imgSrc: logo,
+                },
+                {
+                  id: "1gg441e2z",
+                  name: "Tommaso Usseglio",
+                  role: "Project Manager",
+                  organization: "Euro Mirada",
+                  description:
+                    "A graduate in International Relations, Tommaso Usseglio is a Project Manager at Idea Europa, specializing in European project design and the management of international initiatives. He has extensive experience in coordinating European projects in the social, educational, and cultural sectors, with a strong focus on designing and managing EU funds.",
+                  imgSrc: tommaso,
+                },
+                {
+                  id: "128fff1zz",
+                  name: "Eloisa Casadei",
+                  role: "Account Manager",
+                  organization: "Idea Europa",
+                  description:
+                    "A Political Science graduate, Eloisa Casadei is the Account Manager at Idea Europa and Project Manager at Euro Mamme. A professional in the non-profit and European project sectors, she specializes in the administrative and strategic management of European-funded projects, supporting the growth and organization of third-sector entities and associations.",
+                  imgSrc: eloisa,
+                },
+                {
+                  id: "4az4f89azf8",
+                  name: "Antonio Minelli",
+                  role: "Chief Technology Officer",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli is the Chief Technology Officer at ETLForma, one of Italy's leading IT training organizations. He has overseen technology projects for major clients including Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia, and the Italian Ministry of the Environment. As a seasoned technology veteran, Antonio brings a wealth of real-world experience to every lecture.",
+                  imgSrc: logo,
+                },
+                {
+                  id: "12zajl442z",
+                  name: "Oscar Moretti",
+                  role: "President, Lawyer specialized in Administrative and Environmental Law",
+                  organization: "Euro Mirada",
+                  description:
+                    "A Law graduate, Oscar Moretti is a lawyer specializing in administrative and environmental law. He is an expert in handling disputes with Public Administration and defending the rights of agricultural entrepreneurs. With in-depth knowledge of Italian and European regulations on agriculture, environment, and biodiversity, he works to ensure sustainability and protect the interests of the agricultural sector.",
+                  imgSrc: oscar,
+                },
+                {
+                  id: "f4az8fa4521",
+                  name: "Alessandro Iacuelli",
+                  role: "Analyst and teacher",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli is an Analyst and teacher at ETLForma, where he shares his expertise gained from working with companies such as Thales Alenia Space, a global leader in the space industry and second industrial partner in the International Space Station. Alessandro also conducted research as a data scientist with the Italian National Research Council, studying algorithms using artificial intelligence. His passion for solving complex problems inspires every class.",
                   imgSrc: logo,
                 },
               ],
@@ -1774,37 +1826,78 @@ i18n
                 }, */
               ],
             },
-            homeLecturers: {
-              title: "DOCENTES",
-              subtitle: "Conheça Nossos",
-              specialWord: "Docentes",
-              lecturers: [
-                {
-                  name: "Antonio Minelli",
-                  title: "Diretor de Tecnologia",
-                  organization: "ETLForma",
-                  description:
-                    "Antonio Minelli é o Diretor de Tecnologia da ETLForma, uma das principais organizações de treinamento em TI da Itália. Ele supervisionou projetos tecnológicos para grandes clientes, incluindo Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e o Ministério do Meio Ambiente da Itália. Como um veterano experiente em tecnologia, Antonio traz uma riqueza de experiência prática para cada aula.",
-                  img: logo,
-                },
-                {
-                  name: "Alessandro Iacuelli",
-                  title: "Analista e Professor",
-                  organization: "ETLForma",
-                  description:
-                    "Alessandro Iacuelli é Analista e Professor na ETLForma, onde compartilha sua experiência adquirida ao trabalhar com empresas como Thales Alenia Space, líder global na indústria espacial e segundo maior parceiro industrial da Estação Espacial Internacional. Alessandro também realizou pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos utilizando inteligência artificial. Sua paixão por resolver problemas complexos inspira todas as suas aulas.",
-                  img: logo,
-                },
-                {
-                  name: "Manuele Monti",
-                  title: "Fundador e CEO",
-                  organization: "TechBricks",
-                  description:
-                    "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, ledger distribuído, IA, big data e ciência de dados. Antes de fundar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester, bem como gerente de portfólio da gigante global de energia GDF Suez (atualmente Engie).",
-                  img: logo,
-                },
-              ],
-            },
+              homeLecturers: {
+                "title": "DOCENTES",
+                "subtitle": "Conheça Nossos",
+                "specialWord": "Palestrantes",
+                "members": [
+                  {
+                    "id": "12a4f411eee",
+                    "name": "Mattia Di Tommaso",
+                    "role": "Presidente da Idea Europa",
+                    "organization": "Idea Europa",
+                    "description": "Graduado em Direito, Mattia Di Tommaso é fundador e Presidente da Idea Europa, com mais de dez anos de experiência em projetos europeus, gestão do terceiro setor e formação de novos profissionais. Como CEO da Idea Europa Srl, coordenou inúmeros projetos financiados pela Comissão Europeia e fundou diversas organizações sem fins lucrativos, contribuindo para o crescimento do setor.",
+                    "imgSrc": mattia
+                  },
+                  {
+                    "id": "12aphjl451zz",
+                    "name": "Isabella Atienza",
+                    "role": "Presidente da Euro Mirada",
+                    "organization": "Euro Mirada",
+                    "description": "Graduada em Cooperação Internacional, Isabella Atienza é Presidente da Euro Mirada e possui uma sólida experiência em cooperação internacional, elaboração de projetos europeus e formação no terceiro setor. Participou de diversos projetos europeus voltados para inclusão social e liderança jovem, trabalhando para promover mudanças por meio de iniciativas educacionais e culturais.",
+                    "imgSrc": isabel
+                  },
+                  {
+                    "id": "12azf1151zz",
+                    "name": "Manuele Monti",
+                    "role": "Fundador e CEO",
+                    "organization": "TechBricks",
+                    "description": "Manuele Monti é o Fundador e CEO da TechBricks, um acelerador e estúdio de startups pioneiro focado exclusivamente em tecnologias de próxima geração, como blockchain, inteligência artificial, big data e ciência de dados. Antes de fundar a TechBricks, Manuele foi pesquisador computacional na Universidade de Leicester e gerente de portfólio da gigante global de energia GDF Suez (atualmente Engie).",
+                    "imgSrc": logo
+                  },
+                  {
+                    "id": "1gg441e2z",
+                    "name": "Tommaso Usseglio",
+                    "role": "Gerente de Projetos",
+                    "organization": "Euro Mirada",
+                    "description": "Graduado em Relações Internacionais, Tommaso Usseglio é Gerente de Projetos na Idea Europa, especializado em elaboração de projetos europeus e gestão de iniciativas internacionais. Possui ampla experiência na coordenação de projetos europeus nos setores social, educacional e cultural, com forte foco no desenvolvimento e gestão de fundos da União Europeia.",
+                    "imgSrc": tommaso
+                  },
+                  {
+                    "id": "128fff1zz",
+                    "name": "Eloisa Casadei",
+                    "role": "Gerente de Contas",
+                    "organization": "Idea Europa",
+                    "description": "Graduada em Ciência Política, Eloisa Casadei é Gerente de Contas na Idea Europa e Gerente de Projetos na Euro Mamme. Profissional do setor sem fins lucrativos e de projetos europeus, especializa-se na gestão administrativa e estratégica de projetos financiados pela União Europeia, apoiando o crescimento e a organização de entidades e associações do terceiro setor.",
+                    "imgSrc": eloisa
+                  },
+                  {
+                    "id": "4az4f89azf8",
+                    "name": "Antonio Minelli",
+                    "role": "Diretor de Tecnologia",
+                    "organization": "ETLForma",
+                    "description": "Antonio Minelli é Diretor de Tecnologia da ETLForma, uma das principais organizações de treinamento em TI da Itália. Supervisionou projetos tecnológicos para grandes clientes, incluindo Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e o Ministério do Meio Ambiente da Itália. Como veterano experiente em tecnologia, Antonio traz um vasto conhecimento prático para cada palestra.",
+                    "imgSrc": logo
+                  },
+                  {
+                    "id": "12zajl442z",
+                    "name": "Oscar Moretti",
+                    "role": "Presidente, Advogado especializado em Direito Administrativo e Ambiental",
+                    "organization": "Euro Mirada",
+                    "description": "Graduado em Direito, Oscar Moretti é advogado especializado em direito administrativo e ambiental. É especialista em litígios com a Administração Pública e na defesa dos direitos de empreendedores agrícolas. Com profundo conhecimento das regulamentações italianas e europeias sobre agricultura, meio ambiente e biodiversidade, trabalha para garantir a sustentabilidade e proteger os interesses do setor agrícola.",
+                    "imgSrc": oscar
+                  },
+                  {
+                    "id": "f4az8fa4521",
+                    "name": "Alessandro Iacuelli",
+                    "role": "Analista e Professor",
+                    "organization": "ETLForma",
+                    "description": "Alessandro Iacuelli é Analista e Professor na ETLForma, onde compartilha sua experiência adquirida em empresas como a Thales Alenia Space, líder global na indústria espacial e segundo maior parceiro industrial da Estação Espacial Internacional. Alessandro também conduziu pesquisas como cientista de dados no Conselho Nacional de Pesquisa da Itália, estudando algoritmos baseados em inteligência artificial. Sua paixão por resolver problemas complexos inspira cada aula.",
+                    "imgSrc": logo
+                  }
+                ]
+              },
+            
             news: {
               subtitle: "Explore Nossas",
               specialWord: "notícias",
@@ -2907,7 +3000,6 @@ i18n
                 },
               ],
             },
-
             news: {
               subtitle: "Esplora le nostre",
               specialWord: "notizie",
@@ -2999,35 +3091,84 @@ i18n
             },
             homeLecturers: {
               title: "DOCENTI",
-              subtitle: "Conosci i Nostri",
+              subtitle: "Incontra i Nostri",
               specialWord: "Docenti",
-              lecturers: [
+              members: [
                 {
-                  name: "Antonio Minelli",
-                  title: "Chief Technology Officer",
-                  organization: "ETLForma",
+                  id: "12a4f411eee",
+                  name: "Mattia Di Tommaso",
+                  role: "Presidente di Idea Europa",
+                  organization: "Idea Europa",
                   description:
-                    "Antonio Minelli è il Chief Technology Officer di ETLForma, una delle principali organizzazioni italiane di formazione IT. Ha supervisionato progetti tecnologici per importanti clienti come Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e il Ministero dell'Ambiente italiano. Con una lunga esperienza nel settore tecnologico, Antonio porta un'enorme ricchezza di esperienze pratiche in ogni lezione.",
-                  img: logo,
+                    "Laureato in Giurisprudenza, Mattia Di Tommaso è il fondatore e presidente di Idea Europa, con oltre dieci anni di esperienza nella progettazione di progetti europei, gestione del terzo settore e formazione di nuovi professionisti. Come CEO di Idea Europa Srl, ha coordinato numerosi progetti finanziati dalla Commissione Europea e fondato diverse organizzazioni no-profit, contribuendo alla crescita del settore.",
+                  imgSrc: mattia,
                 },
                 {
-                  name: "Alessandro Iacuelli",
-                  title: "Analista e Docente",
-                  organization: "ETLForma",
+                  id: "12aphjl451zz",
+                  name: "Isabella Atienza",
+                  role: "Presidente di Euro Mirada",
+                  organization: "Euro Mirada",
                   description:
-                    "Alessandro Iacuelli è un analista e docente presso ETLForma, dove condivide la sua esperienza maturata lavorando con aziende come Thales Alenia Space, leader globale nel settore spaziale e secondo partner industriale della Stazione Spaziale Internazionale. Alessandro ha anche svolto ricerche come data scientist presso il Consiglio Nazionale delle Ricerche italiano, studiando algoritmi basati sull'intelligenza artificiale. La sua passione per la risoluzione di problemi complessi ispira ogni lezione.",
-                  img: logo,
+                    "Laureata in Cooperazione Internazionale, Isabella Atienza è la presidente di Euro Mirada e ha una solida esperienza nella cooperazione internazionale, progettazione di progetti europei e formazione nel terzo settore. Ha partecipato a numerosi progetti europei focalizzati sull'inclusione sociale e sulla leadership giovanile, lavorando per promuovere il cambiamento attraverso iniziative educative e culturali.",
+                  imgSrc: isabel,
                 },
                 {
+                  id: "12azf1151zz",
                   name: "Manuele Monti",
-                  title: "Fondatore e CEO",
+                  role: "Fondatore e CEO",
                   organization: "TechBricks",
                   description:
-                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore e studio di startup pionieristico dedicato esclusivamente alle tecnologie di nuova generazione come blockchain, distributed ledger, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il colosso energetico globale GDF Suez (ora Engie).",
-                  img: logo,
+                    "Manuele Monti è il fondatore e CEO di TechBricks, un acceleratore pionieristico e studio di startup focalizzato esclusivamente su tecnologie di prossima generazione come blockchain, registro distribuito, AI, big data e data science. Prima di lanciare TechBricks, Manuele è stato ricercatore computazionale presso l'Università di Leicester e portfolio manager per il gigante energetico globale GDF Suez (ora Engie).",
+                  imgSrc: logo,
+                },
+                {
+                  id: "1gg441e2z",
+                  name: "Tommaso Usseglio",
+                  role: "Project Manager",
+                  organization: "Euro Mirada",
+                  description:
+                    "Laureato in Relazioni Internazionali, Tommaso Usseglio è Project Manager presso Idea Europa, specializzandosi nella progettazione di progetti europei e nella gestione di iniziative internazionali. Ha una vasta esperienza nella coordinazione di progetti europei nei settori sociale, educativo e culturale, con una forte attenzione alla progettazione e gestione dei fondi UE.",
+                  imgSrc: tommaso,
+                },
+                {
+                  id: "128fff1zz",
+                  name: "Eloisa Casadei",
+                  role: "Account Manager",
+                  organization: "Idea Europa",
+                  description:
+                    "Laureata in Scienze Politiche, Eloisa Casadei è Account Manager di Idea Europa e Project Manager di Euro Mamme. Professionista nei settori no-profit e progetti europei, si specializza nella gestione amministrativa e strategica dei progetti finanziati dall'Unione Europea, supportando la crescita e l'organizzazione di enti e associazioni del terzo settore.",
+                  imgSrc: eloisa,
+                },
+                {
+                  id: "4az4f89azf8",
+                  name: "Antonio Minelli",
+                  role: "Chief Technology Officer",
+                  organization: "ETLForma",
+                  description:
+                    "Antonio Minelli è il Chief Technology Officer di ETLForma, una delle principali organizzazioni italiane di formazione IT. Ha supervisionato progetti tecnologici per clienti di rilievo come Telecom Italia, Vodafone, IBM Italia, Nespresso, Finmeccanica, Sony Italia e il Ministero dell'Ambiente Italiano. Con una vasta esperienza tecnologica, Antonio porta una ricchezza di esperienza pratica in ogni lezione.",
+                  imgSrc: logo,
+                },
+                {
+                  id: "12zajl442z",
+                  name: "Oscar Moretti",
+                  role: "Presidente, Avvocato specializzato in Diritto Amministrativo e Ambientale",
+                  organization: "Euro Mirada",
+                  description:
+                    "Laureato in Giurisprudenza, Oscar Moretti è un avvocato specializzato in diritto amministrativo e ambientale. È esperto nella gestione delle controversie con la Pubblica Amministrazione e nella difesa dei diritti degli agricoltori. Con una conoscenza approfondita delle normative italiane ed europee su agricoltura, ambiente e biodiversità, lavora per garantire la sostenibilità e proteggere gli interessi del settore agricolo.",
+                  imgSrc: oscar,
+                },
+                {
+                  id: "f4az8fa4521",
+                  name: "Alessandro Iacuelli",
+                  role: "Analista e docente",
+                  organization: "ETLForma",
+                  description:
+                    "Alessandro Iacuelli è un analista e docente presso ETLForma, dove condivide la sua esperienza acquisita lavorando con aziende come Thales Alenia Space, leader globale nel settore spaziale e secondo partner industriale nella Stazione Spaziale Internazionale. Alessandro ha anche condotto ricerche come data scientist con il Consiglio Nazionale delle Ricerche, studiando algoritmi con intelligenza artificiale. La sua passione per risolvere problemi complessi ispira ogni lezione.",
+                  imgSrc: logo,
                 },
               ],
             },
+            
             homeTeam: {
               title: "TEAM",
               subtitle: "Conosci il Nostro",

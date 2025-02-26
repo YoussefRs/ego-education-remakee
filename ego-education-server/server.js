@@ -11,6 +11,8 @@ const nodemailer = require("nodemailer");
 
 const PORT = process.env.PORT;
 
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 //set directory of where we store files
 
 const uploadDirectory = "./public/images";
@@ -52,6 +54,9 @@ const transporter = nodemailer.createTransport({
   auth: {
     user: process.env.ARUBA_EMAIL,
     pass: process.env.ARUBA_PASSWORD,
+  },
+  tls: {
+    rejectUnauthorized: false, // Allow self-signed certificates
   },
 });
 
@@ -332,6 +337,23 @@ app.post("/accept/:id", async (req, res) => {
       return res.status(404).json({ Error: "Candidate not found" });
     }
 
+      // Create Stripe payment link
+      const product = await stripe.products.create({
+        name: `${course} Enrollment`,
+        description: `Enrollment fee for ${course}`,
+      });
+  
+      const priceData = await stripe.prices.create({
+        product: product.id,
+        unit_amount: 3000 * 100, // Convert to cents
+        currency: "usd",
+      });
+  
+      const paymentLink = await stripe.paymentLinks.create({
+        line_items: [{ price: priceData.id, quantity: 1 }],
+      });
+
+
     // Prepare the acceptance email
     const mailOptions = {
       from: process.env.ARUBA_EMAIL, // Sender address
@@ -393,7 +415,8 @@ app.post("/accept/:id", async (req, res) => {
           <div class="email-body">
             <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
             <p>Congratulations! Your application for the <strong>${course}</strong> course has been accepted.</p>
-            <p>We are excited to have you on board and will contact you shortly with further details.</p>
+            <p>To complete your enrollment, please proceed with the payment.</p>
+            <p><a href="${paymentLink.url}" class="button">Complete Payment</a></p>
             <p>Best regards,</p>
             <p><strong>eGO Education</strong></p>
           </div>

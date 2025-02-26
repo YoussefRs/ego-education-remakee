@@ -10,6 +10,8 @@ function HomeLecturers() {
 
   const { ouur, lecc } = t("about");
 
+  console.log(members)
+
   useEffect(() => {
     AOS.init({
       once: false,
@@ -56,11 +58,11 @@ function HomeLecturers() {
                   />
                   <div className="lecturer-detail">
                     <h5 className="card-title heading text-center">
-                      {member.name}{" "}
+                      {member?.name}{" "}
                     </h5>
-                    <span className="subheading" style={{fontStyle: "italic"}}>{member.role}</span>
+                    <span className="subheading" style={{fontStyle: "italic"}}>{member?.role}</span>
                     <blockquote className="p-0">
-                      <p >{member.description} </p>
+                      <p >{member?.description} </p>
                     </blockquote>
                     <div className="d-flex align-items-center justify-content-between">
                       <div className="social d-flex align-items-center gap-4">
