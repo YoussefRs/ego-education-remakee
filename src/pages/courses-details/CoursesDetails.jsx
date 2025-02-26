@@ -367,7 +367,7 @@ function CoursesDetails() {
                       }`}
                       id="tab2"
                     >
-                      <h2 className="mb-4 fw-bold">{title} </h2>
+                      <h2 className="mb-4 fw-bold" style={{fontFamily: "Gotham Light"}}>{title} </h2>
                       <div className="tab row">
                         <div className="col">
                           {/*   <div className="mb-4 w-100">
@@ -386,7 +386,7 @@ function CoursesDetails() {
                           </div> */}
                           <article className="welcome col-12">
                             <p className="mb-4">{course?.description}</p>
-                            <h2 className="mb-4 fw-bold">{title1} </h2>
+                            <h2 className="mb-4 fw-bold" style={{fontFamily: "Gotham Light"}}>{title1} </h2>
                             <ul className="custom-list-style mb-3">
                               {course?.career?.map((carr, i) => (
                                 <li key={i}>
@@ -430,12 +430,12 @@ function CoursesDetails() {
                                 </figure>
                                 <figure className="effect-layla">
                                   <img
-                                    src="https://media.istockphoto.com/id/1353308759/photo/businesswoman-hand-using-laptop-computer-with-document-management-icon.jpg?b=1&s=612x612&w=0&k=20&c=5YFpNOseQK2jcjmY733eGP0y830EK4tqhSx-W8JSb9o="
+                                    src="https://static.zawya.com/view/acePublic/alias/contentid/ZDJlMGRlZjktMjUwOC00/50/157731772.webp?f=3%3A2&q=0.75&w=3840"
                                     alt="img03"
                                   />
                                   <figcaption>
                                     <h2>
-                                      Apply <span>Now</span>
+                                      Apply <br/><span>Now</span>
                                     </h2>
                                     <a onClick={handleImage2Click}>View more</a>
                                   </figcaption>
@@ -481,7 +481,7 @@ function CoursesDetails() {
                                     <span>Back</span>
                                   </button>
                                 </div>
-                                <h6>
+                                <h6 className="fw-bold">
                                   To properly enrol, make sure you have all the
                                   following documents ready:
                                 </h6>{" "}
@@ -773,7 +773,7 @@ function CoursesDetails() {
                                     <span>Back</span>
                                   </button>
                                 </div>
-                                <h6>
+                                <h6 className="fw-bold">
                                   In any case, while waiting for the apostille
                                   or to simply understand if one is eligible, a
                                   normal copy of the following qualifications is
@@ -817,7 +817,7 @@ function CoursesDetails() {
                                     </span>
                                   </li>
                                 </ul>
-                                <h6 className="mb-5">
+                                <h6 className="mb-5 fw-bold">
                                   The student will receive via email the
                                   evaluation of their academic and/or work
                                   credits and will assign them their study plan
@@ -1090,7 +1090,7 @@ function CoursesDetails() {
               </div>
 
               <aside className="page-sidebar col-lg-4 col-md-4">
-                <h2 className="fw-bold">{title2} </h2>
+                <h2 className="fw-bold" style={{fontFamily: "Gotham Light"}}>{title2} </h2>
                 <div className="right_box mb-5">
                   <div className="p-4">
                     <InfoWidget course={course} />

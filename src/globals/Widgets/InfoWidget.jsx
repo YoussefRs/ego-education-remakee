@@ -11,7 +11,7 @@ export default function InfoWidget({ course }) {
       <div className="row">
         <div
           className="col d-flex align-items-center gap-2"
-          style={{ fontFamily: "Gotham" }}
+          style={{ fontFamily: "Gotham Light" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,13 +27,13 @@ export default function InfoWidget({ course }) {
           {category}
         </div>
         <div className="col">
-          <span style={{ fontFamily: "Gotham Book" }}>{course?.category} </span>
+          <span style={{ fontFamily: "Gotham Light" }}>{course?.category} </span>
         </div>
       </div>
       <div className="row">
         <div
           className="col d-flex align-items-center gap-2"
-          style={{ fontFamily: "Gotham" }}
+          style={{ fontFamily: "Gotham Light" }}
         >
           {" "}
           <svg
@@ -50,7 +50,7 @@ export default function InfoWidget({ course }) {
           {modules}
         </div>
         <div className="col">
-          <span style={{ fontFamily: "Gotham Book" }}>
+          <span style={{ fontFamily: "Gotham Light" }}>
             {course?.totalModules}{" "}
           </span>
         </div>
@@ -58,7 +58,7 @@ export default function InfoWidget({ course }) {
       <div className="row">
         <div
           className="col d-flex align-items-center gap-2"
-          style={{ fontFamily: "Gotham" }}
+          style={{ fontFamily: "Gotham Light" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -73,13 +73,13 @@ export default function InfoWidget({ course }) {
           ECTS
         </div>
         <div className="col">
-          <span style={{ fontFamily: "Gotham Book" }}>{course?.totalEtc} </span>
+          <span style={{ fontFamily: "Gotham Light" }}>{course?.totalEtc} </span>
         </div>
       </div>
       <div className="row">
         <div
           className="col d-flex align-items-center gap-2"
-          style={{ fontFamily: "Gotham" }}
+          style={{ fontFamily: "Gotham Light" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -95,13 +95,13 @@ export default function InfoWidget({ course }) {
           {price}
         </div>
         <div className="col">
-          <span style={{ fontFamily: "Gotham" }}>{course?.price}</span>
+          <span style={{ fontFamily: "Gotham Light" }}>{course?.price}</span>
         </div>
       </div>
       <div className="row">
         <div
           className="col d-flex align-items-center gap-2"
-          style={{ fontFamily: "Gotham" }}
+          style={{ fontFamily: "Gotham Light" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ export default function InfoWidget({ course }) {
         <div className="col">
           <span
             style={{
-              fontFamily: "Gotham",
+              fontFamily: "Gotham Light",
               color: course.enrl == "Closed" ? "" : "#046635",
             }}
           >

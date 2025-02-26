@@ -42,7 +42,7 @@ function ApplyWidget() {
   const { showModal, openModal, closeModal } = useModal();
   return (
     <div className="contact-widget">
-      <h2 className="fw-bold">{line1} </h2>
+      <h2 className="fw-bold" >{line1} </h2>
       <p>{line2}</p>
       <div className="contact-img">
         <img

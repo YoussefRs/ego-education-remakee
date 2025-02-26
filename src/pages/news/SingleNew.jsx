@@ -36,15 +36,15 @@ function SingleNew() {
                       {slide?.date}
                     </a>
                   </div>
-                  <h1 className="mb-3 text-secondary text-uppercase fw-bold text-black">
+                  <h3 className="mb-3 text-secondary text-uppercase fw-bold text-black">
                    {slide?.title}
-                  </h1>
+                  </h3>
                   <p>
                     {slide?.p1}
                   </p>
-                  <h3 className="text-uppercase font-weight-bold mb-3">
+                  <h5 className="text-uppercase font-weight-bold mb-3">
                     {slide?.sub}
-                  </h3>
+                  </h5>
                   {/* <img className="img-fluid w-50 float-left mr-4 mb-2" src={n2} /> */}
                   <p>
                   {slide?.p2}
@@ -58,7 +58,7 @@ function SingleNew() {
                   {slide?.p4}
                   </p>
                 </div>
-                <div className="d-flex justify-content-between bg-white border p-4">
+                {/* <div className="d-flex justify-content-between bg-white border p-4">
                   <div className="d-flex align-items-center">
                     <img
                       className="rounded-circle mr-2"
@@ -69,15 +69,8 @@ function SingleNew() {
                     />
                     <span>A.Daniele Pallotta - General Director</span>
                   </div>
-                  {/* <div className="d-flex align-items-center">
-                    <span className="ml-3">
-                      <i className="far fa-eye mr-2"></i>12345
-                    </span>
-                    <span className="ml-3">
-                      <i className="far fa-comment mr-2"></i>123
-                    </span>
-                  </div> */}
-                </div>
+                 
+                </div> */}
               </div>
               {/* <!-- News Detail End --> */}
 
