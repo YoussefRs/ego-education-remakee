@@ -108,7 +108,7 @@ export default function InfoWidget({ course }) {
             width="16"
             height="16"
             fill="#046635"
-            class="bi bi-mortarboard"
+            className="bi bi-mortarboard"
             viewBox="0 0 16 16"
           >
             <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z" />

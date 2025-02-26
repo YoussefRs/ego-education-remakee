@@ -116,7 +116,6 @@ const NewsPage = () => {
     setNewToAdd(null);
   };
 
-  console.log(news);
 
   return (
     <div className="__dashboard_news_page">

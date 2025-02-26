@@ -20,6 +20,15 @@ import isabel from "./assets/Team/IsabelAtienza.webp";
 import mattia from "./assets/Team/Mattia-di-Tommaso.webp";
 import oscar from "./assets/Team/Oscar-Moretti.webp";
 import tommaso from "./assets/Team/Tommaso-Usseglio.webp";
+
+import n1 from "./assets/news/uniitalo.webp";
+import s2 from "./assets/news/unitalo.webp";
+import n4 from "./assets/news/unijaguaribe2.webp";
+import n5 from "./assets/news/VillaVehia.webp";
+import i1 from "./assets/news/i1.webp";
+import i2 from "./assets/news/i2.webp";
+import i3 from "./assets/news/i3.webp";
+import team from "./assets/news/team.webp";
 import {
   faLaptopCode,
   faPersonChalkboard,
@@ -176,6 +185,77 @@ i18n
             news: {
               subtitle: "Browse Our",
               specialWord: "News",
+              slides :[
+                  {
+                    image: team,
+                    subImage: i1,
+                    title:
+                      "Mattia Di Tommaso Appointed as New Head of the Department of Political Sciences, International Relations and Development Cooperation",
+                    author: "A.Daniele Pallotta",
+                    date: "January 22, 2024",
+                    category: "Education",
+                    sub: "Expanding Academic Horizons: Mattia's Vision for New Educational Programs",
+                    p1: "eGO Education is pleased to announce that Mattia Di Tommaso has been appointed as the new head of our Department of Political Sciences, International Relations and Development Cooperation. With his extensive expertise and visionary leadership, Mattia is set to drive the department’s mission of delivering cutting-edge education and fostering global perspectives.",
+                    p2: "In his new role, Mattia will not only oversee the existing accredited programs—the MA in NGO Management and Leadership and the MSc in European Project Management—but he is also spearheading the development of three additional courses in the field. These innovative programs aim to expand our academic portfolio, address emerging trends, and equip students with the skills needed to navigate the complex landscape of international affairs and development.",
+                    p3: "Under Mattia’s guidance, the department is poised to enhance its reputation for excellence and to offer a broader range of specialized academic opportunities for students aspiring to lead in the public and nonprofit sectors.",
+                    p4: "For more details on our evolving academic offerings and initiatives, please keep following us.",
+                  },
+                  {
+                    image: s2,
+                    subImage: i2,
+                    title:
+                      "eGO Education and Italo-Brasileira Announce Strategic Academic Partnership",
+                    author: "A.Daniele Pallotta",
+                    date: "October 16, 2022",
+                    category: "Education",
+                    sub: "Partnership Agreement Ceremony Emphasizing Academic Excellence",
+                    p1: "eGO Education is proud to announce the signing of a strategic partnership with Italo-Brasileira, a distinguished Centro Universitario based in São Paulo, Brazil. This collaboration marks a significant milestone in expanding international academic opportunities and reinforcing global educational standards.",
+                    p2: "The agreement was formalized during a signing ceremony attended by eGO Education’s General Director, Rector, and Country Manager for Brazil, alongside their counterparts from Italo-Brasileira. The event highlighted the mutual commitment of both institutions to academic excellence and innovation in postgraduate education.",
+                    p3: "eGO Education, known for its online master’s degree programs that are recognized throughout the European Union and are easily validated in Commonwealth countries, will leverage this partnership to offer enhanced learning experiences and broaden its global footprint. The collaboration with Italo-Brasileira is expected to open new avenues for cross-cultural academic exchange, research, and professional development, benefiting students and professionals across continents.",
+                    p4: "This exciting alliance underlines our commitment to fostering accessible, high-quality education on a global scale. We look forward to the many opportunities this partnership will create for our academic communities in Brazil, Europe, and beyond.",
+                  },
+                  {
+                    image: n4,
+                    subImage: i3,
+                    title:
+                      "eGO Education Explores New Collaboration Opportunities with UniJaguaribe",
+                    author: "A.Daniele Pallotta",
+                    date: "September 04, 2022",
+                    category: "Education",
+                    sub: "Strengthening Academic Collaboration for Innovation",
+                    p1: "eGO Education is excited to announce a recent high-level meeting with UniJaguaribe, a respected Faculdade from Ceará, Brazil. The discussion focused on exploring collaborative paths that could lead to innovative academic partnerships and enriched educational experiences.",
+                    p2: "During the meeting, representatives from both institutions engaged in productive dialogue about potential joint initiatives, including research projects, academic exchanges, and the development of innovative learning programs. This collaborative spirit reflects our commitment to breaking new ground in higher education and broadening the scope of opportunities available to students and professionals.",
+                    p3: "This initial discussion marks an important step towards establishing a fruitful long-term partnership, and we are enthusiastic about the possibilities that lie ahead. As we continue to build bridges with esteemed academic institutions like UniJaguaribe, we remain dedicated to our mission of providing accessible, high-quality education worldwide.",
+                    p4: "Stay tuned for further updates on our evolving collaboration and the exciting opportunities it will bring for our academic communities.",
+                  },
+                  {
+                    image: n1,
+                    subImage: i1,
+                    title:
+                      "eGO Education and Fabio Porta Forge Strategic Partnership in São Paulo",
+                    author: "A.Daniele Pallotta",
+                    date: "June 13, 2023",
+                    category: "Education",
+                    sub: "Expanding Academic Opportunities for the Italian Community in Latin America",
+                    p1: "eGO Education is pleased to announce a new strategic partnership with Fabio Porta, a distinguished member of the Italian Chambers representing the foreign constituency for Latin America and President of UIM (Unione Italiani nel Mondo) in Brazil—the leading association of Italians abroad. The partnership was formalized during a meeting in São Paulo, in collaboration with Alessandro Lupo, marking an important milestone in strengthening educational and cultural ties.",
+                    p2: "This collaboration aims to enhance academic outreach and create new opportunities that connect eGO Education’s internationally recognized online master&#39;s degree programs with the vibrant Italian community in Latin America. By combining expertise and shared values, both parties are committed to fostering innovative initiatives that will benefit students, professionals, and the broader community.",
+                    p3: "We look forward to the exciting developments and collaborative projects that will emerge from this partnership, reinforcing our commitment to accessible, high-quality education and global cultural exchange.",
+                  },
+                  {
+                    image: n5,
+                    subImage: i1,
+                    title:
+                      "eGO Education Shines at QS Ranking Event for Latin America in Vila Velha",
+                    author: "A.Daniele Pallotta",
+                    date: "October 02, 2022",
+                    category: "Education",
+                    sub: "QS Quacquarelli Symonds: A Global Leader in Higher Education Analysis",
+                    p1: "eGO Education is proud to have participated in the prestigious QS Ranking event for Latin America, held at the Universidade Vila Velha in Vila Velha. The event provided an excellent platform for academic institutions to showcase their commitment to quality education and innovation.",
+                    p2: "QS Quacquarelli Symonds (QS) is one of the world’s leading higher education analysts, renowned for its influential QS World University Rankings and comprehensive insights into global academic trends. Founded in 1990 by Nunzio Quacquarelli, QS has grown into a truly international organization with offices across Europe, Asia, and the Americas. Their innovative approach and commitment to data- driven excellence have made QS a trusted partner for institutions worldwide, helping shape educational strategies and connect diverse stakeholders through events, conferences, and research reports.",
+                    p3: "A special thank you goes to Leonardo Andrade, Business Development Manager at QS, whose invaluable collaboration helped ensure the success of the event. His expertise and support played a key role in facilitating engaging discussions and networking opportunities among participants.",
+                    p4: "Our involvement at this event reinforces eGO Education’s commitment to enhancing global academic standards and expanding our reach within the international education community. We are excited to continue building relationships with esteemed partners like QS and furthering our mission to provide accessible, high-quality online master’s degree programs recognized throughout the European Union and beyond.",
+                  },
+                ]
             },
             UpcomingCourseSlider: {
               title: "EXPLORE ALL COURSES",
@@ -1901,6 +1981,76 @@ i18n
             news: {
               subtitle: "Explore Nossas",
               specialWord: "notícias",
+              slides: [
+                {
+                image: team,
+                subImage: i1,
+                title:
+                "Mattia Di Tommaso Nomeado Novo Chefe do Departamento de Ciências Políticas, Relações Internacionais e Cooperação para o Desenvolvimento",
+                author: "A. Daniele Pallotta",
+                date: "22 de janeiro de 2024",
+                category: "Educação",
+                sub: "Expandindo Horizontes Acadêmicos: A Visão de Mattia para Novos Programas Educacionais",
+                p1: "A eGO Education tem o prazer de anunciar que Mattia Di Tommaso foi nomeado como o novo chefe do nosso Departamento de Ciências Políticas, Relações Internacionais e Cooperação para o Desenvolvimento. Com sua vasta experiência e liderança visionária, Mattia está pronto para impulsionar a missão do departamento de oferecer uma educação de ponta e promover perspectivas globais.",
+                p2: "Em sua nova função, Mattia não apenas supervisionará os programas credenciados existentes—o Mestrado em Gestão e Liderança de ONGs e o Mestrado em Gestão de Projetos Europeus—mas também liderará o desenvolvimento de três novos cursos na área. Esses programas inovadores visam expandir nosso portfólio acadêmico, abordar tendências emergentes e equipar os alunos com as habilidades necessárias para navegar pelo complexo cenário dos assuntos internacionais e do desenvolvimento.",
+                p3: "Sob a orientação de Mattia, o departamento está pronto para aprimorar sua reputação de excelência e oferecer uma gama mais ampla de oportunidades acadêmicas especializadas para estudantes que desejam liderar nos setores público e sem fins lucrativos.",
+                p4: "Para mais detalhes sobre nossas ofertas acadêmicas em evolução e iniciativas, continue nos acompanhando.",
+                },
+                {
+                image: s2,
+                subImage: i2,
+                title:
+                "eGO Education e Italo-Brasileira Anunciam Parceria Acadêmica Estratégica",
+                author: "A. Daniele Pallotta",
+                date: "16 de outubro de 2022",
+                category: "Educação",
+                sub: "Cerimônia de Assinatura do Acordo Destacando a Excelência Acadêmica",
+                p1: "A eGO Education tem orgulho de anunciar a assinatura de uma parceria estratégica com a Italo-Brasileira, um renomado Centro Universitário sediado em São Paulo, Brasil. Essa colaboração marca um marco significativo na ampliação das oportunidades acadêmicas internacionais e no fortalecimento dos padrões educacionais globais.",
+                p2: "O acordo foi formalizado durante uma cerimônia de assinatura com a presença do Diretor Geral da eGO Education, do Reitor e do Country Manager para o Brasil, junto com seus respectivos representantes da Italo-Brasileira. O evento destacou o compromisso mútuo de ambas as instituições com a excelência acadêmica e a inovação no ensino de pós-graduação.",
+                p3: "A eGO Education, conhecida por seus programas de mestrado online reconhecidos em toda a União Europeia e facilmente validados em países da Commonwealth, aproveitará essa parceria para oferecer experiências de aprendizado aprimoradas e expandir sua presença global. A colaboração com a Italo-Brasileira deve abrir novos caminhos para intercâmbio acadêmico, pesquisa e desenvolvimento profissional, beneficiando estudantes e profissionais em diferentes continentes.",
+                p4: "Essa aliança emocionante reforça nosso compromisso com a oferta de educação acessível e de alta qualidade em escala global. Estamos ansiosos pelas inúmeras oportunidades que essa parceria criará para nossas comunidades acadêmicas no Brasil, na Europa e além.",
+                },
+                {
+                image: n4,
+                subImage: i3,
+                title:
+                "eGO Education Explora Novas Oportunidades de Colaboração com a UniJaguaribe",
+                author: "A. Daniele Pallotta",
+                date: "04 de setembro de 2022",
+                category: "Educação",
+                sub: "Fortalecendo a Colaboração Acadêmica para a Inovação",
+                p1: "A eGO Education tem o prazer de anunciar uma recente reunião de alto nível com a UniJaguaribe, uma respeitada Faculdade do Ceará, Brasil. A discussão teve como foco a exploração de caminhos colaborativos que podem levar a parcerias acadêmicas inovadoras e experiências educacionais enriquecedoras.",
+                p2: "Durante a reunião, representantes de ambas as instituições participaram de diálogos produtivos sobre possíveis iniciativas conjuntas, incluindo projetos de pesquisa, intercâmbios acadêmicos e o desenvolvimento de programas de aprendizado inovadores. Esse espírito de colaboração reflete nosso compromisso em abrir novos caminhos no ensino superior e ampliar as oportunidades disponíveis para estudantes e profissionais.",
+                p3: "Essa primeira discussão marca um passo importante para estabelecer uma parceria frutífera a longo prazo, e estamos entusiasmados com as possibilidades que estão por vir. À medida que continuamos a construir pontes com instituições acadêmicas renomadas como a UniJaguaribe, permanecemos dedicados à nossa missão de fornecer educação acessível e de alta qualidade em todo o mundo.",
+                p4: "Fique atento para mais atualizações sobre nossa colaboração em evolução e as oportunidades empolgantes que ela trará para nossas comunidades acadêmicas.",
+                },
+                {
+                image: n1,
+                subImage: i1,
+                title:
+                "eGO Education e Fabio Porta Firmam Parceria Estratégica em São Paulo",
+                author: "A. Daniele Pallotta",
+                date: "13 de junho de 2023",
+                category: "Educação",
+                sub: "Expandindo Oportunidades Acadêmicas para a Comunidade Italiana na América Latina",
+                p1: "A eGO Education tem o prazer de anunciar uma nova parceria estratégica com Fabio Porta, um membro distinto das Câmaras Italianas, representando a comunidade estrangeira na América Latina e presidente da UIM (Unione Italiani nel Mondo) no Brasil—a principal associação de italianos no exterior. A parceria foi formalizada durante uma reunião em São Paulo, em colaboração com Alessandro Lupo, marcando um passo importante no fortalecimento dos laços educacionais e culturais.",
+                p2: "Essa colaboração visa ampliar o alcance acadêmico e criar novas oportunidades que conectem os programas de mestrado online internacionalmente reconhecidos da eGO Education à vibrante comunidade italiana na América Latina. Ao combinar experiência e valores compartilhados, ambas as partes estão comprometidas em fomentar iniciativas inovadoras que beneficiarão estudantes, profissionais e a comunidade em geral.",
+                p3: "Estamos ansiosos pelos desenvolvimentos e projetos colaborativos que surgirão dessa parceria, reforçando nosso compromisso com a educação acessível, de alta qualidade e com o intercâmbio cultural global.",
+                },
+                {
+                image: n5,
+                subImage: i1,
+                title:
+                "eGO Education Brilha no Evento de Ranking QS para a América Latina em Vila Velha",
+                author: "A. Daniele Pallotta",
+                date: "02 de outubro de 2022",
+                category: "Educação",
+                sub: "QS Quacquarelli Symonds: Um Líder Global na Análise do Ensino Superior",
+                p1: "A eGO Education tem orgulho de ter participado do prestigiado evento de Ranking QS para a América Latina, realizado na Universidade Vila Velha, em Vila Velha. O evento proporcionou uma excelente plataforma para instituições acadêmicas demonstrarem seu compromisso com a qualidade educacional e a inovação.",
+                p2: "A QS Quacquarelli Symonds (QS) é uma das principais organizações globais de análise do ensino superior, conhecida por seu influente QS World University Rankings e seus insights abrangentes sobre tendências acadêmicas internacionais. Fundada em 1990 por Nunzio Quacquarelli, a QS cresceu e se tornou uma organização verdadeiramente internacional, com escritórios na Europa, Ásia e Américas.",
+                p3: "Nosso envolvimento neste evento reforça o compromisso da eGO Education com a melhoria dos padrões acadêmicos globais e a expansão da nossa presença na comunidade educacional internacional.",
+                }
+                ]
             },
             homeTeam: {
               title: "EQUIPE",
@@ -3003,6 +3153,77 @@ i18n
             news: {
               subtitle: "Esplora le nostre",
               specialWord: "notizie",
+              slides: [
+                {
+                  image: team,
+                  subImage: i1,
+                  title:
+                    "Mattia Di Tommaso nominato nuovo Direttore del Dipartimento di Scienze Politiche, Relazioni Internazionali e Cooperazione allo Sviluppo",
+                  author: "A.Daniele Pallotta",
+                  date: "22 gennaio 2024",
+                  category: "Educazione",
+                  sub: "Espandere gli Orizzonti Accademici: La Visione di Mattia per Nuovi Programmi Educativi",
+                  p1: "eGO Education è lieta di annunciare che Mattia Di Tommaso è stato nominato nuovo Direttore del Dipartimento di Scienze Politiche, Relazioni Internazionali e Cooperazione allo Sviluppo. Grazie alla sua vasta esperienza e leadership visionaria, Mattia guiderà la missione del dipartimento nel fornire un'istruzione all'avanguardia e nel promuovere prospettive globali.",
+                  p2: "Nel suo nuovo ruolo, Mattia non solo supervisionerà i programmi accreditati esistenti—il MA in Gestione e Leadership delle ONG e il MSc in Gestione dei Progetti Europei—ma sarà anche alla guida dello sviluppo di tre ulteriori corsi nel settore. Questi programmi innovativi mirano ad ampliare l'offerta accademica, affrontare le tendenze emergenti e dotare gli studenti delle competenze necessarie per navigare nel complesso panorama degli affari internazionali e dello sviluppo.",
+                  p3: "Sotto la guida di Mattia, il dipartimento è destinato a rafforzare la sua reputazione di eccellenza e ad offrire una gamma più ampia di opportunità accademiche specializzate per gli studenti che aspirano a ruoli di leadership nei settori pubblico e no-profit.",
+                  p4: "Per maggiori dettagli sulla nostra offerta accademica in evoluzione e sulle nuove iniziative, continuate a seguirci.",
+                },
+                {
+                  image: s2,
+                  subImage: i2,
+                  title:
+                    "eGO Education e Italo-Brasileira annunciano una partnership accademica strategica",
+                  author: "A.Daniele Pallotta",
+                  date: "16 ottobre 2022",
+                  category: "Educazione",
+                  sub: "Cerimonia di Firma dell'Accordo per Promuovere l'Eccellenza Accademica",
+                  p1: "eGO Education è orgogliosa di annunciare la firma di una partnership strategica con Italo-Brasileira, un prestigioso Centro Universitario con sede a San Paolo, in Brasile. Questa collaborazione rappresenta un traguardo significativo nell'espansione delle opportunità accademiche internazionali e nel rafforzamento degli standard educativi globali.",
+                  p2: "L'accordo è stato formalizzato durante una cerimonia di firma alla quale hanno partecipato il Direttore Generale, il Rettore e il Country Manager per il Brasile di eGO Education, insieme ai loro omologhi di Italo-Brasileira. L'evento ha sottolineato l'impegno reciproco delle due istituzioni per l'eccellenza accademica e l'innovazione nell'istruzione post-laurea.",
+                  p3: "eGO Education, rinomata per i suoi programmi di master online riconosciuti in tutta l'Unione Europea e facilmente convalidabili nei paesi del Commonwealth, sfrutterà questa partnership per offrire esperienze di apprendimento migliorate e ampliare la propria presenza globale. La collaborazione con Italo-Brasileira aprirà nuove opportunità di scambio accademico interculturale, ricerca e sviluppo professionale, a beneficio di studenti e professionisti in diversi continenti.",
+                  p4: "Questa entusiasmante alleanza sottolinea il nostro impegno a favorire un'istruzione accessibile e di alta qualità su scala globale. Siamo entusiasti delle numerose opportunità che questa partnership creerà per le nostre comunità accademiche in Brasile, Europa e oltre.",
+                },
+                {
+                  image: n4,
+                  subImage: i3,
+                  title:
+                    "eGO Education esplora nuove opportunità di collaborazione con UniJaguaribe",
+                  author: "A.Daniele Pallotta",
+                  date: "4 settembre 2022",
+                  category: "Educazione",
+                  sub: "Rafforzare la Collaborazione Accademica per l'Innovazione",
+                  p1: "eGO Education è entusiasta di annunciare un recente incontro di alto livello con UniJaguaribe, un rispettato istituto universitario dello stato del Ceará, in Brasile. La discussione si è concentrata sull'esplorazione di percorsi collaborativi che potrebbero portare a partnership accademiche innovative e a esperienze educative arricchite.",
+                  p2: "Durante l'incontro, i rappresentanti di entrambe le istituzioni hanno avviato un dialogo produttivo su iniziative congiunte, tra cui progetti di ricerca, scambi accademici e lo sviluppo di programmi di apprendimento innovativi. Questo spirito di collaborazione riflette il nostro impegno a innovare nel settore dell'istruzione superiore e ad ampliare le opportunità per studenti e professionisti.",
+                  p3: "Questa prima discussione segna un passo importante verso la creazione di una partnership fruttuosa a lungo termine, e siamo entusiasti delle possibilità future. Continueremo a costruire ponti con istituzioni accademiche di prestigio come UniJaguaribe, mantenendo il nostro impegno a fornire un'istruzione accessibile e di alta qualità a livello mondiale.",
+                  p4: "Restate sintonizzati per ulteriori aggiornamenti sulla nostra collaborazione in evoluzione e sulle entusiasmanti opportunità che offrirà alle nostre comunità accademiche.",
+                },
+                {
+                  image: n1,
+                  subImage: i1,
+                  title:
+                    "eGO Education e Fabio Porta stringono una partnership strategica a San Paolo",
+                  author: "A.Daniele Pallotta",
+                  date: "13 giugno 2023",
+                  category: "Educazione",
+                  sub: "Espandere le Opportunità Accademiche per la Comunità Italiana in America Latina",
+                  p1: "eGO Education è lieta di annunciare una nuova partnership strategica con Fabio Porta, illustre membro delle Camere Italiane che rappresenta la circoscrizione estera per l’America Latina e Presidente di UIM (Unione Italiani nel Mondo) in Brasile, la principale associazione di italiani all'estero. La collaborazione è stata ufficializzata durante un incontro a San Paolo, in collaborazione con Alessandro Lupo, segnando un traguardo importante nel rafforzamento dei legami educativi e culturali.",
+                  p2: "Questa partnership mira a rafforzare la diffusione accademica e a creare nuove opportunità che colleghino i programmi di master online riconosciuti a livello internazionale di eGO Education con la vivace comunità italiana in America Latina. Combinando competenze ed esperienze condivise, entrambe le parti si impegnano a promuovere iniziative innovative a beneficio di studenti, professionisti e della comunità in generale.",
+                  p3: "Siamo entusiasti degli sviluppi futuri e dei progetti collaborativi che emergeranno da questa partnership, rafforzando il nostro impegno per un'istruzione accessibile e di alta qualità e per lo scambio culturale globale.",
+                },
+                {
+                  image: n5,
+                  subImage: i1,
+                  title:
+                    "eGO Education brilla all'evento QS Ranking per l'America Latina a Vila Velha",
+                  author: "A.Daniele Pallotta",
+                  date: "2 ottobre 2022",
+                  category: "Educazione",
+                  sub: "QS Quacquarelli Symonds: Un Leader Globale nell'Analisi dell'Istruzione Superiore",
+                  p1: "eGO Education è orgogliosa di aver partecipato al prestigioso evento QS Ranking per l'America Latina, tenutosi presso l'Universidade Vila Velha a Vila Velha. L'evento ha fornito una piattaforma eccellente per le istituzioni accademiche per dimostrare il loro impegno verso l'educazione di qualità e l'innovazione.",
+                  p2: "QS Quacquarelli Symonds (QS) è uno dei principali analisti globali nel settore dell'istruzione superiore, noto per il suo influente QS World University Rankings. Fondata nel 1990 da Nunzio Quacquarelli, QS è cresciuta fino a diventare un'organizzazione internazionale con uffici in Europa, Asia e Americhe.",
+                  p3: "Un ringraziamento speciale a Leonardo Andrade, Business Development Manager di QS, il cui contributo è stato fondamentale per il successo dell'evento.",
+                }
+              ]
+              
             },
             UpcomingCourseSlider: {
               title: "ESPLORA TUTTI I CORSI",

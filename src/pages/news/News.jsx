@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import n1 from "../../assets/news/uniitalo.webp";
-import s2 from "../../assets/news/unitalo.webp";
-import n4 from "../../assets/news/unijaguaribe2.webp";
-import n5 from "../../assets/news/VillaVehia.webp";
-import i1 from "../../assets/news/i1.webp";
-import i2 from "../../assets/news/i2.webp";
-import i3 from "../../assets/news/i3.webp";
-import team from "../../assets/news/team.webp";
+
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 function News() {
-  const slides = [
+  /* const slides = [
     {
       image: team,
       subImage: i1,
@@ -86,7 +79,7 @@ function News() {
       p3: "A special thank you goes to Leonardo Andrade, Business Development Manager at QS, whose invaluable collaboration helped ensure the success of the event. His expertise and support played a key role in facilitating engaging discussions and networking opportunities among participants.",
       p4: "Our involvement at this event reinforces eGO Education’s commitment to enhancing global academic standards and expanding our reach within the international education community. We are excited to continue building relationships with esteemed partners like QS and furthering our mission to provide accessible, high-quality online master’s degree programs recognized throughout the European Union and beyond.",
     },
-  ];
+  ]; */
 
   const settings = {
     dots: true,
@@ -102,7 +95,7 @@ function News() {
   };
 
   const { t } = useTranslation();
-  const { subtitle, specialWord } = t("home.news");
+  const { subtitle, specialWord, slides } = t("home.news");
 
   return (
     <div className="container mb-5 mt-5">
@@ -132,10 +125,10 @@ function News() {
                           />
                         </a>
                       </div>
-                      <div class="overlay border">
-                        <div class="mb-2">
+                      <div className="overlay border">
+                        <div className="mb-2">
                           <a
-                            class="badge badge-primary border  text-uppercase font-weight-semi-bold p-2"
+                            className="badge badge-primary border  text-uppercase font-weight-semi-bold p-2"
                             style={{
                               backgroundColor: "#046635",
                               marginRight: "1rem",
@@ -144,12 +137,12 @@ function News() {
                           >
                             {slide.category}
                           </a>
-                          <a class="text-black" href={`/news/${slide.title}`}>
+                          <a className="text-black" href={`/news/${slide.title}`}>
                             {slide.date}
                           </a>
                         </div>
                         <a
-                          class="h4 m-0 text-black text-uppercase fw-bold"
+                          className="h4 m-0 text-black text-uppercase fw-bold"
                           href={`/news/${slide.title}`}
                         >
                           {slide.title}

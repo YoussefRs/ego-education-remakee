@@ -274,27 +274,27 @@ app.post(
             </style>
           </head>
           <body>
-            <div class="email-container">
-              <div class="email-header">
+            <div className="email-container">
+              <div className="email-header">
                 <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
                 <h1>Application Received</h1>
               </div>
-              <div class="email-body">
+              <div className="email-body">
                 <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
                 <p>Thank you for your application for the <strong>${course}</strong> course.</p>
                 <p>We will review your application and contact you shortly.</p>
                 <p>Best regards,</p>
                 <p><strong>eGO Education</strong></p>
               </div>
-              <div class="email-footer">
-                <table class="email-footer-table">
+              <div className="email-footer">
+                <table className="email-footer-table">
                   <tr>
                     <!-- Logo Section -->
-                    <td class="email-footer-logo">
+                    <td className="email-footer-logo">
                       <img src="www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
                     </td>
                     <!-- Contact Details Section -->
-                    <td class="email-footer-text">
+                    <td className="email-footer-text">
                       <p><strong>Enrolment Office</strong></p>
                       <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
                       <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
@@ -407,26 +407,26 @@ app.post("/accept/:id", async (req, res) => {
         </style>
       </head>
       <body>
-        <div class="email-container">
-          <div class="email-header">
+        <div className="email-container">
+          <div className="email-header">
             <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
             <h1>Application Accepted</h1>
           </div>
-          <div class="email-body">
+          <div className="email-body">
             <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
             <p>Congratulations! Your application for the <strong>${course}</strong> course has been accepted.</p>
             <p>To complete your enrollment, please proceed with the payment.</p>
-            <p><a href="${paymentLink.url}" class="button">Complete Payment</a></p>
+            <p><a href="${paymentLink.url}" className="button">Complete Payment</a></p>
             <p>Best regards,</p>
             <p><strong>eGO Education</strong></p>
           </div>
-          <div class="email-footer">
-            <table class="email-footer-table">
+          <div className="email-footer">
+            <table className="email-footer-table">
               <tr>
-                <td class="email-footer-logo">
+                <td className="email-footer-logo">
                   <img width="80" height="80" src="https://www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
                 </td>
-                <td class="email-footer-text">
+                <td className="email-footer-text">
                   <p><strong>Enrolment Office</strong></p>
                   <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
                   <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
@@ -536,12 +536,12 @@ app.post("/reject/:id", async (req, res) => {
         </style>
         </head>
         <body>
-          <div class="email-container">
-            <div class="email-header">
+          <div className="email-container">
+            <div className="email-header">
             <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
             <h1>Application Rejected</h1>
           </div>
-            <div class="email-body">
+            <div className="email-body">
               <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
               <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
               <p>The following reasons were cited:</p>
@@ -550,13 +550,13 @@ app.post("/reject/:id", async (req, res) => {
               <p>Best regards,</p>
               <p><strong>eGO Education</strong></p>
             </div>
-            <div class="email-footer">
-            <table class="email-footer-table">
+            <div className="email-footer">
+            <table className="email-footer-table">
               <tr>
-                <td class="email-footer-logo">
+                <td className="email-footer-logo">
                   <img width="80" height="80" src="https://www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
                 </td>
-                <td class="email-footer-text">
+                <td className="email-footer-text">
                   <p><strong>Enrolment Office</strong></p>
                   <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
                   <p>website: <a href="https://ego-education.com">ego-education.com</a></p>

@@ -7,32 +7,32 @@ function SingleNewPrev({ data }) {
   return (
     <>
       {/* <!-- News With Sidebar Start --> */}
-      <div class="container-fluid single_news">
-        <div class="container">
-          <div class="row">
-            <div class="col-xxl-8">
+      <div className="container-fluid single_news">
+        <div className="container">
+          <div className="row">
+            <div className="col-xxl-8">
               {/* <!-- News Detail Start --> */}
-              <div class="position-relative mb-3">
+              <div className="position-relative mb-3">
                 <img
-                  class="img-fluid w-100"
+                  className="img-fluid w-100"
                   src={data?.pic}
                   style={{ objectFit: "cover", height: 350 }}
                 />
-                <div class="bg-white border border-top-0 p-4">
-                  <div class="mb-3">
+                <div className="bg-white border border-top-0 p-4">
+                  <div className="mb-3">
                     <a
-                      class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                      className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                       href=""
                     >
                       {data?.title}
                     </a>
-                    <a class="text-body" href="">
+                    <a className="text-body" href="">
                       {data?.addedAt}
                     </a>
                   </div>
                   <div className="__news_content"><DescriptionComponent description={data?.content} /></div>
                   <>
-                    {/* <h1 class="mb-3 text-secondary text-uppercase fw-bold text-black">
+                    {/* <h1 className="mb-3 text-secondary text-uppercase fw-bold text-black">
                       Lorem ipsum dolor sit amet elit vitae porta diam...
                     </h1>
                     <p>
@@ -45,10 +45,10 @@ function SingleNewPrev({ data }) {
                       dolor elitr, stet et no diam sit. Dolor erat justo dolore
                       sit invidunt.
                     </p>
-                    <h3 class="text-uppercase font-weight-bold mb-3">
+                    <h3 className="text-uppercase font-weight-bold mb-3">
                       Lorem ipsum dolor sit amet elit
                     </h3>
-                    <img class="img-fluid w-50 float-left mr-4 mb-2" src={n2} />
+                    <img className="img-fluid w-50 float-left mr-4 mb-2" src={n2} />
                     <p>
                       Diam dolor est labore duo invidunt ipsum clita et, sed et
                       lorem voluptua tempor invidunt at est sanctus sanctus. Clita
@@ -65,10 +65,10 @@ function SingleNewPrev({ data }) {
                       duo tempor sea kasd clita ipsum et.
                     </p>
   
-                    <h3 class="text-uppercase font-weight-bold mb-3">
+                    <h3 className="text-uppercase font-weight-bold mb-3">
                       Lorem ipsum dolor sit amet elit
                     </h3>
-                    <img class="img-fluid w-50 float-left mr-4 mb-2" src={n1} />
+                    <img className="img-fluid w-50 float-left mr-4 mb-2" src={n1} />
                     <p>
                       Diam dolor est labore duo invidunt ipsum clita et, sed et
                       lorem voluptua tempor invidunt at est sanctus sanctus. Clita
@@ -89,34 +89,34 @@ function SingleNewPrev({ data }) {
               </div>
             </div>
 
-            <div class="col-xxl-4">
+            <div className="col-xxl-4">
               {/* <!-- Popular News Start --> */}
-              <div class="mb-3">
-                <div class="section-title mb-0">
-                  <h4 class="m-0 text-uppercase font-weight-bold">
+              <div className="mb-3">
+                <div className="section-title mb-0">
+                  <h4 className="m-0 text-uppercase font-weight-bold">
                     Tranding News
                   </h4>
                 </div>
-                <div class="bg-white border border-top-0 p-3">
+                <div className="bg-white border border-top-0 p-3">
                   <div
-                    class="d-flex align-items-center bg-white mb-3"
+                    className="d-flex align-items-center bg-white mb-3"
                     style={{ height: 110 }}
                   >
-                    <img class="img-fluid" src={n3} alt="" />
-                    <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                      <div class="mb-2">
+                    <img className="img-fluid" src={n3} alt="" />
+                    <div className="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                      <div className="mb-2">
                         <a
-                          class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                          className="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
                           href=""
                         >
                           Business
                         </a>
-                        <a class="text-body" href="">
+                        <a className="text-body" href="">
                           <small>Jan 01, 2045</small>
                         </a>
                       </div>
                       <a
-                        class="h6 m-0 text-secondary text-uppercase fw-bold text-black"
+                        className="h6 m-0 text-secondary text-uppercase fw-bold text-black"
                         href=""
                       >
                         Lorem ipsum dolor sit amet elit...
@@ -124,24 +124,24 @@ function SingleNewPrev({ data }) {
                     </div>
                   </div>
                   <div
-                    class="d-flex align-items-center bg-white mb-3"
+                    className="d-flex align-items-center bg-white mb-3"
                     style={{ height: 110 }}
                   >
-                    <img class="img-fluid" src={n3} alt="" />
-                    <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                      <div class="mb-2">
+                    <img className="img-fluid" src={n3} alt="" />
+                    <div className="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                      <div className="mb-2">
                         <a
-                          class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                          className="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
                           href=""
                         >
                           Business
                         </a>
-                        <a class="text-body" href="">
+                        <a className="text-body" href="">
                           <small>Jan 01, 2045</small>
                         </a>
                       </div>
                       <a
-                        class="h6 m-0 text-secondary text-uppercase fw-bold text-black"
+                        className="h6 m-0 text-secondary text-uppercase fw-bold text-black"
                         href=""
                       >
                         Lorem ipsum dolor sit amet elit...
@@ -149,24 +149,24 @@ function SingleNewPrev({ data }) {
                     </div>
                   </div>
                   <div
-                    class="d-flex align-items-center bg-white mb-3"
+                    className="d-flex align-items-center bg-white mb-3"
                     style={{ height: 110 }}
                   >
-                    <img class="img-fluid" src={n3} alt="" />
-                    <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                      <div class="mb-2">
+                    <img className="img-fluid" src={n3} alt="" />
+                    <div className="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                      <div className="mb-2">
                         <a
-                          class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                          className="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
                           href=""
                         >
                           Business
                         </a>
-                        <a class="text-body" href="">
+                        <a className="text-body" href="">
                           <small>Jan 01, 2045</small>
                         </a>
                       </div>
                       <a
-                        class="h6 m-0 text-secondary text-uppercase fw-bold text-black"
+                        className="h6 m-0 text-secondary text-uppercase fw-bold text-black"
                         href=""
                       >
                         Lorem ipsum dolor sit amet elit...
@@ -174,24 +174,24 @@ function SingleNewPrev({ data }) {
                     </div>
                   </div>
                   <div
-                    class="d-flex align-items-center bg-white mb-3"
+                    className="d-flex align-items-center bg-white mb-3"
                     style={{ height: 110 }}
                   >
-                    <img class="img-fluid" src={n3} alt="" />
-                    <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                      <div class="mb-2">
+                    <img className="img-fluid" src={n3} alt="" />
+                    <div className="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                      <div className="mb-2">
                         <a
-                          class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                          className="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
                           href=""
                         >
                           Business
                         </a>
-                        <a class="text-body" href="">
+                        <a className="text-body" href="">
                           <small>Jan 01, 2045</small>
                         </a>
                       </div>
                       <a
-                        class="h6 m-0 text-secondary text-uppercase fw-bold text-black"
+                        className="h6 m-0 text-secondary text-uppercase fw-bold text-black"
                         href=""
                       >
                         Lorem ipsum dolor sit amet elit...
@@ -203,7 +203,7 @@ function SingleNewPrev({ data }) {
               {/* <!-- Popular News End --> */}
 
               {/* <!-- Ads Start --> */}
-              <div class="mb-3">
+              <div className="mb-3">
                 <ContactWidget />
               </div>
               {/* <!-- Ads End --> */}
