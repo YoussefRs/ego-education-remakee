@@ -24,7 +24,7 @@ function SingleNew() {
                   src={slide?.image}
                   style={{ objectFit: "cover" }}
                 />
-                <div class="bg-white  p-4">
+                <div class="bg-white pt-4 pb-2">
                   <div class="mb-3">
                     <a
                       class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -50,7 +50,7 @@ function SingleNew() {
                   {slide?.p2}
                   </p>
 
-                  <img class="img-fluid w-50 float-left mr-4 mb-2" src={slide?.subImage} />
+                  {/* <img class="img-fluid w-50 float-left mr-4 mb-2" src={slide?.subImage} /> */}
                   <p>
                   {slide?.p3}
                   </p>
