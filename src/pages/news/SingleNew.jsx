@@ -20,9 +20,9 @@ function SingleNew() {
               {/* <!-- News Detail Start --> */}
               <div className="position-relative mb-3">
                 <img
-                  className="img-fluid w-100"
+                  className=" w-100"
                   src={slide?.image}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", height: 500 }}
                 />
                 <div className="bg-white pt-4 pb-2">
                   <div className="mb-3">
