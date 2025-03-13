@@ -126,6 +126,7 @@ function Navigation({ show, backgroundColor }) {
           </Link>
         ))}
       </section>
+      
       <section className="flex_content d-flex alingn-items-center justify-content-between">
         <div id="mini-nav" ref={dropdownRef}>
           <div className="_dropdown pull-right">
