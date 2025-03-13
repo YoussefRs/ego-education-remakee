@@ -12,7 +12,7 @@ function Navigation({ show, backgroundColor }) {
     { key: "courses", link: "/courses" },
     { key: "eLearning", link: "/elearn" },
     { key: "partners", link: "/partners" },
-    { key: "research", link: "/research" },
+    // { key: "research", link: "/research" },
     { key: "apply", link: "/confirm" },
     { key: "institute", link: "/institute" },
     { key: "office", link: "/student-office" },

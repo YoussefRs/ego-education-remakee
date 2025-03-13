@@ -40,6 +40,23 @@ function CoursesDetails() {
     tab5,
   } = t("home.courseDetails");
 
+  const {
+    heading,
+    documents,
+    linguisticCertifications,
+    educationalQualifications,
+    reviewProcess,
+    paymentConfirmation,
+    welcomeMessage,
+    checkboxLabel,
+    applyButton,
+    entry,
+    bck,
+    re,
+  } = t("apply");
+
+  const { title_, l1, l2, l3, l4, l5 } = t("re");
+
   const [activePane, setActivePane] = useState(title);
   const location = useLocation();
   const courseId = extractIdFromPathname(location.pathname);
@@ -162,11 +179,11 @@ function CoursesDetails() {
                         state={{ course }}
                         className="apply-link"
                       >
-                        Apply
+                        {applyButton}
                       </Link>
                     ) : (
                       <button onClick={openModal} className="apply-link">
-                        Apply
+                        {applyButton}
                       </button>
                     )}
                   </div>
@@ -367,7 +384,12 @@ function CoursesDetails() {
                       }`}
                       id="tab2"
                     >
-                      <h2 className="mb-4 fw-bold" style={{fontFamily: "Gotham Light"}}>{title} </h2>
+                      <h2
+                        className="mb-4 fw-bold"
+                        style={{ fontFamily: "Gotham Light" }}
+                      >
+                        {title}{" "}
+                      </h2>
                       <div className="tab row">
                         <div className="col">
                           {/*   <div className="mb-4 w-100">
@@ -386,7 +408,12 @@ function CoursesDetails() {
                           </div> */}
                           <article className="welcome col-12">
                             <p className="mb-4">{course?.description}</p>
-                            <h2 className="mb-4 fw-bold" style={{fontFamily: "Gotham Light"}}>{title1} </h2>
+                            <h2
+                              className="mb-4 fw-bold"
+                              style={{ fontFamily: "Gotham Light" }}
+                            >
+                              {title1}{" "}
+                            </h2>
                             <ul className="custom-list-style mb-3">
                               {course?.career?.map((carr, i) => (
                                 <li key={i}>
@@ -422,9 +449,7 @@ function CoursesDetails() {
                                     alt="img06"
                                   />
                                   <figcaption>
-                                    <h2>
-                                      Request <span>Evalution</span>
-                                    </h2>
+                                    <h2>{re}</h2>
                                     <a onClick={handleImage1Click}>View more</a>
                                   </figcaption>
                                 </figure>
@@ -434,9 +459,7 @@ function CoursesDetails() {
                                     alt="img03"
                                   />
                                   <figcaption>
-                                    <h2>
-                                      Apply <br/><span>Now</span>
-                                    </h2>
+                                    <h2>{applyButton}</h2>
                                     <a onClick={handleImage2Click}>View more</a>
                                   </figcaption>
                                 </figure>
@@ -450,7 +473,7 @@ function CoursesDetails() {
                                       icon={faListCheck}
                                       color="#046635"
                                     />{" "}
-                                    Entry Requirements
+                                    {entry}
                                   </h6>
                                   <button
                                     className="button-green d-flex align-items-center gap-2"
@@ -478,14 +501,10 @@ function CoursesDetails() {
                                         d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
                                       />
                                     </svg>
-                                    <span>Back</span>
+                                    <span>{bck}</span>
                                   </button>
                                 </div>
-                                <h6 className="fw-bold">
-                                  To properly enrol, make sure you have all the
-                                  following documents ready:
-                                </h6>{" "}
-                                <br />
+                                <h6 className="fw-bold">{heading}</h6> <br />
                                 <ul className="custom-list-style">
                                   <li className="d-flex mb-2">
                                     <svg
@@ -499,11 +518,49 @@ function CoursesDetails() {
                                     >
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                     </svg>
-                                    <span>
-                                      Previous academic career (Exams + ECTS if
-                                      you have taken exams at other universities
-                                      and have not yet graduated).
-                                    </span>
+                                    <span>{documents?.academicCareer}</span>
+                                  </li>
+                                  <li>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      color="#046635"
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      className="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
+                                    <span>{documents?.degreeObtained}</span>
+                                  </li>
+                                  <li>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      color="#046635"
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      className="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
+                                    <span> {documents?.cv}</span>
+                                  </li>
+                                  <li>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      color="#046635"
+                                      width="25"
+                                      height="25"
+                                      fill="currentColor"
+                                      className="bi bi-dot"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
+                                    <span>{documents?.idDocument}</span>
                                   </li>
                                   <li>
                                     <svg
@@ -518,66 +575,14 @@ function CoursesDetails() {
                                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                     </svg>
                                     <span>
-                                      Degree obtained. Qualifications issued in
-                                      English, Spanish, French, Italian are
-                                      accepted.
-                                    </span>
-                                  </li>
-                                  <li>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      color="#046635"
-                                      width="25"
-                                      height="25"
-                                      fill="currentColor"
-                                      className="bi bi-dot"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                                    </svg>
-                                    <span>Updated CV in English.</span>
-                                  </li>
-                                  <li>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      color="#046635"
-                                      width="25"
-                                      height="25"
-                                      fill="currentColor"
-                                      className="bi bi-dot"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                                    </svg>
-                                    <span>
-                                      Copy of a valid identification document.
-                                    </span>
-                                  </li>
-                                  <li>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      color="#046635"
-                                      width="25"
-                                      height="25"
-                                      fill="currentColor"
-                                      className="bi bi-dot"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
-                                    </svg>
-                                    <span>
-                                      For other languages, the qualification
-                                      must be translated into English or
-                                      Italian.
+                                      {documents?.translationRequirement}
                                     </span>
                                   </li>
 
                                   <br />
                                   <li>
                                     <div className="content">
-                                      Linguistic certifications held among the
-                                      following, if not native or not possessing
-                                      a degree in the following languages:
+                                      {linguisticCertifications?.heading}
                                       <ul className="custom-list-style">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -591,7 +596,10 @@ function CoursesDetails() {
                                           <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                         </svg>
                                         <span style={{ fontWeight: 600 }}>
-                                          English
+                                          {
+                                            linguisticCertifications?.languages
+                                              ?.english
+                                          }
                                         </span>
                                         <li className="d-flex mb-2">
                                           <ul className="custom-list-style d-flex flex-column">
@@ -630,7 +638,10 @@ function CoursesDetails() {
                                           <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                                         </svg>
                                         <span style={{ fontWeight: 600 }}>
-                                          Italian
+                                          {
+                                            linguisticCertifications?.languages
+                                              ?.italian
+                                          }
                                         </span>
                                         <li className="d-flex mb-2">
                                           <ul className="custom-list-style d-flex flex-column">
@@ -656,47 +667,22 @@ function CoursesDetails() {
                                           </ul>
                                         </li>
                                       </ul>
-                                      To access the Bachelor’s, at least a{" "}
-                                      <span className="fw-bold ego-green">
-                                        B2
-                                      </span>{" "}
-                                      level of knowledge of the English or
-                                      Italian language is required, while for
-                                      the Master’s, at least a{" "}
-                                      <span className="fw-bold ego-green">
-                                        C1{" "}
-                                      </span>
-                                      level is{" "}
-                                      <span className="fw-bold ego-green">
-                                        required
-                                      </span>
-                                      .
+                                      {
+                                        linguisticCertifications?.bachelorRequirement
+                                      }
                                       <br />
                                       <br />
-                                      All educational qualifications (such as
-                                      high school diploma, bachelor’s, master’s)
-                                      should be apostilled through a
-                                      certification of value at the Maltese or
-                                      Italian embassies abroad.
+                                      {educationalQualifications}
                                       <br />
                                       <br />
-                                      Once registration is complete, our team
-                                      will review your documents and information
-                                      within 72 hours. We&#39;ll email you an
-                                      update.
+                                      {reviewProcess}
                                       <br />
                                       <br />
-                                      Upon{" "}
-                                      <span className="fw-bold ego-green">
-                                        payment confirmation
-                                      </span>
-                                      , you&#39;ll get your username and
-                                      password via email to start your online
-                                      learning journey.
+                                      {paymentConfirmation}
                                       <br />
                                       <br />
                                       <span className="fw-bold ego-green">
-                                        Welcome to eGO Education.
+                                        {welcomeMessage}
                                       </span>
                                       <br />
                                       <br />
@@ -710,9 +696,7 @@ function CoursesDetails() {
                                             marginBottom: 10,
                                           }}
                                         />
-                                        I confirm that I have thoroughly
-                                        reviewed and understood all the entry
-                                        requirements.
+                                        {checkboxLabel}
                                       </label>
                                       <br />
                                       <Link
@@ -727,7 +711,7 @@ function CoursesDetails() {
                                           inst: course.institute,
                                         }}
                                       >
-                                        Apply
+                                        {applyButton}
                                       </Link>
                                     </div>
                                   </li>
@@ -742,7 +726,7 @@ function CoursesDetails() {
                                       icon={faListCheck}
                                       color="#046635"
                                     />{" "}
-                                    Evaluation
+                                    {title_}
                                   </h6>
                                   <button
                                     className="button-green d-flex align-items-center gap-2"
@@ -770,16 +754,10 @@ function CoursesDetails() {
                                         d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
                                       />
                                     </svg>
-                                    <span>Back</span>
+                                    <span>{bck} </span>
                                   </button>
                                 </div>
-                                <h6 className="fw-bold">
-                                  In any case, while waiting for the apostille
-                                  or to simply understand if one is eligible, a
-                                  normal copy of the following qualifications is
-                                  enough:
-                                </h6>{" "}
-                                <br />
+                                <h6 className="fw-bold">{l1}</h6> <br />
                                 <ul className="custom-list-style">
                                   <li className="d-flex mb-2">
                                     <FontAwesomeIcon
@@ -788,11 +766,7 @@ function CoursesDetails() {
                                       size={20}
                                       style={{ paddingRight: 10, marginTop: 3 }}
                                     />
-                                    <span>
-                                      Previous academic career (Exams + ECTS if
-                                      you have taken exams at other universities
-                                      and have not yet graduated).
-                                    </span>
+                                    <span>{l2}</span>
                                   </li>
                                   <li>
                                     <FontAwesomeIcon
@@ -801,7 +775,7 @@ function CoursesDetails() {
                                       size={20}
                                       style={{ paddingRight: 10 }}
                                     />
-                                    <span>Updated CV in English.</span>
+                                    <span>{l3}</span>
                                   </li>
                                   <li>
                                     <FontAwesomeIcon
@@ -810,19 +784,10 @@ function CoursesDetails() {
                                       size={20}
                                       style={{ paddingRight: 10 }}
                                     />
-                                    <span>
-                                      Degree obtained. Qualifications issued in
-                                      English, Spanish, French, Italian are
-                                      accepted.
-                                    </span>
+                                    <span>{l4}</span>
                                   </li>
                                 </ul>
-                                <h6 className="mb-5 fw-bold">
-                                  The student will receive via email the
-                                  evaluation of their academic and/or work
-                                  credits and will assign them their study plan
-                                  and year of enrolment
-                                </h6>{" "}
+                                <h6 className="mb-5 fw-bold">{l5}</h6>{" "}
                                 <button
                                   className="text-white button-green"
                                   onClick={openModal}
@@ -1090,7 +1055,9 @@ function CoursesDetails() {
               </div>
 
               <aside className="page-sidebar col-lg-4 col-md-4">
-                <h2 className="fw-bold" style={{fontFamily: "Gotham Light"}}>{title2} </h2>
+                <h2 className="fw-bold" style={{ fontFamily: "Gotham Light" }}>
+                  {title2}{" "}
+                </h2>
                 <div className="right_box mb-5">
                   <div className="p-4">
                     <InfoWidget course={course} />

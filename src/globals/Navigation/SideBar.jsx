@@ -65,7 +65,7 @@ function SideBar({ show, handleShow }) {
         </li>
         <li>
         <a href="/research">
-        {research}
+        {/* {research} */}
           </a>
         </li>
         <li>

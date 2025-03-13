@@ -63,7 +63,8 @@ const Footer = () => {
               <a href="/elearn">{quickLinks.links.elearn}</a>
               <a href="/partners">{quickLinks.links.partners}</a>
               <a href="/confirm">{quickLinks.links.apply}</a>
-              <a href="/about">{quickLinks.links.about}</a>
+              <a href="/institute">{quickLinks.links.about}</a>
+              <a href="/student-office">{quickLinks.links.sf}</a>
               <a href="/policies-privacy">{quickLinks.links.policiesPrivacy}</a>
             </div>
           </div>
