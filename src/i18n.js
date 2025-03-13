@@ -3955,6 +3955,7 @@ i18n
                 "Per altre lingue, la qualifica deve essere tradotta in inglese o italiano.",
             },
             linguisticCertifications: {
+              
               heading:
                 "Certificazioni linguistiche possedute tra le seguenti, se non madrelingua o non in possesso di una laurea nelle seguenti lingue:",
               languages: {
