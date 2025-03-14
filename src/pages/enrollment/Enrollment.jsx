@@ -33,7 +33,7 @@ import { useTranslation } from "react-i18next";
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const {
     header,
     program,
@@ -56,15 +56,15 @@ function Enrollment() {
     h1,
     h2,
     h3,
-    btn
+    btn,
   } = t("enrol");
-  
 
   const inputRefs = useRef({});
   const { showModal, openModal, closeModal } = useModal();
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   const [showCountryMenu, setShowCountryMenu] = useState(false);
 
@@ -226,15 +226,16 @@ function Enrollment() {
     return isValid;
   };
 
+
   const handleSubmit = async () => {
     try {
-      const isValid = validateForm(); // Perform initial validation
+      const isValid = validateForm();
       if (!isValid) {
-        return; // Stop if the frontend validation fails
+        return;
       }
 
       setLoading(true);
-      
+
       const data = new FormData();
       Object.keys(formData).forEach((key) => {
         if (key.startsWith("file")) {
@@ -245,38 +246,39 @@ function Enrollment() {
           data.append(key, formData[key]);
         }
       });
-      
+
       const response = await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      
+
       setShowApplyModal(true);
-      setFormData(initialData); // Reset form
+      setFormData(initialData);
     } catch (error) {
       console.error("Error submitting form:", error);
 
-      // Handle backend errors
       if (error.response && error.response.data) {
         const backendErrors = {};
         if (error.response.data.Error) {
-          backendErrors.email = error.response.data.Error; // Capture backend error
+          backendErrors.email = error.response.data.Error;
         }
-
-        // Revalidate the form with backend errors
         const isValidAfterBackendErrors = validateForm(backendErrors);
 
         if (!isValidAfterBackendErrors) {
           console.log(
             "Form is invalid due to backend errors. Stopping submission."
           );
-          return; // Stop further actions if backend errors exist
+          return;
         }
       }
     } finally {
       setLoading(false);
     }
+  };
+
+  const openErrorModal = () => {
+    setShowErrorModal(true);
   };
 
   const hideApplyModal = () => {
@@ -899,7 +901,7 @@ function Enrollment() {
         <div className="row mt-5 mb-5">
           <div className="col">
             <button
-              onClick={handleSubmit}
+              onClick={openErrorModal}
               className={`submit-btn ${
                 formData.advertisingAuthorization &&
                 formData.withdrawalAuthorization &&
@@ -960,6 +962,37 @@ function Enrollment() {
           </section>
           <section>
             <button onClick={() => setShowApplyModal(false)}>Close</button>
+          </section>
+        </section>
+      </Modal>
+
+      <Modal
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={showErrorModal}
+        onHide={() => setShowErrorModal(false)}
+      >
+        <section id="lead-capture">
+          <section className="visuals">
+            <img src={logo} />
+          </section>
+          <section className="readables">
+            <div id="please">
+                  <h2> An error occurred during your application submission. </h2>
+                  <br />
+                  Please try again in a few minutes. If the issue persists, send your application directly to  
+                  <span style={{color: "rgb(4, 102, 53)"}}> enrolment@ego-education.com</span>
+                  <br />
+                  <br />
+                  <span>
+                    Thank you for your patience, and we look forward to
+                    connecting with you soon!
+                  </span>
+            </div>
+          </section>
+          <section>
+            <button onClick={() => setShowErrorModal(false)}>Close</button>
           </section>
         </section>
       </Modal>

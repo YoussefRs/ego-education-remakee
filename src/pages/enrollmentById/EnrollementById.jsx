@@ -13,7 +13,8 @@ import { useModal } from "../../globals/Modal/useModal";
 
 import { countries } from "../../globals/countriesData";
 import Flag from "react-world-flags";
-import { CertificateIcon,
+import {
+  CertificateIcon,
   EmailIcon,
   FileIcon,
   IdIcon,
@@ -26,15 +27,15 @@ import { CertificateIcon,
   AddressIcon,
   CityIcon,
   CountryIcon,
-  GenderIcon, } from "../enrollment/Svgs";
-
+  GenderIcon,
+} from "../enrollment/Svgs";
 
 function EnrollementById() {
   const location = useLocation();
   const apiUrl = import.meta.env.VITE_API_URL;
   const { course, degree, inst } = location.state;
 
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const {
     header,
     program,
@@ -57,15 +58,15 @@ function EnrollementById() {
     h1,
     h2,
     h3,
-    btn
+    btn,
   } = t("enrol");
-  
 
   const inputRefs = useRef({});
   const { showModal, openModal, closeModal } = useModal();
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   const [showCountryMenu, setShowCountryMenu] = useState(false);
 
@@ -227,6 +228,10 @@ function EnrollementById() {
     return isValid;
   };
 
+  const openErrorModal = () => {
+    setShowErrorModal(true);
+  };
+
   const handleSubmit = async () => {
     try {
       const isValid = validateForm(); // Perform initial validation
@@ -235,7 +240,7 @@ function EnrollementById() {
       }
 
       setLoading(true);
-      
+
       const data = new FormData();
       Object.keys(formData).forEach((key) => {
         if (key.startsWith("file")) {
@@ -246,13 +251,13 @@ function EnrollementById() {
           data.append(key, formData[key]);
         }
       });
-      
+
       const response = await axios.post(`${apiUrl}/create`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      
+
       setShowApplyModal(true);
       setFormData(initialData); // Reset form
     } catch (error) {
@@ -300,373 +305,371 @@ function EnrollementById() {
     }
   };
 
-
-
   return (
     <>
-    <SubHeader
-      title={"Apply"}
-      path={[{ url: "/enrollment", label: "home" }]}
-      current={"Apply"}
-    />
-    <CModal title="My Modal" show={showModal} onHide={closeModal}></CModal>
+      <SubHeader
+        title={"Apply"}
+        path={[{ url: "/enrollment", label: "home" }]}
+        current={"Apply"}
+      />
+      <CModal title="My Modal" show={showModal} onHide={closeModal}></CModal>
 
-    <div className="container enrollment d-flex flex-column">
-      <h1 className="mb-4">{header} </h1>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <ProgramIcon />
-          </div>
-          <select
-            name="course"
-            value={formData.course}
-            onChange={(e) => {
-              handleInputChange(e);
-              if (e.target.value) {
-                setErrors((prevErrors) => {
-                  const updatedErrors = { ...prevErrors };
-                  delete updatedErrors.course;
-                  return updatedErrors;
-                });
-              }
-            }}
-            ref={(el) => (inputRefs.current.course = el)}
-            required
-          >
-            <option value="">{program} </option>
-            <option value="MSc in Information Security">
-              MSc in Information Security
-            </option>
-          </select>
-          {errors.course && <div className="error">{errors.course}</div>}
-        </div>
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <LangIcon />
-          </div>
-          <select
-            name="lng"
-            value={formData.lng}
-            onChange={handleInputChange}
-          >
-            <option>{lng} </option>
-            <option value="English">English</option>
-            <option value="Italian">Italian</option>
-            <option value="Italian">Brazilian</option>
-          </select>
-          {errors.lng && <div className="error">{errors.lng}</div>}
-        </div>
-      </div>
-      <div className="row"></div>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <NameIcon width={"77%"} />
-          </div>
-          <span className="wpcf7-form-control-wrap" data-name="first-name">
-            <input
-              size="40"
-              placeholder={fname}
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              ref={(el) => (inputRefs.current.firstName = el)}
+      <div className="container enrollment d-flex flex-column">
+        <h1 className="mb-4">{header} </h1>
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <ProgramIcon />
+            </div>
+            <select
+              name="course"
+              value={formData.course}
               onChange={(e) => {
                 handleInputChange(e);
                 if (e.target.value) {
                   setErrors((prevErrors) => {
                     const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.firstName;
+                    delete updatedErrors.course;
                     return updatedErrors;
                   });
                 }
               }}
+              ref={(el) => (inputRefs.current.course = el)}
               required
-            />
-          </span>
-          {errors.firstName && (
-            <div className="error">{errors.firstName}</div>
-          )}
-        </div>
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <NameIcon width={"77%"} />
+            >
+              <option value="">{program} </option>
+              <option value="MSc in Information Security">
+                MSc in Information Security
+              </option>
+            </select>
+            {errors.course && <div className="error">{errors.course}</div>}
           </div>
-          <span className="wpcf7-form-control-wrap" data-name="lastname">
-            <input
-              size="40"
-              placeholder={lname}
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              ref={(el) => (inputRefs.current.lastName = el)}
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.value) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.lastName;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              required
-            />
-          </span>
-          {errors.lastName && <div className="error">{errors.lastName}</div>}
-        </div>
-      </div>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <EmailIcon width={"77%"} />
-          </div>
-          <span className="wpcf7-form-control-wrap" data-name="email">
-            <input
-              size="40"
-              placeholder="Email*"
-              type="email"
-              name="email"
-              value={formData.email}
-              ref={(el) => (inputRefs.current.email = el)}
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.value) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.email;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              required
-            />
-          </span>
-          {errors.email && <div className="error">{errors.email}</div>}
-          {errors.email && (
-            <div className="error">{errors.email.message}</div>
-          )}
-        </div>
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <EmailIcon width={"77%"} />
-          </div>
-          <span className="wpcf7-form-control-wrap" data-name="email-email">
-            <input
-              size="40"
-              placeholder={reamil}
-              type="email"
-              name="repeatEmail"
-              value={formData.repeatEmail}
-              ref={(el) => (inputRefs.current.repeatEmail = el)}
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.value) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.repeatEmail;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              required
-            />
-          </span>
-          {errors.repeatEmail && (
-            <div className="error">{errors.repeatEmail}</div>
-          )}
-        </div>
-      </div>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <PhoneIcon width={"77%"} />
-          </div>
-          <span className="wpcf7-form-control-wrap" data-name="phone">
-            <PhoneInput
-              country={"us"} // Default country
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              inputProps={{
-                name: "phone",
-                required: true,
-                placeholder: "Telephone / Mobile*",
-              }}
-              ref={(el) => (inputRefs.current.phone = el)}
-              enableSearch={true} // Search countries in dropdown
-              countryCodeEditable={false} // Prevent manual editing of country code
-              la
-            />
-          </span>
-          {errors.phone && <div className="error">{errors.phone}</div>}
-        </div>
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <CalendarIcon width={"77%"} />
-          </div>
-          <span className="wpcf7-form-control-wrap" data-name="date">
-            <input
-              ref={dateInputRef}
-              size="40"
-              placeholder={bday}
-              type={inputType}
-              name="date"
-              value={formData.date}
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <LangIcon />
+            </div>
+            <select
+              name="lng"
+              value={formData.lng}
               onChange={handleInputChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              required
-            />
-          </span>
-          {errors.date && <div className="error">{errors.date}</div>}
-        </div>
-      </div>
-      <div className="row mb-md-5 align-items-center">
-        <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
-          <div className="__icon">
-            <FileIcon width={"77%"} />
+            >
+              <option>{lng} </option>
+              <option value="English">English</option>
+              <option value="Italian">Italian</option>
+              <option value="Italian">Brazilian</option>
+            </select>
+            {errors.lng && <div className="error">{errors.lng}</div>}
           </div>
-          <fieldset>
-            <legend>{acc} </legend>
-            <span data-default="Choose file">
-              {formData.file1 ? formData.file1.name : ""}
+        </div>
+        <div className="row"></div>
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <NameIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="first-name">
+              <input
+                size="40"
+                placeholder={fname}
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                ref={(el) => (inputRefs.current.firstName = el)}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.firstName;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                required
+              />
             </span>
-          </fieldset>
-          {errors.file1 && <div className="error">{errors.file1}</div>}
-          <label className="__upload_icon" data-default="Choose file">
-            <UploadIcon />
-            <input
-              type="file"
-              name="file1"
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.files.length > 0) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.file1;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              ref={(el) => (inputRefs.current.file1 = el)}
-            />
-          </label>
-        </div>
-        <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
-          <div className="__icon">
-            <FileIcon width={"77%"} />
+            {errors.firstName && (
+              <div className="error">{errors.firstName}</div>
+            )}
           </div>
-          <fieldset>
-            <legend>{degg} </legend>
-            <span>{formData.file2 ? formData.file2.name : ""}</span>
-          </fieldset>
-          {errors.file2 && <div className="error">{errors.file2}</div>}
-          <label className="__upload_icon" data-default="Choose file">
-            <UploadIcon />
-            <input
-              type="file"
-              name="file2"
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.files.length > 0) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.file2;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              ref={(el) => (inputRefs.current.file2 = el)}
-            />
-          </label>
-        </div>
-      </div>
-      <div className="row mb-md-5 align-items-center">
-        <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
-          <div className="__icon">
-            <FileIcon width={"77%"} />
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <NameIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="lastname">
+              <input
+                size="40"
+                placeholder={lname}
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                ref={(el) => (inputRefs.current.lastName = el)}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.lastName;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                required
+              />
+            </span>
+            {errors.lastName && <div className="error">{errors.lastName}</div>}
           </div>
-          <fieldset>
-            <legend>{cv} </legend>
-            <span>{formData.file3 ? formData.file3.name : ""}</span>
-          </fieldset>
-          {errors.file3 && <div className="error">{errors.file3}</div>}
-          <label className="__upload_icon" data-default="Choose file">
-            <UploadIcon />
-            <input
-              type="file"
-              name="file3"
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.files.length > 0) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.file3;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              ref={(el) => (inputRefs.current.file3 = el)}
-            />
-          </label>
         </div>
-        <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
-          <div className="__icon">
-            <IdIcon width={"77%"} />
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <EmailIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="email">
+              <input
+                size="40"
+                placeholder="Email*"
+                type="email"
+                name="email"
+                value={formData.email}
+                ref={(el) => (inputRefs.current.email = el)}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.email;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                required
+              />
+            </span>
+            {errors.email && <div className="error">{errors.email}</div>}
+            {errors.email && (
+              <div className="error">{errors.email.message}</div>
+            )}
           </div>
-          <fieldset>
-            <legend>{copy} </legend>
-            <span>{formData.file4 ? formData.file4.name : ""}</span>
-          </fieldset>
-          {errors.file4 && <div className="error">{errors.file4}</div>}
-          <label className="__upload_icon" data-default="Choose file">
-            <UploadIcon />
-            <input
-              type="file"
-              name="file4"
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.files.length > 0) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.file4;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              ref={(el) => (inputRefs.current.file4 = el)}
-            />
-          </label>
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <EmailIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="email-email">
+              <input
+                size="40"
+                placeholder={reamil}
+                type="email"
+                name="repeatEmail"
+                value={formData.repeatEmail}
+                ref={(el) => (inputRefs.current.repeatEmail = el)}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.repeatEmail;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                required
+              />
+            </span>
+            {errors.repeatEmail && (
+              <div className="error">{errors.repeatEmail}</div>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="row mb-md-5 align-items-center">
-        <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
-          <div className="__icon">
-            <CertificateIcon width={"77%"} />
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <PhoneIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="phone">
+              <PhoneInput
+                country={"us"} // Default country
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                inputProps={{
+                  name: "phone",
+                  required: true,
+                  placeholder: "Telephone / Mobile*",
+                }}
+                ref={(el) => (inputRefs.current.phone = el)}
+                enableSearch={true} // Search countries in dropdown
+                countryCodeEditable={false} // Prevent manual editing of country code
+                la
+              />
+            </span>
+            {errors.phone && <div className="error">{errors.phone}</div>}
           </div>
-          <fieldset>
-            <legend>{lngg} </legend>
-            <span>{formData.file5 ? formData.file5.name : ""}</span>
-          </fieldset>
-          {errors.file5 && <div className="error">{errors.file5}</div>}
-          <label className="__upload_icon" data-default="Choose file">
-            <UploadIcon />
-            <input type="file" name="file5" onChange={handleInputChange} />
-          </label>
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <CalendarIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="date">
+              <input
+                ref={dateInputRef}
+                size="40"
+                placeholder={bday}
+                type={inputType}
+                name="date"
+                value={formData.date}
+                onChange={handleInputChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                required
+              />
+            </span>
+            {errors.date && <div className="error">{errors.date}</div>}
+          </div>
         </div>
-      </div>
-      <h1 className="mt-5 mb-4">{header2} </h1>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <CountryIcon width={"77%"} />
+        <div className="row mb-md-5 align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <FileIcon width={"77%"} />
+            </div>
+            <fieldset>
+              <legend>{acc} </legend>
+              <span data-default="Choose file">
+                {formData.file1 ? formData.file1.name : ""}
+              </span>
+            </fieldset>
+            {errors.file1 && <div className="error">{errors.file1}</div>}
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input
+                type="file"
+                name="file1"
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file1;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.file1 = el)}
+              />
+            </label>
           </div>
-          <span
-            className="wpcf7-form-control-wrap d-flex justify-content-center"
-            data-name="country"
-          >
-            {/* <input
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <FileIcon width={"77%"} />
+            </div>
+            <fieldset>
+              <legend>{degg} </legend>
+              <span>{formData.file2 ? formData.file2.name : ""}</span>
+            </fieldset>
+            {errors.file2 && <div className="error">{errors.file2}</div>}
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input
+                type="file"
+                name="file2"
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file2;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.file2 = el)}
+              />
+            </label>
+          </div>
+        </div>
+        <div className="row mb-md-5 align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <FileIcon width={"77%"} />
+            </div>
+            <fieldset>
+              <legend>{cv} </legend>
+              <span>{formData.file3 ? formData.file3.name : ""}</span>
+            </fieldset>
+            {errors.file3 && <div className="error">{errors.file3}</div>}
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input
+                type="file"
+                name="file3"
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file3;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.file3 = el)}
+              />
+            </label>
+          </div>
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <IdIcon width={"77%"} />
+            </div>
+            <fieldset>
+              <legend>{copy} </legend>
+              <span>{formData.file4 ? formData.file4.name : ""}</span>
+            </fieldset>
+            {errors.file4 && <div className="error">{errors.file4}</div>}
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input
+                type="file"
+                name="file4"
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.files.length > 0) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.file4;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.file4 = el)}
+              />
+            </label>
+          </div>
+        </div>
+        <div className="row mb-md-5 align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-center __enrollment_field">
+            <div className="__icon">
+              <CertificateIcon width={"77%"} />
+            </div>
+            <fieldset>
+              <legend>{lngg} </legend>
+              <span>{formData.file5 ? formData.file5.name : ""}</span>
+            </fieldset>
+            {errors.file5 && <div className="error">{errors.file5}</div>}
+            <label className="__upload_icon" data-default="Choose file">
+              <UploadIcon />
+              <input type="file" name="file5" onChange={handleInputChange} />
+            </label>
+          </div>
+        </div>
+        <h1 className="mt-5 mb-4">{header2} </h1>
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <CountryIcon width={"77%"} />
+            </div>
+            <span
+              className="wpcf7-form-control-wrap d-flex justify-content-center"
+              data-name="country"
+            >
+              {/* <input
               size="40"
               placeholder="Country Of Birth*"
               type="text"
@@ -685,288 +688,323 @@ function EnrollementById() {
               ref={(el) => (inputRefs.current.country = el)}
               required
             /> */}
-            <div
-              className="__country_select"
-              onClick={() => {
-                setShowCountryMenu(!showCountryMenu);
-              }}
-            >
-              <Flag
-                code={
-                  countries.find((cnt) => {
-                    return cnt.name_en === formData?.country;
-                  })?.code
-                }
-                fallback={<span></span>}
-                height={"11px"}
-                width={"16px"}
-              />
-              {formData.country && formData.country !== "" ? (
-                <span>{formData.country}</span>
-              ) : (
-                <span className="__ph">{country} </span>
-              )}
-            </div>
-          </span>
-          <div
-            className={`__country_select_menu ${
-              showCountryMenu ? "__show" : ""
-            }`}
-          >
-            <div
-              className="__option"
-              onClick={() => {
-                setFormData((prev) => ({
-                  ...prev,
-                  country: "",
-                }));
-                setShowCountryMenu(false);
-              }}
-            ></div>
-            {countries.map((cntr, i) => (
               <div
-                className="__option"
-                value={cntr.code}
-                key={i}
+                className="__country_select"
                 onClick={() => {
-                  setFormData((prev) => ({
-                    ...prev,
-                    country: cntr.name_en,
-                  }));
-                  setShowCountryMenu(false);
+                  setShowCountryMenu(!showCountryMenu);
                 }}
               >
                 <Flag
-                  code={cntr.code}
+                  code={
+                    countries.find((cnt) => {
+                      return cnt.name_en === formData?.country;
+                    })?.code
+                  }
                   fallback={<span></span>}
                   height={"11px"}
                   width={"16px"}
                 />
-                <span>{cntr.name_de}</span>
+                {formData.country && formData.country !== "" ? (
+                  <span>{formData.country}</span>
+                ) : (
+                  <span className="__ph">{country} </span>
+                )}
               </div>
-            ))}
+            </span>
+            <div
+              className={`__country_select_menu ${
+                showCountryMenu ? "__show" : ""
+              }`}
+            >
+              <div
+                className="__option"
+                onClick={() => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    country: "",
+                  }));
+                  setShowCountryMenu(false);
+                }}
+              ></div>
+              {countries.map((cntr, i) => (
+                <div
+                  className="__option"
+                  value={cntr.code}
+                  key={i}
+                  onClick={() => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      country: cntr.name_en,
+                    }));
+                    setShowCountryMenu(false);
+                  }}
+                >
+                  <Flag
+                    code={cntr.code}
+                    fallback={<span></span>}
+                    height={"11px"}
+                    width={"16px"}
+                  />
+                  <span>{cntr.name_de}</span>
+                </div>
+              ))}
+            </div>
+            {errors.country && <div className="error">{errors.country}</div>}
           </div>
-          {errors.country && <div className="error">{errors.country}</div>}
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <CityIcon width={"77%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="city">
+              <input
+                size="40"
+                placeholder={city}
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.city;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.city = el)}
+                required
+              />
+            </span>
+            {errors.city && <div className="error">{errors.city}</div>}
+          </div>
         </div>
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <CityIcon width={"77%"} />
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <AddressIcon width={"60%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="address">
+              <input
+                size="40"
+                placeholder={address}
+                type="text"
+                name="address"
+                value={formData.address}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.address;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.address = el)}
+              />
+            </span>
+            {errors.address && <div className="error">{errors.address}</div>}
           </div>
-          <span className="wpcf7-form-control-wrap" data-name="city">
-            <input
-              size="40"
-              placeholder={city}
-              type="text"
-              name="city"
-              value={formData.city}
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <AddressIcon width={"60%"} />
+            </div>
+            <span className="wpcf7-form-control-wrap" data-name="zip">
+              <input
+                size="40"
+                placeholder={zip}
+                type="number"
+                name="zip"
+                value={formData.zip}
+                onChange={(e) => {
+                  handleInputChange(e);
+                  if (e.target.value) {
+                    setErrors((prevErrors) => {
+                      const updatedErrors = { ...prevErrors };
+                      delete updatedErrors.zip;
+                      return updatedErrors;
+                    });
+                  }
+                }}
+                ref={(el) => (inputRefs.current.zip = el)}
+                required
+              />
+            </span>
+            {errors.zip && <div className="error">{errors.zip}</div>}
+          </div>
+        </div>
+        <div className="row mb-md-5">
+          <div className="col-md-6 col-12 __enrollment_field">
+            <div className="__icon">
+              <GenderIcon width={"77%"} />
+            </div>
+            <select
+              name="gender"
+              value={formData.gender}
               onChange={(e) => {
                 handleInputChange(e);
                 if (e.target.value) {
                   setErrors((prevErrors) => {
                     const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.city;
+                    delete updatedErrors.gender;
                     return updatedErrors;
                   });
                 }
               }}
-              ref={(el) => (inputRefs.current.city = el)}
               required
-            />
-          </span>
-          {errors.city && <div className="error">{errors.city}</div>}
-        </div>
-      </div>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <AddressIcon width={"60%"} />
+            >
+              <option value="">{gender} </option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Female">Other</option>
+            </select>
+            {errors.gender && <div className="error">{errors.gender}</div>}
           </div>
-          <span className="wpcf7-form-control-wrap" data-name="address">
-            <input
-              size="40"
-              placeholder={address}
-              type="text"
-              name="address"
-              value={formData.address}
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.value) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.address;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              ref={(el) => (inputRefs.current.address = el)}
-            />
-          </span>
-          {errors.address && <div className="error">{errors.address}</div>}
         </div>
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <AddressIcon width={"60%"} />
+        <h1 className="mt-5 mb-4">Privacy</h1>
+        <div className="row ">
+          <div className="col">
+            <label className="Check">
+              <input
+                type="checkbox"
+                name="processingAuthorization"
+                checked={formData.processingAuthorization}
+                onChange={handleInputChange}
+              />
+              {h1}
+            </label>
           </div>
-          <span className="wpcf7-form-control-wrap" data-name="zip">
-            <input
-              size="40"
-              placeholder={zip}
-              type="number"
-              name="zip"
-              value={formData.zip}
-              onChange={(e) => {
-                handleInputChange(e);
-                if (e.target.value) {
-                  setErrors((prevErrors) => {
-                    const updatedErrors = { ...prevErrors };
-                    delete updatedErrors.zip;
-                    return updatedErrors;
-                  });
-                }
-              }}
-              ref={(el) => (inputRefs.current.zip = el)}
-              required
-            />
-          </span>
-          {errors.zip && <div className="error">{errors.zip}</div>}
         </div>
-      </div>
-      <div className="row mb-md-5">
-        <div className="col-md-6 col-12 __enrollment_field">
-          <div className="__icon">
-            <GenderIcon width={"77%"} />
+        <div className="row ">
+          <div className="col">
+            <label className="Check">
+              <input
+                type="checkbox"
+                name="withdrawalAuthorization"
+                checked={formData.withdrawalAuthorization}
+                onChange={handleInputChange}
+              />
+              {h2}
+            </label>
           </div>
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={(e) => {
-              handleInputChange(e);
-              if (e.target.value) {
-                setErrors((prevErrors) => {
-                  const updatedErrors = { ...prevErrors };
-                  delete updatedErrors.gender;
-                  return updatedErrors;
-                });
+        </div>
+        <div className="row ">
+          <div className="col">
+            <label className="Check">
+              <input
+                type="checkbox"
+                name="advertisingAuthorization"
+                checked={formData.advertisingAuthorization}
+                onChange={handleInputChange}
+              />
+              {h3}
+            </label>
+          </div>
+        </div>
+        <div className="row mt-5 mb-5">
+          <div className="col">
+            <button
+              onClick={openErrorModal}
+              className={`submit-btn ${
+                formData.advertisingAuthorization &&
+                formData.withdrawalAuthorization &&
+                formData.processingAuthorization
+                  ? ""
+                  : "disabled"
+              }`}
+              disabled={
+                !formData.advertisingAuthorization ||
+                !formData.withdrawalAuthorization ||
+                !formData.processingAuthorization
               }
-            }}
-            required
-          >
-            <option value="">{gender} </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Female">Other</option>
-          </select>
-          {errors.gender && <div className="error">{errors.gender}</div>}
-        </div>
-      </div>
-      <h1 className="mt-5 mb-4">Privacy</h1>
-      <div className="row ">
-        <div className="col">
-          <label className="Check">
-            <input
-              type="checkbox"
-              name="processingAuthorization"
-              checked={formData.processingAuthorization}
-              onChange={handleInputChange}
-            />
-            {h1}
-          </label>
-        </div>
-      </div>
-      <div className="row ">
-        <div className="col">
-          <label className="Check">
-            <input
-              type="checkbox"
-              name="withdrawalAuthorization"
-              checked={formData.withdrawalAuthorization}
-              onChange={handleInputChange}
-            />
-            {h2}
-          </label>
-        </div>
-      </div>
-      <div className="row ">
-        <div className="col">
-          <label className="Check">
-            <input
-              type="checkbox"
-              name="advertisingAuthorization"
-              checked={formData.advertisingAuthorization}
-              onChange={handleInputChange}
-            />
-            {h3}
-          </label>
-        </div>
-      </div>
-      <div className="row mt-5 mb-5">
-        <div className="col">
-          <button
-            onClick={handleSubmit}
-            className={`submit-btn ${
-              formData.advertisingAuthorization &&
-              formData.withdrawalAuthorization &&
-              formData.processingAuthorization
-                ? ""
-                : "disabled"
-            }`}
-            disabled={
-              !formData.advertisingAuthorization ||
-              !formData.withdrawalAuthorization ||
-              !formData.processingAuthorization
-            }
-            style={{ width: "150px" }}
-          >
-            {loading ? "..." : btn}
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <Modal
-      size="md"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      show={showApplyModal}
-      onHide={hideApplyModal}
-    >
-      <section id="lead-capture">
-        <section className="visuals">
-          <img src={logo} />
-        </section>
-        <section className="readables">
-          <div id="please">
-            {loading ? (
-              <span>
-                Please do not close the tab while your file is being uploaded.
-                This may take a moment depending on the size of the file.
-                Thank you for your patience!
-              </span>
-            ) : (
-              <>
-                <h2> Thank you for your application!</h2>
-                <br />
-                We sincerely appreciate your interest in joining us. Your
-                application has been received successfully. An email
-                confirmation has been sent to you, and we will carefully
-                review your application. Our team will get back to you as soon
-                as possible with the next steps.
-                <br />
-                <br />
-                <span>
-                  Thank you for your patience, and we look forward to
-                  connecting with you soon!
-                </span>
-              </>
-            )}
+              style={{ width: "150px" }}
+            >
+              {loading ? "..." : btn}
+            </button>
           </div>
+        </div>
+      </div>
+
+      <Modal
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={showApplyModal}
+        onHide={hideApplyModal}
+      >
+        <section id="lead-capture">
+          <section className="visuals">
+            <img src={logo} />
+          </section>
+          <section className="readables">
+            <div id="please">
+              {loading ? (
+                <span>
+                  Please do not close the tab while your file is being uploaded.
+                  This may take a moment depending on the size of the file.
+                  Thank you for your patience!
+                </span>
+              ) : (
+                <>
+                  <h2> Thank you for your application!</h2>
+                  <br />
+                  We sincerely appreciate your interest in joining us. Your
+                  application has been received successfully. An email
+                  confirmation has been sent to you, and we will carefully
+                  review your application. Our team will get back to you as soon
+                  as possible with the next steps.
+                  <br />
+                  <br />
+                  <span>
+                    Thank you for your patience, and we look forward to
+                    connecting with you soon!
+                  </span>
+                </>
+              )}
+            </div>
+          </section>
+          <section>
+            <button onClick={() => setShowApplyModal(false)}>Close</button>
+          </section>
         </section>
-        <section>
-          <button onClick={() => setShowApplyModal(false)}>Close</button>
+      </Modal>
+
+      <Modal
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={showErrorModal}
+        onHide={() => setShowErrorModal(false)}
+      >
+        <section id="lead-capture">
+          <section className="visuals">
+            <img src={logo} />
+          </section>
+          <section className="readables">
+            <div id="please">
+              <h2> An error occurred during your application submission. </h2>
+              <br />
+              Please try again in a few minutes. If the issue persists, send
+              your application directly to
+              <span style={{ color: "rgb(4, 102, 53)" }}>
+                {" "}
+                enrolment@ego-education.com
+              </span>
+              <br />
+              <br />
+              <span>
+                Thank you for your patience, and we look forward to connecting
+                with you soon!
+              </span>
+            </div>
+          </section>
+          <section>
+            <button onClick={() => setShowErrorModal(false)}>Close</button>
+          </section>
         </section>
-      </section>
-    </Modal>
-  </>
+      </Modal>
+    </>
   );
 }
 
