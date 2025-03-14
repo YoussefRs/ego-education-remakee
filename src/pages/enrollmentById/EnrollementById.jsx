@@ -60,6 +60,7 @@ function EnrollementById() {
     h3,
     btn,
   } = t("enrol");
+  const {t1, t2, t3, t4} = t("applyerr");
 
   const inputRefs = useRef({});
   const { showModal, openModal, closeModal } = useModal();
@@ -983,10 +984,9 @@ function EnrollementById() {
           </section>
           <section className="readables">
             <div id="please">
-              <h2> An error occurred during your application submission. </h2>
+              <h2> {t1}</h2>
               <br />
-              Please try again in a few minutes. If the issue persists, send
-              your application directly to
+              {t2}
               <span style={{ color: "rgb(4, 102, 53)" }}>
                 {" "}
                 enrolment@ego-education.com
@@ -994,13 +994,12 @@ function EnrollementById() {
               <br />
               <br />
               <span>
-                Thank you for your patience, and we look forward to connecting
-                with you soon!
+              {t3}
               </span>
             </div>
           </section>
           <section>
-            <button onClick={() => setShowErrorModal(false)}>Close</button>
+            <button onClick={() => setShowErrorModal(false)}>{t4}</button>
           </section>
         </section>
       </Modal>

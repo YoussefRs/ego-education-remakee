@@ -1732,6 +1732,13 @@ i18n
             re: "Request Evaluation",
           },
 
+          applyerr: {
+            t1 : "An error occurred during your application submission.",
+            t2: "Please try again in a few minutes. If the issue persists, send your application directly to",
+            t3: "Thank you for your patience, and we look forward to connectingwith you soon!",
+            t4: "Close"
+          },
+
           re: {
             title_: "Evaluation",
             l1: "In any case, while waiting for the apostille or to simply understand if one is eligible, a normal copy of the following qualifications is enough:",
@@ -3039,7 +3046,12 @@ i18n
             re: "Solicitar Avaliação",
             bck: "Voltar",
           },
-
+          applyerr: {
+            t1: "Ocorreu um erro durante o envio da sua inscrição.",
+            t2: "Por favor, tente novamente em alguns minutos. Se o problema persistir, envie sua inscrição diretamente para",
+            t3: "Agradecemos sua paciência e esperamos nos conectar com você em breve!",
+            t4: "Fechar"
+          },          
           re: {
             title_: "Avaliação",
             l1: "Em qualquer caso, enquanto aguarda a apostila ou simplesmente para entender se é elegível, basta uma cópia normal das seguintes qualificações:",
@@ -3979,6 +3991,12 @@ i18n
             bck: "Indietro",
             re: "Richiedi una valutazione",
           },
+          applyerr: {
+            t1: "Si è verificato un errore durante l'invio della tua candidatura.",
+            t2: "Per favore, riprova tra qualche minuto. Se il problema persiste, invia la tua candidatura direttamente a",
+            t3: "Grazie per la tua pazienza, non vediamo l'ora di connetterci con te presto!",
+            t4: "Chiudi"
+          },
 
           re: {
             title_: "Valutazione",
@@ -3988,6 +4006,8 @@ i18n
             l4: "Titolo di studio conseguito. Sono accettate qualifiche rilasciate in inglese, spagnolo, francese, italiano.",
             l5: "Lo studente riceverà via email la valutazione dei propri crediti accademici e/o lavorativi e gli verrà assegnato il piano di studi e l'anno di iscrizione.",
           },
+
+
 
           enrol: {
             header: "Informazioni sull'Iscrizione",
