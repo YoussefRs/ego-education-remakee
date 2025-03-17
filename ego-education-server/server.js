@@ -13,48 +13,92 @@ const nodemailer = require("nodemailer");
 
 const PORT = process.env.PORT;
 
-app.post("/webhook/stripe", express.raw({ type: "application/json" }), async (req, res) => {
-  let event;
+app.post(
+  "/webhook/stripe",
+  express.raw({ type: "application/json" }),
+  async (req, res) => {
+    let event;
 
+    try {
+      const sig = req.headers["stripe-signature"];
+      event = stripe.webhooks.constructEvent(
+        req.body,
+        sig,
+        process.env.STRIPE_WEBHOOK_SECRET
+      );
+    } catch (err) {
+      console.error("⚠️ Webhook signature verification failed.", err.message);
+      return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    console.log(event);
+
+    if (event.type === "checkout.session.completed") {
+      const session = event.data.object;
+      const customerEmail = session.customer_details.email;
+
+      console.log(
+        `✅ Payment successful for ${customerEmail}. Creating iSpring account...`
+      );
+
+      const candidateQuery = `SELECT firstName, lastName FROM candidates WHERE email = ?`;
+      const [candidate] = await promisePool.query(candidateQuery, [
+        customerEmail,
+      ]);
+
+      console.log(candidate);
+
+      if (!candidate || candidate.length === 0) {
+        console.error("Candidate not found.");
+        return res.status(404).send("Candidate not found.");
+      }
+
+      const { firstName, lastName } = candidate[0];
+      const randomPassword = crypto.randomBytes(8).toString("hex");
+
+      const ispringAccount = await registerISpringUser(
+        firstName,
+        lastName,
+        customerEmail,
+        randomPassword
+      );
+
+      if (!ispringAccount) {
+        return res.status(500).send("Failed to create iSpring account.");
+      }
+
+      // ✅ Send Email with Credentials
+      await sendEmail(customerEmail, firstName, lastName, randomPassword);
+
+      res.status(200).send("iSpring account created and email sent.");
+    } else {
+      res.status(400).send("Unhandled event type.");
+    }
+  }
+);
+
+const sendEmail = async (email, firstName, lastName, password) => {
   try {
-    const sig = req.headers["stripe-signature"];
-    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
-  } catch (err) {
-    console.error("⚠️ Webhook signature verification failed.", err.message);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    let mailOptions = {
+      from: process.env.EGO_EMAIL,
+      to: email,
+      subject: "Your iSpring Academy Login Credentials",
+      html: `
+        <p>Dear ${firstName} ${lastName},</p>
+        <p>Your iSpring Academy account has been successfully created.</p>
+        <p><strong>Login:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${password}</p>
+        <p>You can log in at <a href="https://ego-education.ispringlearn.eu/login">iSpring Academy</a>.</p>
+        <p>Best regards,<br/>Your Team</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log(`📧 Email sent to ${email}`);
+  } catch (error) {
+    console.error("❌ Email sending failed:", error);
   }
-
-  console.log(event)
-
-  if (event.type === "checkout.session.completed") {
-    const session = event.data.object;
-    const customerEmail = session.customer_details.email;
-
-    console.log(`✅ Payment successful for ${customerEmail}. Creating iSpring account...`);
-
-    const candidateQuery = `SELECT firstName, lastName FROM candidates WHERE email = ?`;
-    const [candidate] = await promisePool.query(candidateQuery, [customerEmail]);
-
-    if (!candidate || candidate.length === 0) {
-      console.error("Candidate not found.");
-      return res.status(404).send("Candidate not found.");
-    }
-
-    const { firstName, lastName } = candidate[0];
-    const randomPassword = crypto.randomBytes(8).toString("hex");
-
-    const ispringAccount = await registerISpringUser(firstName, lastName, customerEmail, randomPassword);
-
-    if (!ispringAccount) {
-      return res.status(500).send("Failed to create iSpring account.");
-    }
-
-
-    res.status(200).send("iSpring account created and email sent.");
-  } else {
-    res.status(400).send("Unhandled event type.");
-  }
-});
+};
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -93,9 +137,9 @@ const promisePool = pool.promise();
 
 // Setup your Aruba email transporter
 const transporter = nodemailer.createTransport({
-  host: "smtps.aruba.it", // Replace with Aruba SMTP host
-  port: 465, // Secure SMTP port for Aruba
-  secure: true, // Use SSL
+  host: "smtp-relay.brevo.com", // Replace with Aruba SMTP host
+  port: 587, // Secure SMTP port for Aruba
+  secure: false, // Use SSL
   auth: {
     user: process.env.ARUBA_EMAIL,
     pass: process.env.ARUBA_PASSWORD,
@@ -122,7 +166,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 app.use(express.static(path.join(__dirname, "../dist")));
-
 
 const validateEmailFirst = async (req, res, next) => {
   try {
@@ -154,7 +197,6 @@ const uploadMiddleware = upload.fields([
   { name: "file4", maxCount: 1 },
   { name: "file5", maxCount: 1 },
 ]);
-
 
 app.post(
   "/create",
@@ -199,12 +241,12 @@ app.post(
       }
 
       // Collect uploaded file paths
-        const uploadedFiles = {};
-        ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
-          if (req.files[fileField]) {
-            uploadedFiles[fileField] = req.files[fileField][0].path;
-          }
-        });
+      const uploadedFiles = {};
+      ["file1", "file2", "file3", "file4", "file5"].forEach((fileField) => {
+        if (req.files[fileField]) {
+          uploadedFiles[fileField] = req.files[fileField][0].path;
+        }
+      });
 
       // SQL query to insert data into the database
       const sql = `
@@ -240,7 +282,7 @@ app.post(
 
       // Send confirmation email
       const mailOptions = {
-        from: process.env.ARUBA_EMAIL, // Sender address
+        from: process.env.EGO_EMAIL, // Sender address
         to: email, // Recipient's email
         subject: "Application Received", // Email subject
         html: `
@@ -382,26 +424,25 @@ app.post("/accept/:id", async (req, res) => {
       return res.status(404).json({ Error: "Candidate not found" });
     }
 
-      // Create Stripe payment link
-      const product = await stripe.products.create({
-        name: `${course} Enrollment`,
-        description: `Enrollment fee for ${course}`,
-      });
-  
-      const priceData = await stripe.prices.create({
-        product: product.id,
-        unit_amount: 3000 * 100, // Convert to cents
-        currency: "usd",
-      });
-  
-      const paymentLink = await stripe.paymentLinks.create({
-        line_items: [{ price: priceData.id, quantity: 1 }],
-      });
+    // Create Stripe payment link
+    const product = await stripe.products.create({
+      name: `${course} Enrollment`,
+      description: `Enrollment fee for ${course}`,
+    });
 
+    const priceData = await stripe.prices.create({
+      product: product.id,
+      unit_amount: 3000 * 100, // Convert to cents
+      currency: "usd",
+    });
+
+    const paymentLink = await stripe.paymentLinks.create({
+      line_items: [{ price: priceData.id, quantity: 1 }],
+    });
 
     // Prepare the acceptance email
     const mailOptions = {
-      from: process.env.ARUBA_EMAIL, // Sender address
+      from: process.env.EGO_EMAIL, // Sender address
       to: email, // Recipient's email
       subject: "Application Accepted", // Email subject
       html: `
@@ -503,21 +544,23 @@ app.post("/accept/:id", async (req, res) => {
   }
 });
 
-
 const getISpringAccessToken = async () => {
   try {
-    const response = await fetch("https://ego-education.ispringlearn.eu/api/v3/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Accept": "application/json",
-      },
-      body: new URLSearchParams({
-        client_id: process.env.ISPRING_CLIENT_ID,
-        client_secret: process.env.ISPRING_CLIENT_SECRET,
-        grant_type: "client_credentials",
-      }),
-    });
+    const response = await fetch(
+      "https://ego-education.ispringlearn.eu/api/v3/token",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+        },
+        body: new URLSearchParams({
+          client_id: process.env.ISPRING_CLIENT_ID,
+          client_secret: process.env.ISPRING_CLIENT_SECRET,
+          grant_type: "client_credentials",
+        }),
+      }
+    );
 
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Failed to fetch token");
@@ -529,36 +572,47 @@ const getISpringAccessToken = async () => {
   }
 };
 
-const registerISpringUser = async () => {
+const registerISpringUser = async (
+  firstName,
+  lastName,
+  customerEmail,
+  randomPassword
+) => {
   try {
-    const accessToken = await getISpringAccessToken();  // Replace with a valid access token
+    const accessToken = await getISpringAccessToken(); // Replace with a valid access token
     if (!accessToken) return null;
 
     const response = await fetch("https://api-learn.ispringlearn.eu/user", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",
-        "Accept": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify({
-        "first_name": "John",  // Replace with actual first name
-        "last_name": "Doe",    // Replace with actual last name
-        "country": "63",     // Replace with the selected country
-        "login": "john.doe",  // Replace with the login (username)
-        "email": "yesdeuce@gmail.com", // Replace with actual email
-        "USER_DEFINED_FIELD1": "+1234567890",  // Replace with actual phone number
-        "EDUCATION_TITLE": "Bachelor's Degree",  // Replace with actual education
-        "departmentId": "1f73019c-fa31-11ed-958b-c2425271d525",  // Replace with actual department ID
-        "password": "Password@122",  // Hardcoded password or user-provided
-        "role": "Learner"  // Replace with actual role if needed
+        departmentId: "1f73019c-fa31-11ed-958b-c2425271d525",
+        password: randomPassword,
+        fields: {
+          login: `${firstName}_${lastName}`,
+          email: customerEmail,
+          first_name: firstName,
+          last_name: lastName,
+          country: "63",
+          USER_DEFINED_FIELD1: "+21624512254",
+          EDUCATION_TITLE: "bachelor",
+        },
+        role: "learner",
+        sendLoginEmail: true,
+        invitationMessage:
+          "Please use the following credentials to sign up at iSpring Academy:",
       }),
     });
 
     const data = await response.json();
 
-    console.log(data)
-    if (!response.ok) throw new Error(data.message || "Failed to create iSpring user");
+    console.log(data);
+    if (!response.ok)
+      throw new Error(data.message || "Failed to create iSpring user");
 
     return data;
   } catch (error) {
@@ -566,8 +620,6 @@ const registerISpringUser = async () => {
     return null;
   }
 };
-
-
 
 app.post("/reject/:id", async (req, res) => {
   const candidateId = req.params.id; // Extract candidate ID from route parameter
@@ -596,7 +648,7 @@ app.post("/reject/:id", async (req, res) => {
 
     // Prepare the rejection email
     const mailOptions = {
-      from: process.env.ARUBA_EMAIL, // Sender address
+      from: process.env.EGO_EMAIL, // Sender address
       to: email, // Recipient's email
       subject: "Application Rejected", // Email subject
       html: `

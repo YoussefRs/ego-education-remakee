@@ -903,7 +903,7 @@ function Enrollment() {
         <div className="row mt-5 mb-5">
           <div className="col">
             <button
-              onClick={openErrorModal}
+              onClick={handleSubmit}
               className={`submit-btn ${
                 formData.advertisingAuthorization &&
                 formData.withdrawalAuthorization &&
