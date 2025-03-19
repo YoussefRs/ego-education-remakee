@@ -235,6 +235,9 @@ app.post(
         advertisingAuthorization === "true",
       ];
 
+
+      
+
       // Execute the query
       const [result] = await promisePool.query(sql, values);
 
