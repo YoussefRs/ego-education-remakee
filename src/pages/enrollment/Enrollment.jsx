@@ -33,6 +33,7 @@ import { useTranslation } from "react-i18next";
 
 function Enrollment() {
   const apiUrl = import.meta.env.VITE_API_URL;
+  const brevoKey = import.meta.env.VITE_BREVO_API_KEY;
   const { t } = useTranslation();
   const {
     header,
@@ -59,7 +60,7 @@ function Enrollment() {
     btn,
   } = t("enrol");
 
-  const {t1, t2, t3, t4} = t("applyerr");
+  const { t1, t2, t3, t4 } = t("applyerr");
 
   const inputRefs = useRef({});
   const { showModal, openModal, closeModal } = useModal();
@@ -228,7 +229,6 @@ function Enrollment() {
     return isValid;
   };
 
-
   const handleSubmit = async () => {
     try {
       const isValid = validateForm();
@@ -254,6 +254,47 @@ function Enrollment() {
           "Content-Type": "multipart/form-data",
         },
       });
+
+      // ✅ Send email notification using Brevo API
+      await axios.post(
+        "https://api.brevo.com/v3/smtp/email",
+        {
+          sender: {
+            name: "eGO Education",
+            email: "enrolment@ego-education.com",
+          },
+          to: [{ email: formData.email }], // Send to the user who filled the form
+          subject: "Application Received",
+          htmlContent: `
+         <html>
+           <body>
+        <div style="font-family: Arial, sans-serif; color: #333;">
+          <div style="background-color: #046635; padding: 20px; text-align: center; color: #fff;">
+            <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
+            <h1>Application Accepted</h1>
+          </div>
+          <div style="padding: 20px;">
+           <p>Dear <strong>${formData.firstName} ${formData.lastName}</strong>,</p>
+                <p>Thank you for your application for the <strong>${formData.course}</strong> course.</p>
+                <p>We will review your application and contact you shortly.</p>
+                <p>Best regards,</p>
+            <p><strong>Enrolment Office</strong></p>
+                      <p>Email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                      <p>Website: <a href="https://ego-education.com">www.ego-education.com</a></p>
+          </div>
+        </div>
+      </body>
+      <html>
+        `,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "api-key": brevoKey, // Store API key securely in .env
+          },
+        }
+      );
 
       setShowApplyModal(true);
       setFormData(initialData);
@@ -981,15 +1022,16 @@ function Enrollment() {
           </section>
           <section className="readables">
             <div id="please">
-                  <h2> {t1} </h2>
-                  <br />
-                  {t2} 
-                  <span style={{color: "rgb(4, 102, 53)"}}> enrolment@ego-education.com</span>
-                  <br />
-                  <br />
-                  <span>
-                  {t3}
-                  </span>
+              <h2> {t1} </h2>
+              <br />
+              {t2}
+              <span style={{ color: "rgb(4, 102, 53)" }}>
+                {" "}
+                enrolment@ego-education.com
+              </span>
+              <br />
+              <br />
+              <span>{t3}</span>
             </div>
           </section>
           <section>

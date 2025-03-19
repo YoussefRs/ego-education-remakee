@@ -6,10 +6,12 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
-const crypto = require("crypto");
 const fetch = require("node-fetch");
+const SibApiV3Sdk = require("sib-api-v3-sdk");
 
-const nodemailer = require("nodemailer");
+const brevoClient = SibApiV3Sdk.ApiClient.instance;
+const apiKey = brevoClient.authentications["api-key"];
+apiKey.apiKey = process.env.BREVO_API_KEY;
 
 const PORT = process.env.PORT;
 
@@ -31,8 +33,6 @@ app.post(
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
-    console.log(event);
-
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       const customerEmail = session.customer_details.email;
@@ -46,15 +46,13 @@ app.post(
         customerEmail,
       ]);
 
-      console.log(candidate);
-
       if (!candidate || candidate.length === 0) {
         console.error("Candidate not found.");
         return res.status(404).send("Candidate not found.");
       }
 
       const { firstName, lastName } = candidate[0];
-      const randomPassword = crypto.randomBytes(8).toString("hex");
+      const randomPassword = "Password@122";
 
       const ispringAccount = await registerISpringUser(
         firstName,
@@ -67,9 +65,6 @@ app.post(
         return res.status(500).send("Failed to create iSpring account.");
       }
 
-      // ✅ Send Email with Credentials
-      await sendEmail(customerEmail, firstName, lastName, randomPassword);
-
       res.status(200).send("iSpring account created and email sent.");
     } else {
       res.status(400).send("Unhandled event type.");
@@ -77,41 +72,18 @@ app.post(
   }
 );
 
-const sendEmail = async (email, firstName, lastName, password) => {
-  try {
-    let mailOptions = {
-      from: process.env.EGO_EMAIL,
-      to: email,
-      subject: "Your iSpring Academy Login Credentials",
-      html: `
-        <p>Dear ${firstName} ${lastName},</p>
-        <p>Your iSpring Academy account has been successfully created.</p>
-        <p><strong>Login:</strong> ${email}</p>
-        <p><strong>Password:</strong> ${password}</p>
-        <p>You can log in at <a href="https://ego-education.ispringlearn.eu/login">iSpring Academy</a>.</p>
-        <p>Best regards,<br/>Your Team</p>
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
-    console.log(`📧 Email sent to ${email}`);
-  } catch (error) {
-    console.error("❌ Email sending failed:", error);
-  }
-};
-
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-//set directory of where we store files
-
 const uploadDirectory = "./public/images";
 app.use(
   cors({
-    origin: "*", // This allows requests from any origin
+    origin: "*",
   })
 );
 app.use(express.json({ limit: "100mb" }));
 app.use("/public/images", express.static(uploadDirectory));
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+//set directory of where we store files
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -134,20 +106,6 @@ const promisePool = pool.promise();
     console.error("Database connection failed:", err);
   }
 })();
-
-// Setup your Aruba email transporter
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com", // Replace with Aruba SMTP host
-  port: 587, // Secure SMTP port for Aruba
-  secure: false, // Use SSL
-  auth: {
-    user: process.env.ARUBA_EMAIL,
-    pass: process.env.ARUBA_PASSWORD,
-  },
-  tls: {
-    rejectUnauthorized: false, // Allow self-signed certificates
-  },
-});
 
 // Create the upload directory if it doesn't exist
 if (!fs.existsSync(uploadDirectory)) {
@@ -280,127 +238,9 @@ app.post(
       // Execute the query
       const [result] = await promisePool.query(sql, values);
 
-      // Send confirmation email
-      const mailOptions = {
-        from: process.env.EGO_EMAIL, // Sender address
-        to: email, // Recipient's email
-        subject: "Application Received", // Email subject
-        html: `
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style>
-              body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-              }
-              .email-container {
-                max-width: 600px;
-                margin: 20px auto;
-                background-color: #ffffff;
-                border: 1px solid #dddddd;
-                border-radius: 8px;
-                overflow: hidden;
-              }
-              .email-header {
-                background-color: #046635;
-                color: #ffffff;
-                text-align: center;
-                padding: 20px;
-              }
-              .email-header img {
-                max-width: 150px;
-                margin-bottom: 10px;
-              }
-              .email-body {
-                padding: 20px;
-                color: #333333;
-                line-height: 1.6;
-              }
-              .email-body p {
-                margin: 10px 0;
-              }
-              .email-footer {
-                background-color: #fff;
-                padding: 20px;
-                font-size: 14px;
-                color: #333333;
-                border-top: 1px solid #dddddd;
-              }
-              .email-footer-table {
-                width: 100%;
-                table-layout: fixed;
-              }
-              .email-footer-table td {
-                vertical-align: top;
-              }
-              .email-footer-logo {
-                width: 80px;
-                padding-right: 10px;
-              }
-              .email-footer-logo img {
-                max-width: 100%;
-                height: auto;
-              }
-              .email-footer-text {
-                color: #333333;
-                font-size: 14px;
-                line-height: 1.5;
-              }
-              .email-footer-text p {
-                margin: 5px 0;
-              }
-              .email-footer-text a {
-                color: #046635;
-                text-decoration: none;
-              }
-            </style>
-          </head>
-          <body>
-            <div className="email-container">
-              <div className="email-header">
-                <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
-                <h1>Application Received</h1>
-              </div>
-              <div className="email-body">
-                <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
-                <p>Thank you for your application for the <strong>${course}</strong> course.</p>
-                <p>We will review your application and contact you shortly.</p>
-                <p>Best regards,</p>
-                <p><strong>eGO Education</strong></p>
-              </div>
-              <div className="email-footer">
-                <table className="email-footer-table">
-                  <tr>
-                    <!-- Logo Section -->
-                    <td className="email-footer-logo">
-                      <img src="www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
-                    </td>
-                    <!-- Contact Details Section -->
-                    <td className="email-footer-text">
-                      <p><strong>Enrolment Office</strong></p>
-                      <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
-                      <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </body>
-          </html>
-        `,
-      };
-
-      const info = await transporter.sendMail(mailOptions);
-
       res.status(200).json({
         Status: "Success",
         Data: result,
-        EmailInfo: info,
       });
     } catch (error) {
       console.log("Server Error:", error);
@@ -410,10 +250,15 @@ app.post(
 );
 
 app.post("/accept/:id", async (req, res) => {
-  const candidateId = req.params.id; // Extract candidate ID from route parameter
+  const candidateId = req.params.id;
   const { email, firstName, lastName, course } = req.body;
 
   try {
+    // Check if required fields are provided
+    if (!email || !firstName || !lastName || !course) {
+      return res.status(400).json({ Error: "Missing required fields" });
+    }
+
     // Update candidate status in the database
     const sqlUpdateStatus = `UPDATE candidates SET status = 'Accepted' WHERE id = ?`;
     const [updateResult] = await promisePool.query(sqlUpdateStatus, [
@@ -440,107 +285,58 @@ app.post("/accept/:id", async (req, res) => {
       line_items: [{ price: priceData.id, quantity: 1 }],
     });
 
-    // Prepare the acceptance email
-    const mailOptions = {
-      from: process.env.EGO_EMAIL, // Sender address
-      to: email, // Recipient's email
-      subject: "Application Accepted", // Email subject
-      html: `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-          .email-container {
-            font-family: Arial, sans-serif;
-            color: #333;
-          }
-          .email-header {
-            background-color: #046635;
-            padding: 20px;
-            text-align: center;
-            color : #fff;
-          }
+    // Ensure sender email is defined
+    if (!process.env.EGO_EMAIL) {
+      return res.status(500).json({
+        Error: "Sender email (EGO_EMAIL) is not set in environment variables",
+      });
+    }
 
-           .email-header h1 {
-           color : #fff;
-          }
-          .email-header img {
-            max-height: 80px;
-          }
-          .email-body {
-            padding: 20px;
-          }
-          .email-footer {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-          }
-          .email-footer-table {
-            margin: auto;
-            text-align: left;
-          }
-          .email-footer-logo img {
-            max-width: 100%;
-            height: auto;
-          }
-          .email-footer-text {
-            padding-left: 10px;
-          }
-        </style>
-      </head>
+    // Set up email parameters
+    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
+
+    sendSmtpEmail.sender = {
+      name: "eGO Education",
+      email: process.env.EGO_EMAIL,
+    }; // ✅ Ensure sender is defined
+    sendSmtpEmail.to = [{ email: email, name: `${firstName} ${lastName}` }];
+    sendSmtpEmail.subject = "Application Accepted";
+    sendSmtpEmail.htmlContent = `
+      <html>
       <body>
-        <div className="email-container">
-          <div className="email-header">
+        <div style="font-family: Arial, sans-serif; color: #333;">
+          <div style="background-color: #046635; padding: 20px; text-align: center; color: #fff;">
             <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
             <h1>Application Accepted</h1>
           </div>
-          <div className="email-body">
+          <div style="padding: 20px;">
             <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
             <p>Congratulations! Your application for the <strong>${course}</strong> course has been accepted.</p>
             <p>To complete your enrollment, please proceed with the payment.</p>
-            <p><a href="${paymentLink.url}" className="button">Complete Payment</a></p>
+            <p><a href="${paymentLink.url}" style="display: inline-block; padding: 10px 20px; color: #fff; background-color: #046635; text-decoration: none; border-radius: 5px;">Complete Payment</a></p>
             <p>Best regards,</p>
-            <p><strong>eGO Education</strong></p>
-          </div>
-          <div className="email-footer">
-            <table className="email-footer-table">
-              <tr>
-                <td className="email-footer-logo">
-                  <img width="80" height="80" src="https://www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
-                </td>
-                <td className="email-footer-text">
-                  <p><strong>Enrolment Office</strong></p>
-                  <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
-                  <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
-                </td>
-              </tr>
-            </table>
+             <p><strong>Enrolment Office</strong></p>
+                      <p>Email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                      <p>Website: <a href="https://www.ego-education.com">www.ego-education.com</a></p>
           </div>
         </div>
       </body>
       </html>
-      `,
-    };
+    `;
 
     // Send the email
-    transporter.sendMail(mailOptions, (emailErr, info) => {
-      if (emailErr) {
-        console.error("Email Error:", emailErr);
-        return res.status(500).json({ Error: "Error sending email" });
-      }
+    await apiInstance.sendTransacEmail(sendSmtpEmail);
 
-      res.json({
-        Status: "Success",
-        Message: "Candidate accepted and email sent",
-      });
+    res.json({
+      Status: "Success",
+      Message: "Candidate accepted and email sent",
     });
   } catch (error) {
     console.error("Server Error:", error);
-    res.status(500).json({ Error: "Server error occurred" });
+    res
+      .status(500)
+      .json({ Error: "Server error occurred", Details: error.message });
   }
 });
 
@@ -620,16 +416,16 @@ const registerISpringUser = async (
     return null;
   }
 };
+const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 app.post("/reject/:id", async (req, res) => {
-  const candidateId = req.params.id; // Extract candidate ID from route parameter
+  const candidateId = req.params.id;
   const { email, firstName, lastName, course, reasons } = req.body;
 
   if (!email || !firstName || !lastName || !course) {
     return res.status(400).json({ Error: "Missing required fields" });
   }
 
-  // Validate reasons and convert to HTML list
   const reasonsList =
     Array.isArray(reasons) && reasons.length > 0
       ? reasons.map((reason) => `<li>${reason}</li>`).join("")
@@ -646,105 +442,80 @@ app.post("/reject/:id", async (req, res) => {
       return res.status(404).json({ Error: "Candidate not found" });
     }
 
-    // Prepare the rejection email
-    const mailOptions = {
-      from: process.env.EGO_EMAIL, // Sender address
-      to: email, // Recipient's email
-      subject: "Application Rejected", // Email subject
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>
-          .email-container {
-            font-family: Arial, sans-serif;
-            color: #333;
-          }
-          .email-header {
-            background-color: #046635;
-            padding: 20px;
-            text-align: center;
-            color : #fff;
-          }
-
-           .email-header h1 {
-           color : #fff;
-          }
-          .email-header img {
-            max-height: 80px;
-          }
-          .email-body {
-            padding: 20px;
-          }
-          .email-footer {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-          }
-          .email-footer-table {
-            margin: auto;
-            text-align: left;
-          }
-          .email-footer-logo img {
-            max-width: 100%;
-            height: auto;
-          }
-          .email-footer-text {
-            padding-left: 10px;
-          }
+    // Prepare the email content
+    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
+    sendSmtpEmail.sender = {
+      name: "eGO Education",
+      email: "enrolment@ego-education.com",
+    };
+    sendSmtpEmail.to = [{ email, name: `${firstName} ${lastName}` }];
+    sendSmtpEmail.subject = "Application Rejected";
+    sendSmtpEmail.htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          .email-container { font-family: Arial, sans-serif; color: #333; }
+          .email-header { background-color: #046635; padding: 20px; text-align: center; color: #fff; }
+          .email-header h1 { color: #fff; }
+          .email-header img { max-height: 80px; }
+          .email-body { padding: 20px; }
+          .email-footer { background-color: #fff; padding: 20px; text-align: center; font-size: 12px; color: #666; }
+          .email-footer-table { text-align: left; }
+          .email-footer-logo img { max-width: 100%; height: auto; }
+          .email-footer-text { padding-left: 10px; }
         </style>
-        </head>
-        <body>
-          <div className="email-container">
-            <div className="email-header">
+      </head>
+      <body>
+        <div class="email-container">
+          <div class="email-header">
             <img src="https://www.ego-education.com/assets/logo-ego-white-BNobZOaW.png" alt="Company Logo">
             <h1>Application Rejected</h1>
           </div>
-            <div className="email-body">
-              <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
-              <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
-              <p>The following reasons were cited:</p>
-              <ul>${reasonsList}</ul>
-              <p>We encourage you to reapply in the future and wish you all the best in your endeavors.</p>
-              <p>Best regards,</p>
-              <p><strong>eGO Education</strong></p>
-            </div>
-            <div className="email-footer">
-            <table className="email-footer-table">
+          <div class="email-body">
+            <p>Dear <strong>${firstName} ${lastName}</strong>,</p>
+            <p>We regret to inform you that your application for the <strong>${course}</strong> course has not been accepted at this time.</p>
+            <p>The following reasons were cited:</p>
+            <ul>${reasonsList}</ul>
+            <p>We encourage you to reapply in the future and wish you all the best in your endeavors.</p>
+            <p>Best regards,</p>
+            <p><strong>eGO Education</strong></p>
+          </div>
+          <div class="email-footer">
+            <table class="email-footer-table">
               <tr>
-                <td className="email-footer-logo">
+                <td class="email-footer-logo">
                   <img width="80" height="80" src="https://www.ego-education.com/assets/logo-ego-black-DPDz0FSK.png" alt="Company Logo">
                 </td>
-                <td className="email-footer-text">
+                <td class="email-footer-text">
                   <p><strong>Enrolment Office</strong></p>
-                  <p>email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
-                  <p>website: <a href="https://ego-education.com">ego-education.com</a></p>
+                  <p>Email: <a href="mailto:enrolment@ego-education.com">enrolment@ego-education.com</a></p>
+                  <p>Website: <a href="https://ego-education.com">www.ego-education.com</a></p>
                 </td>
               </tr>
             </table>
           </div>
-          </div>
-        </body>
-        </html>
-      `,
-    };
+        </div>
+      </body>
+      </html>
+    `;
 
-    // Send the email
-    transporter.sendMail(mailOptions, (emailErr, info) => {
-      if (emailErr) {
-        console.error("Email Error:", emailErr);
-        return res.status(500).json({ Error: "Error sending email" });
+    // Send the email via SendinBlue API
+    apiInstance.sendTransacEmail(sendSmtpEmail).then(
+      function (data) {
+        console.log("Email sent successfully:", data);
+        res.json({
+          Status: "Success",
+          Message: "Candidate rejected and email sent",
+        });
+      },
+      function (error) {
+        console.error("SendinBlue Email Error:", error);
+        res.status(500).json({ Error: "Error sending email" });
       }
-
-      res.json({
-        Status: "Success",
-        Message: "Candidate rejected and email sent",
-      });
-    });
+    );
   } catch (error) {
     console.error("Server Error:", error);
     res.status(500).json({ Error: "Server error occurred" });
